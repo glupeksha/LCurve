@@ -45,7 +45,8 @@ def subs(a,b):
     print(subss)
 
 def log(a):
-    math.log(a)
+    z=math.log(a)
+    print(z)
 
     
     
