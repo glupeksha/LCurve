@@ -40,7 +40,9 @@ def mul(num1,num2):
     multflication = num1 * num2
     print(multflication)
 
-
+def subs(a,b):
+    subss=a-b
+    print(subss)
 
 def log(a):
     math.log(a)
