@@ -36,6 +36,12 @@ def div(a,b):
     total=a/float(b)
     print(total)
     
+def mul(num1,num2):
+    multflication = num1 * num2
+    print(multflication)
+
+
+
 def log(a):
     math.log(a)
 
