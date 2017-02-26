@@ -1,4 +1,4 @@
-h1{
+h1{/*beautyfy the hedder*/
 	color: purple;
 	text-align: center;
 	font-size: 100px;
@@ -6,7 +6,7 @@ h1{
 	background-color: purple;
  
 }
-.flash {
+.flash {/*beautyfy the animation*/
    animation-name: flash;
     animation-duration: 0.5s;
     animation-timing-function: linear;
