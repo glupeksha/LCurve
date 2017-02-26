@@ -32,15 +32,46 @@ ul{
 	overflow: hidden;
 	background-color: black;
 }
-.button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+
+li{
+	float:left;
 }
+li a,.dropbtn{
+	display:inline-block;
+	color:white;
+	text-align:center;
+	padding:14px 16px;
+	text-decoration:none;
+}
+li .dropdown{
+	display:inline-block;
+}
+li a:hover,.dropdown:hover .dropbtn{
+ 	background-color: red;
+ }
+.dropdown-contain {
+    display: none;
+    position: absolute;
+    background-color: lightblue;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    padding: 11px 10px;
+    z-index: 1;
+    
+}
+
+.dropdown-contain a{
+	color: green;
+	padding: 11px 10px;
+	display: block;
+	border: double;
+}
+
+.dropdown:hover .dropdown-contain {
+    display: block;
+}
+
+.dropdown:hover .dropbtn{
+	background-color: red;
+}
+
