@@ -1,0 +1,40 @@
+h1{
+	color: purple;
+	text-align: center;
+	font-size: 100px;
+	font-family: cursive;
+	background-color: purple;
+ 
+}
+.flash {
+   animation-name: flash;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: red;}
+    to {color: yellow;}
+}
+body{
+	background-color: purple;
+	background-image: url(https://www.google.lk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj8pufFgq3SAhUBVbwKHb66D2sQjRwIBw&url=http%3A%2F%2Ftutorialzine.com%2F2010%2F07%2Fmaking-slick-mobileapp-website-jquery-css%2F&psig=AFQjCNG93qJ95Lxx-6ni4h9fiR4E5XfQTw&ust=1488172985650342);
+}
+p{
+	background-color: orange;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
