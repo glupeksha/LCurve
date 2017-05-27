@@ -43,3 +43,8 @@ GroupProject
 
     ce0030 (vivid crimson)
         sports tab
+        
+##Notification color scheme [home]
+
+    22AED1 (ball blue)
+        homework
