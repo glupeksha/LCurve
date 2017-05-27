@@ -85,6 +85,7 @@ html,body{
     border-radius: 0px 0px 20px 20px;
     border: 3px solid #C2DFE3;
     background-color: #1abb9c;
+    cursor: pointer;
 }
 .item_nav > img{
     height: 30px;
@@ -300,8 +301,8 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 
 .col1{
     background-color: #FAF7FF;
-    height: 80%;
-    border-radius: 20px;
+    height: 83%;
+/*    border-radius: 20px;*/
     
     border: 2px solid #C2DFE3;
     z-index: 100;
@@ -309,8 +310,8 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 
 .col2{
     background-color: #FAF7FF;
-    height: 80%;
-    border-radius: 20px;
+    height: 83%;
+/*    border-radius: 20px;*/
     border: 2px solid #C2DFE3;
     z-index: 100;
 }
@@ -321,8 +322,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     bottom:0;
     height: 40px;
     margin-top: -39px;
-    border-radius:  20px 20px 0px 0px;
-    
+/*    border-radius:  20px 20px 0px 0px;*/    
 }
 
 .ftr{
@@ -338,6 +338,68 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     margin-top: -31px;
     z-index: 1;
     border-right: 20px solid #C2DFE3;
-    border-left: 20px solid #C2DFE3;
-    
+    border-left: 20px solid #C2DFE3;    
+}
+
+.schl{
+    padding: 0px 25px 25px 25px;
+}
+
+.notify{
+    margin-top:35px;
+    background-color: #FAF7FF;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border-radius: 0px 0px 20px 20px;
+    height: 150px;
+    color: #FAF7FF;
+}
+
+.notify_head{    
+    height: 30px;
+}
+
+.notify_body{    
+    height: 50px;
+    font-size:26px;
+    padding-top: 6px !important;
+}
+
+.notify_indi{
+    height: 22px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.notify_cr{
+    border: 2px solid #22AED1;
+}
+
+.notify_head_cr{
+}
+
+.notify_body_cr{
+    background-color: #22AED1;
+}
+
+.notify_indi_cr{
+    background-color: #22AED1;
+    color: #FAF7FF;
+/*    color: #FAF7FF;*/
+}
+
+.notify_sc{
+    border: 2px solid #122c34;
+}
+
+.notify_head_sc{
+}
+
+.notify_body_sc{
+    background-color: #122c34;
+}
+
+.notify_indi_sc{
+    background-color: #122c34;
+    color: #FAF7FF;
 }
