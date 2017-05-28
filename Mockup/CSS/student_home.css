@@ -350,7 +350,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     background-color: #FAF7FF;
     padding-right: 0 !important;
     padding-left: 0 !important;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 0px 0px;
     height: 150px;
     color: #FAF7FF;
 }
@@ -359,9 +359,9 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     height: 30px;
 }
 
-.notify_body{    
-    height: 50px;
-    font-size:26px;
+.notify_shead{    
+    height: 35px;
+    font-size:16px;
     padding-top: 6px !important;
 }
 
@@ -369,6 +369,23 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     height: 22px;
     font-size: 12px;
     text-align: center;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.notify_body{
+    overflow-y: scroll;
+    height:85;
+    color: #606060;
+}
+
+.notify_info{
+    padding-left:28px;
+}
+
+.notify_infoRi  ul, .notify_info ul{
+    margin: 0 !important ;
+    list-style-type: none;
+    padding: 0 0 0 12px !important;
 }
 
 .notify_cr{
@@ -378,7 +395,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 .notify_head_cr{
 }
 
-.notify_body_cr{
+.notify_shead_cr{
     background-color: #22AED1;
 }
 
@@ -395,7 +412,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 .notify_head_sc{
 }
 
-.notify_body_sc{
+.notify_shead_sc{
     background-color: #122c34;
 }
 
