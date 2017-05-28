@@ -5,6 +5,10 @@ html,body{
     font-family: 'Hind', sans-serif;
     font-weight: 300;
 }
+.logo{
+    width: 70px;
+    margin-top: -10px;
+}
 /*bootstrap overriding start*/
 .navbar-fixed-bottom, .navbar-fixed-top {
     z-index: 200;    
@@ -406,17 +410,17 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 }
 
 .notify_sc{
-    border: 2px solid #122c34;
+    border: 2px solid #bbbe64;
 }
 
 .notify_head_sc{
 }
 
 .notify_shead_sc{
-    background-color: #122c34;
+    background-color: #bbbe64;
 }
 
 .notify_indi_sc{
-    background-color: #122c34;
+    background-color: #bbbe64;
     color: #FAF7FF;
 }
