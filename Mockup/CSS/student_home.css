@@ -87,9 +87,11 @@ html,body{
     width: 140px;
 /*    max-height: 30px;*/
     border-radius: 0px 0px 20px 20px;
-    border: 3px solid #C2DFE3;
+/*    border: 3px solid #C2DFE3;*/
+    border: 3px solid rgba(255,255,255,0.8);
     background-color: #1abb9c;
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .item_nav > img{
     height: 30px;
@@ -103,7 +105,8 @@ html,body{
 	background: #1abb9c;
 	border-color: #1abb9c;
 	border-radius: 0px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/*            , 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .topbar .navbar-header a {
@@ -378,7 +381,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 }
 
 .notify_body{
-    overflow-y: scroll;
+/*    overflow-y: scroll;*/
     height:85;
     color: #606060;
 }
