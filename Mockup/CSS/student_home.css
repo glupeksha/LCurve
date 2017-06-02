@@ -353,6 +353,12 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     padding: 0px 25px 25px 25px;
 }
 
+.viewMore{
+    background-color: #22AED1;
+    color: #fff;
+    height
+}
+
 .notify{
     margin-top:35px;
     background-color: #FAF7FF;
@@ -388,6 +394,9 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 
 .notify_info{
     padding-left:28px;
+}
+.notify_footer{
+    height:85;    
 }
 
 .notify_infoRi  ul, .notify_info ul{
