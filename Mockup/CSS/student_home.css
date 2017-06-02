@@ -1,6 +1,6 @@
 html,body{
     @import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');
-    @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');    
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
     background-color: #75879C;
     font-family: 'Hind', sans-serif;
     font-weight: 300;
@@ -11,7 +11,7 @@ html,body{
 }
 /*bootstrap overriding start*/
 .navbar-fixed-bottom, .navbar-fixed-top {
-    z-index: 200;    
+    z-index: 200;
 }
 /*bootstrap overriding end*/
 
@@ -56,7 +56,7 @@ html,body{
   opacity: 1;
 }
 
-.text_nav { 
+.text_nav {
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -64,7 +64,7 @@ html,body{
     color: #fff;
   transition: .5s ease;
   opacity: 0;
-    
+
 
 }
 .center{
@@ -237,7 +237,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 	.wrapper.toggled .sidebar, .wrapper.toggled .sidebar-nav {
 		width: 200px;
 	}
-	
+
 	.wrapper.toggled .sidebar-nav li a {
 		text-align: left;
 		padding: 0 0 0 10px;
@@ -296,7 +296,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 }
 
 .text {
-  white-space: nowrap; 
+  white-space: nowrap;
   color: white;
   font-size: 20px;
   position: absolute;
@@ -311,7 +311,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     background-color: #FAF7FF;
     height: 83%;
 /*    border-radius: 20px;*/
-    
+
     border: 2px solid #C2DFE3;
     z-index: 100;
 }
@@ -324,20 +324,20 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     z-index: 100;
 }
 
-.col3{    
+.col3{
     background-color: #2A3F54;
-    z-index:300;    
+    z-index:300;
     bottom:0;
     height: 40px;
     margin-top: -39px;
-/*    border-radius:  20px 20px 0px 0px;*/    
+/*    border-radius:  20px 20px 0px 0px;*/
 }
 
 .ftr{
 }
 
 .tp_mgn2{
-   margin-top:31px; 
+   margin-top:31px;
 }
 
 .tp_mgn3{
@@ -346,7 +346,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     margin-top: -31px;
     z-index: 1;
     border-right: 20px solid #C2DFE3;
-    border-left: 20px solid #C2DFE3;    
+    border-left: 20px solid #C2DFE3;
 }
 
 .schl{
@@ -369,11 +369,11 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     color: #FAF7FF;
 }
 
-.notify_head{    
+.notify_head{
     height: 30px;
 }
 
-.notify_shead{    
+.notify_shead{
     height: 35px;
     font-size:16px;
     padding-top: 6px !important;
@@ -387,8 +387,10 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 }
 
 .notify_body{
-/*    overflow-y: scroll;*/
-    height:85;
+    overflow-y: scroll;
+    max-height:81px;
+    height: 100%;
+
     color: #606060;
 }
 
