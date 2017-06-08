@@ -6,18 +6,15 @@ html,body{
     font-weight: 300;
 }
 .logo{
-    width: 70px;
-    margin-top: -10px;
+    width: 44px;
+    margin-top: 5px;
+    
 }
 /*bootstrap overriding start*/
 .navbar-fixed-bottom, .navbar-fixed-top {
     z-index: 200;
 }
 /*bootstrap overriding end*/
-
-.logo{
-    background-image: url(#)
-}
 
 /*template overriding*/
 #dashboard{
@@ -91,7 +88,7 @@ html,body{
     border: 3px solid rgba(255,255,255,0.8);
     background-color: #1abb9c;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0o, 0.2);
 }
 .item_nav > img{
     height: 30px;
