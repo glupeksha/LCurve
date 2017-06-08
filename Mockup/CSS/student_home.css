@@ -365,8 +365,9 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     padding-right: 0 !important;
     padding-left: 0 !important;
     border-radius: 0px 0px 0px 0px;
-    height: 203px;
+    height: 150px;
     color: #FAF7FF;
+    overflow: hidden;
 }
 
 .notify_head{
@@ -394,6 +395,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 
 .notify_info{
     padding-left:28px;
+    overflow: hidden;
 }
 .notify_footer{
     height:85;
