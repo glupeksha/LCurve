@@ -21,3 +21,7 @@ $(document).ready(function(){
     $("#homework_task").html(taskList);
     $("#homework_subjects").html(subjectList);
 });
+
+$(".viewmore").click(function(){
+  $("#homework").css({"height": 400});
+});

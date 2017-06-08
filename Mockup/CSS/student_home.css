@@ -430,3 +430,9 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     background-color: #bbbe64;
     color: #FAF7FF;
 }
+.viewmore{
+  padding: 60px 0;
+}
+.view{
+  height: 400px;
+}
