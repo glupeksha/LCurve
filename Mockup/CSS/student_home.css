@@ -448,3 +448,10 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 .view{
   height: 400px;
 }
+
+.subjects{
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    
+}
