@@ -455,7 +455,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     text-align: center;
     align-content: center;
     vertical-align: middle;
-    
+
 }
 /*View More Toggle*/
 .switch {
@@ -511,4 +511,8 @@ input:checked + .slider:before {
   -webkit-transform: translateY(-28px);
   -ms-transform: translateY(-28px);
   transform: translateY(-28px);
+}
+#task_remaining{
+  text-align: center;
+  padding-left: 35px;
 }
