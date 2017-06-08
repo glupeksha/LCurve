@@ -8,7 +8,7 @@ html,body{
 .logo{
     width: 44px;
     margin-top: 5px;
-    
+
 }
 /*bootstrap overriding start*/
 .navbar-fixed-bottom, .navbar-fixed-top {
@@ -360,14 +360,16 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     color: #fff;
     height : 17px;
 }
-
+#homework{
+  height: 150px;
+}
 .notify{
     margin-top:35px;
     background-color: #FAF7FF;
     padding-right: 0 !important;
     padding-left: 0 !important;
     border-radius: 0px 0px 0px 0px;
-    height: 150px;
+
     color: #FAF7FF;
     overflow: hidden;
 }
@@ -448,10 +450,63 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 .view{
   height: 400px;
 }
-
 .subjects{
     text-align: center;
     align-content: center;
     vertical-align: middle;
     
+}
+/*View More Toggle*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 60px;
+  max-width: None;
+  /*position:absolute;*/
+    bottom:0;
+    right:0;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #22aed1;
+  -webkit-transition: .4s;
+  transition: .4s;
+  margin-top: -30px;
+  margin-bottom: 32px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #22aed1;
+
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #22aed1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateY(-28px);
+  -ms-transform: translateY(-28px);
+  transform: translateY(-28px);
 }
