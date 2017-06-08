@@ -353,13 +353,19 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     padding: 0px 25px 25px 25px;
 }
 
+.viewMore{
+    background-color: #22AED1;
+    color: #fff;
+    height : 17px;
+}
+
 .notify{
     margin-top:35px;
     background-color: #FAF7FF;
     padding-right: 0 !important;
     padding-left: 0 !important;
     border-radius: 0px 0px 0px 0px;
-    height: 150px;
+    height: 203px;
     color: #FAF7FF;
 }
 
@@ -381,15 +387,16 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
 }
 
 .notify_body{
-    overflow-y: scroll;
-    max-height:81px;
-    height: 100%;
-
+/*    overflow-y: scroll;*/
+    height:85;
     color: #606060;
 }
 
 .notify_info{
     padding-left:28px;
+}
+.notify_footer{
+    height:85;
 }
 
 .notify_infoRi  ul, .notify_info ul{
@@ -430,6 +437,7 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
     background-color: #bbbe64;
     color: #FAF7FF;
 }
+
 .viewmore{
   padding: 60px 0;
 }
