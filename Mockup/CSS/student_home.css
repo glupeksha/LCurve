@@ -4,6 +4,7 @@ html,body{
     background-color: #75879C;
     font-family: 'Hind', sans-serif;
     font-weight: 300;
+    color: #606060;
 }
 .logo{
     width: 44px;
@@ -480,8 +481,9 @@ nav.subbar > ul.nav.nav-tabs > li.active > a {
   background-color: #22aed1;
   -webkit-transition: .4s;
   transition: .4s;
-  margin-top: -30px;
-  margin-bottom: 32px;
+    margin-top: -32px;
+    bottom: 34px;
+/*  margin-bottom: 32px;*/
 }
 
 .slider:before {
