@@ -14,6 +14,8 @@ $(document).ready(function(){
     { "subject":"Science", "task_title":"Blood Circular System", "progress":0},
     { "subject":"Science", "task_title":"Blood Circular System", "progress":0}
   ];
+
+
     var taskList="";
     var subjectList="";
     var doneList="";
@@ -29,13 +31,33 @@ $(document).ready(function(){
         task_remaining=task_remaining+1;
         doneList=doneList+"<li><i class=\"fa fa-square-o\" aria-hidden=\"true\" ></i></li>";
       }
-
     }
-
-
     $("#homework_task").html(taskList);
     $("#homework_subjects").html(subjectList);
     $("#homework_done").html(doneList);
+
+
+    var society="";
+    var notification_sc="";
+
+    var notifications_sc = [
+      { "Society":"Camera Club", "notification":"Photographers will be selected fo School proze giving on 7th October", "expired":0},
+      { "Society":"Science Society", "notification":"Next meeting venue is changed to Lab A", "expired":1},
+      { "Society":"Computer Society", "notification":"Software competition hosted by UCSC will take place on 5th October", "expired":1},
+      { "Society":"Scouts", "notification":"Submit your details for volunteering on Scandira on or before 8th November", "expired":0},
+      { "Society":"Astronomy Club", "notification":"Night camp organized by HTX will start on 6th October to 8th October", "expired":0}
+    ];
+
+
+    for (var i=0; i < notifications_sc.length; i = i + 1){
+      total=total+1;
+      society=society+"<li>"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</li>";
+      notification_sc=notification_sc+"<li>"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</li>";
+    }
+
+    $("#Society_Name").html(society);
+    $("#notification_sc").html(notification_sc);
+
     if(task_remaining==0){
       $("#task_remaining").html("All Done");
     }else{
@@ -43,7 +65,7 @@ $(document).ready(function(){
     }
 
 
-    $(".slider").click(function(){
+    $(".slider_cr").click(function(){
         if(cr_flag==0){
           cr_flag=1;
           var realHeight=$('#homework')[0].scrollHeight+10;
