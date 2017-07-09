@@ -145,6 +145,7 @@ html,body{
 .notify_body{
   height:85;
   color: #606060;
+  padding-top: 10px;
 }
 .notify_info{
   padding-left:28px;
@@ -164,6 +165,7 @@ html,body{
 .col1{
   background-color: #FAF7FF;
   height: 100%;
+  min-height: 500px;
   border: 2px solid #C2DFE3;
   z-index: 100;
   float: left;
@@ -202,7 +204,14 @@ html,body{
   padding-left: 35px;
 }
 #homework{
-  height: 150px;
+  height: 190px;
+}
+.cr_panel_title{
+  float: left;
+}
+.cr_panel_check{
+  float: right;
+  cursor: pointer;
 }
 .slider_cr {
   background-color: #22aed1;
@@ -215,6 +224,7 @@ html,body{
 }
 .notify_head_sc{
 }
+
 .notify_shead_sc{
   background-color: #bbbe64;
 }
@@ -226,7 +236,7 @@ html,body{
   background-color: #bbbe64;
 }
 #societyNotification{
-  height: 150px;
+  height: 190px;
 }
 #testTable{
   margin-right:30px;

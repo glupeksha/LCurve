@@ -24,61 +24,64 @@ $(document).ready(function(){
   $(".avatar").attr("src",""+avatar_url+"");
 
   //Set homework data
-  var taskList="";
-  var subjectList="";
-  var doneList="";
   var total=0;
   var task_remaining=0;
+  var panels_cr="<div  class=\"panel-group\">";
   for (var i=0; i < homeworks.length; i = i + 1){
     total=total+1;
-    taskList=taskList+"<li>"+JSON.parse(JSON.stringify(homeworks[i])).task_title+"</li>";
-    subjectList=subjectList+"<li>"+JSON.parse(JSON.stringify(homeworks[i])).subject+"</li>";
     if(JSON.parse(JSON.stringify(homeworks[i])).progress==1){
-      doneList=doneList+"<li><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i></li>";
+      panels_cr=panels_cr+"<div class=\"panel panel-success changepanel\">";
+      panels_cr=panels_cr+"<div class=\"panel-heading\">"+JSON.parse(JSON.stringify(homeworks[i])).subject+"</div>";
+      panels_cr=panels_cr+"<div class=\"panel-body\"><p class=\"cr_panel_title\">"+JSON.parse(JSON.stringify(homeworks[i])).task_title+"</p>";
+      panels_cr=panels_cr+"<i class=\"fa fa-check-square-o cr_panel_check\" aria-hidden=\"true\"></i>";
     }else{
+      panels_cr=panels_cr+"<div class=\"panel panel-info changepanel\">";
+      panels_cr=panels_cr+"<div class=\"panel-heading\">"+JSON.parse(JSON.stringify(homeworks[i])).subject+"</div>";
+      panels_cr=panels_cr+"<div class=\"panel-body\"><p class=\"cr_panel_title\">"+JSON.parse(JSON.stringify(homeworks[i])).task_title+"</p>";
       task_remaining=task_remaining+1;
-      doneList=doneList+"<li><i class=\"fa fa-square-o\" aria-hidden=\"true\" ></i></li>";
+      panels_cr=panels_cr+"<i class=\"fa fa-square-o cr_panel_check\" aria-hidden=\"true\" ></i>";
     }
+    panels_cr=panels_cr+"</div>";
+    panels_cr=panels_cr+"</div>";
   }
+  panels_cr=panels_cr+"</div>";
   if(task_remaining==0){
     $("#task_remaining").html("All Done");
   }else{
     $("#task_remaining").html(task_remaining+"/"+total);
   }
-  $("#homework_task").html(taskList);
-  $("#homework_subjects").html(subjectList);
-  $("#homework_done").html(doneList);
+  $("#panels_cr").html(panels_cr);
+
 
   //Set Society Anouncement Data
-  var table="<table>";
-  var society="";
-  var notification_sc="";
+  var panels_sc="<div  class=\"panel-group\">";
   for (var i=0; i < notifications_sc.length; i = i + 1){
     total=total+1;
-    table=table+"<tr id=\"testRow\">";
+    panels_sc=panels_sc+"<div class=\"panel panel-info\">";
     if(i%2==1){
-      table=table+"<td style=\"background-color: #1abb9c;\">"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</td>";
-      table=table+"<td style=\"background-color: #1abb9c;\">"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</td>";
+      panels_sc=panels_sc+"<div class=\"panel-heading\">"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</div>";
+      panels_sc=panels_sc+"<div class=\"panel-body\">"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</div>";
     }else{
-      table=table+"<td>"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</td>";
-      table=table+"<td>"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</td>";
+      panels_sc=panels_sc+"<div class=\"panel-heading\">"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</div>";
+      panels_sc=panels_sc+"<div class=\"panel-body\">"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</div>";
     }
-    table=table+"</tr>";
+    panels_sc=panels_sc+"</div>";
   }
-  table=table+"</table>";
-  $("#testTable").html(table);
-  //$("#Society_Name").html(society);
-  //$("#notification_sc").html(notification_sc);
+  panels_sc=panels_sc+"</div>";
+  $("#panels_sc").html(panels_sc);
+
 
 
   //Homework Marker
-    $('#homework_done li').click(function(){
-      $(this).next('ul').slideToggle('500');
-      if($(this).find('i').hasClass("fa-check-square-o")){
+    $('.cr_panel_check').click(function(){
+      if($(this).hasClass("fa-check-square-o")){
         task_remaining=task_remaining+1;
-
+        $(this).parentsUntil(".panel-group").filter(".changepanel").removeClass("panel-success");
+        $(this).parentsUntil(".panel-group").filter(".changepanel").addClass("panel-info");
       }else{
         task_remaining=task_remaining-1;
+        $(this).parentsUntil(".panel-group").filter(".changepanel").removeClass("panel-info");
+        $(this).parentsUntil(".panel-group").filter(".changepanel").addClass("panel-success");
       }
       if(task_remaining==0){
         $("#task_remaining").html("All Done");
@@ -86,7 +89,7 @@ $(document).ready(function(){
         $("#task_remaining").html(task_remaining+"/"+total);
       }
 
-      $(this).find('i').toggleClass('fa fa-check-square-o fa fa-square-o')
+      $(this).toggleClass('fa fa-check-square-o fa fa-square-o')
     });
 
     //Homework pane Slider
@@ -103,7 +106,7 @@ $(document).ready(function(){
         cr_flag=0;
         $("#homework").css({
           '-webkit-transition': 'height .4s',
-          "height": '150px'
+          "height": '190px'
         });
       }
 
@@ -123,7 +126,7 @@ $(document).ready(function(){
         sc_flag=0;
         $("#societyNotification").css({
           '-webkit-transition': 'height .4s',
-          "height": '150px'
+          "height": '190px'
         });
       }
 
