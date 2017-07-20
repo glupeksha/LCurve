@@ -8,8 +8,7 @@
 <!--    css styles start-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/student_home.css">
-    <link rel="stylesheet" href="css/student_registration.css">
+    <link rel="stylesheet" href="CSS/student_home.css">
 <!--    css styles end-->
 
 </head>
@@ -122,79 +121,241 @@
 
 
 
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.r1{
+	height: 50px;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+    width: 800px;
+    height: 440px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
 <body>
-
-<h2>Signup Form</h2>
-
-<form action="/action_page.php" style="border:1px solid #ccc">
-  <div class="container">
-    <label><b>Name with initials</b></label>
-    <input type="text" placeholder="ex:Dissanayake P.D" name="nameinit" required>
-
-     <label><b>Full Name</b></label>
-    <input type="text" placeholder="ex:Pathum Dishan Dissanayake" name="full_name" required>
-
-     <label><b>Address</b></label>
-    <input type="text" placeholder="Enter Address" name="address" required><br><br>
-
-    <label><b>Gender</b><br></label><br>
-        <div class="col-lg-2">
-            <input type="checkbox" >Male
-        </div>
-
-        <div class="col-lg-2">
-            <input type="checkbox" >Female
-        </div>
-
-    <br><br>
-
-     <label><b>Grade</b></label><br>
-    <input type="number" placeholder="10" name="grade" required><br><br>
-
-	<label><b>Index Number</b></label><br>
-    <input type="text" placeholder="ex:15000303" name="index_no" ><br><br>
-
-    <label><b>Admission Date</b></label><br>
-    <input type="date" name="admsn_date" ><br><br>
-
-     <label><b>Birth day<br></b><input type="date" placeholder="25/07/2017" width:3px; required></label><br><br>
-
-	 <label><b>Guardian Name</b></label><br>
-    <input type="text" placeholder="Ex:Mr. A.H De Silva" name="guardian" ><br><br>
-
-	<label><b>Email</b></label><br>
-    <input type="email" placeholder="Enter valid Email Address" name="email" ><br><br>
-
-    <label><b>City</b></label><input type="text" placeholder="Enter City" name="city"  ><label><b>Postal Code</b></label>
-	<input type="text" placeholder="Enter Postal Code" name="postal_code" >
-
-	<label><b>Telephone Number</b></label><br>
-    <input type="tel" placeholder="Enter Telephone number" name="tno" ><br><br>
-
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <label><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-
-   <div class="clearfix">
-             <div class="row">
-                <div class="col-lg-9">
-                    <button type="submit" class="btn">Submit</button>
-                </div>
-
-                <div class="col-lg-2">
-                    <button class="btn ">cancel</button>
-                </div>
+<!--Dashboard-->
+    <div class="">
+        <div class="col-lg-12">
+            <div class="col-lg-1">
             </div>
-    </div>
+            <div class="col-lg-10 tp_mgn3">
+                <div class="col-lg-12 col1 tp_mgn2">
+                    <div class="schl">
 
-             
-    </div>
-  </div>
-</form>
+						<h2>Signup Form</h2>
+
+						<form action="/action_page.php" style="border:1px solid #ccc">
+							<div class="container">
+							<div class="row r1">
+							</div>
+
+							<div class="form-group has-feedback">
+									<label><b>Name with initials</b></label>
+								<a href="#">
+									<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+									</span>
+								</a>
+								<input type="text" placeholder="ex:Dissanayake P.D" name="nameinit" required>
+							</div>
+
+							 <label><b>Full Name</b></label>
+								<a href="#">
+									<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+									</span>
+								</a>
+								<input type="text" placeholder="ex:Pathum Dishan Dissanayake" name="full_name" required>
+
+							 <label><b>Address</b></label>
+								<a href="#">
+									<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+									</span>
+								</a>
+								<input type="text" placeholder="Enter Address" name="address" required><br><br>
+
+
+								</div></form>
+
+							</div>
+		            	</div>
+		            </div>
+		        </div>
+
+	<div class="">
+		 <div class="col-lg-12">
+		            <div class="col-lg-1">
+		            </div>
+        <div class="col-lg-10 tp_mgn3">
+		                <div class="col-lg-12 col1 tp_mgn2">
+		                    <div class="schl">
+		                    <div class="row r1">
+		                    </div>
+		                    <form action="/action_page.php" style="border:1px solid #ccc">
+  								<div class="container">
+  								<div class="row r1">
+		                    	</div>
+								<label><b>Gender</b><br></label><br>
+								<div class="col-lg-1">
+									Male
+								</div>
+								<div class="col-lg-2">
+									<input type="radio"  name="gender" value="Male">
+								</div>
+								<div class="col-lg-1">
+									Female
+								</div>
+								<div class="col-lg-2">
+									<input type="radio"  name="gender" value="Female">
+								 </div><br><br>
+
+							 <label><b>Grade</b></label><br>
+							<input type="number" placeholder="10" name="grade" min="1" max="13"required><br><br>
+
+							<label><b>Index Number</b></label>
+								<a href="#">
+									<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+									</span>
+								</a><br>
+							<input type="text" placeholder="ex:15000303" name="index_no" ><br><br>
+
+							<label><b>Admission Date</b></label><br>
+							<input type="date" name="admsn_date" width:3px; ><br><br>
+
+							</div>
+							</form>
+							</div>
+							</div>
+		            </div>
+		     </div>
+		     </div>
+
+<div class="">
+        <div class="col-lg-12">
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-10 tp_mgn3">
+                <div class="col-lg-12 col1 tp_mgn2">
+                    <div class="schl">
+                    <div class="row r1">
+		                    	</div>
+                    <form action="/action_page.php" style="border:1px solid #ccc">
+  								<div class="container">
+
+							<label><b>Birth day<br></b><input type="date"  min="1998-12-31" max="2011-01-01" width:3px; required></label><br><br>
+
+							 <label><b>Guardian Name</b></label><br>
+								<input type="text" placeholder="Ex:Mr. A.H De Silva" name="guardian" ><br><br>
+							<div class="form-group has-feedback">
+								<label class="control-label" for="inputSuccess2"><b>Email</b></label>
+								<input type="email" placeholder="Enter valid Email Address"class="form-control" id="inputSuccess2"/>
+								<span class="glyphicon glyphicon-envelope	Try it
+							 form-control-feedback"></span>
+							</div>
+
+
+							<label><b>City</b></label>
+							<input type="text" placeholder="Enter City" name="city"  >
+
+
+						</div>
+						</form>
+		            </div>
+		            </div>
+					</div>
+					</div>
+					</div>
+		            <div class="">
+					        <div class="col-lg-12">
+					            <div class="col-lg-1">
+					            </div>
+					            <div class="col-lg-10 tp_mgn3">
+					                <div class="col-lg-12 col1 tp_mgn2">
+					                    <div class="schl">
+					                    <div class="row r1">
+		                    			</div>
+                    				<form action="/action_page.php" style="border:1px solid #ccc">
+  									<div class="container">
+
+
+										<label><b>Postal Code</b></label>
+										<input type="text" placeholder="Enter Postal Code" name="postal_code" >
+					                    <label><b>Telephone Number</b></label><br>
+										<input type="tel" placeholder="Enter Telephone number" name="tno" ><br><br>
+
+										<div class="form-group has-feedback">
+											<label class="control-label" for="inputSuccess2"><b>Password</b></label>
+											<input type="password" placeholder="Enter Password" size="25" minlength="5" name="psw" class="form-control" id="inputSuccess2"required>
+											<span class="glyphicon glyphicon-eye-open Try it form-control-feedback"></span>
+										</div>
+
+										<div class="form-group has-feedback">
+												<label class="control-label" for="inputSuccess2"><b>Password</b></label>
+												<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+												<span class="glyphicon glyphicon-eye-open Try it form-control-feedback"></span>
+										</div>
+
+									   <div class="clearfix">
+											  <div class="col-lg-1"></div>
+											  <div class="col-lg-5"><button type="submit" class="signupbtn">Submit</button></div>
+										<div class="col-lg-1"></div>
+											 <div class="col-lg-5"><button type="button" class="cancelbtn">Cancel</button></div>
+										</div>
+								</div>
+								</form>
+		            		</div>
+		            </div>
+				</div>
+				</div>
+				</div>
+				</div>
+
 
     </body>
 </html>
