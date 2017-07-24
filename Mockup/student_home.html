@@ -14,7 +14,9 @@
   <!--    css styles start-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="css/student_home.css">
+  <link rel="stylesheet" href="css/student_home.css"> 
+  <link href="css/calbootstrap.css" rel="stylesheet">     
+  <link href="css/bic_calendar.css" rel="stylesheet">
   <!--    css styles end-->
 
 </head>
@@ -197,9 +199,12 @@
 
     <!--Dashboard Right Bar start-->
       <div class="col-lg-4 col2 tp_mgn2">
+        <div class="col-lg-12" >
+          <div id="calendarCall">
+          </div>
+        </div>
       </div>
     <!--Dashboard Right Bar end-->
-
     </div>
     <!--Dashboard Content end-->
 
@@ -223,6 +228,50 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/student_home.js"></script>
+  <script>
+		$(document).ready(function() {
+
+			var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+			var dayNames = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+
+			var events = [
+				{
+					date: "28/7/2017",
+					title: 'assignment 4 submission',
+					color: '',
+					class: '',
+					displayMonthController: true,
+					displayYearController: true,
+					nMonths: 6
+				}
+			];
+
+			$('#calendarCall').bic_calendar({
+				//list of events in array
+				events: events,
+				//enable select
+				enableSelect: true,
+				//enable multi-select
+				multiSelect: true,
+				//set day names
+				dayNames: dayNames,
+				//set month names
+				monthNames: monthNames,
+				//show dayNames
+				showDays: true,
+				//show month controller
+				displayMonthController: true,
+				//show year controller
+				displayYearController: true,                                
+				//set ajax call
+				
+			});
+		});
+  </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/bic_calendar.js"></script>
+	<script src="js/calbootstrap.js"></script>
   <!--    js libraries end-->
 
 </body>
