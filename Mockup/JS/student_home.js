@@ -57,7 +57,7 @@ $(document).ready(function(){
   var panels_sc="<div  class=\"panel-group\">";
   for (var i=0; i < notifications_sc.length; i = i + 1){
     total=total+1;
-    panels_sc=panels_sc+"<div class=\"panel panel-warning\">";
+    panels_sc=panels_sc+"<div class=\"panel panel-info\">";
     if(i%2==1){
       panels_sc=panels_sc+"<div class=\"panel-heading\">"+JSON.parse(JSON.stringify(notifications_sc[i])).Society+"</div>";
       panels_sc=panels_sc+"<div class=\"panel-body\">"+JSON.parse(JSON.stringify(notifications_sc[i])).notification+"</div>";
