@@ -89,8 +89,7 @@ $(document).ready(function(){
 
       if(this.checked){
         task_remaining=task_remaining-1;
-        draw(this,'list');
-        drawNext(this,'list');
+        
       }else{
         task_remaining=task_remaining+1;
       }
