@@ -4,8 +4,8 @@ $(document).ready(function(){
   //dummy data
   var avatar_url="https://scontent.fcmb2-1.fna.fbcdn.net/v/t1.0-9/17264485_1863589770546994_4450096234249845576_n.jpg?oh=2689c09530b7fd92800d66f964df2ce2&oe=59E6CCF0"
   var homeworks = [
-    { "subject":"Maths","colour":"purple", "homework":[{"task_title":"1234567890123456789012345678901234567890", "progress":0}]},
-    { "subject":"History","colour":"yellow", "homework":[{"task_title":"Revolution", "progress":1}]},
+    { "subject":"Maths","colour":"purple", "homework":[{"task_title":"Solve Geometry questions in page 24, 25 and page 30", "progress":1}]},
+    { "subject":"History","colour":"yellow", "homework":[{"task_title":"Write a chapter on how french Revolution started and causes for it", "progress":0}]},
     { "subject":"Science","colour":"pink", "homework":[{"task_title":"Blood Circular System", "progress":1},{"task_title":"Digestive System", "progress":0}]},
     { "subject":"English", "colour":"green", "homework":[{"task_title":"Essay", "progress":0}]}
   ];
@@ -24,11 +24,11 @@ $(document).ready(function(){
   //Set homework data
   var total=0;
   var task_remaining=0;
-  var panels_cr="<div  class=\"col-lg-12 panel-group\">";
+  var panels_cr="";
 
   for (var i=0; i < homeworks.length; i = i + 1){
-    panels_cr=panels_cr+"<div class=\"col-lg-4\"> ";
-    panels_cr=panels_cr+"<div class=\"panel panel-success "+homeworks[i].colour+"border changepanel MarginPanels\">";
+    panels_cr=panels_cr+"<div class=\"col-lg-4 MarginPanels\"> ";
+    panels_cr=panels_cr+"<div class=\"panel panel-success "+homeworks[i].colour+"border changepanel\">";
     panels_cr=panels_cr+"<div class=\"panel-heading "+homeworks[i].colour+" panel-heading-custom\">"+homeworks[i].subject+"</div>";
     panels_cr=panels_cr+"<div class=\"panel-body\">";
     panels_cr=panels_cr+"<form class=\"ac-custom ac-list\" autocomplete=\"off\">";
@@ -40,8 +40,10 @@ $(document).ready(function(){
         panels_cr=panels_cr+"<input id=\""+i+"cb"+j+"\" name=\""+i+"cb"+j+"\" type=\"checkbox\" class=\"cr_check\" checked>";
         panels_cr=panels_cr+"<label for=\""+i+"cb"+j+"\" >"+homeworks[i].homework[j].task_title+"</label>";
         panels_cr=panels_cr+"<svg viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1.986,8.91c41.704,4.081,83.952,5.822,125.737,2.867 c17.086-1.208,34.157-0.601,51.257-0.778c21.354-0.223,42.706-1.024,64.056-1.33c18.188-0.261,36.436,0.571,54.609,0.571\" style=\"stroke-dasharray: 295.877, 295.877; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0s;\"></path><path d=\"M3.954,25.923c9.888,0.045,19.725-0.905,29.602-1.432 c16.87-0.897,33.825-0.171,50.658-2.273c14.924-1.866,29.906-1.407,44.874-1.936c19.9-0.705,39.692-0.887,59.586,0.45 c35.896,2.407,71.665-1.062,107.539-1.188\" style=\"stroke-dasharray: 292.511, 292.511; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0.3s;\"></path></svg>";
+        if(homeworks[i].homework[j].task_title.length>50){
+          panels_cr=panels_cr+"<svg class=\"nextLine\" viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1.986,8.91c41.704,4.081,83.952,5.822,125.737,2.867 c17.086-1.208,34.157-0.601,51.257-0.778c21.354-0.223,42.706-1.024,64.056-1.33c18.188-0.261,36.436,0.571,54.609,0.571\" style=\"stroke-dasharray: 295.877, 295.877; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0s;\"></path><path d=\"M3.954,25.923c9.888,0.045,19.725-0.905,29.602-1.432 c16.87-0.897,33.825-0.171,50.658-2.273c14.924-1.866,29.906-1.407,44.874-1.936c19.9-0.705,39.692-0.887,59.586,0.45 c35.896,2.407,71.665-1.062,107.539-1.188\" style=\"stroke-dasharray: 292.511, 292.511; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0.3s;\"></path></svg>";
+        }
 
-        panels_cr=panels_cr+"<svg viewBox=\"0 0 300 100\" preserveAspectRatio=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1.986,8.91c41.704,4.081,83.952,5.822,125.737,2.867 c17.086-1.208,34.157-0.601,51.257-0.778c21.354-0.223,42.706-1.024,64.056-1.33c18.188-0.261,36.436,0.571,54.609,0.571\" style=\"stroke-dasharray: 295.877, 295.877; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0s;\"></path><path d=\"M3.954,25.923c9.888,0.045,19.725-0.905,29.602-1.432 c16.87-0.897,33.825-0.171,50.658-2.273c14.924-1.866,29.906-1.407,44.874-1.936c19.9-0.705,39.692-0.887,59.586,0.45 c35.896,2.407,71.665-1.062,107.539-1.188\" style=\"stroke-dasharray: 292.511, 292.511; stroke-dashoffset: 0; transition: stroke-dashoffset 0.3s ease-in-out 0.3s;\"></path></svg>";
       }else{
         panels_cr=panels_cr+"<input id=\""+i+"cb"+j+"\" name=\""+i+"cb"+j+"\" type=\"checkbox\" class=\"cr_check\">";
         panels_cr=panels_cr+"<label for=\""+i+"cb"+j+"\" >"+homeworks[i].homework[j].task_title+"</label>";
@@ -56,7 +58,6 @@ $(document).ready(function(){
     panels_cr=panels_cr+"</div>";
   }
 
-  panels_cr=panels_cr+"</div>";
   if(task_remaining==0){
     $("#task_remaining").html("All Done");
   }else{
@@ -88,6 +89,8 @@ $(document).ready(function(){
 
       if(this.checked){
         task_remaining=task_remaining-1;
+        draw(this,'list');
+        drawNext(this,'list');
       }else{
         task_remaining=task_remaining+1;
       }
