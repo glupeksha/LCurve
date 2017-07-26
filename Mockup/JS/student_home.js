@@ -10,11 +10,11 @@ $(document).ready(function(){
     { "subject":"English", "colour":"green", "homework":[{"task_title":"Essay", "progress":0}]}
   ];
   var notifications_sc = [
-    { "Society":"Camera Club", "notification":"Photographers will be selected fo School proze giving on 7th October", "expired":0},
-    { "Society":"Science Society", "notification":"Next meeting venue is changed to Lab A", "expired":1},
-    { "Society":"Computer Society", "notification":"Software competition hosted by UCSC will take place on 5th October", "expired":1},
-    { "Society":"Scouts", "notification":"Submit your details for volunteering on Scandira on or before 8th November", "expired":0},
-    { "Society":"Astronomy Club", "notification":"Night camp organized by HTX will start on 6th October to 8th October", "expired":0}
+    { "Society":"Camera Club", "colour":"blue", "notifications":[{"notification":"Photographers will be selected fo School proze giving on 7th October", "expired":0, "postedDate":"2017-07-12 11:35:55"}]},
+    { "Society":"Science Society", "colour":"purple", "notifications":[{"notification":"Next meeting venue is changed to Lab A", "expired":1, "postedDate":"2017-07-25 22:00:00"},{"notification":"Meeting was canceled becaus of unavoidabel circumstances", "expired":1, "postedDate":"2017-07-07 14:35:55"}]},
+    { "Society":"Computer Society", "colour":"pink", "notifications":[{"notification":"Software competition hosted by UCSC will take place on 5th October", "expired":1, "postedDate":"2017-06-18 11:35:55"}]},
+    { "Society":"Scouts", "colour":"yellow", "notifications":[{"notification":"Submit your details for volunteering on Scandira on or before 8th November", "expired":0, "postedDate":"2017-07-26 11:35:55"}]},
+    { "Society":"Astronomy Club", "colour":"green", "notifications":[{"notification":"Night camp organized by HTX will start on 6th October to 8th October", "expired":0, "postedDate":"2017-07-26 21:00:00"}]}
   ];
 
   //populate data
@@ -26,14 +26,14 @@ $(document).ready(function(){
   var task_remaining=0;
   var panels_cr="";
 
-  for (var i=0; i < homeworks.length; i = i + 1){
+  for (var i=0; i < homeworks.length; i++){
     panels_cr=panels_cr+"<div class=\"col-lg-4 MarginPanels\"> ";
     panels_cr=panels_cr+"<div class=\"panel panel-success "+homeworks[i].colour+"border changepanel\">";
     panels_cr=panels_cr+"<div class=\"panel-heading "+homeworks[i].colour+" panel-heading-custom\">"+homeworks[i].subject+"</div>";
     panels_cr=panels_cr+"<div class=\"panel-body\">";
     panels_cr=panels_cr+"<form class=\"ac-custom ac-list\" autocomplete=\"off\">";
     panels_cr=panels_cr+"<ul>";
-    for(var j=0;j<homeworks[i].homework.length;j=j+1){
+    for(var j=0;j<homeworks[i].homework.length;j++){
       total=total+1;
       panels_cr=panels_cr+"<li>";
       if(homeworks[i].homework[j].progress==1){
@@ -66,14 +66,14 @@ $(document).ready(function(){
   //Set Society Anouncement Data
   var panels_sc="<div  class=\"panel-group\">";
   for (var i=0; i < notifications_sc.length; i = i + 1){
-    panels_sc=panels_sc+"<div class=\"panel panel-info\">";
-    if(i%2==1){
-      panels_sc=panels_sc+"<div class=\"panel-heading\">"+notifications_sc[i].Society+"</div>";
-      panels_sc=panels_sc+"<div class=\"panel-body\">"+notifications_sc[i].notification+"</div>";
-    }else{
-      panels_sc=panels_sc+"<div class=\"panel-heading\">"+notifications_sc[i].Society+"</div>";
-      panels_sc=panels_sc+"<div class=\"panel-body\">"+notifications_sc[i].notification+"</div>";
+    panels_sc=panels_sc+"<div class=\"panel panel-info "+notifications_sc[i].colour+"border\">";
+    panels_sc=panels_sc+"<div class=\"panel-heading "+notifications_sc[i].colour+"\">"+notifications_sc[i].Society+"</div>";
+    panels_sc=panels_sc+"<div class=\"panel-body\">";
+    for(var j=0;j<notifications_sc[i].notifications.length;j++){
+      panels_sc=panels_sc+"<div class=\"row\"><div class=\"col-lg-9\">"+notifications_sc[i].notifications[j].notification+"</div>";
+      panels_sc=panels_sc+"<div class=\"col-lg-3\">"+timeSince(new Date(notifications_sc[i].notifications[j].postedDate))+" ago </div></div>";
     }
+    panels_sc=panels_sc+"</div>";
     panels_sc=panels_sc+"</div>";
   }
   panels_sc=panels_sc+"</div>";
@@ -135,6 +135,37 @@ $(document).ready(function(){
       }
 
     });
+
+    function timeSince(date) {
+
+      var seconds = Math.floor((new Date() - date) / 1000);
+
+      var interval = Math.floor(seconds / 31536000);
+
+      if (interval > 1) {
+        return interval + " years";
+      }
+      interval = Math.floor(seconds / 2592000);
+      if (interval > 1) {
+        return interval + " months";
+      }
+      interval = Math.floor(seconds / 86400);
+      if (interval > 1) {
+        return interval + " days";
+      }
+      interval = Math.floor(seconds / 3600);
+      if (interval > 1) {
+        return interval + " hours";
+      }
+      interval = Math.floor(seconds / 60);
+      if (interval > 1) {
+        return interval + " minutes";
+      }
+      return Math.floor(seconds) + " seconds";
+    }
+    var aDay = 24*60*60*1000
+    console.log(timeSince(new Date(Date.now()-aDay)));
+    console.log(timeSince(new Date(Date.now()-aDay*2)));
 
     //Homework Dashboard list
     var script = document.createElement('script');

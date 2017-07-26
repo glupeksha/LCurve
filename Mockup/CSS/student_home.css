@@ -10,6 +10,8 @@ html,body{
 }
 .defaultMargin{
   margin: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 /*Generic Classes end*/
 
@@ -188,30 +190,6 @@ html,body{
   height: 40px;
 
 }
-
-/*Homework start*/
-.notify_cr{
-  border: 2px solid #22AED1;
-}
-.notify_head_cr{
-}
-.notify_shead_cr{
-  background-color: #22AED1;
-}
-.notify_indi_cr{
-  background-color: #22AED1;
-  color: #FAF7FF;
-}
-#task_remaining{
-  text-align: center;
-  padding-left: 35px;
-}
-#homework{
-  height: 150px;
-}
-.slider_cr {
-  background-color: #22aed1;
-}
 /*panel list start*/
 .MarginPanels{
   width: 100%;
@@ -255,6 +233,40 @@ html,body{
   border-color: #ff18e5 !important;
   border-width: 2px;
 }
+.blue{
+  color: #ffffff !important;
+  background-color: #32c3d8 !important;
+  border-radius: 0px;
+}
+.blueborder{
+  border-color: #32c3d8 !important;
+  border-width: 2px;
+}
+/*panel list end*/
+
+/*Homework start*/
+.notify_cr{
+  border: 2px solid #22AED1;
+}
+.notify_head_cr{
+}
+.notify_shead_cr{
+  background-color: #22AED1;
+}
+.notify_indi_cr{
+  background-color: #22AED1;
+  color: #FAF7FF;
+}
+#task_remaining{
+  text-align: center;
+  padding-left: 35px;
+}
+#homework{
+  height: 150px;
+}
+.slider_cr {
+  background-color: #22aed1;
+}
 #panels_cr{
   display: grid;
 	grid-gap: 1rem;
@@ -262,7 +274,7 @@ html,body{
 	grid-auto-flow: row dense;
 	grid-auto-columns: minmax(30px, 100px);
 }
-/*panel list end*/
+
 /*homework list start*/
 .ac-custom ul {
   padding: 0px;
@@ -383,6 +395,9 @@ html,body{
 #testTable{
   margin-right:30px;
   overflow: visible;
+}
+#panels_sc{
+  margin-top: 5px;
 }
 /*Society Anouncement end*/
 
