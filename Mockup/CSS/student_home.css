@@ -226,7 +226,7 @@ html,body{
 }
 .purpleborder{
   border-color: #83678a !important;
-  border-width: 5px;
+  border-width: 2px;
 }
 .yellow{
   color: #ffffff !important;
@@ -235,7 +235,7 @@ html,body{
 }
 .yellowborder{
   border-color: #efbf24 !important;
-  border-width: 5px;
+  border-width: 2px;
 }
 .green{
   color: #ffffff !important;
@@ -244,7 +244,7 @@ html,body{
 }
 .greenborder{
   border-color: #358c4f !important;
-  border-width: 5px;
+  border-width: 2px;
 }
 .pink{
   color: #ffffff !important;
@@ -253,7 +253,7 @@ html,body{
 }
 .pinkborder{
   border-color: #ff18e5 !important;
-  border-width: 5px;
+  border-width: 2px;
 }
 #panels_cr{
   display: grid;
@@ -269,11 +269,9 @@ html,body{
 	list-style: none;
   overflow: hidden;
 }
-
 .ac-custom li {
 	position: relative;
 }
-
 .ac-custom label {
 	display: inline-block;
 	position: relative;
@@ -284,7 +282,6 @@ html,body{
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
 }
-
 .ac-custom input[type="checkbox"]
 .ac-custom label::before {
 	width: 50px;
@@ -295,7 +292,6 @@ html,body{
 	position: absolute;
 	cursor: pointer;
 }
-
 .ac-custom input[type="checkbox"] {
 	opacity: 0;
 	-webkit-appearance: none;
@@ -303,28 +299,21 @@ html,body{
 	vertical-align: middle;
 	z-index: 100;
 }
-
 .ac-custom label::before {
 	content: '';
 	border: 4px solid #fff;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
-
 .ac-radio label::before {
 	border-radius: 50%;
 }
-
 .ac-custom input[type="checkbox"]:checked + label {
-	color: #111;
+	color: #aaa;
 }
-
 .ac-custom input[type="checkbox"]:checked + label::before {
 	opacity: 0.8;
 }
-
-/* General SVG and path styles */
-
 .ac-custom svg {
 	position: absolute;
 	width: 40px;
@@ -336,6 +325,7 @@ html,body{
 }
 .ac-custom svg.nextLine{
   top: 50%;
+  stroke: #333333;
 }
 .ac-custom svg path {
 	stroke: #797964;
@@ -344,33 +334,30 @@ html,body{
 	stroke-linejoin: round;
 	fill: none;
 }
-
-/* Specific input, SVG and path styles */
 .ac-list ul li {
 	font-size: 1em;
-
 }
-
 .ac-list ul li label {
 	font-size: 1em;
 	text-indent: 0;
+  display:inline-block;
+  width:260px;
+  white-space: nowrap;
+  overflow:hidden !important;
+  text-overflow: ellipsis;
 }
-
 .ac-list label::before {
 	display: none;
 }
-
 .ac-list svg {
 	width: 100%;
 	height: 45px;
 	left: 0;
 	margin-top: 0px;
 }
-
 .ac-list svg path {
 	stroke-width: 4px;
 }
-
 /*homework list end*/
 /*Homework end*/
 
