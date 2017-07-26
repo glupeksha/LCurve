@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" href="css/student_home.css">
+  <link rel="stylesheet" type="text/css" href="css/calendar.css" />
   <!--    css styles end-->
-
+<script src="js/modernizr.custom.63321.js"></script>
 </head>
 
 <body>
@@ -206,7 +207,21 @@
 
           <!--Dashboard Right Bar start-->
           <div class="col-lg-4 col2">
-
+            <!--Calander start-->
+            <div class="custom-calendar-wrap">
+              <div id="custom-inner" class="custom-inner">
+                <div class="custom-header clearfix">
+                  <nav>
+                    <span id="custom-prev" class="custom-prev"></span>
+                    <span id="custom-next" class="custom-next"></span>
+                  </nav>
+                  <h2 id="custom-month" class="custom-month"></h2>
+                  <h3 id="custom-year" class="custom-year"></h3>
+                </div>
+                <div id="calendar" class="fc-calendar-container"></div>
+              </div>
+            </div>
+            <!--Calander end-->
           </div>
           <!--Dashboard Right Bar end-->
         </div>
@@ -234,7 +249,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/student_home.js"></script>
-
+  <script type="text/javascript" src="js/jquery.calendario.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
   <!--    js libraries end-->
 
 </body>
