@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>L'Curve</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+<!--    css styles start-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/admin_home.css">
+<!--    css styles end-->
+
+
+<style>
+.button {
+    background-color: #3399CC; /* Green */
+    border= 10pt;
+    border-color:#2233CC;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button5 {border-radius: 50%;}
+</style>
+
+</head>
+<body>
+  <!--Navigation Bar on the top-->
+    <nav class="navbar navbar-default navbar-fixed-top topbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">
+					<span class="visible-xs">L'Curve</span>
+					<span class="hidden-xs logo"><a href="student_home.html"><img class="logo" src="images/logoTrans100.PNG" alt="L'Curve"></a></span>
+				</a>
+			</div>
+
+			<div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+				<ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button class="navbar-btn">
+                            <i class="fa fa-bell"></i>
+                        </button>
+
+                    </li>
+
+					<li class="dropdown">
+						<button class="navbar-btn" data-toggle="dropdown">
+							<img src="http://lorempixel.com/30/30/people" class="img-circle">
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Account</a></li>
+							<li><a href="#">Profile</a></li>
+							<li class="nav-divider"></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+    </nav>
+    <!--Navigation images-->
+    <section class="">
+        <div class="">
+            <div class="col-lg-6 container_nav">
+                <div class="col-lg-12 center tp_mgn">
+<!--                    <div class="col-lg-1"></div>-->
+					<a class="td_none" href="admin_home.html">
+						<div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579;" >
+							<img src="images/homesm.PNG" class="img-responsive grow image_nav">
+							<h6 align="center" class="text_nav">Home</h6>
+						</div>
+					</a>
+
+					<a class="td_none" href="admin_home.html">
+						<div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
+					         <img src="images/societiessm.PNG" class="img-responsive grow image_nav">
+					         <h6 align="center" class="text_nav">Configuration</h6>
+					    </div>
+					</a>
+					<a class="td_none" href="student_registration.html">
+					    <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
+					        <img src="images/sportssm.png" class="img-responsive grow image_nav">
+					        <h6 align="center" class="text_nav">Registration</h6>
+					    </div>
+					</a>
+					<a class="td_none" href="other.html">
+					    <div class="col-lg-3 item_nav" style="background-color: #005000; border-color: #008823;">
+					        <img src="images/sportssm.png" class="img-responsive grow image_nav">
+					        <h6 align="center" class="text_nav">Other</h6>
+					    </div>
+                    </a>
+                        <!--
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-1"></div>
+-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+<br><br><br><br>
+<!--Sub Navigation Bar on the top-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+<br>
+       <div class="">
+	              <div class="col-lg-12 container_nav">
+	                  <div class="col-lg-12 center tp_mgn">
+<!--                    <div class="col-lg-1"></div>-->
+
+ 			<div class="col-lg-1"></div>
+ 			<a class="navbar-brand" ><b><div class ="f">Registration</div></b></a>
+		  <a class="button button5" href="student_registration.html" > Student registration</a>
+		  <a class="button button5"  href="parent_registration.html">Parent registration</a>
+			<a class="button button5" href="teacher_registration.html">Teacher registration</a>
+			<a class="button button5" href="administrator_registration.html">Admin registration</a>
+
+						<div class="col-lg-2"></div>
+                    <div class="col-lg-1"></div>
+				</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</nav>
+
+
+
+
+<!--Dashboard-->
+
+    <div class="col-lg-12 ftr">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 col3">
+
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+<!--    js libraries start-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/student_home.js"></script>
+<!--    js libraries end-->
+
+
+
+
+
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+    width: 800px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+ <div class="">
+        <div class="col-lg-12">
+            <div class="col-lg-1">
+            </div>
+            <div class="col-lg-10 tp_mgn3">
+                <div class="col-lg-12 col1 tp_mgn2">
+                    <div class="schl">
+
+
+<h2>Signup Form</h2>
+<h3>Teacher</h3>
+
+<form action="/action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+  <div class="row r1"></div>
+
+    <div class="form-group has-feedback">
+	            <label><b>Name with initials</b></label>
+	    	<a href="#">
+				<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+				</span>
+	        </a>
+	    	<input type="text" placeholder="ex:Mr.Hewawitharana K.S" name="nameinit" required>
+	</div>
+
+    <label><b>Full Name</b></label>
+	     	<a href="#">
+				<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+				</span>
+	        </a>
+	    	<input type="text" placeholder="ex:Mr.Kasun Sameera Hewawitharana" name="full_name" required>
+
+
+     <label><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" required><br><br>
+
+	<form action="somefile.php" >
+	    <b>NIC</b>
+	    <input
+	        type="text"
+	        name="nic"
+	        placeholder="947070924V"
+	        pattern="[V]{000000000,999999999}"
+	        title="Please include V into NIC no.NIC number is missing without V"required>
+
+
+  			<div class="row r1">
+		    </div>
+
+			<label><b>Gender</b><br></label><br>
+				<div class="col-lg-1">
+					Male
+				</div>
+				<div class="col-lg-2">
+					<input type="radio" name="gender" value="Male" >
+				</div>
+
+				<div class="col-lg-1">
+					Female
+				</div>
+				<div class="col-lg-2">
+					<input type="radio" name="gender" value="Male">
+				</div>
+				<br><br>
+
+			<label><b>State</b><br></label><br>
+				<div class="col-lg-1">
+					Married
+				</div>
+				<div class="col-lg-2">
+					<input type="radio" name="state" value="married">
+				</div>
+				<div class="col-lg-1">
+					Single
+				</div>
+				<div class="col-lg-2">
+					<input type="radio" name="state" value="single" >
+				</div>
+				<br><br>
+
+				<label><b>Birth day<br></b>
+					<input type="date" placeholder="25/07/1994" width:3px; max=1998-12-31 required>
+				</label><br><br>
+
+				<label><b>Age</b></label><br>
+					<input type="number" placeholder="25" name="grade" min="19" max="60" required><br><br>
+
+				<label><b>Registration Number</b>
+				</label>
+				<br>
+					<input type="text" placeholder="ex:SL/1596432" name="reg_no" required>
+				<br><br>
+
+				<label><b>Classes You Can Teach</b></label><br>
+					<input type="text" placeholder="Ex:A/L classes,Elementary" name="classes" ><br><br>
+				<br><br>
+
+
+				<label><b>Subjects You Can Teach</b></label><br>
+				<form>
+					<div class="multiselect">
+						<div class="selectBox" onclick="showCheckboxes()">
+							<div class="overSelect"></div>
+						</div>
+						<div id="checkboxes">
+							<label for="one">
+							<div class="col-lg-12">
+								<input type="checkbox" id="one" />Maths</label>
+								<label for="two">
+									<input type="checkbox" id="two" />Science</label>
+								<label for="three">
+									<input type="checkbox" id="three" />English</label>
+								<label for="four">
+									<input type="checkbox" id="one" />History</label>
+								<label for="five">
+									<input type="checkbox" id="two" />Buddhism</label>
+							</div>
+						</div>
+					</div>
+				</form><br><br>
+
+
+				<label><b>Telephone Number</b></label><br>
+					<input type="telephone number" placeholder="Enter Telephone number" name="tno" ><br><br>
+			<div class="form-group has-feedback">
+				<label class="control-label" for="inputSuccess2"><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" size="25" minlength="5" name="psw" class="form-control" id="inputSuccess2"required>
+				<span class="glyphicon glyphicon-eye-open Try it form-control-feedback"></span>
+
+			<label class="control-label" for="inputSuccess2"><b>Repeat Password</b></label>
+				<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+				<span class="glyphicon glyphicon-eye-open Try it form-control-feedback">
+				</span>
+			</div>
+
+			<div class="clearfix">
+					<div class="col-lg-1"></div>
+					<div class="col-lg-5"><button type="submit" class="signupbtn">Submit</button></div>
+					<div class="col-lg-1"></div>
+					<div class="col-lg-5"><button type="button" class="cancelbtn">Cancel</button></div>
+			</div>
+
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--Footer start-->
+  <div class="col-lg-12 ftr">
+         <div class="col-lg-1"></div>
+         <div class="col-lg-10 col3">
+
+         </div>
+         <div class="col-lg-1"></div>
+    </div>
+  <!--Footer end-->
+
+
+    </body>
+</html>
