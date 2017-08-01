@@ -199,7 +199,15 @@ html,body{
   margin-top: 10px;
   padding: 0px;
 }
-
+#panels_sc .panel{
+  border-color: #bbbe64 !important;
+  border-width: 2px;
+}
+#panels_sc .panel-heading{
+  background-color: #d9dbaa !important;
+  color: #666837 !important;
+  border-width: 2px;
+}
 .purple{
   color: #444c4f !important;
   background-color: #bcd0d6  !important;

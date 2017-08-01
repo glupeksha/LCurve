@@ -66,8 +66,8 @@ $(document).ready(function(){
   //Set Society Anouncement Data
   var panels_sc="<div  class=\"panel-group\">";
   for (var i=0; i < notifications_sc.length; i = i + 1){
-    panels_sc=panels_sc+"<div class=\"panel panel-info "+notifications_sc[i].colour+"border\">";
-    panels_sc=panels_sc+"<div class=\"panel-heading "+notifications_sc[i].colour+"\">"+notifications_sc[i].Society+"</div>";
+    panels_sc=panels_sc+"<div class=\"panel panel-info\">";
+    panels_sc=panels_sc+"<div class=\"panel-heading\">"+notifications_sc[i].Society+"</div>";
     panels_sc=panels_sc+"<div class=\"panel-body\">";
     for(var j=0;j<notifications_sc[i].notifications.length;j++){
       panels_sc=panels_sc+"<div class=\"row\"><div class=\"col-lg-9\">"+notifications_sc[i].notifications[j].notification+"</div>";
