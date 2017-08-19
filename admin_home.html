@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--    title bar start -->
+  <title>L'Curve</title>
+  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <!--    title bar end -->
+
+  <!--    css styles start-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="css/admin_home.css">
+  <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+  <!--    css styles end-->
+<script src="js/modernizr.custom.63321.js"></script>
+</head>
+
+<body>
+
+  <!--Navigation Bar on the top start-->
+  <nav class="navbar navbar-default navbar-fixed-top topbar">
+    <div class="container-fluid">
+
+      <!--Navigation Bar Logo start-->
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <span class="hidden-xs">L'Curve</span>
+        </a>
+        <span class="logo">
+          <a href="student_home.html" class="">
+            <img class="logo" src="images/logoTrans100.PNG" alt="L'Curve">
+          </a>
+        </span>
+      </div>
+      <!--Navigation Bar Logo end-->
+
+      <!--Navigation Bar AccountSetting start-->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button class="navbar-btn">
+            <i class="fa fa-bell"></i>
+          </button>
+        </li>
+
+        <li class="dropdown">
+          <button class="navbar-btn" data-toggle="dropdown">
+            <img src="" class="img-circle avatar">
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="nav-divider"></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!--Navigation Bar AccountSetting end-->
+
+    </div>
+  </nav>
+  <!--Navigation Bar on the top end-->
+
+  <!--Navigation images start-->
+  <div class="row container_nav">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-6 tp_mgn">
+        <div class="col-lg-12">
+           <a class="td_none" href="admin_home.html">
+		   <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579;" >
+		  <img src="images/homesm.PNG" class="img-responsive grow image_nav">
+		  									        <h6 align="center" class="text_nav">Home</h6>
+		  					                    </div>
+		  					                    </a>
+
+		  					                    <a class="td_none" href="configuration.html">
+		  					                    <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
+		  					                        <img src="images/societiessm.PNG" class="img-responsive grow image_nav">
+		  					                        <h6 align="center" class="text_nav">Configuration</h6>
+		  					                    </div>
+		  					                    </a>
+		  					                    <a class="td_none" href="student_registration.html">
+		  					                    <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
+		  					                        <img src="images/sportssm.png" class="img-responsive grow image_nav">
+		  					                        <h6 align="center" class="text_nav">Registration</h6>
+		  					                    </div>
+		  					                    </a>
+		  					 					<a class="td_none" href="other.html">
+		  					                    <div class="col-lg-3 item_nav" style="background-color: #005000; border-color: #008823;">
+		  					                        <img src="images/sportssm.png" class="img-responsive grow image_nav">
+		  					                        <h6 align="center" class="text_nav">Other</h6>
+		  					                    </div>
+                    </a>
+        </div>
+      </div>
+      <div class="col-lg-3">
+      </div>
+
+  </div>
+  <!--Navigation images end-->
+
+  <!--Dashboard start-->
+  <div class="row">
+      <!--Dashboard Left Margin-->
+      <div class="col-lg-1">
+      </div>
+      <!--Dashboard Content start-->
+      <div class="col-lg-10 col0 tp_mgn3">
+        <div class="row tp_mgn2">
+          <!--Dashboard Left Bar start-->
+          <div class="col-lg-8 col1">
+
+
+              <!--Society Announcement Pane start-->
+              <div class="row defaultMargin">
+
+                  <!-- Notification Body -->
+                  <div id="societyNotification" class="row notify notify_sc">
+                    <!--Headrer-->
+                    <div class="row notify_head notify_head_sc">
+                        <div class="col-lg-9">
+                        </div>
+                        <div class="col-lg-3 notify_indi notify_indi_sc">
+                          Announcement
+                        </div>
+                    </div>
+                    <!--Notification brief-->
+                    <div class="row notify_shead notify_shead_sc">
+                      <div class="col-lg-12">
+                        <div class="col-lg-8">
+                          Society and Clubs Announcements
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                      </div>
+                    </div>
+                    <!--Details-->
+                    <div class="row  notify_body notify_body_sc">
+                      <div class="col-lg-12">
+                        <div id="panels_sc" class="col-lg-12">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--View More-->
+                  <div class="row notify_footer notify_footer_sc">
+                    <div class="col-lg-11">
+                    </div>
+                    <div class="col-lg-1">
+                      <label class="switch">
+                        <input type="checkbox" checked>
+                        <div class="slider slider_sc">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              <!--Society Announcement Pane end-->
+          </div>
+          <!--Dashboard Left Bar end-->
+
+          <!--Dashboard Right Bar start-->
+          <div class="col-lg-4 col2">
+            <!--Calander start-->
+            <div class="custom-calendar-wrap">
+              <div id="custom-inner" class="custom-inner">
+                <div class="custom-header clearfix">
+                  <nav>
+                    <span id="custom-prev" class="custom-prev"></span>
+                    <span id="custom-next" class="custom-next"></span>
+                  </nav>
+                  <h2 id="custom-month" class="custom-month"></h2>
+                  <h3 id="custom-year" class="custom-year"></h3>
+                </div>
+                <div id="calendar" class="fc-calendar-container"></div>
+              </div>
+            </div>
+            <!--Calander end-->
+          </div>
+          <!--Dashboard Right Bar end-->
+        </div>
+      </div>
+      <!--Dashboard Content end-->
+
+      <!--Dashboard Right Margin-->
+      <div class="col-lg-1">
+      </div>
+  </div>
+  <!--Dashboard end-->
+
+  <!--Footer start-->
+  <div class="row">
+      <div class="col-lg-1">
+      </div>
+      <div class="col-lg-10 col3">
+      </div>
+      <div class="col-lg-1">
+      </div>
+  </div>
+  <!--Footer end-->
+
+  <!--    js libraries start-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/student_home.js"></script>
+  <script type="text/javascript" src="js/jquery.calendario.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <!--    js libraries end-->
+
+</body>
+</html>
