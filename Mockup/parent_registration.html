@@ -1,348 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>L'Curve</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-<!--    css styles start-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="css/admin_home.css">
-<!--    css styles end-->
 
-
-<style>
-.button {
-    background-color: #3399CC; /* Green */
-    border= 10pt;
-    border-color:#2233CC;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button5 {border-radius: 50%;}
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--    title bar start -->
+  <title>L'Curve</title>
+  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <!--    title bar end -->
+  <!--    css styles start-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="css/admin_home.css">
+  <link rel="stylesheet" href="css/registration.css">
+  <!--    css styles end-->
 </head>
+
+
+
 <body>
-  <!--Navigation Bar on the top-->
-    <nav class="navbar navbar-default navbar-fixed-top topbar">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a href="#" class="navbar-brand">
-					<span class="visible-xs">L'Curve</span>
-					<span class="hidden-xs logo"><a href="student_home.html"><img class="logo" src="images/logoTrans100.PNG" alt="L'Curve"></a></span>
-				</a>
-			</div>
 
-			<div class="navbar-collapse collapse" id="navbar-collapse-main">
+  <!--Navigation Bar on the top start-->
+  <nav class="navbar navbar-default navbar-fixed-top topbar">
+    <div class="container-fluid" >
 
-				<ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <button class="navbar-btn">
-                            <i class="fa fa-bell"></i>
-                        </button>
-
-                    </li>
-
-					<li class="dropdown">
-						<button class="navbar-btn" data-toggle="dropdown">
-							<img src="http://lorempixel.com/30/30/people" class="img-circle">
-						</button>
-						<ul class="dropdown-menu">
-							<li><a href="#">Account</a></li>
-							<li><a href="#">Profile</a></li>
-							<li class="nav-divider"></li>
-							<li><a href="#">Logout</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-    </nav>
-    <!--Navigation images-->
-    <section class="">
-        <div class="">
-            <div class="col-lg-6 container_nav">
-                <div class="col-lg-12 center tp_mgn">
-<!--                    <div class="col-lg-1"></div>-->
-                <a class="td_none" href="admin_home.html">
-					<div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579;" >
-						<img src="images/homesm.PNG" class="img-responsive grow image_nav">
-						<h6 align="center" class="text_nav">Home</h6>
-					</div>
-				</a>
-
-				<a class="td_none" href="admin_home.html">
-					<div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
-						<img src="images/societiessm.PNG" class="img-responsive grow image_nav">
-						<h6 align="center" class="text_nav">Configuration</h6>
-					</div>
-				</a>
-				<a class="td_none" href="student_registration.html">
-					<div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
-						<img src="images/sportssm.png" class="img-responsive grow image_nav">
-						<h6 align="center" class="text_nav">Registration</h6>
-					</div>
-				</a>
-				<a class="td_none" href="other.html">
-					<div class="col-lg-3 item_nav" style="background-color: #005000; border-color: #008823;">
-						<img src="images/sportssm.png" class="img-responsive grow image_nav">
-						<h6 align="center" class="text_nav">Other</h6>
-					</div>
-                </a>
-                        <!--
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-1"></div>
--->
-                </div>
-            </div>
-        </div>
-    </section>
-
-<<br><br><br><br>
-<!--Sub Navigation Bar on the top-->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-<br>
-       <div class="">
-	              <div class="col-lg-12 container_nav">
-	                  <div class="col-lg-12 center tp_mgn">
-<!--                    <div class="col-lg-1"></div>-->
-
- 			<div class="col-lg-1"></div>
- 			<a class="navbar-brand" ><b><div class ="f">Registration</div></b></a>
-		  <a class="button button5" href="student_registration.html" > Student registration</a>
-		  <a class="button button5"  href="parent_registration.html">Parent registration</a>
-			<a class="button button5" href="teacher_registration.html">Teacher registration</a>
-			<a class="button button5" href="administrator_registration.html">Admin registration</a>
-
-						<div class="col-lg-2"></div>
-                    <div class="col-lg-1"></div>
-				</div>
-                </div>
-            </div>
-        </div>
-
+      <!--Navigation Bar Logo start-->
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <span class="hidden-xs">L'Curve</span>
+        </a>
+        <span class="logo">
+          <a href="student_home.html" class="">
+            <img class="logo" src="images/logoTrans100.PNG" alt="L'Curve">
+          </a>
+        </span>
+      </div>
+      <!--Navigation Bar Logo end-->
 
     </div>
+  </nav>
+  <!--Navigation Bar on the top end-->
 
-</nav>
+<div class="row r1 " ></div>
+ 
+  <!--Dashboard start-->
+  <div class="row">
+      <!--Dashboard Left Margin-->
+      <div class="col-lg-1">
+      </div>
+      <!--Dashboard Content start-->
+      <div class="col-lg-10 col0 tp_mgn3">
+        <div class="row tp_mgn2">
+          <!--Dashboard inner start-->
+          <div class="col-lg-12 col1">
+
+              <!--Pane start-->
+              <div class="row defaultMargin ">
+
+              <!--Dashboard content start-->
+              <h2><b>Signup Form</b></h2>
+              <h3><b>Parent</b></h3>
+
+              <!--form start-->
+              <form  style="border:1px solid #ccc">
+                  <div class="container ">  
+
+                      <label><b>Name </b></label>
+                      <a href="#">
+                         <span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+                         </span>
+                      </a><div class="row r2"></div>
+                      <input type="text"class="form-control" placeholder="ex:Dissanayake P.D" name="nameinit" required>
+                      <div class="row r3"></div>  
 
 
+                      <label><b>Child's Name</b></label>
+                      <a href="#">
+                      <span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+                      </span>
+                        </a><div class="row r2"></div>
+                      <input type="text" placeholder="ex:Sandun Lakmal" name="full_name" required>
+                      <div class="row r3"></div>  
 
 
-<!--Dashboard-->
-
-    <div class="col-lg-12 ftr">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 col3">
-
-        </div>
-        <div class="col-lg-1"></div>
-    </div>
-<!--    js libraries start-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/student_home.js"></script>
-<!--    js libraries end-->
+                     <label><b>Child's Index Number</b></label>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+                      </span>
+                        </a><div class="row r2"></div>
+                      <input type="text" placeholder="ex:15000303" name="index_no" >
+                      <div class="row r3"></div>  
 
 
+                      <label><b>Address</b></label>
+                        <a href="#">
+                          <span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
+                          </span>
+                        </a><div class="row r2"></div>
+                        <input type="text" class="form-control" placeholder="Enter Address" name="address" required>
+                        <div class="row r3"></div>  
 
 
+                        <label ><b>NIC</b></label>
+                        <div class="row r2"></div>                 
+                        <input class="form-control"
+                            type="text"
+                            name="nic"
+                            placeholder="947070924V"
+                            pattern="[V]{000000000,999999999}"
+                            required>
+                      <div class="row r3"></div>
 
-<style>
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
 
-/* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
+                        <label><b>Gender</b><br></label>
+                        <div class="row r2"></div>
+                        <div class="row r2"></div>
+                            <div class="col-lg-1">
+                              Male
+                            </div>
+                        <div class="col-lg-2">
+                          <input type="radio"  name="gender" value="Male">
+                        </div>
+                        <div class="col-lg-1">
+                           Female
+                        </div>
+                        <div class="col-lg-2">
+                           <input type="radio"  name="gender" value="Female">
+                         </div>
+                         <div class="row r3"></div> <div class="row r3"></div>  
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-}
 
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
-    float: left;
-    width: 50%;
-}
+                        
+                    <label><b>Birth day</b>
+                    <div class="row r2"></div>
+                      <input type="date" placeholder="25/07/1994" width:3px; max=1998-12-31 required>
+                    </label>
+                    <div class="row r3"></div>  
 
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-    width: 800px;
-}
 
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
+                    <label><b>Age</b></label>
+                    <div class="row r2"></div>
+                      <input type="number" placeholder="25" name="grade" min="19" max="60" required>
+                    <div class="row r3"></div>                         
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-       width: 100%;
-    }
-}
-</style>
-<body>
- <div class="">
-        <div class="col-lg-12">
-            <div class="col-lg-1">
+            
+                    <label class="control-label" for="inputSuccess2"><b>Email</b>
+                    </label><div class="row r2"></div>
+                      <input type="email" class="form-control" placeholder="Enter valid Email Address"class="form-control" id="inputSuccess2"/>
+                    <div class="row r3"></div>         
+                        
+                    
+
+                    <label><b>Telephone Number</b></label>
+                    <div class="row r2"></div>
+                      <input type="telephone number" placeholder="Enter Telephone number" name="tno" >
+                    <div class="row r3"></div>  
+
+
+                    <label class="control-label" for="inputSuccess2"><b>Password</b>
+                    </label><div class="row r2"></div>
+                      <input type="password"class="form-control" placeholder="Enter Password" size="25" minlength="5" name="psw" class="form-control" id="inputSuccess2"required>
+                    <div class="row r3"></div>       
+                
+
+                    <label class="control-label" for="inputSuccess2"><b>Repeat Password</b></label>
+                    <div class="row r2"></div>
+                      <input type="password" class="form-control" placeholder="Repeat Password" name="psw-repeat" required>
+                    <div class="row r3"></div>  
+
+
+                    <div class="clearfix">
+                      <div class="col-lg-1"></div>
+                      <div class="col-lg-5"><button type="submit" class="signupbtn">Submit</button></div>
+                      <div class="col-lg-1"></div>
+                      <div class="col-lg-5"><button type="button" class="cancelbtn">Cancel</button></div>
+                      </div>
+                    <div class="row r3"></div>  
+
+                    </form>
+                  <!--Pane end-->
+
+             </div>
+             <!--Dashboard inner end-->
+
             </div>
-            <div class="col-lg-10 tp_mgn3">
-                <div class="col-lg-12 col1 tp_mgn2">
-                    <div class="schl">
+          </div>
+          <!--Dashboard Content end-->
 
-
-<h2>Signup Form</h2>
-<h3>Parent</h3>
-
-<form action="/action_page.php" style="border:1px solid #ccc">
-  	<div class="container">
-
-	<div class="form-group has-feedback">
-            <label><b>Name </b></label>
-    	<a href="#">
-			<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
-			</span>
-        </a>
-    	<input type="text" placeholder="ex:Mr.Dissanayake P.D" name="nameinit" required>
-	</div>
-
-     <label><b>Child's Name</b></label>
-     	<a href="#">
-			<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
-			</span>
-        </a>
-    	<input type="text" placeholder="ex:Sandun Lakmal" name="full_name" required>
-
-
-
-	<label><b>Child's Index Number</b></label>
-		<a href="#">
-			<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
-			</span>
-        </a><br>
-    	<input type="text" placeholder="ex:15000303" name="index_no" ><br><br>
-
-     <label><b>Address</b></label>
-     	<a href="#">
-			<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
-	 		</span>
-        </a>
-    	<input type="text" placeholder="Enter Address" name="address" required><br><br>
-
-    <label><b>Gender</b><br></label><br>
-     	<div class="col-lg-1">
-     		Male
-     	</div>
-     	<div class="col-lg-2">
-     		<input type="radio"  name="gender" value="Male">
-     	</div>
-     	<div class="col-lg-1">
-     		Female
-     	</div>
-     	<div class="col-lg-2">
-     		<input type="radio"  name="gender" value="Female">
-    	 </div><br><br>
-
-
-    <b>NIC</b>
-		    <input
-		        type="text"
-		        name="nic"
-		        placeholder="947070924V"
-		        pattern="[V]{000000000,999999999}"
-		        title="Please include V into NIC no.NIC number is missing without V"required>
-
-
-     <label><b>Birth day<br></b><input type="date"  min="1998-12-31" max="2011-01-01" width:3px; required></label><br><br>
-
-	<div class="form-group has-feedback">
-		<label class="control-label" for="inputSuccess2"><b>Email</b></label>
-		<input type="email" placeholder="Enter valid Email Address"class="form-control" id="inputSuccess2"/>
-		<span class="glyphicon glyphicon-envelope	Try it
-	 form-control-feedback"></span>
-	</div>
-
-
-		<label><b>Address</b></label>
-     	<a href="#">
-			<span class="glyphicon glyphicon-info-sign" style="font-size:15px;font-color:white;color:light-blue;text-shadow:2px 2px 4px #000000;">
-	 		</span>
-        </a>
-    	<input type="text" placeholder="Enter Address" name="address" required><br><br>
-
-
-	<label><b>Telephone Number</b></label><br>
-    <input type="tel" placeholder="Enter Telephone number" name="tno" ><br><br>
-
-	<div class="form-group has-feedback">
-		<label class="control-label" for="inputSuccess2"><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" size="25" minlength="5" name="psw" class="form-control" id="inputSuccess2"required>
-		<span class="glyphicon glyphicon-eye-open Try it form-control-feedback"></span>
-	</div>
-
-    <div class="form-group has-feedback">
-			<label class="control-label" for="inputSuccess2"><b>Repeat Password</b></label>
-		    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-			<span class="glyphicon glyphicon-eye-open Try it form-control-feedback"></span>
-	</div>
-
-   <div class="clearfix">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-5"><button type="submit" class="signupbtn">Submit</button></div>
-		  <div class="col-lg-1"></div>
-         <div class="col-lg-5"><button type="button" class="cancelbtn">Cancel</button></div>
-    </div>
+      <!--Dashboard Right Margin-->
+      <div class="col-lg-1">
+      </div>
   </div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!--Footer start-->
-  <div class="col-lg-12 ftr">
-         <div class="col-lg-1"></div>
-         <div class="col-lg-10 col3">
-
-         </div>
-         <div class="col-lg-1"></div>
-    </div>
-  <!--Footer end-->
+  <!--Dashboard end-->
 
 
 
-    </body>
+  <!--    js libraries start-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/student_home.js"></script>
+  <script type="text/javascript" src="js/jquery.calendario.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <!--    js libraries end-->
+
+</body>
 </html>
