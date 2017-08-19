@@ -134,3 +134,7 @@ html,body{
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
+.fnt{
+ font-size: 11px;
+}
+
