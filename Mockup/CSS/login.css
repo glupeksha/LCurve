@@ -56,8 +56,13 @@ html,body{
     margin-bottom: 10px;
 }
 
+.regIn a, .login a{
+    color:#fff;
+}
+
 .form1 .login:hover, .form1 .login:focus, .form1 .login:active .form1, .regIn:hover, .form1 .regIn:focus, .form1 .regIn:active{
     background-color: #138972;
+    color: #fff;
 }
 
 .form-box{
