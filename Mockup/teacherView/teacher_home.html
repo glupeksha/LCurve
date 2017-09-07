@@ -8,16 +8,16 @@
 
   <!--    title bar start -->
   <title>L'Curve</title>
-  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <!--    title bar end -->
 
   <!--    css styles start-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="css/student_home.css">
-  <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+  <link rel="stylesheet" href="../css/student_home.css">
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
   <!--    css styles end-->
-<script src="js/modernizr.custom.63321.js"></script>
+<script src="../js/modernizr.custom.63321.js"></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         </a>
         <span class="logo">
           <a href="student_home.html" class="">
-            <img class="logo" src="images/logoTrans100.PNG" alt="L'Curve">
+            <img class="logo" src="../images/logoTrans100.PNG" alt="L'Curve">
           </a>
         </span>
       </div>
@@ -41,25 +41,6 @@
 
       <!--Navigation Bar AccountSetting start-->
       <ul class="nav navbar-nav navbar-right">
-
-      <li><br>
-        <button class="btn info s" ><b>En</b></button>
-        <button class="btn info s" ><b> සිං</b></button>
-        <button class="btn info s" ><b>த</b></button>
-      </li>
-        
-
-      <li><div class="col-lg-1"></div></li>
-        <li>
-              <div class="search">
-                <form><br>
-                  <input type="text" name="search" placeholder="Search..">
-                </form>
-              </div>
-        </li>
-
-        <li><div class="col-lg-1"></div></li>
-      
         <li>
           <button class="navbar-btn">
             <i class="fa fa-bell"></i>
@@ -77,10 +58,9 @@
             <li><a href="#">Logout</a></li>
           </ul>
         </li>
-
-        <li><div class="col-lg-1"></div></li>
       </ul>
       <!--Navigation Bar AccountSetting end-->
+
     </div>
   </nav>
   <!--Navigation Bar on the top end-->
@@ -93,25 +73,25 @@
         <div class="col-lg-12">
           <a class="td_none" href="teacher_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579;" >
-              <img src="images/homesm.PNG" class="img-responsive grow image_nav">
+              <img src="../images/homesm.PNG" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Home</h6>
             </div>
           </a>
           <a class="td_none" href="Subject_contain_management.html">
             <div class="col-lg-3 item_nav" style="background-color: #E28B12; border-color: #A5660E;">
-              <img src="images/classroomsm.PNG" class="img-responsive grow image_nav">
-              <h6 align="center" class="text_nav">My class</h6>
+              <img src="../images/classroomsm.PNG" class="img-responsive grow image_nav">
+              <h6 align="center" class="text_nav">My Class</h6>
             </div>
           </a>
-          <a class="td_none" href="teacher_home.html">
+          <a class="td_none" href="student_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
-              <img src="images/societiessm.PNG" class="img-responsive grow image_nav">
+              <img src="../images/societiessm.PNG" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Societies</h6>
             </div>
           </a>
-          <a class="td_none" href="teacher_home.html">
+          <a class="td_none" href="student_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
-              <img src="images/sportssm.png" class="img-responsive grow image_nav">
+              <img src="../images/sportssm.png" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Sports</h6>
             </div>
           </a>
@@ -132,118 +112,91 @@
       <div class="col-lg-10 col0 tp_mgn3">
         <div class="row tp_mgn2">
           <!--Dashboard Left Bar start-->
-          <div class="col-lg-8 col1">
-
-              <!--Home work Pane start-->
-              <div class="row defaultMargin">
-                  <!-- Homework Body -->
-                  <div id="homework" class="row notify notify_cr">
-                      <!-- Header -->
-                      <div class="row notify_head notify_head_cr">
-                          <div class="col-lg-9">
-                          </div>
-                          <div class="col-lg-3 notify_indi notify_indi_cr">
-                            Sessons
-                          </div>
-                      </div>
-                      <!-- Notification brief -->
-                      <div class="row notify_shead notify_shead_cr">
-                        <div class="col-lg-12">
-                        
-                          <div class="col-lg-4">
+          <div class="col-lg-9 col1">
+            <div class="col-lg-12">
+                        <!--Session pane start-->
+                          <div id="homework" class="col-lg-12 notify notify_cr">
+                              <div class="col-lg-12 notify_head notify_head_cr">
+                                  <div class="col-lg-9">
+                                  </div>
+                                <div class="col-lg-3 notify_indi notify_indi_cr">
+                                      Sessons
+                                  </div>
+                              </div>
+                              <div class="raw">
+                              <div class="col-lg-12 notify_shead notify_shead_cr">
+                              
+                                  <div class="col-lg-4">
                                       Now
-                          </div>
-                          <div class="col-lg-4">
+                                  </div>
+                                  <div class="col-lg-4">
                                       Next
-                          </div>
-                          <div class="col-lg-4">
+                                  </div>
+                                  <div class="col-lg-4">
                                       Later
-                          </div>
-                          </div>
-                        </div>
-                        <div class="row notify_body notify_body_cr">
-                        <div class="col-lg-4">Grade 8-D
+                                  </div>
+                                  </div>
+                              </div>
+                                  
+
+                              <div class="raw">
+                              <div class="col-lg-12 notify_body notify_body_cr">
+                                  <div class="col-lg-4">Grade 8-D
                                   </div>
                                   <div class="col-lg-4 ">Grade 9-E
                                   </div>
                                   <div class="col-lg-2">
                                   </div>
-                      </div>
-                      </div>
-                      <!-- Details -->
-                      
-                  </div>
-                  <!-- View More -->
-                  <div class="row notify_footer notify_footer_cr">
-                      <div class="col-lg-11"></div>
-                      <div class="col-lg-1">
-                        <label class="switch">
-                          <input type="checkbox" checked>
-                          <div class="slider slider_cr">
-                            <span class="glyphicon glyphicon-chevron-up" style="padding: 7px"></span>
-                          <span class="glyphicon glyphicon-chevron-down style"  style="padding: 7px"></span>
+
+                              </div>
+                              </div>
                           </div>
-                        </label>
-                      </div>
-                  </div>
-              
-
-              <!--Home work Pane end-->
-
-              <!--Society Announcement Pane start-->
-              <div class="row defaultMargin">
-
-                  <!-- Notification Body -->
-                  <div id="societyNotification" class="row notify notify_sc">
-                    <!--Headrer-->
-                    <div class="row notify_head notify_head_sc">
-                        <div class="col-lg-9">
+                          <div class="col-lg-12 notify_footer notify_footer_cr">
+                              <div class="col-lg-11"></div>
+                              
+                          </div>
                         </div>
-                        <div class="col-lg-3 notify_indi notify_indi_sc">
-                          Announcement
-                        </div>
-                    </div>
-                    <!--Notification brief-->
-                    <div class="row notify_shead notify_shead_sc">
-                      <div class="col-lg-12">
+                        <!--Session pane ends-->
 
-                      <div class="col-lg-8">
 
-                      </div>
-                        <div class="col-lg-4">
+                        <!--Announcement Pane-->
+                        <br><br>
+                        <div class="col-lg-12">
+                          <div id="notifications" class="col-lg-12 notify notify_sc">
+                              <div class="col-lg-12 notify_head notify_head_sc">
+                                  <div class="col-lg-9">
+                                  </div>
+                                  <div class="col-lg-3 notify_indi notify_indi_sc">
+                                      Announcement
+                                  </div>
+                                  
+                              </div>
+                              <div class="col-lg-12 notify_shead notify_shead_sc">
+                                  <div class="col-lg-8">
+
+                                  </div>
+                                  <div class="col-lg-4">
                                     <ul>
                                       <li><a href="">Make a News</a></li>
                                     </ul>
                                   </div>
-                        <div class="col-lg-4">
-                        </div>
-                      </div>
-                    </div>
-                    <!--Details-->
-                    <div class="row  notify_body notify_body_sc">
-                      <div class="col-lg-12">
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <!--View More-->
-                  <div class="row notify_footer notify_footer_sc">
-                    <div class="col-lg-11">
-                    </div>
-                    <div class="col-lg-1">
-                      <label class="switch">
-                        <input type="checkbox" checked>
-                        <div class="slider slider_sc">
-                        <span class="glyphicon glyphicon-chevron-up" style="padding: 7px"></span>
-                          <span class="glyphicon glyphicon-chevron-down style"  style="padding: 7px"></span>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-              </div>
-              <!--Society Announcement Pane end-->
+                              </div>
+                              <div class="col-lg-12 notify_body notify_body_sc">
+                                  <ul>
+                                    <li>Today there is a Special Meeting for  Prefects.</li>
+                                    <li>Today Mr Terry is retiring.</li>
+                                  </ul>
+                                
+                              </div>
 
-              <div id="task" class="col-lg-12 notify notify_cr">
+                              <div class="col-lg-12 notify_footer notify_footer_sc">
+                              <div class="col-lg-11"></div>
+                              
+                          </div>
+                          </div>
+                          <!--task pane start-->
+
+                          <div id="task" class="col-lg-12 notify notify_cr">
                               <div class="col-lg-12 notify_head notify_head_cr">
                                   <div class="col-lg-9">
                                   </div>
@@ -268,29 +221,20 @@
                               </div>
                               <div class="col-lg-12 notify_body notify_body_cr">
                                   <ul>
-                                        <li>Have to meet principle</li>
-                                        <li>Have to meet principle</li>
-                                        <li>Have to meet principle</li>
-                                        <li>Have to meet principle</li>
-                                        </ul>
+                                        <li>Have to meet principle</li></ul>
                                   </div>
                           </div>
                           <div class="col-lg-12 notify_footer notify_footer_cr">
                             <div class="col-lg-11"></div>
-                            <div class="col-lg-1">
-                              <label class="switch">
-                                <input type="checkbox" checked>
-                                <div class="slider slider_cr">
-                                  <span class="glyphicon glyphicon-chevron-up" style="padding: 7px"></span>
-                          			<span class="glyphicon glyphicon-chevron-down style"  style="padding: 7px"></span>                                </div>
-                              </label>
-                            </div>
+                            
                           </div>
+                      </div>
+                      <!--task pane ends-->
           </div>
           <!--Dashboard Left Bar end-->
 
           <!--Dashboard Right Bar start-->
-          <div class="col-lg-4 col2">
+          <div class="col-lg-3 col2">
             <!--Calander start-->
             <div class="custom-calendar-wrap">
               <div id="custom-inner" class="custom-inner">
@@ -332,9 +276,9 @@
   <!--    js libraries start-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/student_home.js"></script>
-  <script type="text/javascript" src="js/jquery.calendario.js"></script>
-  <script type="text/javascript" src="js/data.js"></script>
+  <script src="../js/student_home.js"></script>
+  <script type="text/javascript" src="../js/jquery.calendario.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
   <!--    js libraries end-->
 
 </body>
