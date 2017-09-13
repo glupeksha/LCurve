@@ -93,7 +93,6 @@ html,body{
   font-size: 12px;
   color: #fff;
   transition: .5s ease;
-  opacity: 0;
 }
 .item_nav > img{
   height: 30px;
@@ -272,12 +271,6 @@ html,body{
   text-align: center;
   padding-left: 35px;
 }
-#homework{
-  height: 150px;
-}
-.slider_cr {
-  background-color: #22aed1;
-}
 #panels_cr{
   display: grid;
 	grid-gap: 1rem;
@@ -400,9 +393,6 @@ html,body{
 .slider_sc {
   background-color: #22AED1;
 }
-#societyNotification{
-  height: 150px;
-}
 #testTable{
   margin-right:30px;
   overflow: visible;
@@ -412,56 +402,5 @@ html,body{
 }
 /*Society Anouncement end*/
 
-/*View More start*/
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 60px;
-  max-width: None;
-  bottom:0;
-  right:0;
-  background-color: black;
-  margin-top: -32px;
-}
-.switch input {
-  display:none;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transition: .4s;
-  transition: .4s;
-  z-index: 200;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-input:checked + .slider {
-  /*background-color: #22aed1;*/
-}
-
-input:focus + .slider {
-  /*box-shadow: 0 0 1px #22aed1;*/
-}
-input:checked + .slider:before {
-  -webkit-transform: translateY(-30px);
-  -ms-transform: translateY(-30px);
-  transform: translateY(-30px);
-}
-.size1{width: 96px; height: 71px;}
-/*View More end*/
 
 /*DashBoard end*/
