@@ -1,15 +1,13 @@
-# GroupProject
+## Theme
 
-## theme
-
-### font
+### Font
 ```markdown
 
     hind (body)
     roboto (h1,h2,h3,h4)
 ```
 
-### color theme
+### Color theme
 ```markdown
 
     1abb9c (light sea green)
