@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="full">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +8,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', "L'Curve") }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
 
 </head>
-<body>
+<body class="full">
 
-    <div id="app">
+    <div id="app" class="full">
 
         <!-- Navigation Bar -->
         @include('layouts.nav')
@@ -35,11 +35,16 @@
             </div>
         </div>
 
-        @include('layouts.dashboard')
-        
+        @yield('content')
+
+        @auth
+            @include('layouts.dashboard')
+        @endauth
         
 
     </div>
+
+   
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
