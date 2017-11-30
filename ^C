@@ -1,0 +1,16 @@
+Added dashboard theme. need to change username toggle menu
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch test
+# Changes to be committed:
+#	modified:   lcurve/public/css/app.css
+#	modified:   lcurve/resources/assets/sass/app.scss
+#	modified:   lcurve/resources/assets/sass/dashboard.scss
+#	modified:   lcurve/resources/assets/sass/navigation.scss
+#	modified:   lcurve/resources/views/home.blade.php
+#	modified:   lcurve/resources/views/layouts/app.blade.php
+#	modified:   lcurve/resources/views/layouts/dashboard.blade.php
+#	modified:   lcurve/resources/views/layouts/nav.blade.php
+#	modified:   lcurve/resources/views/welcome.blade.php
+#
