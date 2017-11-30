@@ -8,17 +8,17 @@
 
   <!--    title bar start -->
   <title>L'Curve</title>
-  <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <!--    title bar end -->
 
   <!--    css styles start-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="css/student_home.css">
-  <link rel="stylesheet" type="text/css" href="css/calendar.css" />
-  <link rel="stylesheet" type="text/css" href="css/profile.css" />
+  <link rel="stylesheet" href="../css/student_home.css">
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css" />
+  <link rel="stylesheet" type="text/css" href="../css/profile.css" />
   <!--    css styles end-->
-<script src="js/modernizr.custom.63321.js"></script>
+<script src="../js/modernizr.custom.63321.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
         </a>
         <span class="logo">
           <a href="student_home.html" class="">
-            <img class="logo" src="images/logoTrans100.PNG" alt="L'Curve">
+            <img class="logo" src="../images/logoTrans100.PNG" alt="L'Curve">
           </a>
         </span>
       </div>
@@ -43,6 +43,25 @@
 
       <!--Navigation Bar AccountSetting start-->
       <ul class="nav navbar-nav navbar-right">
+
+      <li><br>
+        <button class="btn info s" ><b>En</b></button>
+        <button class="btn info s" ><b> සිං</b></button>
+        <button class="btn info s" ><b>த</b></button>
+      </li>
+        
+
+      <li><div class="col-lg-1"></div></li>
+        <li>
+              <div class="search">
+                <form><br>
+                  <input type="text" name="search" placeholder="Search..">
+                </form>
+              </div>
+        </li>
+
+        <li><div class="col-lg-1"></div></li>
+      
         <li>
           <button class="navbar-btn">
             <i class="fa fa-bell"></i>
@@ -60,6 +79,8 @@
             <li><a href="#">Logout</a></li>
           </ul>
         </li>
+
+        <li><div class="col-lg-1"></div></li>
       </ul>
       <!--Navigation Bar AccountSetting end-->
 
@@ -75,25 +96,25 @@
         <div class="col-lg-12">
           <a class="td_none" href="student_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579;" >
-              <img src="images/homesm.PNG" class="img-responsive grow image_nav">
+              <img src="../images/homesm.PNG" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Home</h6>
             </div>
           </a>
           <a class="td_none" href="student_class_room.html">
             <div class="col-lg-3 item_nav" style="background-color: #E28B12; border-color: #A5660E;">
-              <img src="images/classroomsm.PNG" class="img-responsive grow image_nav">
+              <img src="../images/classroomsm.PNG" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Class Room</h6>
             </div>
           </a>
           <a class="td_none" href="student_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
-              <img src="images/societiessm.PNG" class="img-responsive grow image_nav">
+              <img src="../images/societiessm.PNG" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Societies</h6>
             </div>
           </a>
           <a class="td_none" href="student_home.html">
             <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
-              <img src="images/sportssm.png" class="img-responsive grow image_nav">
+              <img src="../images/sportssm.png" class="img-responsive grow image_nav">
               <h6 align="center" class="text_nav">Sports</h6>
             </div>
           </a>
@@ -132,18 +153,13 @@
                         </div>
                         <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
                             <div class="btn-group" role="group">
-                                <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                     <div class="hidden-xs">Personal Details</div>
                                 </button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                                <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>
                                     <div class="hidden-xs">Progress Report</div>
-                                </button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                    <div class="hidden-xs">Emails and Notifications</div>
                                 </button>
                             </div>
                         </div>
@@ -153,43 +169,48 @@
                             <div class="tab-pane fade in active" id="tab1">
                               
 
-								<!-- profile detailes-->
 								<div class="container">
-								  <div class="row">
-								    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-								       <div class="well profile">
-								            <div class="col-sm-12">
-								                <div class="col-xs-12 col-sm-8">
-								              
-								                    <p><strong>About: </strong> Grade 12 </p>
-								                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-								                    <p><strong>Subjects: </strong>
-								                        <span class="tags">Mathematics</span> 
-								                        <span class="tags">Physics</span>
-								                        <span class="tags">Chemistry</span>
-								                        <span class="tags">General English</span>
-								                    </p>
-								                </div>             
-								                <div class="col-xs-12 col-sm-4 text-center">
-								                    <figure>
-								                        <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
-								                        
-								                    </figure>
-								                </div>
-								            </div>            
-								            <div class="col-xs-12 divider text-center">
-								                
-								                <div class="col-xs-12 col-sm-4 emphasis">
-								                      
-								                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Edit Profile </button>
-								                </div>
-								                
-								            </div>
-								       </div>                 
-								    </div>
-								  </div>
-								</div>
-						<!-- profile detailes end-->
+                  <div class="row">
+                    <div class="col-md-offset-1 col-md-8 col-lg-offset-1 col-lg-12">
+                       <div class="well profile">
+                            <div class="col-sm-12" style="background-color: ivory">
+                                <div class="col-xs-12 col-sm-10">
+                              
+                                    <p><strong>Positions: </strong> Head prefect </p>
+                                    <p><strong>Address: </strong> 123, tr road, colombo 7.</p>
+                                    <p><strong>Parents/Gardien name: </strong> Mr. Liyanage </p>
+                                    <p><strong>Telephone Number: </strong> 011-2230953 </p>
+                                    <p><strong>Email: </strong> 123@gmail.com </p>
+                                    <p><strong>Siblings: </strong> R. Liyanage </p>
+                                    <p><strong>About: </strong> Grade 12 </p>
+                                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                                    <p><strong>Subjects: </strong>
+                                        <span class="tags">Mathematics</span> 
+                                        <span class="tags">Physics</span>
+                                        <span class="tags">Chemistry</span>
+                                        <span class="tags">General English</span>
+                                    </p>
+                                </div>             
+                                <div class="col-xs-12 col-sm-4 text-center">
+                                    <figure>
+                                        <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+                                        
+                                    </figure>
+                                </div>
+                            </div>            
+                            <div class="col-xs-12 divider text-center">
+                                
+                                <div class="col-xs-12 col-sm-4 emphasis">
+                                      
+                                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> Edit Profile </button>
+                                </div>
+                                
+                            </div>
+                       </div>                 
+                    </div>
+                  </div>
+                </div>
+                                              <!-- profile detailes-->
 
 
 
@@ -197,7 +218,7 @@
                             </div>
                             <div class="tab-pane fade in" id="tab2">
                               <h3>Progress Report</h3>
-                              <img src="images/progress.jpg" style="width: 600px; height: 600px">
+                              <img src="../images/progress.jpg" style="width: 600px; height: 600px">
                             </div>
                             <div class="tab-pane fade in" id="tab3">
                               
@@ -256,10 +277,10 @@
   <!--    js libraries start-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/student_home.js"></script>
-  <script type="text/javascript" src="js/jquery.calendario.js"></script>
-  <script type="text/javascript" src="js/data.js"></script>
-  <script type="text/javascript" src="js/profile.js"></script>
+  <script src="../js/student_home.js"></script>
+  <script type="text/javascript" src="../js/jquery.calendario.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
+  <script type="text/javascript" src="../js/profile.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
             window.alert = function(){};

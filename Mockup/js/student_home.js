@@ -7,6 +7,7 @@ $(document).ready(function(){
     { "subject":"Maths","colour":"purple", "homework":[{"task_title":"Solve Geometry questions in page 24, 25 and page 30", "progress":1}]},
     { "subject":"History","colour":"yellow", "homework":[{"task_title":"Write a paragraph on how french Revolution started and causes for it. Write your opinion about the king and the queens reaction.", "progress":0}]},
     { "subject":"Science","colour":"pink", "homework":[{"task_title":"Blood Circular System", "progress":1},{"task_title":"Digestive System", "progress":0}]},
+    { "subject":"IT","colour":"pink", "homework":[{"task_title":"Python", "progress":1},{"task_title":"Java", "progress":0}]},
     { "subject":"English", "colour":"green", "homework":[{"task_title":"Essay", "progress":0}]}
   ];
   var notifications_sc = [
@@ -96,45 +97,7 @@ $(document).ready(function(){
       }
     });
 
-    //Homework pane Slider
-    var cr_flag=0;
-    $(".slider_cr").click(function(){
-      if(cr_flag==0){
-        cr_flag=1;
-        var realHeight=$('#homework')[0].scrollHeight+10;
-        $("#homework").css({
-          '-webkit-transition': 'height .4s',
-          "height":realHeight
-        });
-      }else{
-        cr_flag=0;
-        $("#homework").css({
-          '-webkit-transition': 'height .4s',
-          "height": '190px'
-        });
-      }
-
-    });
-
-    //Society Anouncement pane Slider
-    var sc_flag=0;
-    $(".slider_sc").click(function(){
-      if(sc_flag==0){
-        sc_flag=1;
-        var realHeight=$('#societyNotification')[0].scrollHeight+10;
-        $("#societyNotification").css({
-          '-webkit-transition': 'height .4s',
-          "height":realHeight
-        });
-      }else{
-        sc_flag=0;
-        $("#societyNotification").css({
-          '-webkit-transition': 'height .4s',
-          "height": '190px'
-        });
-      }
-
-    });
+    
 //Announcements ago function
     function timeSince(date) {
 
@@ -233,7 +196,7 @@ $(document).ready(function(){
 
 //Homework Dashboard list
     var script = document.createElement('script');
-    script.src = "js/svgcheckbx.js";
+    script.src = "../js/svgcheckbx.js";
     script.async = true;
     document.head.appendChild(script);
 
