@@ -8479,6 +8479,7 @@ button.close {
   border-right: 15px solid #C2DFE3;
   float: left;
   padding: 30px;
+  height: auto;
 }
 
 .col2 {
@@ -8597,8 +8598,3 @@ button.close {
   opacity: 1;
   right: 0;
 }
-
-body {
-  background-image: url("/images/background.png") !important;
-}
-

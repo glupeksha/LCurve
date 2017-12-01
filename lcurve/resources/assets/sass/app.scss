@@ -12,14 +12,11 @@
 //layout
 @import "navigation";
 @import "dashboard";
-
-@import "society";
-
-
-
 body{
 	background-image: url("/images/background.png") !important;
 }
 
+
 //subject
+@import "society";
 

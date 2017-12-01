@@ -65,9 +65,23 @@
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+
+                    <!--language switch button starts-->
+
+                    <div class="content">
+                        
+                        <div class="links">
+                            <a href="locale/en">English</a>
+                            <a href="locale/si">Sinhala</a>
+                        </div>
+                    </div>
+
+                    <!--language switch button starts-->
+                    
                     @auth
                         <a href="{{ url('/home') }}">@lang('applang.homeBar')</a>
                     @else
@@ -91,5 +105,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>

@@ -11,11 +11,6 @@
                     <div class="col-lg-2 subjects">
                 	 <div class="subject_icon" style="height:100px; width:100px; background-color: blue;">
                       <img src="{{ $subject->image }}"/>
-
-                      {{ var_dump($subject->image)}}
-
-
-
                       </div>
                       <div>
                       	{{$subject->title}}
