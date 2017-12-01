@@ -12,14 +12,14 @@
 
           <!--Dashboard Left Bar start-->
           <div class="col-lg-9 col1 full">
-            @yield('left-bar')
+            @yield('dash-left')
 
           </div>
           <!--Dashboard Left Bar end-->
 
           <!--Dashboard Right Bar start-->
           <div class="col-lg-3 col2 full">
-            @yield('right-bar')
+            @yield('dash-right')
           </div>
           <!--Dashboard Right Bar end-->
 

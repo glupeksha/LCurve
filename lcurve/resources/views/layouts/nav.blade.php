@@ -84,6 +84,11 @@
 
                     <ul class="dropdown-menu">
                         <li>
+                            
+                            @role('Admin') {{-- Laravel-permission blade helper --}}
+                                <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
+                            @endrole
+
                             <a href="{{route('home')}}">Profile</a>
 
                             <a href="{{ route('logout') }}"
