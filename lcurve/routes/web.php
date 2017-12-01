@@ -27,3 +27,18 @@ Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('announcements', 'AnnouncementController');
+
+//Routes to get locale and set locale
+
+Route::get('locale', function () {
+    return \App::getLocale();
+});
+
+
+Route::get('locale/{locale}', function ($locale) {
+    \Session::put('locale', $locale);
+    return redirect()->back();
+});
+
+Route::view('/welcome', 'welcome');
+
