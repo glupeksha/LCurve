@@ -1,18 +1,19 @@
 <?php  
 
 	return [
+
+
 		// login page
-		'email'=>'E-Mail Address',
-		'password'=>'Password',
+		'emailReq'=>'E-Mail Address',
 		'remember'=>'Remember Me',
 		'loginbutton'=>'Login',
-		'forgot'=>'Forgot Your Password?',
+		'forgotPass'=>'Forgot Your Password?',
 		'loginHeading'=>'Login',
 
 		//register page
 		
-		'Register'=>'Register',
-		'Name'=>'Name',
+		'RegisterReq'=>'Register',
+		'NameReg'=>'Name',
 		'emailReg'=>'E-Mail Address',
 		'passwordReg'=>'Password',
 		'confirmPassword'=>'Confirm Password',
@@ -24,11 +25,11 @@
 		'resetLink'=>'Send Password Reset Link',
 
 		//navbar
-		'home'=>'Home',
-		'classRoom'=>'Class Room',
-		'societies'=>'Societies',
-		'sports'=>'Sports',
-		'profile'=>'Profile',
-		'logout'=>'Logout',
+		'homeBar'=>'Home',
+		'classRoomBar'=>'Class Room',
+		'societiesBar'=>'Societies',
+		'sportsBar'=>'Sports',
+		'profileBar'=>'Profile',
+		'logoutBar'=>'Logout',
 
 	];
