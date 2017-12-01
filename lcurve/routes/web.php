@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/locale/{lang?}', function ($lang=null) {
+	App::setlocale($lang);
+    return view('login');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
