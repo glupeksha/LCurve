@@ -28,4 +28,6 @@ Route::resource('permissions', 'PermissionController');
 
 Route::resource('announcements', 'AnnouncementController');
 
+Route::resource('subjects', 'SubjectController');
+
 Route::resource('societies', 'SocietyController');
