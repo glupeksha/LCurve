@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+
 
 class SubjectController extends Controller
 {
@@ -38,12 +38,6 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
 
-
-        $file = Input::file('image');
-        $img = Image::make($file);
-        Response::make($img->encode('png'));
-
-        var_dump($request['color']);
         //Validating title and content field
         $this->validate($request, [
             'title'=>'required|max:100',
@@ -51,11 +45,11 @@ class SubjectController extends Controller
             'color'=>'required'
             ]);
 
-        
+
 
         $subjects = Subject::create([
             'title'=>$request['title'],
-            'image'=>$img,
+            'image'=>$request['image'],
             'color'=>$request['color']
         ]);
 
@@ -107,8 +101,8 @@ class SubjectController extends Controller
         $subjects->image = $request->input('image');
         $subjects->save();
 
-        return redirect()->route('subjects.show', 
-            $subjects->id)->with('flash_message', 
+        return redirect()->route('subjects.show',
+            $subjects->id)->with('flash_message',
             'Subject, '. $subjects->title.' updated');
     }
 
