@@ -4,6 +4,7 @@
 }
 .dash{
   height: 90%;
+
 }
 .row-border{
   margin-top:31px;
@@ -14,9 +15,10 @@
   background-color: #C2DFE3;
   margin-top: -31px;
   padding-bottom: 31px;
-  z-index: 1;
   border-right: 20px solid #C2DFE3;
   border-left: 20px solid #C2DFE3;
+  overflow: scroll;
+  //height: auto;
 
 }
 
@@ -25,9 +27,9 @@
   background-color: #FAF7FF;
   border: 2px solid #C2DFE3;
   border-right: 15px solid #C2DFE3;
-  z-index: 100;
   float: left;
   padding: 30px;
+  height: auto;
 
 }
 
@@ -36,7 +38,6 @@
   background-color: #FAF7FF;
   float: right;
   border: 2px solid #C2DFE3;
-  z-index: 100;
   padding: 30px;
 
 }
@@ -44,7 +45,6 @@
 .footer{
   margin-top: -31px;
   background-color: #2A3F54;
-  z-index:300;
   bottom:0;
   height: 40px;
 }

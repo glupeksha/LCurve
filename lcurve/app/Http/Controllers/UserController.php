@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -104,8 +105,8 @@ class UserController extends Controller
     //Validate name, email and password fields  
         $this->validate($request, [
             'name'=>'required|max:120',
-            'email'=>'required|email|unique:users,email,'.$id,
-            'password'=>'required|min:6|confirmed'
+            'email'=>'required|email|unique:users,email,'.$user->id,
+            'password'=>'required|min:6|confirmed',
         ]);
         $input = $request->only(['name', 'email', 'password']); //Retreive the name, email and password fields
         $roles = $request['roles']; //Retreive all roles

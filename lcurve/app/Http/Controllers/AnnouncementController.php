@@ -94,13 +94,12 @@ class AnnouncementController extends Controller
             'content'=>'required',
         ]);
 
-        $announcement = Announcement::findOrFail($id);
         $announcement->title = $request->input('title');
         $announcement->content = $request->input('content');
         $announcement->save();
 
-        return redirect()->route('announcements.show', 
-            $announcement->id)->with('flash_message', 
+        return redirect()->route('announcements.show',
+            $announcement->id)->with('flash_message',
             'Article, '. $announcement->title.' updated');
     }
 
