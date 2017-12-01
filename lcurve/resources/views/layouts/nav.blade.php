@@ -21,7 +21,7 @@
                 </a>
             </span>
         </div>
-    
+
         @auth
         <!--Navigation images start-->
         <div class="row container_nav">
@@ -29,12 +29,12 @@
             </div>
             <div class="col-lg-6 tp_mgn">
             <div class="col-lg-12">
-                <a class="td_none" href="student_home.html">
+                <a class="td_none" href="{{ route('home') }}">
                     <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579; " >
 
                         <img src="{{asset('images/navigation/homesm.PNG')}}" class="img-responsive grow image_nav"/>
                         <h6 align="center" class="text_nav">@lang('applang.homeBar')</h6>
-                        
+
                     </div>
                 </a>
                 <a class="td_none" href="student_class_room.html">
@@ -63,7 +63,7 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="col-lg-3">
         </div>
 
@@ -92,7 +92,7 @@
 
                     <ul class="dropdown-menu">
                         <li>
-                            
+
                             @role('Admin') {{-- Laravel-permission blade helper --}}
                                 <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
                             @endrole
