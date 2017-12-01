@@ -12,7 +12,7 @@
                 	 <div class="subject_icon" style="height:100px; width:100px; background-color: blue;">
                       <img src="data:image/png;base64,{{chunk_split(base64_encode($subject->image)) }}"/>
 
-                      {{ var_dump($subject->image)}}
+                      
                       
                           
                         
