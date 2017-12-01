@@ -10,10 +10,11 @@
             {{ Form::model($society, array('route' => array('societies.update', $society->id), 'method' => 'PUT')) }}
         <div class="form-group">
 
-            {{ Form::label('body', 'society Body') }}
-            {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
+            {{ Form::label('content', 'Content') }}
+            {{ Form::textarea('content', null, array('class' => 'form-control')) }}<br>
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+
 
             {{ Form::close() }}
         </div>

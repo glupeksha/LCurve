@@ -20,6 +20,20 @@ class ClearanceSocietyMiddleware
       }
 
       if($request->is('societies/create')){
+        if(Auth::user()->hasPermissionTo('Create About Us')){
+          return $next($request);
+        }
+        abort('401',"You dont have permission");
+      }
+
+      if($request->is('societies/*/edit')){
+        if(Auth::user()->hasPermissionTo('Edit About Us')){
+          return $next($request);
+        }
+        abort('401',"You dont have permission");
+      }
+
+      if($request->is('societies/create')){
         if(Auth::user()->hasPermissionTo('Create Announcement')){
           return $next($request);
         }

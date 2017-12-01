@@ -11,7 +11,7 @@
             <div class="panel-body">
             @foreach ($societies as $society)
                 
-                    <button class="buttonx" >
+                    <button class="buttonstyles" >
                     <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->title }}</b></a>
                     </button>
                 
