@@ -2,18 +2,19 @@
 
 	return [
 
-		'email'=>'විද්‍යුත් තැපෑල',
-		'password'=>'මුරපදය',
+
+		// login page
+		'emailReq'=>'විද්‍යුත් තැපෑල',
 		'remember'=>'මාව මතක තබා ගන්න',
 		'loginbutton'=>'පද්ධතියට ඇතුළුවීම',
-		'forgot'=>'මුරපදය අමතක වුනාද?',
+		'forgotPass'=>'මුරපදය අමතක වුනාද?',
 		'loginHeading'=>'පද්ධතියට ඇතුළුවීම',
 		
 
 		//register page
 		
-		'Register'=>'ලියාපදිංචි වීම',
-		'Name'=>'නම',
+		'RegisterReq'=>'ලියාපදිංචි වීම',
+		'NameReg'=>'නම',
 		'passwordReg'=>'මුරපදය',
 		'confirmPassword'=>'මුරපදය තහවුරු කරන්න',
 		'registerProceed'=>'ලියාපදිංචි වීම',
@@ -24,12 +25,12 @@
 		'resetLink'=>'මුරපදය වෙනස් කිරීමට විද්‍යුත් තැපැල යවන්න',
 
 		//navbar
-		'home'=>'මුල් පිටුව',
-		'classRoom'=>'පංති කාමරය',
-		'societies'=>'පාසැල් සමිති',
-		'sports'=>'ක්‍රීඩා',
-		'profile'=>'මගේ ගිණුම',
-		'logout'=>'පද්ධතියෙන් ඉවත්වන්න',
+		'homeBar'=>'මුල් පිටුව',
+		'classRoomBar'=>'පංති කාමරය',
+		'societiesBar'=>'පාසැල් සමිති',
+		'sportsBar'=>'ක්‍රීඩා',
+		'profileBar'=>'මගේ ගිණුම',
+		'logoutBar'=>'පද්ධතියෙන් ඉවත්වන්න',
 
 
 	];
