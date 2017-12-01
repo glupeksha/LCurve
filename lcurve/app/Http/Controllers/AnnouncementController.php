@@ -94,7 +94,6 @@ class AnnouncementController extends Controller
             'content'=>'required',
         ]);
 
-        //$announcement = Announcement::findOrFail($id);
         $announcement->title = $request->input('title');
         $announcement->content = $request->input('content');
         $announcement->save();
