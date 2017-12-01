@@ -17,7 +17,7 @@
 
             <span class="logo">
                 <a href="{ url('/') }}" class="">
-                    <img class="logo" src="images/logoTrans100.PNG" alt="L'Curve">
+                    <img class="logo" src="{{asset('images/logoTrans100.PNG')}}" alt="L'Curve">
                 </a>
             </span>
         </div>
@@ -31,25 +31,25 @@
             <div class="col-lg-12">
                 <a class="td_none" href="student_home.html">
                     <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579; " >
-                        <img src="images/navigation/homesm.PNG" class="img-responsive grow image_nav"/>
+                        <img src="{{asset('images/navigation/homesm.PNG')}}" class="img-responsive grow image_nav"/>
                         <h6 align="center" class="text_nav">Home</h6>
                     </div>
                 </a>
                 <a class="td_none" href="student_class_room.html">
                     <div class="col-lg-3 item_nav" style="background-color: #E28B12; border-color: #A5660E; ">
-                        <img src="images/navigation/classroomsm.PNG" class="img-responsive grow image_nav"/>
+                        <img src="{{asset('images/navigation/classroomsm.PNG')}}" class="img-responsive grow image_nav"/>
                         <h6 align="center" class="text_nav">Class Room</h6>
                     </div>
                 </a>
                 <a class="td_none" href="student_home.html">
                     <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
-                        <img src="images/navigation/societiessm.PNG" class="img-responsive grow image_nav"/>
+                        <img src="{{asset('images/navigation/societiessm.PNG')}}" class="img-responsive grow image_nav"/>
                         <h6 align="center" class="text_nav">Societies</h6>
                     </div>
                 </a>
                 <a class="td_none" href="student_home.html">
                     <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
-                        <img src="images/navigation/sportssm.PNG" class="img-responsive grow image_nav"/>
+                        <img src="{{asset('images/navigation/sportssm.PNG')}}" class="img-responsive grow image_nav"/>
                         <h6 align="center" class="text_nav">Sports</h6>
                     </div>
                 </a>
