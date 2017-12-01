@@ -26,3 +26,5 @@ Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('announcements', 'AnnouncementController');
+
+Route::resource('societies', 'SocietyController');
