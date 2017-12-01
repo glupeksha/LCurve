@@ -12,3 +12,6 @@
 //layout
 @import "navigation";
 @import "dashboard";
+body{
+	background-image: asset("/images/background.png") !important;
+}

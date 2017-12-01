@@ -8502,3 +8502,7 @@ button.close {
   height: 40px;
 }
 
+body {
+  background-image: asset("/images/background.png") !important;
+}
+
