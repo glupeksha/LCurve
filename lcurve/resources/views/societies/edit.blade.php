@@ -10,7 +10,6 @@
             {{ Form::model($society, array('route' => array('societies.update', $society->id), 'method' => 'PUT')) }}
         <div class="form-group">
 
-
             {{ Form::label('body', 'society Body') }}
             {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
 
