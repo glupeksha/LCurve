@@ -12,8 +12,8 @@
             {{ Form::label('title', 'Title') }}
             {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('body', 'announcement Body') }}
-            {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
+            {{ Form::label('content', 'announcement Body') }}
+            {{ Form::textarea('content', null, array('class' => 'form-control')) }}<br>
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
