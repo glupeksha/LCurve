@@ -31,7 +31,7 @@
 ### Sub color scheme [navigation bar]
 ```markdown
     
-    1abb9c (light green sea)
+    0b9b7e (light green sea)
         navigation bar
 
     2274a5 (lapis lazuli)
@@ -53,3 +53,13 @@
         homework
 ```        
         
+## Composer
+```markdown
+
+composer install
+composer require spatie/laravel-permission
+composer require laravelcollective/html
+
+php artisan key:generate
+
+```

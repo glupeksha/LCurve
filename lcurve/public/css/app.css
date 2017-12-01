@@ -8394,7 +8394,6 @@ button.close {
 
 .tp_mgn {
   margin-top: -9px;
-  z-index: 800;
 }
 
 .td_none,
@@ -8434,9 +8433,6 @@ button.close {
   font-weight: 400;
   font-size: 12px;
   color: #fff;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-  opacity: 0;
 }
 
 .item_nav > img {
@@ -8472,16 +8468,15 @@ button.close {
   background-color: #C2DFE3;
   margin-top: -31px;
   padding-bottom: 31px;
-  z-index: 1;
   border-right: 20px solid #C2DFE3;
   border-left: 20px solid #C2DFE3;
+  overflow: scroll;
 }
 
 .col1 {
   background-color: #FAF7FF;
   border: 2px solid #C2DFE3;
   border-right: 15px solid #C2DFE3;
-  z-index: 100;
   float: left;
   padding: 30px;
 }
@@ -8490,19 +8485,17 @@ button.close {
   background-color: #FAF7FF;
   float: right;
   border: 2px solid #C2DFE3;
-  z-index: 100;
   padding: 30px;
 }
 
 .footer {
   margin-top: -31px;
   background-color: #2A3F54;
-  z-index: 300;
   bottom: 0;
   height: 40px;
 }
 
 body {
-  background-image: asset("/images/background.png") !important;
+  background-image: url("/images/background.png") !important;
 }
 

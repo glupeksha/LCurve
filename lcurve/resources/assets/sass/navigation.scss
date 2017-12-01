@@ -40,7 +40,6 @@
 }
 .tp_mgn{
   margin-top: -9px;
-  z-index: 800;
 
 }
 .td_none, .td_none:hover{
@@ -63,7 +62,7 @@
   background-color: #1abb9c;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0o, 0.2);
-  width: 96px; 
+  width: 96px;
   height: 71px;
 }
 .text_nav {
@@ -72,8 +71,7 @@
   font-weight: 400;
   font-size: 12px;
   color: #fff;
-  transition: .5s ease;
-  opacity: 0;
+
 }
 .item_nav > img{
   height: 30px;

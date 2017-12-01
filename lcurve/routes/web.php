@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,5 +27,7 @@ Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
 
 Route::resource('announcements', 'AnnouncementController');
+
 Route::resource('subjects', 'SubjectController');
 
+Route::resource('societies', 'SocietyController');
