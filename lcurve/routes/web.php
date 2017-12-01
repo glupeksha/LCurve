@@ -27,7 +27,7 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('announcements', 'AnnouncementController');
 Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
-
+Route::resource('sections', 'SectionController');
 
 //Routes to get locale and set locale
 Route::get('locale', function () {
@@ -38,5 +38,3 @@ Route::get('locale/{locale}', function ($locale) {
     return redirect()->back();
 });
 Route::view('/welcome', 'welcome');
-
-

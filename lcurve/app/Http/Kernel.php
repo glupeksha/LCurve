@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
+        'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
     ];
 }

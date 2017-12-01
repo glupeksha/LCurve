@@ -13,10 +13,19 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
+        //Admin Role
         $role=Role::find(1);
+
         $role->givePermissionTo(Permission::create(['name'=>'Administrator Permissions']));
+
+        //Announcements
         $role->givePermissionTo(Permission::create(['name'=>'Create Announcement']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Announcement']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Announcement']));
+
+        //Sections
+        $role->givePermissionTo(Permission::create(['name'=>'Create Section']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Section']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Section']));
     }
 }
