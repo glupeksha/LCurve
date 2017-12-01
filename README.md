@@ -53,3 +53,13 @@
         homework
 ```        
         
+## Composer
+```markdown
+
+composer install
+composer require spatie/laravel-permission
+composer require laravelcollective/html
+
+php artisan key:generate
+
+```
