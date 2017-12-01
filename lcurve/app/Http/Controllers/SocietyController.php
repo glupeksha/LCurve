@@ -86,12 +86,11 @@ class SocietyController extends Controller
     public function update(Request $request, Society $society)
     {
      $this->validate($request, [
-            'title'=>'required|max:100',
+            
             'content'=>'required',
         ]);
 
-        $society =Society::findOrFail($id);
-        $society->title = $request->input('title');
+       
         $society->content = $request->input('content');
         $society->save();
 
