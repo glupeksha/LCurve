@@ -3,3 +3,17 @@ lcurve/app/Providers/AppServiceProvider.php
 lcurve/public/css/app.css
 lcurve/public/css/app.css
 lcurve/public/css/app.css
+
+
+lcurve/node_modules
+lcurve/public/hot
+lcurve/public/storage
+lcurve/storage/*.key
+lcurve/vendors
+lcurve/.idea
+lcurve/.vagrant
+lcurve/Homestead.json
+lcurve/Homestead.yaml
+lcurve/npm-debug.log
+lcurve/yarn-error.log
+lcurve/.env
