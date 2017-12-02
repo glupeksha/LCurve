@@ -12,6 +12,6 @@ class Announcement extends Model
 
     public function announceable()
     {
-      retuen $this->morphTo();
+      return $this->morphTo();
     }
 }

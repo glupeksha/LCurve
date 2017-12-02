@@ -17,6 +17,6 @@ class Society extends Model
 
     public function addAnnouncement(Announcement $announcement)
     {
-    	$announcement->save();
+    	$this->announcements()->save($announcement);
     }
 }

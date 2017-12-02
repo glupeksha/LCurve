@@ -7,15 +7,15 @@
             <div class="panel-heading">
                 <h3>Societies</h3>
             </div>
-          
+
 
             <div class="panel-body">
             @foreach ($societies as $society)
                 <div class="row">
                     <div class="col-lg-8">
-                        <button class="buttonstyles" >
+                        {{--<button class="buttonstyles">--}}
                         <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
-                        </button>
+                        {{--</button>--}}
                     </div>
 
                     <div class="col-lg-4">
@@ -24,19 +24,19 @@
                     @can('Edit Society')
                     <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
                     @endcan
-                    
+
                     @can('Delete Society')
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                     @endcan
                     {!! Form::close() !!}
                     </div>
-                </div>  
-                
+                </div>
+
             @endforeach
             </div>
-             
+
         </div>
-            
+
         <div class="text-center">
             {!! $societies->links() !!}
         </div>
