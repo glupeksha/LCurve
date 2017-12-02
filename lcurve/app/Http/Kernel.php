@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
         'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
         'clearanceSection' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
+        'clearanceForum' => \App\Http\Middleware\ClearanceForumMiddleware::class,
     ];
 }
