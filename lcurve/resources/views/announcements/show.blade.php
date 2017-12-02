@@ -5,7 +5,9 @@
 
     <h1>{{ $announcement->title }}</h1>
     <hr>
+
     <p >{{ $announcement->content }} </p>
+
     <hr>
     {!! Form::open(['method' => 'DELETE', 'route' => ['announcements.destroy', $announcement->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>

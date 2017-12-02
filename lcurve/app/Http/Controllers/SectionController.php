@@ -40,7 +40,7 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-         //Validating title and content field
+         //Validating grade
         $this->validate($request, [
             'grade'=>'required|max:100',
             ]);

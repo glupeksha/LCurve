@@ -34,5 +34,10 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit Section']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Section']));
 
+        //Classroom
+        $role->givePermissionTo(Permission::create(['name'=>'Create ClassRoom']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit ClassRoom']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete ClassRoom']));
+
     }
 }
