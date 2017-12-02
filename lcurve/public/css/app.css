@@ -8480,6 +8480,7 @@ button.close {
   float: left;
   padding: 30px;
   height: auto;
+  min-height: 100%;
 }
 
 .col2 {
@@ -8487,6 +8488,8 @@ button.close {
   float: right;
   border: 2px solid #C2DFE3;
   padding: 30px;
+  min-height: 100%;
+  height: auto;
 }
 
 .footer {
@@ -8494,6 +8497,10 @@ button.close {
   background-color: #2A3F54;
   bottom: 0;
   height: 40px;
+}
+
+body {
+  background-image: url("/images/background.png") !important;
 }
 
 .notify_cr {
@@ -8598,3 +8605,4 @@ button.close {
   opacity: 1;
   right: 0;
 }
+
