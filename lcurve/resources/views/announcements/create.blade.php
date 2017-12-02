@@ -19,6 +19,10 @@
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}
             <br>
 
+            {{ Form::label('subscribe', 'Subscribe content') }}
+            {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}
+            <br>
+
             {{ Form::submit('Create Announcement', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>

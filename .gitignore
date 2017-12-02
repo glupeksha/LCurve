@@ -1,2 +1,5 @@
 lcurve/app/Providers/AppServiceProvider.php
 *.example
+lcurve/public/css/app.css
+lcurve/public/css/app.css
+lcurve/public/css/app.css

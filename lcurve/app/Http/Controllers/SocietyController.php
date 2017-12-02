@@ -36,21 +36,25 @@ class SocietyController extends Controller
      */
     public function store(Request $request)
     {
-               //Validating title and content field
+               //Validating name and other fields
         $this->validate($request, [
-            'title'=>'required|max:100',
+            'name'=>'required|max:100',
             'content' =>'required',
+            'subscribe' =>'required',
+            'color' =>'required',
             ]);
 
-        $title = $request['title'];
+        $name = $request['name'];
         $content = $request['content'];
+        $subscribe = $request['subscribe'];
+        $color = $request['color'];
 
-        $society = Society::create($request->only('title', 'content'));
+        $society = Society::create($request->only('name', 'content','subscribe','color'));
 
     //Display a successful message upon save
         return redirect()->route('societies.index')
             ->with('flash_message', 'Article,
-             '. $society->title.' created');
+             '. $society->name.' created');
     }
 
     /**
@@ -86,17 +90,21 @@ class SocietyController extends Controller
     public function update(Request $request, Society $society)
     {
      $this->validate($request, [
-            
+             'name'=>'required',
             'content'=>'required',
+            'subscribe'=>'required',
+            
         ]);
 
-       
+        $society->name = $request->input('name');
         $society->content = $request->input('content');
+        $society->subscribe = $request->input('subscribe');
+        $color->subscribe = $request->input('color');
         $society->save();
 
         return redirect()->route('societies.show', 
             $society->id)->with('flash_message', 
-            'Article, '. $society->title.' updated');
+            'Article, '. $society->name.' updated');
     }
 
     /**

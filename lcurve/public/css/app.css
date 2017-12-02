@@ -8516,6 +8516,23 @@ body {
   color: #FAF7FF;
 }
 
+.notify_head {
+  height: 30px;
+}
+
+.notify_shead {
+  height: 35px;
+  font-size: 16px;
+  padding-top: 6px !important;
+}
+
+.notify_indi {
+  height: 22px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+}
+
 .buttonstyles {
   display: inline-block;
   border-radius: 4px;

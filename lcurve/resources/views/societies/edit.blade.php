@@ -9,9 +9,19 @@
         <hr>
             {{ Form::model($society, array('route' => array('societies.update', $society->id), 'method' => 'PUT')) }}
         <div class="form-group">
+            {{ Form::label('name', 'Society') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('content', 'Content') }}
+            {{ Form::label('content', 'About Us') }}
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}<br>
+
+
+            {{ Form::label('subscribe', 'Who can subscribe') }}
+            {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}<br>
+
+             {{ Form::label('color', 'Color') }}
+            {{ Form::text('color', null, array('class' => 'form-control')) }}<br>
+
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
