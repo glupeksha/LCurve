@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
         'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
+        'clearanceSection' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
     ];
 }
