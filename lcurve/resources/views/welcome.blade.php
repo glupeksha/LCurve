@@ -73,15 +73,15 @@
                     <!--language switch button starts-->
 
                     <div class="content">
-                        
+
                         <div class="links">
-                            <a href="locale/en">English</a>
-                            <a href="locale/si">Sinhala</a>
+                            <a href="{{url('locale/en')}}">English</a>
+                            <a href="{{url('locale/si')}}">Sinhala</a>
                         </div>
                     </div>
 
                     <!--language switch button starts-->
-                    
+
                     @auth
                         <a href="{{ url('/home') }}">@lang('applang.homeBar')</a>
                     @else
