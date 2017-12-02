@@ -32,12 +32,16 @@ Route::resource('sections', 'SectionController');
 Route::resource('classRooms', 'ClassRoomController');
 Route::resource('forums', 'ForumController');
 
-//Routes to get locale and set locale
+Route::get('locale/{locale}','LocalizationController@index');
+
+/**Routes to get locale and set locale
 Route::get('locale', function () {
     return \App::getLocale();
 });
+Route::get('localization/{locale}','LocalizationController@index');
+
 Route::get('locale/{locale}', function ($locale) {
     \Session::put('locale', $locale);
     return redirect()->back();
-});
+});**/
 Route::view('/welcome', 'welcome');

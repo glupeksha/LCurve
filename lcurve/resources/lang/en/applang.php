@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 	return [
 
@@ -11,7 +11,6 @@
 		'loginHeading'=>'Login',
 
 		//register page
-		
 		'RegisterReq'=>'Register',
 		'NameReg'=>'Name',
 		'emailReg'=>'E-Mail Address',
