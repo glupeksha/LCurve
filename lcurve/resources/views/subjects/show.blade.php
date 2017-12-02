@@ -1,11 +1,14 @@
 @extends('layouts.app')
-
 @section('dash-left')
 
-
-    <h3><img src="{{$subject->image}}"/> {{ $subject->name }}</h3>
-
-    <p>{{ $subject->color }} </p>
+<h3><img src="{{$subject->image}}"/> {{ $subject->name }}</h3>
+<br>
+<div class="col-lg-11">
+    <div class="container" style="border-width: 10px;background-color:{{ $subject->color }};max-height:3px;max-width: 690px;">
+    <br><br>
+    </div>
+</div>
+<br>
 
     {!! Form::open(['method' => 'DELETE', 'route' => ['subjects.destroy', $subject->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
