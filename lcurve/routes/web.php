@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,6 +30,7 @@ Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
 Route::resource('sections', 'SectionController');
 Route::resource('classRooms', 'ClassRoomController');
+Route::resource('forums', 'ForumController');
 
 Route::get('locale/{locale}','LocalizationController@index');
 

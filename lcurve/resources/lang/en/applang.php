@@ -17,6 +17,10 @@
 		'passwordReg'=>'Password',
 		'confirmPassword'=>'Confirm Password',
 		'registerProceed'=>'Register',
+		'languageSelect'=>'Select default language',
+		'chooseEn'=>'  English',
+		'chooseSi'=>'  සිංහල',
+
 
 		// email reset password
 

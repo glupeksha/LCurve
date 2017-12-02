@@ -61,6 +61,38 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group">
+                            <label for="language" class="col-md-4 control-label">@lang('applang.languageSelect')</label>
+
+                            <div class="col-md-6">
+                                
+                            <!--language switch button starts-->
+
+                            <div class="content">
+                                
+                                <div class="links">
+                               @if(\Session::get('locale')=="en")
+                                    <input type="radio" name="en" onclick="window.location='locale/en';" checked />@lang('applang.chooseEn')
+                                @else
+                                    <input type="radio" name="en" onclick="window.location='locale/en';" />@lang('applang.chooseEn')
+                                @endif
+
+                                @if(\Session::get('locale')=="si")
+                                    <input type="radio" name="si" onclick="window.location='locale/si';" checked />@lang('applang.chooseSi')
+                                @else
+                                    <input type="radio" name="si" onclick="window.location='locale/si';" />@lang('applang.chooseSi')
+                                @endif
+                                </div>
+                            </div>
+
+                            <!--language switch button starts-->
+
+                            </div>
+                        </div>
+
+
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

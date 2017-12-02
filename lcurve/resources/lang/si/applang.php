@@ -18,6 +18,9 @@
 		'passwordReg'=>'මුරපදය',
 		'confirmPassword'=>'මුරපදය තහවුරු කරන්න',
 		'registerProceed'=>'ලියාපදිංචි වීම',
+		'languageSelect'=>'භාෂාව තෝරන්න',
+		'chooseSi'=>'  සිංහල',
+		'chooseEn'=>'  English',
 
 		// email reset password
 

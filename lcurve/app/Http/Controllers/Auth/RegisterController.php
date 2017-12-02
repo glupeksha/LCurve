@@ -62,10 +62,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+
+        if($data['en']=='on'){
+            $language='en';
+        }elseif($data['si']=='on'){
+            $language='si';
+        }
+
+        //dd($language);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
+            'language' => $language,
         ]);
     }
 }
