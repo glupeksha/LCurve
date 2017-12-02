@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Image;
 
 
 class SubjectController extends Controller
@@ -38,25 +40,26 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
 
-        //Validating title and content field
+        //Validating name and content field
         $this->validate($request, [
-            'title'=>'required|max:100',
+            'name'=>'required|max:100',
             'image' =>'required',
             'color'=>'required'
             ]);
 
+        //create png image
+        $img=Image::make(Input::file('image'))->encode('png')->encode('data-url');
 
-
-        $subjects = Subject::create([
-            'title'=>$request['title'],
-            'image'=>$request['image'],
+        $subject = Subject::create([
+            'name'=>$request['name'],
+            'image'=>$img,
             'color'=>$request['color']
         ]);
 
-    //Display a successful message upon save
+        //Display a successful message upon save
         return redirect()->route('subjects.index')
             ->with('flash_message', 'subject,
-             '. $subjects->title.' created');
+             '. $subject->name.' created');
     }
 
     /**
@@ -67,7 +70,7 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        //
+        return view('subjects.show',compact('subject'));
     }
 
     /**
@@ -78,7 +81,7 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        return view ('subjects.edit');
+        return view ('subjects.edit',compact('subject'));
     }
 
     /**
@@ -91,19 +94,21 @@ class SubjectController extends Controller
     public function update(Request $request, Subject $subject)
     {
        $this->validate($request, [
-            'title'=>'required|max:100',
+            'name'=>'required|max:100',
             'image'=>'required',
             'color'=>'required',
         ]);
 
-        $subjects = Subject::findOrFail($id);
-        $subjects->title = $request->input('title');
-        $subjects->image = $request->input('image');
-        $subjects->save();
+        //create png image
+        $img=Image::make(Input::file('image'))->encode('png')->encode('data-url');
+
+        $subject->name = $request->input('name');
+        $subject->image = $img;
+        $subject->save();
 
         return redirect()->route('subjects.show',
-            $subjects->id)->with('flash_message',
-            'Subject, '. $subjects->title.' updated');
+            $subject->id)->with('flash_message',
+            'Subject, '. $subject->name.' updated');
     }
 
     /**
