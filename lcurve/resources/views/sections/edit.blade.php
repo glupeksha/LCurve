@@ -5,16 +5,15 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Societies About Us</h1>
+        <h1>Edit Section</h1>
         <hr>
-            {{ Form::model($society, array('route' => array('societies.update', $society->id), 'method' => 'PUT')) }}
+            {{ Form::model($section, array('route' => array('sections.update', $section->id), 'method' => 'PUT')) }}
         <div class="form-group">
+            {{ Form::label('grade', 'Grade') }}
+            {{ Form::text('grade', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('content', 'Content') }}
-            {{ Form::textarea('content', null, array('class' => 'form-control')) }}<br>
-
+            
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-
 
             {{ Form::close() }}
         </div>

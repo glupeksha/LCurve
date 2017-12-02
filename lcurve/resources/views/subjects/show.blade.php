@@ -17,5 +17,5 @@
     @endcan
     {!! Form::close() !!}
 
-
 @endsection
+

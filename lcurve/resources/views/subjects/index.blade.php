@@ -14,12 +14,12 @@
                       <img src="{{$subject->image}}"/>
                       </div>
                       <div>
-                      	{{$subject->name}}
+                      {{$subject->name}}
                       </div>
                     </div>
 									</a>
             		</div>
-            @endforeach
+                @endforeach
         </div>
     </div>
     </div>
