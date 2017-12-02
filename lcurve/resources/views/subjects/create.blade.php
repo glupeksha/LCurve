@@ -11,11 +11,11 @@
         {{ Form::open(array('route' => 'subjects.store', 'files'=>'true')) }}
 
         <div class="form-group">
-            {{ Form::label('title', 'Title') }}
-            {{ Form::text('title', null, array('class' => 'form-control')) }}
+            {{ Form::label('name', 'Name') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}
             <br>
 
-           
+
             {{ Form::label('image', 'Subject Image') }}
             {{ Form::file('image', null, array('class' => 'form-control')) }}
             <br>
@@ -23,7 +23,7 @@
              {{ Form::label('color', 'Color') }}
             {{ Form::color('color', null, array('class' => 'form-control')) }}
             <br>
-            
+
 
 
             {{ Form::submit('Create Subject', array('class' => 'btn btn-success btn-lg btn-block')) }}

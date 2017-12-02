@@ -7,10 +7,10 @@
 
         <h1>Edit Subject</h1>
         <hr>
-            {{ Form::model($subjects, array('route' => array('subjects.update', $subject->id), 'method' => 'PUT')) }}
+            {{ Form::model($subject, array('route' => array('subjects.update', $subject->id), 'method' => 'PUT', 'files'=>'true')) }}
         <div class="form-group">
-            {{ Form::label('title', 'Title') }}
-            {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
+            {{ Form::label('name', 'Name') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}<br>
 
             {{ Form::label('color', 'Color') }}
             {{ Form::text('color', null, array('class' => 'form-control')) }}<br>
