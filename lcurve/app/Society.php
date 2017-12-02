@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Society extends Model
 {
    protected $fillable = [
-        'title', 'content'
+        'name', 'content','subscribe','color'
     ];
      public function announcements()
     {

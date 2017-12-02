@@ -8496,6 +8496,10 @@ button.close {
   height: 40px;
 }
 
+body {
+  background-image: url("/images/background.png") !important;
+}
+
 .notify_cr {
   border: 2px solid #22AED1;
 }
@@ -8507,6 +8511,23 @@ button.close {
 .notify_indi_cr {
   background-color: #22AED1;
   color: #FAF7FF;
+}
+
+.notify_head {
+  height: 30px;
+}
+
+.notify_shead {
+  height: 35px;
+  font-size: 16px;
+  padding-top: 6px !important;
+}
+
+.notify_indi {
+  height: 22px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .buttonstyles {
@@ -8598,3 +8619,4 @@ button.close {
   opacity: 1;
   right: 0;
 }
+
