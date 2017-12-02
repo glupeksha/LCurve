@@ -7,7 +7,8 @@
             About Us
         </div>
         <div class="col-lg-7"></div>
-        @can('Edit Announcement')
+        
+        @can('Edit About Us')
         <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info glyphicon glyphicon-plus-sign " role="button" style="width: 100px; height: 30px;">Edit</a>
         @endcan
 
