@@ -5,8 +5,8 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Subject</h1>
-        <hr>
+        <h3>Edit Subject</h3>
+        <hr style="border-color: {{ $subject->color }};">
             {{ Form::model($subject, array('route' => array('subjects.update', $subject->id), 'method' => 'PUT', 'files'=>'true')) }}
         <div class="form-group">
             {{ Form::label('name', 'Name') }}
