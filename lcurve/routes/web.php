@@ -32,9 +32,11 @@ Route::resource('sections', 'SectionController');
 Route::resource('classRooms', 'ClassRoomController');
 Route::resource('lessons', 'LessonsController');
 Route::resource('forums', 'ForumController');
+Route::resource('sports', 'SportController');
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
+Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 
 Route::get('locale/{locale}','LocalizationController@index');
 
