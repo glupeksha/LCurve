@@ -20,7 +20,7 @@ class ClearanceSocietyMiddleware
       }
 
 
-            if($request->is('societies/*/edit')){
+      if($request->is('societies/*/edit')){
         if(Auth::user()->hasPermissionTo('Edit society')){
           return $next($request);
         }
@@ -51,4 +51,5 @@ class ClearanceSocietyMiddleware
       }
       return $next($request);
     }
+ 
 }
