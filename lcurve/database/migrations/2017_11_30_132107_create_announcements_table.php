@@ -18,8 +18,8 @@ class CreateAnnouncementsTable extends Migration
             $table->string('title');
             $table->text('content');
             $table->date('calanderDate')->nullable($value = true);
-            $table->date('expireDate');
-            $table->morphs('announceable');
+            $table->date('expireDate')->nullable($value = true);
+            $table->nullableMorphs('announceable');
             $table->timestamps();
         });
     }

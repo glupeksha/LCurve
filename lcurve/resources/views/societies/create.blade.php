@@ -19,7 +19,7 @@
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}
             <br>
 
-            
+
             {{ Form::label('subscribe', 'Subscribe content') }}
             {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}
             <br>
