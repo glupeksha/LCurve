@@ -30,6 +30,7 @@
                     
                     </div>
                 </div>
+                <br>
 
                   <!-- Modal - start -->
                   <div class="modal fade" id="myModal" role="dialog">
@@ -39,11 +40,11 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Are you sure you want to delete?</h4>
+                          <h5 class="modal-title">Are you sure you want to delete?</h5>
                         </div>
 
                         <div class="modal-footer">          
-                            {!! Form::submit('OK') !!}
+                            {!! Form::submit('OK',array('class' => 'okbtnstyle')) !!}
                         </div>
                       </div>
                       {!! Form::close() !!}

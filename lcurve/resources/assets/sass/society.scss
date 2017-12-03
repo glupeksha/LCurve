@@ -2,14 +2,29 @@
 .notify_head_cr{
 }
 .notify_cr{
-  border: 2px solid #22AED1;
+  border: 2px solid ;
 }
-.notify_shead_cr{
-  background-color: #22AED1;
-}
+
 .notify_indi_cr{
-  background-color: #22AED1;
   color: #FAF7FF;
+   border: 2px solid ;
+}
+a:link {
+    text-decoration: none;
+}
+.ok-btn-style{
+
+}
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
 
 .notify_head{
@@ -28,6 +43,19 @@
 }
 
 //button styles
+.okbtnstyle{
+  border-radius: 4px;
+  background-color: #75879c;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 8px;
+  width: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
 .buttonstyles{
 
   display: inline-block;

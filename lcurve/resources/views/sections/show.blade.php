@@ -4,9 +4,9 @@
 
 
     <h1>{{ $section->grade }}</h1>
-    <hr>
+    <hr style="border-color:#848991">
     
-    <hr>
+    <hr style="border-color:#848991">
     {!! Form::open(['method' => 'DELETE', 'route' => ['sections.destroy', $section->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
     @can('Edit Section')
