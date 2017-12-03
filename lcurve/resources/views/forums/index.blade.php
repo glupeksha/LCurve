@@ -3,22 +3,30 @@
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
+        <div class="panel panel-default"> 
             <div class="panel-heading">
                 <h3>Questions</h3>
             </div>
             <div class="panel-heading">Page {{ $forums->currentPage() }} of {{ $forums->lastPage() }}
             </div>
             @foreach ($forums as $forum)
+
+             
+      
                 <div class="panel-body">
-                    <li style="list-style-type:disc">
-                        <a href="{{ route('forums.show', $forum->id ) }}"><b>{{ $forum->title }}</b><br>
+                    <div class="panel panel-info">
+                    <li>
+                        <div class="panel-heading">
+                            <a href="{{ route('forums.show', $forum->id ) }}"><b>{{ $forum->title }}</b><br>
+                        </div>
+                        <div class="panel-body">
                             <p class="teaser">
-                               {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}
+                               {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}</a>
                             </p>
-                        </a>
+                        </div>
                     </li>
                 </div>
+             </div>
             @endforeach
         </div>
             
