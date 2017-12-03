@@ -2838,6 +2838,7 @@ return array(
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SessionUpdateTimestampHandlerInterface' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+    'SocietiesTableSeeder' => $baseDir . '/database/seeds/SocietiesTableSeeder.php',
     'Spatie\\Permission\\Commands\\CreatePermission' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
     'Spatie\\Permission\\Commands\\CreateRole' => $vendorDir . '/spatie/laravel-permission/src/Commands/CreateRole.php',
     'Spatie\\Permission\\Contracts\\Permission' => $vendorDir . '/spatie/laravel-permission/src/Contracts/Permission.php',
