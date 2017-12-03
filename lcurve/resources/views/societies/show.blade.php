@@ -53,10 +53,15 @@
 
   <div class="raw">
     <div class="col-lg-12 notify_body notify_body_cr">
-      <a href="{{route('announcements.create',compact($society))}}">Add</a>
+
+      @can('Create Announcement')
+        {{ Form::open(array('action' => array('AnnouncementController@storeUnderSociety', $society))) }}
+        @include('announcements.plug_create')
+      @endcan
+
       @foreach ($society->announcements as $announcement)
-        <h6>$announcement->title</h6>
-        <p>$announcement->content</p>
+        <h6>{{$announcement->title}}</h6>
+        <p>{{$announcement->content}}</p>
       @endforeach
     </div>
   </div>

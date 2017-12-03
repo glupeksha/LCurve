@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Announcement;
 use Illuminate\Http\Request;
+use App\Society;
 
 class AnnouncementController extends Controller
 {
@@ -49,6 +50,22 @@ class AnnouncementController extends Controller
         $content = $request['content'];
 
         $announcement = Announcement::create($request->only('title', 'content'));
+
+    //Display a successful message upon save
+        return redirect()->route('announcements.index')
+            ->with('flash_message', 'Article,
+             '. $announcement->title.' created');
+    }
+
+    public function storeUnderSociety(Society $society)
+    {
+        //Validating title and content field
+        $this->validate(request(), [
+            'title'=>'required|max:100',
+            'content' =>'required',
+            ]);
+
+        $announcement = $society->announcements()->create(request()->only('title', 'content'));
 
     //Display a successful message upon save
         return redirect()->route('announcements.index')

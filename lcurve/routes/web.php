@@ -32,6 +32,9 @@ Route::resource('sections', 'SectionController');
 Route::resource('classRooms', 'ClassRoomController');
 Route::resource('forums', 'ForumController');
 
+//plug announcement
+Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
+
 Route::get('locale/{locale}','LocalizationController@index');
 
 /**Routes to get locale and set locale

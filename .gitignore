@@ -3,8 +3,8 @@ lcurve/app/Providers/AppServiceProvider.php
 lcurve/public/css/app.css
 lcurve/public/css/app.css
 lcurve/public/css/app.css
-
 vendor
+/vendors
 lcurve/node_modules
 lcurve/public/hot
 lcurve/public/storage
