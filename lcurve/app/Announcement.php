@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model
 {
     protected $fillable = [
-        'title', 'content'
+        'title', 'content','announceable_id','announceable_type'
     ];
-    public function society()
+
+    public function announceable()
     {
-        return $this->belongsTo('App\Society');
+      return $this->morphTo();
     }
 }
