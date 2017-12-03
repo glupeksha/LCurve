@@ -27,7 +27,7 @@
         <div class="row container_nav">
             <div class="col-lg-3">
             </div>
-            <div class="col-lg-6 tp_mgn">
+            <div class="col-lg-6 tp_mgn" style="padding-left:60px; padding-right: 60px">
             <div class="col-lg-12">
                 <a class="td_none" href="{{ route('home') }}">
                     <div class="col-lg-3 item_nav" style="background-color: #2274a5; border-color: #195579; " >

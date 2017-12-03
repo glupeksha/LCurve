@@ -8466,11 +8466,11 @@ button.close {
 }
 
 .col-border {
-  background-color: rgba(194, 223, 227, 0.3);
+  background-color: rgba(194, 223, 227, 0.5);
   margin-top: -31px;
   padding-bottom: 31px;
-  border-right: 20px solid rgba(194, 223, 227, 0.3);
-  border-left: 20px solid rgba(194, 223, 227, 0.3);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -8490,7 +8490,7 @@ button.close {
 .col2 {
   background-color: #FAF7FF;
   float: right;
-  border: 2px solid rgba(194, 223, 227, 0.3);
+  border: 2px solid transparent;
   padding: 30px;
   min-height: 100%;
   height: auto;
@@ -8507,6 +8507,7 @@ body {
   background-image: url("/images/background.png") !important;
   max-width: 100%;
   overflow-x: hidden;
+
 }
 
 .notify_cr {

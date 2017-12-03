@@ -68,7 +68,7 @@ class AnnouncementController extends Controller
         $announcement = $society->announcements()->create(request()->only('title', 'content'));
 
     //Display a successful message upon save
-        return redirect()->route('announcements.index')
+        return redirect()->back()
             ->with('flash_message', 'Article,
              '. $announcement->title.' created');
     }
