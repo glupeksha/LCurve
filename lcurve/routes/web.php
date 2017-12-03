@@ -29,6 +29,8 @@ Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
 Route::resource('sections', 'SectionController');
 Route::resource('classRooms', 'ClassRoomController');
+Route::resource('lessons', 'LessonsController');
+
 
 //Routes to get locale and set locale
 Route::get('locale', function () {

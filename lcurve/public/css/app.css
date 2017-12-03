@@ -8496,6 +8496,10 @@ button.close {
   height: 40px;
 }
 
+body {
+  background-image: url("/images/background.png") !important;
+}
+
 .notify_cr {
   border: 2px solid #22AED1;
 }
@@ -8598,3 +8602,4 @@ button.close {
   opacity: 1;
   right: 0;
 }
+
