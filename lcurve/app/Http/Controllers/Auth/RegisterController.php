@@ -62,11 +62,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
 
-        if($data['en']=='on'){
+
+        if(array_key_exists('en',$data)){
             $language='en';
-        }elseif($data['si']=='on'){
+        }elseif(array_key_exists('si',$data)){
             $language='si';
         }
 
