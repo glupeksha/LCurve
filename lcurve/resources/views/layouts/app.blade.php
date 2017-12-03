@@ -28,7 +28,7 @@
                 <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
                 </div>
             </div>
-        @endif 
+        @endif
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 @include ('layouts.errors') {{-- Including error file --}}
@@ -40,14 +40,16 @@
         @auth
             @include('layouts.dashboard')
         @endauth
-        
+
 
     </div>
 
-   
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/calendar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.calendario.js') }}"></script>
     @stack('scripts')
 
 </body>

@@ -19,6 +19,7 @@
 
           <!--Dashboard Right Bar start-->
           <div class="col-lg-3 col2 full">
+            @include('layouts.calendar')
             @yield('dash-right')
           </div>
           <!--Dashboard Right Bar end-->
@@ -31,7 +32,7 @@
       <!--Dashboard Right Margin-->
       <div class="col-lg-1">
       </div>
-      
+
   </div>
 <!--Dashboard end-->
 
