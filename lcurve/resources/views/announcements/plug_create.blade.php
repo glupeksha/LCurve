@@ -9,5 +9,4 @@
     <br>
 
     {{ Form::submit('Create Announcement', array('class' => 'btn btn-success btn-lg btn-block')) }}
-    {{ Form::close() }}
 </div>
