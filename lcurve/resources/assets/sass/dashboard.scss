@@ -9,28 +9,32 @@
 .row-border{
   margin-top:31px;
   height: 95%;
+  overflow-y: scroll;
 }
 
 .col-border{
-  background-color: #C2DFE3;
+  background-color: rgba(194, 223, 227,0.3);
   margin-top: -31px;
   padding-bottom: 31px;
-  border-right: 20px solid #C2DFE3;
-  border-left: 20px solid #C2DFE3;
-  overflow: scroll;
-  //height: auto;
+  border-right: 20px solid rgba(194, 223, 227,0.3);
+  border-left: 20px solid rgba(194, 223, 227,0.3);
+  max-width: 100%;
+  overflow-x: hidden;
 
 }
 
 //dashboard left bar
 .col1{
   background-color: #FAF7FF;
-  border: 2px solid #C2DFE3;
-  border-right: 15px solid #C2DFE3;
+  border: 2px solid rgba(194, 223, 227,0.3);
+  border-right: 15px solid rgba(194, 223, 227,0.3);
   float: left;
   padding: 30px;
   height: auto;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
 
 }
 
@@ -38,7 +42,7 @@
 .col2{
   background-color: #FAF7FF;
   float: right;
-  border: 2px solid #C2DFE3;
+  border: 2px solid rgba(194, 223, 227,0.3);
   padding: 30px;
   min-height: 100%;
   height: auto;

@@ -4,12 +4,12 @@ lcurve/public/css/app.css
 lcurve/public/css/app.css
 lcurve/public/css/app.css
 
-
+vendor
 lcurve/node_modules
 lcurve/public/hot
 lcurve/public/storage
 lcurve/storage/*.key
-lcurve/vendors
+lcurve/vendor
 lcurve/.idea
 lcurve/.vagrant
 lcurve/Homestead.json
@@ -17,3 +17,6 @@ lcurve/Homestead.yaml
 lcurve/npm-debug.log
 lcurve/yarn-error.log
 lcurve/.env
+lcurve/package.json
+lcurve/package-lock.json
+lcurve/public/mix-manifest.json
