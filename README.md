@@ -59,6 +59,7 @@
 composer install
 composer require spatie/laravel-permission
 composer require laravelcollective/html
+composer require intervention/image
 
 php artisan key:generate
 

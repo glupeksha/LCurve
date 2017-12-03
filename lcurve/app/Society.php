@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Society extends Model
 {
    protected $fillable = [
-        'title', 'content'
+        'name', 'content','subscribe','color'
     ];
+
      public function announcements()
     {
-        return $this->hasMany('App\Announcement');
+        return $this->morphMany('App\Announcement','announceable');
     }
+
     public function addAnnouncement(Announcement $announcement)
     {
-    	$announcement->save();
+    	$this->announcements()->save($announcement);
     }
 }

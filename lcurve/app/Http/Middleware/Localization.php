@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Session;
 use Closure;
 use Carbon\Carbon;
-
-
+use Illuminate\Support\Facades\App;
+use Auth;
 
 
 class Localization
@@ -19,14 +20,16 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
-
-        if ( \Session::has('locale')) {
-            \App::setLocale(\Session::get('locale'));
+        if ( Session::has('locale')) {
+            App::setLocale(Session::get('locale'));
 
             // You also can set the Carbon locale
-            Carbon::setLocale(\Session::get('locale'));
+            Carbon::setLocale(Session::get('locale'));
         }
-
+        
+        if(Auth::user()){
+          App::setLocale(Auth::user()->language);
+        }
         return $next($request);
     }
 }

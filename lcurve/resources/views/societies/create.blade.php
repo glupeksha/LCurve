@@ -11,12 +11,21 @@
         {{ Form::open(array('route' => 'societies.store')) }}
 
         <div class="form-group">
-            {{ Form::label('title', 'Title') }}
-            {{ Form::text('title', null, array('class' => 'form-control')) }}
+            {{ Form::label('name', 'Name') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}
             <br>
 
             {{ Form::label('content', 'Society About Us') }}
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}
+            <br>
+
+            
+            {{ Form::label('subscribe', 'Subscribe content') }}
+            {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}
+            <br>
+
+             {{ Form::label('color', 'Color') }}
+            {{ Form::color('color', null, array('class' => 'form-control')) }}
             <br>
 
             {{ Form::submit('Create Society', array('class' => 'btn btn-success btn-lg btn-block')) }}

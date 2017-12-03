@@ -26,7 +26,10 @@ class PermissionsTableSeeder extends Seeder
         //Society
         $role->givePermissionTo(Permission::create(['name'=>'Create About Us']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit About Us']));
-
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'Stay Before Delete']));
+        
         //Sections
         $role->givePermissionTo(Permission::create(['name'=>'Create Section']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Section']));
@@ -37,11 +40,15 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassRoom']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete ClassRoom']));
 
-
-
         //lessons
         $role->givePermissionTo(Permission::create(['name'=>'Create Lesson']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Lesson']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Lesson']));
+
+        //Forum
+        $role->givePermissionTo(Permission::create(['name'=>'Create Forum']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Forum']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Forum']));
+
     }
 }

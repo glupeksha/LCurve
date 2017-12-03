@@ -37,7 +37,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="student_class_room.html">
+                <a class="td_none" href="{{url('/subjects')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #E28B12; border-color: #A5660E; ">
 
                         <img src="{{asset('images/navigation/classroomsm.PNG')}}" class="img-responsive grow image_nav"/>
@@ -45,7 +45,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="student_home.html">
+                <a class="td_none" href="{{url('/societies')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
 
                         <img src="{{asset('images/navigation/societiessm.PNG')}}" class="img-responsive grow image_nav"/>

@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+
     ];
 
     /**
@@ -61,7 +62,8 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
         'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
-        'clearanceSection' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
         'clearanceLesson' => \App\Http\Middleware\ClearanceLessonMiddleware::class,
+        'clearanceClassRoom' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
+        'clearanceForum' => \App\Http\Middleware\ClearanceForumMiddleware::class,
     ];
 }
