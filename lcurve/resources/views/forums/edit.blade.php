@@ -17,9 +17,8 @@
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
-            {{ Form::close() }}
-        </div>
+            {{ Form::close() ,R        </div>
     </div>
 </div>
 
-@endsection
+@endsection+
