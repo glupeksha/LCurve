@@ -14,6 +14,6 @@ class LocalizationController extends Controller {
       Session::put('locale',$locale);
       //dd(App::getLocale());
 
-      return view('welcome');
+      return back();
    }
 }
