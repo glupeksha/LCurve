@@ -1,6 +1,14 @@
 @extends('layouts.app')
 @section('dash-left')
 
+
+<br>
+<div class="col-lg-12">
+    <div class="container" style="border-width: 30px;background-color:{{ $society->color }};max-height:3px;max-width: 720px;">
+    <br><br>
+    </div>
+</div>
+<br>
 {{-- About Us--}}
 <div class="col-lg-12 notify_cr" style="margin-bottom: 20px;">
     <div class="col-lg-12 notify_head notify_head_cr">
