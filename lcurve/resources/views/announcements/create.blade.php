@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h1>Create New Announcement</h1>
+        <h3>Create New Announcement</h3>
         <hr>
 
     {{-- Using the Laravel HTML Form Collective to create our form --}}
