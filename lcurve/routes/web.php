@@ -44,3 +44,4 @@ Route::get('/events/calendar', 'EventController@showCalendar');
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
+Route::view('/profile', 'users.profile');
