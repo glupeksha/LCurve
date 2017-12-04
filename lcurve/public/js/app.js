@@ -42917,7 +42917,7 @@ if (false) {
 /* 42 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import \"role\";\r\n^\r\n      File to import not found or unreadable: C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\resources\\assets\\sass\\role.scss.\nParent style sheet: stdin\r\n      in C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\resources\\assets\\sass\\app.scss (line 24, column 1)\n    at runLoaders (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\async\\dist\\async.js:2257:31)\n    at Object.callback (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\async\\dist\\async.js:958:16)\n    at options.error (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ }),
 /* 43 */

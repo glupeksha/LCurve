@@ -27,13 +27,33 @@
                     <td>{{ str_replace(array('[',']','"'),'', $role->permissions()->pluck('name')) }}</td>{{-- Retrieve array of permissions associated to a role and convert to string --}}
                     <td>
                     <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
+                    
+                    @can('Delete Role')
+                    <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+                    @endcan                  
 
                     </td>
                 </tr>
+
+                 <!-- Modal - start -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                     {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h5 class="modal-title">Are you sure you want to delete?</h5>
+                        </div>
+
+                        <div class="modal-footer">                           
+                            {!! Form::submit('OK') !!}
+                        </div>
+                      </div>
+                      {!! Form::close() !!}
+                    </div>
+                  </div>
+                <!-- Modal - end -->
                 @endforeach
             </tbody>
 
