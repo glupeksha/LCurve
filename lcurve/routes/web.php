@@ -33,10 +33,12 @@ Route::resource('classRooms', 'ClassRoomController');
 Route::resource('lessons', 'LessonsController');
 Route::resource('forums', 'ForumController');
 Route::resource('sports', 'SportController');
+Route::resource('events', 'EventController');
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
+Route::get('/events/calendar', 'EventController@showCalendar');
 
 Route::get('locale/{locale}','LocalizationController@index');
 
