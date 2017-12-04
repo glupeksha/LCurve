@@ -20,6 +20,7 @@ class CreateAnnouncementsTable extends Migration
             $table->date('calanderDate')->nullable($value = true);
             $table->date('expireDate')->nullable($value = true);
             $table->nullableMorphs('announceable');
+            $table->unsignedInteger('event_id');
             $table->timestamps();
         });
     }

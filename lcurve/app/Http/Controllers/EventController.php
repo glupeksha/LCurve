@@ -62,8 +62,14 @@ class EventController extends Controller
 		      'firstDay' => 1,
           'height' => 'auto',
           'themeSystem' => 'bootstrap3',
-          'columnHeader' => false,
-          'aspectRatio' => 1
+          'aspectRatio' => 1,
+          'footer' => true,
+          'header' => [
+              'left' => 'title',
+              'center' => '',
+              'right' =>  'today prev,next'
+          ]
+
       ]);
       return view('events.calendar', compact('calendar'));
       //return view('events.index');

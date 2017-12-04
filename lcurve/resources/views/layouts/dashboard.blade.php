@@ -19,7 +19,6 @@
 
           <!--Dashboard Right Bar start-->
           <div class="col-lg-3 col2 full">
-          
             @yield('dash-right')
           </div>
           <!--Dashboard Right Bar end-->

@@ -963,8 +963,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-__webpack_require__(42);
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(42);
 
 
 /***/ }),
@@ -18124,9 +18123,9 @@ if (token) {
 
     // Define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module.
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
       return _;
-    }).call(exports, __webpack_require__, exports, module),
+    }.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
@@ -28389,9 +28388,9 @@ jQuery.nodeName = nodeName;
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
 		return jQuery;
-	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -42710,7 +42709,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/components/ExampleComponent.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -42720,9 +42719,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
+    hotAPI.createRecord("data-v-7168fb6a", Component.options)
   } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
+    hotAPI.reload("data-v-7168fb6a", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -42909,18 +42908,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7168fb6a", module.exports)
   }
 }
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import \"role\";\r\n^\r\n      File to import not found or unreadable: C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\resources\\assets\\sass\\role.scss.\nParent style sheet: stdin\r\n      in C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\resources\\assets\\sass\\app.scss (line 24, column 1)\n    at runLoaders (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\async\\dist\\async.js:2257:31)\n    at Object.callback (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\async\\dist\\async.js:958:16)\n    at options.error (C:\\Users\\Warunika\\Documents\\GitHub\\GroupProject\\lcurve\\node_modules\\node-sass\\lib\\index.js:294:32)");
-
-/***/ }),
-/* 43 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
