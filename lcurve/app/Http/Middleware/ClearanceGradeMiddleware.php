@@ -3,10 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
 use Illuminate\Support\Facades\Auth;
 
-class ClearanceAnnouncementMiddleware
+class ClearanceGradeMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,28 +16,31 @@ class ClearanceAnnouncementMiddleware
      */
     public function handle($request, Closure $next)
     {
-      
+       if(Auth::user()->hasPermissionTo('Administrator Permissions')){
+        return $next($request);
+      }
 
-      if($request->is('announcements/create')){
-        if(Auth::user()->hasPermissionTo('Create Announcement')){
+      if($request->is('grades/create')){
+        if(Auth::user()->hasPermissionTo('Create Grade')){
           return $next($request);
         }
         abort('401',"You dont have permission");
       }
 
-      if($request->is('announcements/*/edit')){
-        if(Auth::user()->hasPermissionTo('Edit Announcement')){
+      if($request->is('grades/*/edit')){
+        if(Auth::user()->hasPermissionTo('Edit Grade')){
           return $next($request);
         }
         abort('401',"You dont have permission");
       }
 
       if($request->isMethod('Delete')){
-        if(Auth::user()->hasPermissionTo('Delete Announcement')){
+        if(Auth::user()->hasPermissionTo('Delete Grade')){
           return $next($request);
         }
         abort('401',"You dont have permission");
       }
       return $next($request);
+    
     }
 }

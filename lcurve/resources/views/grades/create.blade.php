@@ -8,15 +8,15 @@
         <hr style="border-color:#848991">
 
     {{-- Using the Laravel HTML Form Collective to create our form --}}
-        {{ Form::open(array('route' => 'sections.store')) }}
+        {{ Form::open(array('route' => 'grades.store')) }}
 
         <div class="form-group">
-            {{ Form::label('grade', 'Grade') }}
-            {{ Form::text('grade', null, array('class' => 'form-control')) }}
+            {{ Form::label('name', 'Grade') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}
             <br>
 
 
-            {{ Form::submit('Create Section', array('class' => 'btn btn-success btn-lg btn-block')) }}
+            {{ Form::submit('Create Grade', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>
         </div>

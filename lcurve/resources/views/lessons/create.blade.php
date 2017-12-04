@@ -27,7 +27,7 @@
 
 @endsection
 @push('styles')
-
+<!--java script files for editor-->
     <script src="{{asset('js/tinymce/jquery.tinymce.min.js')}}"></script>
     <script src="{{asset('js/tinymce/tinymce.min.js')}}"></script>
     <script>

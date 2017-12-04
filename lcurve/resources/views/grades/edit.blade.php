@@ -5,12 +5,12 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Section</h1>
+        <h1>Edit Grade</h1>
         <hr>
-            {{ Form::model($section, array('route' => array('sections.update', $section->id), 'method' => 'PUT')) }}
+            {{ Form::model($grade, array('route' => array('grades.update', $grade->id), 'method' => 'PUT')) }}
         <div class="form-group">
-            {{ Form::label('grade', 'Grade') }}
-            {{ Form::text('grade', null, array('class' => 'form-control')) }}<br>
+            {{ Form::label('name', 'Grade') }}
+            {{ Form::text('name', null, array('class' => 'form-control')) }}<br>
 
             
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
