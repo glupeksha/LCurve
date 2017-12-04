@@ -5,8 +5,8 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Announcement</h1>
-        <hr>
+        <h3>Edit Announcement</h3>
+          <hr style="border-color:#848991">
             {{ Form::model($announcement, array('route' => array('announcements.update', $announcement->id), 'method' => 'PUT')) }}
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
