@@ -39,3 +39,4 @@ Route::post('/societies/{society}/announcements','AnnouncementController@storeUn
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
+Route::view('/profile', 'users.profile');
