@@ -9,11 +9,10 @@
             </div>
 
             @foreach ($sections as $section)
-                <div class="panel-body">
-                    <li style="list-style-type:disc">
-                        <a href="{{ route('sections.show', $section->id ) }}"><b>{{ $section->grade }}</b>
-                        </a>
-                    </li>
+                <div class="panel-body">                    
+                    <a href="{{ route('sections.show', $section->id ) }}"><b>{{ $section->grade }}</b>
+                    </a>
+                    
                 </div>
             @endforeach
         </div>
