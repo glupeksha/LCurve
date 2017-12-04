@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Announcement;
 use Illuminate\Http\Request;
 use App\Society;
+use App\Sport;
 
 class AnnouncementController extends Controller
 {
@@ -68,10 +69,28 @@ class AnnouncementController extends Controller
         $announcement = $society->announcements()->create(request()->only('title', 'content'));
 
     //Display a successful message upon save
-        return redirect()->route('announcements.index')
+        return redirect()->back()
             ->with('flash_message', 'Article,
              '. $announcement->title.' created');
     }
+
+
+    public function storeUnderSport(Sport $sport)
+    {
+        //Validating title and content field
+        $this->validate(request(), [
+            'title'=>'required|max:100',
+            'content' =>'required',
+            ]);
+
+        $announcement = $sport->announcements()->create(request()->only('title', 'content'));
+
+    //Display a successful message upon save
+        return redirect()->route('sports.index')
+            ->with('flash_message', 'Article,
+             '. $announcement->title.' created');
+    }
+    
 
     /**
      * Display the specified resource.

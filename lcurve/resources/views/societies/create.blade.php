@@ -4,8 +4,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h1>Create New Society</h1>
-        <hr>
+        <h3>Create New Society</h3>
+        <hr style="border-color:#848991">
 
     {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{ Form::open(array('route' => 'societies.store')) }}
@@ -19,7 +19,7 @@
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}
             <br>
 
-            
+
             {{ Form::label('subscribe', 'Subscribe content') }}
             {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}
             <br>

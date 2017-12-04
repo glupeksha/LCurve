@@ -104,6 +104,7 @@ class SubjectController extends Controller
 
         $subject->name = $request->input('name');
         $subject->image = $img;
+        $subject->color = $request->input('color');
         $subject->save();
 
         return redirect()->route('subjects.show',
@@ -119,6 +120,10 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+
+        return redirect()->route('subjects.index')
+            ->with('flash_message',
+             'Article successfully deleted');
     }
 }
