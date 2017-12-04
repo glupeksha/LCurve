@@ -5,8 +5,8 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Class Room</h1>
-        <hr>
+        <h3>Edit Class Room</h3>
+         <hr style="border-color:#848991">
             {{ Form::model($classRoom, array('route' => array('classRooms.update', $classRoom->id), 'method' => 'PUT')) }}
         <div class="form-group">
             {{ Form::label('grade_id', 'Grade') }}
@@ -15,7 +15,8 @@
             {{ Form::label('name', 'Name Of The Class') }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+        <div class="col-lg-10"></div>
+            {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
 
             {{ Form::close() }}
         </div>

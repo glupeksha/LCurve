@@ -84,11 +84,11 @@ class ClassRoomController extends Controller
 
         //validating class Room
         $this->validate($request, [
-            'grade'=>'required|max:100',
+            'grade_id'=>'required|max:100',
             'name'=>'required',
         ]);
 
-        $classRoom->grade = $request->input('grade');
+        $classRoom->grade_id = $request->input('grade_id');
         $classRoom->name = $request->input('name');
         $classRoom->save();
 
