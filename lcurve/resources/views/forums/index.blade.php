@@ -7,7 +7,7 @@
             <div class="panel-heading"  >
                 <h3>Questions</h3>
             </div>
-            <div class="panel-heading" >Page {{ $forums->currentPage() }} of {{ $forums->lastPage() }}
+             <div class="panel-heading" style="background-color: #d9dbaa; border-color: #d9dbaa !important">Page {{ $forums->currentPage() }} of {{ $forums->lastPage() }}
             </div>
 
             @foreach ($forums as $forum)         
