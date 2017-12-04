@@ -5,14 +5,14 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Sections</h3>
+                <h3>Grades</h3>
             </div>
-            <div class="panel-heading">Page {{ $sections->currentPage() }} of {{ $sections->lastPage() }}
+            <div class="panel-heading">Page {{ $grades->currentPage() }} of {{ $grades->lastPage() }}
             </div>
-            @foreach ($sections as $section)
+            @foreach ($grades as $grade)
                 <div class="panel-body">
                     <li style="list-style-type:disc">
-                        <a href="{{ route('sections.show', $section->id ) }}"><b>{{ $section->grade }}</b>
+                        <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
                         </a>
                     </li>
                 </div>
@@ -20,10 +20,14 @@
         </div>
             
         <div class="text-center">
-            {!! $sections->links() !!}
+            {!! $grades->links() !!}
         </div>
     </div>
 </div>
+
+ @can('Create Grade')
+    <a href="{{ route('grades.create') }}" class="btn btn-info" role="button">Add</a>
+    @endcan
 
 
 @endsection

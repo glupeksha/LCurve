@@ -5,7 +5,7 @@
     <div class="container" style="border:solid; width: 300px;">
         <br>
         <li style="list-style-type:disc"><lable><b>Grade :</b></lable>
-        {{ $classRoom->grade }}
+        {{ $classRoom->grade->name }}
         </li>
         <hr>
         <li style="list-style-type:disc"><lable><b>Name Of The class :</b></lable>

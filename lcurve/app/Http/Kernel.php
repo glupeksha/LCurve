@@ -61,9 +61,10 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
-        'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
+        'clearanceGrade' => \App\Http\Middleware\ClearanceGradeMiddleware::class,
         'clearanceLesson' => \App\Http\Middleware\ClearanceLessonMiddleware::class,
         'clearanceClassRoom' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
         'clearanceForum' => \App\Http\Middleware\ClearanceForumMiddleware::class,
+        'clearanceClassSubject' => \App\Http\Middleware\ClearanceClassSubjectMiddleware::class,
     ];
 }

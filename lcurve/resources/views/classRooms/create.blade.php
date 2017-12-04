@@ -12,8 +12,8 @@
 
         <div class="form-group">
 
-            {{ Form::label('grade', 'Grade') }}
-            {{ Form::text('grade', null, array('class' => 'form-control')) }}
+            {{ Form::label('grade_id', 'Grade') }}
+            {{ Form::text('grade_id', null, array('class' => 'form-control')) }}
 
             <br>
             {{ Form::label('name', 'Class Name') }}

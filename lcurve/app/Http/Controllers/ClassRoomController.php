@@ -14,8 +14,8 @@ class ClassRoomController extends Controller
      */
     public function index()
     {
-        $classRoom = ClassRoom::orderby('id','desc')->paginate(5);
-        return view('classRooms.index',compact('classRoom'));
+        $classRooms = ClassRoom::orderby('id','desc')->paginate(5);
+        return view('classRooms.index',compact('classRooms'));
     }
 
     /**
@@ -36,16 +36,13 @@ class ClassRoomController extends Controller
      */
     public function store(Request $request)
     {
-        //Validating grade
+        //Validating class Room
         $this->validate($request, [
-            'grade'=>'required|max:100',
+            'grade_id'=>'required|max:100',
             'name'=>'required',
             ]);
-
-        $grade = $request['grade'];
-        $name = $request['name'];
         
-        $classRooms = ClassRoom::create($request->only('grade','name'));
+        $classRooms = ClassRoom::create($request->only('grade_id','name'));
 
     //Display a successful message upon save
         return redirect()->route('classRooms.index')
@@ -84,6 +81,8 @@ class ClassRoomController extends Controller
      */
     public function update(Request $request, ClassRoom $classRoom)
     {
+
+        //validating class Room
         $this->validate($request, [
             'grade'=>'required|max:100',
             'name'=>'required',

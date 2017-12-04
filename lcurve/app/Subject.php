@@ -14,4 +14,9 @@ class Subject extends Model
    {
        return $this->morphMany('App\Announcement','announceable');
    }
+
+   public function classSubject()
+    {
+        return $this->hasMany('App\ClassSubject');
+    }
 }

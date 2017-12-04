@@ -28,10 +28,11 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('announcements', 'AnnouncementController');
 Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
-Route::resource('sections', 'SectionController');
+Route::resource('grades', 'GradeController');
 Route::resource('classRooms', 'ClassRoomController');
 Route::resource('lessons', 'LessonsController');
 Route::resource('forums', 'ForumController');
+Route::resource('classSubjects', 'ClassSubjectController');
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
