@@ -14,6 +14,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         {{--<button class="buttonstyles">--}}
+                         <div class="col-lg-2"></div>
                         <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
                         {{--</button>--}}
                     </div>
@@ -44,14 +45,13 @@
                         </div>
 
                         <div class="modal-footer">          
-                            {!! Form::submit('OK',array('class' => 'okbtnstyle')) !!}
+                            {!! Form::submit('OK') !!}
                         </div>
                       </div>
                       {!! Form::close() !!}
                     </div>
                   </div>
                 <!-- Modal - end -->
-
             @endforeach
             </div>
 

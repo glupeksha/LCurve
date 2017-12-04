@@ -119,6 +119,6 @@ class SocietyController extends Controller
 
         return redirect()->route('societies.index')
             ->with('flash_message',
-             'Article successfully deleted');
+             'Society successfully deleted');
     }
 }

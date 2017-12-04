@@ -21,7 +21,6 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();//Get all roles
-
         return view('roles.index')->with('roles', $roles);
     }
 
@@ -33,7 +32,6 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all();//Get all permissions
-
         return view('roles.create', ['permissions'=>$permissions]);
     }
 
@@ -141,6 +139,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+
         //$role = Role::findOrFail($id);
         $role->delete();
 
