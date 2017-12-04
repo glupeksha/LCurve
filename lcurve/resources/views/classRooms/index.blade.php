@@ -7,9 +7,10 @@
             <div class="panel-heading">
                 <h3>Class Rooms</h3>
             </div>
-            <div class="panel-heading">Page {{ $classRooms->currentPage() }} of {{ $classRooms->lastPage() }}
+             <div class="panel-heading" style="background-color: #d9dbaa; border-color: #d9dbaa !important">Page {{ $classRooms->currentPage() }} of {{ $classRooms->lastPage() }}
             </div>
             @foreach ($classRooms as $classRoom)
+             <div class="panel-body panel-heading"> 
                 <div class="panel-body">
                     <li style="list-style-type:disc">
                         <a href="{{ route('classRooms.show', $classRoom->id ) }}">
@@ -18,6 +19,7 @@
                         <br>
                         </a>
                     </li>
+                </div>
                 </div>
             @endforeach
         </div>
@@ -32,7 +34,8 @@
         </div>
 
 @can('Create ClassRoom')
-    <a href="{{ route('classRooms.create') }}" class="btn btn-info" role="button">Add ClassRoom</a>
+<div class="col-lg-9"></div>
+    <a href="{{ route('classRooms.create') }}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Add ClassRoom</a>
     @endcan
 
 
