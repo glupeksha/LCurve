@@ -9,24 +9,21 @@
             </div>
             <div class="panel-heading">Page {{ $forums->currentPage() }} of {{ $forums->lastPage() }}
             </div>
-            @foreach ($forums as $forum)
 
-             
-      
+            @foreach ($forums as $forum)         
                 <div class="panel-body">
-                    <div class="panel panel-info">
-                    <li>
+                    <div class="panel panel-info">                    
                         <div class="panel-heading">
-                            <a href="{{ route('forums.show', $forum->id ) }}"><b>{{ $forum->title }}</b><br>
+                            <a href="{{ route('forums.show', $forum->id ) }}"><b>{{ $forum->title }}</b></a>
+                        <br>
                         </div>
                         <div class="panel-body">
                             <p class="teaser">
-                               {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}</a>
+                               {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}
                             </p>
-                        </div>
-                    </li>
+                        </div>                 
+                    </div>
                 </div>
-             </div>
             @endforeach
         </div>
             
