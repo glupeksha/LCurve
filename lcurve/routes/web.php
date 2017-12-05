@@ -40,7 +40,6 @@ Route::resource('events', 'EventController');
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 Route::get('/events/calendar', 'EventController@showCalendar');
-
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
