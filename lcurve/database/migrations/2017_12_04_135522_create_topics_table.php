@@ -15,8 +15,9 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('seqNo');
-            $table->unsignedInteger('level');
+            $table->unsignedInteger('class_subject_id');
+            $table->unsignedInteger('seqNo')->default(1);
+            $table->unsignedInteger('level')->default(0);
             $table->string('name');
             $table->timestamps();
         });

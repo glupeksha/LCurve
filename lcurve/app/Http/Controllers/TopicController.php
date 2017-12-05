@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Topic;
+use App\ClassSubject;
 use Illuminate\Http\Request;
 
 class TopicController extends Controller
@@ -33,9 +34,18 @@ class TopicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClassSubject $classSubject)
     {
-        //
+      $this->validate(request(), [
+          'name'=>'required|max:100',
+          ]);
+
+          $topic = $classSubject->topics()->create(request()->only('name'));
+
+      //Display a successful message upon save
+          return redirect()->back()
+              ->with('flash_message', 'Article,
+               '. $topic->name.' created');
     }
 
     /**

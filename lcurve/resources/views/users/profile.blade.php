@@ -12,7 +12,7 @@
 
             <div class="panel-body">
 
-            	{{Auth::user()->name}}
+            {{Auth::user()->name}}
 			<br>{{Auth::user()->email}}
 			<br>{{Auth::user()->password}}
 			<br>{{Auth::user()->language}}

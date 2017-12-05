@@ -5,13 +5,12 @@
 <div class="panel panel-default">
         <div class="panel-body panel-heading"> 
     <h3>{{ $grade->name }}</h3>
-    <hr style="border-color:#848991">
-    
+    <hr style="border-color:#848991">    
     <hr style="border-color:#848991">
     
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
     @can('Edit Grade')
-    <a href="{{ route('grades.edit', $grade->id) }}" class="btn btn-info" role="button">Edit</a>
+    <a href="{{ route('grades.edit', $grade) }}" class="btn btn-info" role="button">Edit</a>
     @endcan
      @can('Delete Grade')
         <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>

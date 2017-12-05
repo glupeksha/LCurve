@@ -24,5 +24,13 @@ class ClassSubject extends Model
     {
         return $this->belongsTo('App\User','teacher_id','id');
     }
+    public function topics()
+    {
+        return $this->hasMany('App\Topic');
+    }
+    public function topicSeq()
+    {
+      return $this->topics()->orderBy('seqNo')->get();
+    }
 
 }
