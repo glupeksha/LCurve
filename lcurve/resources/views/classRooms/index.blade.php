@@ -11,14 +11,13 @@
             </div>
             @foreach ($classRooms as $classRoom)
              <div class="panel-body panel-heading"> 
-                <div class="panel-body">
-                    <li style="list-style-type:disc">
-                        <a href="{{ route('classRooms.show', $classRoom->id ) }}">
+                <div class="panel-body">    
+                <div class="col-lg-1"></div>               
+                        <a href="{{ route('classRooms.show', $classRoom->id ) }}" style="font: sans-serif;">
                         <b>{{ $classRoom->grade->name }} 
                         - {{ $classRoom->name }} </b>
                         <br>
                         </a>
-                    </li>
                 </div>
                 </div>
             @endforeach

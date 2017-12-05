@@ -24,8 +24,6 @@
             {{ Form::color('color', null, array('class' => 'form-control')) }}
             <br>
 
-
-
             {{ Form::submit('Create Subject', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>

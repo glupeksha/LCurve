@@ -7,14 +7,12 @@
             <div class="panel-heading">
                 <h3>Grades</h3>
             </div>
-            <div class="panel-heading">Page {{ $grades->currentPage() }} of {{ $grades->lastPage() }}
+            <div class="panel-heading" style="background-color: #d9dbaa; border-color: #d9dbaa !important">Page {{ $grades->currentPage() }} of {{ $grades->lastPage() }}
             </div>
             @foreach ($grades as $grade)
-                <div class="panel-body">
-                    <li style="list-style-type:disc">
+                <div class="panel-body">                    
                         <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
                         </a>
-                    </li>
                 </div>
             @endforeach
         </div>
@@ -26,7 +24,8 @@
 </div>
 
  @can('Create Grade')
-    <a href="{{ route('grades.create') }}" class="btn btn-info" role="button">Add</a>
+ <div class="col-lg-10"></div>  
+    <a href="{{ route('grades.create') }}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Add</a>
     @endcan
 
 

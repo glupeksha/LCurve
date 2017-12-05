@@ -4,8 +4,8 @@
 
 <div class='col-lg-4 col-lg-offset-4'>
 
-    <h1><i class='fa fa-key'></i> Add Role</h1>
-    <hr>
+    <h3><i class='fa fa-key'></i> Add Role</h3>
+      <hr style="border-color:#848991">
     
     {{ Form::open(array('url' => 'roles')) }}
 
