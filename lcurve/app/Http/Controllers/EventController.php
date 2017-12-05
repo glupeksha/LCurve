@@ -10,27 +10,34 @@ class EventController extends Controller
 {
 
   public function showCalendar(){
-    $events = [];
-    $data = Event::all();
-    if($data->count()) {
-        foreach ($data as $key => $value) {
-            $events[] = Calendar::event(
-                $value->title,
-                true,
-                new \DateTime($value->start_date),
-                new \DateTime($value->end_date.' +1 day'),
-                null,
-                // Add color and link on event
-              [
-                  'color' => '#f05050',
-                  'url' => 'pass here url and any route',
-              ]
-            );
-        }
-    }
-    $calendar = Calendar::addEvents($events);
-    dd($calendar);
-    return view('events.calendar', compact('calendar'));
+          $events = [];
+          $data = Event::all();
+          if($data->count()) {
+              foreach ($data as $key => $value) {
+                  $events[] = Calendar::event(
+                      $value->title,
+                      true,
+                      new \DateTime($value->start_date),
+                      new \DateTime($value->end_date.' +1 day'),
+                      null,
+                      // Add color and link on event
+                    [
+                        'color' => '#f05050',
+                        'url' => 'pass here url and any route',
+                    ]
+                  );
+              }
+          }
+          $calendar = Calendar::addEvents($events)
+          ->setOptions([ //set fullcalendar options
+              'firstDay' => 1,
+              'height' => 'auto',
+              'themeSystem' => 'bootstrap3',
+              'columnHeader' => false,
+              'aspectRatio' => 1
+          ]);
+          return view('events.calendar', compact('calendar'));
+      //return view('events.index');
   }
     /**
      * Display a listing of the resource.
@@ -39,34 +46,8 @@ class EventController extends Controller
      */
     public function index()
     {
-      $events = [];
-      $data = Event::all();
-      if($data->count()) {
-          foreach ($data as $key => $value) {
-              $events[] = Calendar::event(
-                  $value->title,
-                  true,
-                  new \DateTime($value->start_date),
-                  new \DateTime($value->end_date.' +1 day'),
-                  null,
-                  // Add color and link on event
-                [
-                    'color' => '#f05050',
-                    'url' => 'pass here url and any route',
-                ]
-              );
-          }
-      }
-      $calendar = Calendar::addEvents($events)
-      ->setOptions([ //set fullcalendar options
-		      'firstDay' => 1,
-          'height' => 'auto',
-          'themeSystem' => 'bootstrap3',
-          'columnHeader' => false,
-          'aspectRatio' => 1
-      ]);
-      return view('events.calendar', compact('calendar'));
-      //return view('events.index');
+     $events = Event::orderby('id','desc')->paginate(5);
+        return view('events.index',compact('events')); 
     }
 
     /**
@@ -76,7 +57,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+      return view('events.create');
     }
 
     /**
@@ -87,7 +68,23 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validating title and content field
+        $this->validate(request(), [
+            'title'=>'required|max:100',
+            'start'=>'required|date|before:end',
+            'end'=>'required|date|after:start',
+            ]);
+
+        $title = $request['name'];
+        $start = $request['start'];
+        $end = $request['end'];
+
+        $event = Event::create($request->only('title', 'start','end'));
+
+    //Display a successful message upon save
+        return redirect()->route('events.index')
+            ->with('flash_message', 'Event,
+             '. $event->name.' created');
     }
 
     /**
@@ -98,7 +95,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+       return view ('events.show', compact('event')); 
     }
 
     /**
@@ -109,7 +106,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+      return view ('events.edit',compact('event') );
     }
 
     /**
@@ -121,7 +118,21 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+     $this->validate($request, [
+             'title'=>'required',
+            'start'=>'required',
+            'end'=>'required',
+            
+        ]);
+
+        $event->title = $request->input('title');
+        $event->start = $request->input('start');
+        $event->end = $request->input('end');
+        $event->save();
+
+        return redirect()->route('events.show', 
+            $event->id)->with('flash_message', 
+            'Article, '. $event->name.' updated');        
     }
 
     /**
@@ -132,6 +143,10 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+         $event->delete();
+
+        return redirect()->route('events.index')
+            ->with('flash_message',
+             'event successfully deleted');
     }
 }
