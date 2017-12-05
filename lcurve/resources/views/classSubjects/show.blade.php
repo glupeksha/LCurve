@@ -5,21 +5,31 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
-         <div class="panel-body panel-heading"> 
+         <div class="panel-body panel-heading">
             <br>
-            <label><b>Grade : </b></label>{{  $classSubject->classRoom->grade->name }}<br>
-             <hr style="border-color:#848991">
+            <label><b>Subject: </b></label>{{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}<br>
+            <label><b>Teacher name: </b></label>{{  $classSubject->teacher->name }}<br>
+            <hr style="border-color:#848991">
+            <h4>Lesson Plan</h4>
+            <div class="list-group">
+              <ol >
+                @foreach($classSubject->topics as $topic)
+                  <li><a href="#" class="list-group-item">{{$topic->name}}</a></li>
+                @endforeach
+              </ol>
+            </div>
 
-            <label><b>Class : </b></label>{{  $classSubject->classRoom->name }}<br> 
-             <hr style="border-color:#848991">
 
-            <label><b>Subject name : </b></label>{{  $classSubject->subject->name }}<br> 
-             <hr style="border-color:#848991">
 
-            <label><b>Teacher name : </b></label>{{  $classSubject->teacher->name }}<br><br>
-            
+              {{ Form::open(array('action' => array('TopicController@store',$classSubject))) }}
+              {{ Form::text('name', 'Add Topic', array('class' => 'form-control')) }}
+              {{ Form::submit('Add Topic', array('class' => 'btn btn-success btn-lg btn-block')) }}
+              {{ Form::close() }}
+
+
+
             <div class="row">
-              <div class="col-lg-8"></div>    
+              <div class="col-lg-8"></div>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 @can('Edit ClassSubject')
@@ -45,7 +55,7 @@
                           <h5 class="modal-title">Are you sure you want to delete?</h5>
                         </div>
 
-                        <div class="modal-footer">          
+                        <div class="modal-footer">
                             {!! Form::submit('OK',array('class' => 'okbtnstyle')) !!}
                         </div>
                       </div>

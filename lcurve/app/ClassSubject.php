@@ -28,5 +28,9 @@ class ClassSubject extends Model
     {
         return $this->hasMany('App\Topic');
     }
+    public function topicSeq()
+    {
+      return $this->topics()->orderBy('seqNo')->get();
+    }
 
 }
