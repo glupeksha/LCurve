@@ -18,7 +18,7 @@
             {{ Form::label('image', 'Subject image') }}
             {{ Form::file('image', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+            {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
 
             {{ Form::close() }}
         </div>

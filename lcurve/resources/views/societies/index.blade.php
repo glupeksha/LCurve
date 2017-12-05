@@ -11,49 +11,30 @@
 
             <div class="panel-body">
             @foreach ($societies as $society)
+                <div class="panel-body panel-heading"> 
                 <div class="row">
                     <div class="col-lg-8">
-                        {{--<button class="buttonstyles">--}}
-                         <div class="col-lg-2"></div>
-                        <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
+                        {{--<button class="buttonstyles">--}}                       
+                              <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
                         {{--</button>--}}
-                    </div>
-
-                    <div class="col-lg-4">
-
-                    @can('Edit Society')
-                    <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
-                    @endcan
-
-                    @can('Delete Society')
-                    <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
-                    @endcan
-                    
+                    </div>  
+                     <div class="col-lg-4"> 
+                      {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}                 
+                        @can('Edit Society')
+                        <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
+                        @endcan
+                        @can('Delete Society')
+                       
+                          {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                        @endcan
+                        {!! Form::close() !!}
                     </div>
                 </div>
+              
                 <br>
-
-                  <!-- Modal - start -->
-                  <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-                     {!! Form::open(['method' => 'DELETE', 'route' => ['societies.destroy', $society->id] ]) !!}
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h5 class="modal-title">Are you sure you want to delete?</h5>
-                        </div>
-
-                        <div class="modal-footer">          
-                            {!! Form::submit('OK') !!}
-                        </div>
-                      </div>
-                      {!! Form::close() !!}
-                    </div>
-                  </div>
-                <!-- Modal - end -->
+                 </div>
             @endforeach
-            </div>
+          
 
         </div>
 
@@ -62,5 +43,5 @@
         </div>
     </div>
 </div>
-
+</div>
 @endsection

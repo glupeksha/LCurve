@@ -8,17 +8,16 @@
 <hr style="border-color:{{ $subject->color }}; border-width: 3px;">
 
 
-    {!! Form::open(['method' => 'DELETE', 'route' => ['subjects.destroy', $subject->id] ]) !!}
-    
+   <div class="col-lg-9"></div>
     @can('Edit Subject')
     <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-info" role="button">Edit</a>
     @endcan
+    
 
- 	@can('Delete Subject')
-    <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+	@can('Delete Subject')
+        <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
     @endcan
-
-    <!-- Modal - start -->
+ <!-- Modal - start -->
                   <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
                      {!! Form::open(['method' => 'DELETE', 'route' => ['subjects.destroy', $subject->id] ]) !!}
@@ -36,9 +35,7 @@
                       {!! Form::close() !!}
                     </div>
                   </div>
-                <!-- Modal - end -->
-
-    {!! Form::close() !!}
+        <!-- Modal - end -->
 
 @endsection
 

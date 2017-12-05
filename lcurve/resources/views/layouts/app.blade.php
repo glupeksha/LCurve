@@ -47,6 +47,9 @@
 
 
     <!-- Scripts -->
+    <script src="{{ asset('js/app.js')}}"></script>
+    <script src="{{ asset('js/calender.js')}}"></script>
+    <script src="{{ asset('js/jquery.calandario.js')}}"></script>
     @stack('scripts')
 
 </body>

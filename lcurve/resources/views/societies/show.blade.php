@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('dash-left')
 
+
 <!--about us pane start-->
 {{-- About Us--}}
 <div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:{{ $society->color }}; ">
@@ -82,6 +83,7 @@
 </div>
 <!--announcement pane end-->
 <hr>
+
 
 @endsection
 
