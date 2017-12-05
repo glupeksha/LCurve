@@ -59,9 +59,9 @@ class RoleController extends Controller
         $role->save();
     //Looping thru selected permissions
         foreach ($permissions as $permission) {
-            $p = Permission::where('id', '=', $permission)->firstOrFail(); 
+            $p = Permission::where('id', '=', $permission)->firstOrFail();
          //Fetch the newly created role and assign permission
-            $role = Role::where('name', '=', $name)->first(); 
+            $role = Role::where('name', '=', $name)->first();
             $role->givePermissionTo($p);
         }
 
