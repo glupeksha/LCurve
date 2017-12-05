@@ -61,6 +61,7 @@ return array(
     'App\\Society' => $baseDir . '/app/Society.php',
     'App\\Sport' => $baseDir . '/app/Sport.php',
     'App\\Subject' => $baseDir . '/app/Subject.php',
+    'App\\Topic' => $baseDir . '/app/Topic.php',
     'App\\User' => $baseDir . '/app/User.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',

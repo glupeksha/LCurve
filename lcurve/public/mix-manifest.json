@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/bootstrap-fullcalendar.css": "/css/bootstrap-fullcalendar.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/materialize.css": "/css/materialize.css"
 }

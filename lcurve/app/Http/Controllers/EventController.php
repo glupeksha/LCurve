@@ -47,7 +47,7 @@ class EventController extends Controller
     public function index()
     {
      $events = Event::orderby('id','desc')->paginate(5);
-        return view('events.index',compact('events')); 
+        return view('events.index',compact('events'));
     }
 
     /**
@@ -95,7 +95,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-       return view ('events.show', compact('event')); 
+       return view ('events.show', compact('event'));
     }
 
     /**
@@ -122,7 +122,7 @@ class EventController extends Controller
              'title'=>'required',
             'start'=>'required',
             'end'=>'required',
-            
+
         ]);
 
         $event->title = $request->input('title');
@@ -130,9 +130,9 @@ class EventController extends Controller
         $event->end = $request->input('end');
         $event->save();
 
-        return redirect()->route('events.show', 
-            $event->id)->with('flash_message', 
-            'Article, '. $event->name.' updated');        
+        return redirect()->route('events.show',
+            $event->id)->with('flash_message',
+            'Article, '. $event->name.' updated');
     }
 
     /**
