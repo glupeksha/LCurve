@@ -91,7 +91,7 @@ class AnnouncementController extends Controller
             ->with('flash_message', 'Article,
              '. $announcement->title.' created');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -137,7 +137,7 @@ class AnnouncementController extends Controller
 
         return redirect()->route('announcements.show',
             $announcement->id)->with('flash_message',
-            'Article, '. $announcement->title.' updated');
+            'Announcement, '. $announcement->title.' updated');
     }
 
     /**

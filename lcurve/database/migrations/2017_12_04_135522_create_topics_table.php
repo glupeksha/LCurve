@@ -17,7 +17,7 @@ class CreateTopicsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('class_subject_id');
             $table->unsignedInteger('seqNo')->default(1);
-            $table->unsignedInteger('level')->default(0);
+            $table->unsignedInteger('parent')->nullable($value = true);
             $table->string('name');
             $table->timestamps();
         });

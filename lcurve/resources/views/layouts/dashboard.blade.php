@@ -34,14 +34,13 @@
 
   </div>
 <!--Dashboard end-->
-
 <!--Footer start-->
-          <div class="row">
-              <div class="col-lg-1">
-              </div>
-              <div class="col-lg-10 footer">
-              </div>
-              <div class="col-lg-1">
-              </div>
-          </div>
-        <!--Footer end-->
+<div class="row">
+    <div class="col-lg-1">
+    </div>
+    <div class="col-lg-10 col3">
+    </div>
+    <div class="col-lg-1">
+    </div>
+</div>
+<!--Footer end-->

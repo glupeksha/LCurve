@@ -43,7 +43,7 @@ Route::post('/societies/{society}/announcements','AnnouncementController@storeUn
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 Route::get('/events/calendar', 'EventController@showCalendar');
 Route::post('/topics/{classSubject}','TopicController@store');
-
+Route::get('/updatesequence','TopicController@updateSequence');
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
