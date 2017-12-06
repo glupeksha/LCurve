@@ -346,6 +346,7 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'App\\ClassRoom' => __DIR__ . '/../..' . '/app/ClassRoom.php',
         'App\\ClassSubject' => __DIR__ . '/../..' . '/app/ClassSubject.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\DropDown' => __DIR__ . '/../..' . '/app/DropDown.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Forum' => __DIR__ . '/../..' . '/app/Forum.php',

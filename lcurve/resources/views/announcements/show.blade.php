@@ -6,9 +6,9 @@
     
     <div class="panel-primary">
      <div class="panel-body">
-        <div class= "panel panel-info"style=" border-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #000000 @endif ;
+        <div class= "panel panel-info" style=" border-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #abad85 @endif ;
                     border-width: 2px;  ">                    
-          <div class="panel-heading" style="background-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #000000 @endif ;
+          <div class="panel-heading" style="background-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #abad85 @endif ;
                     border-width: 2px;  ">
                 <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: white"><b>{{ $announcement->title }}</b></a>
                 <br>
