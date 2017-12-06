@@ -21,7 +21,19 @@
             {{ Form::date('end', null, array('class' => 'form-control')) }}
             <br>
           
+            {{ Form::label('isAllDay', 'Is it an all-day event?') }} <br>
+            {{ Form::checkbox('isAllDay', null, array('class' => 'form-control,checkbox-inline') ) }} Yes<br>
 
+
+            {{ Form::label('color', 'Color') }}
+            {{ Form::color('color', null, array('class' => 'form-control')) }}
+            <br>
+
+            
+            {{ Form::label('url', 'Give event url here') }}
+            {{ Form::url('url', null, array('class' => 'form-control')) }}
+            <br>
+            
             {{ Form::submit('Create Event', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>

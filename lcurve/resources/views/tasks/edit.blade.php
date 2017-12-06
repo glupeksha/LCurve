@@ -20,7 +20,7 @@
             {{ Form::text('content', null, array('class' => 'form-control')) }}<br>
 
             {{ Form::label('isAssignment', 'Is it an assignment?') }} <br>
-            {{ Form::checkbox('isAssignment', '1', null, array('class' => 'form-control,checkbox-inline') ) }} Yes <br>
+            {{ Form::checkbox('isAssignment','true',1, array('class' => 'form-control,checkbox-inline') ) }} Yes <br>
 
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}

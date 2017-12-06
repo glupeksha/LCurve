@@ -73,13 +73,22 @@ class EventController extends Controller
             'title'=>'required|max:100',
             'start'=>'required|date|before:end',
             'end'=>'required|date|after:start',
+            'color' =>'required',
+            'url'=>'required',
             ]);
 
         $title = $request['name'];
         $start = $request['start'];
         $end = $request['end'];
+        if(array_key_exists('isAllDay',$request)){
+          $isAllDay = true;
+        }else{
+          $isAllDay = false;
+        }
+        $color = $request['color'];
+        $url = $request['url'];
 
-        $event = Event::create($request->only('title', 'start','end'));
+        $event = Event::create($request->only('title', 'start','end','isAllDay','color','url'));
 
     //Display a successful message upon save
         return redirect()->route('events.index')
@@ -122,12 +131,23 @@ class EventController extends Controller
              'title'=>'required',
             'start'=>'required',
             'end'=>'required',
+            'color'=> 'required',
+            'url' => 'required',
 
         ]);
 
         $event->title = $request->input('title');
         $event->start = $request->input('start');
         $event->end = $request->input('end');
+
+        if(array_key_exists('isAllDay',$request)){
+          $event->isAllDay=true;
+        }else{
+          $event->isAllDay=false;
+        }
+
+        $event->color = $request->input('color');
+        $event->url = $request->input('url');
         $event->save();
 
         return redirect()->route('events.show',

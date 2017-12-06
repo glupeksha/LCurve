@@ -20,13 +20,24 @@
                     </div>
                 </div>
             @endforeach
+            
+            @can('Create Event')
+            <div class="col-lg-8">
+                <a href="{{route('events.create')}}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Create New Event</a>
+            </div>
+            @endcan
+            
         </div>
+
+
+            
             
         <div class="text-center">
             {!! $events->links() !!}
         </div>
     </div>
-</div>
 
+</div>
+            
 
 @endsection
