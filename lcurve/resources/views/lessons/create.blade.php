@@ -4,9 +4,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h1>Create New Lesson</h1>
-        <hr>
-
+        <h3>Create New Lesson</h3>
+         <hr style="border-color:#848991">
     {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{ Form::open(array('route' => 'lessons.store')) }}
 

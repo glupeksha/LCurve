@@ -36,22 +36,29 @@ Route::resource('classSubjects', 'ClassSubjectController');
 Route::resource('sports', 'SportController');
 Route::resource('events', 'EventController');
 Route::resource('studentSubjects', 'StudentSubjectController');
+Route::resource('topics', 'TopicController');
+Route::resource('tasks', 'TaskController');
+
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
-Route::get('/events/calendar', 'EventController@showCalendar');
+
 Route::get('/selectSubject', 'UserController@selectSubject');
 Route::get('/addSubject', 'UserController@addSubject');
 
-
-Route::get('locale/{locale}','LocalizationController@index');
-
-Route::view('/welcome', 'welcome');
 Route::get('/studentsSubjects/index', function()
 {
     return View::make('dash-left');
 });
 Route::view('/studentsSubject', 'studentsSubject.index');
 Route::view('/studentsubjects', 'studentsSubject.attach');
+
+Route::get('/calendar', 'EventController@showCalendar');
+Route::post('/topics/{classSubject}','TopicController@store');
+Route::get('/updatesequence','TopicController@updateSequence');
+Route::get('locale/{locale}','LocalizationController@index');
+
+Route::view('/welcome', 'welcome');
+Route::view('/profile', 'users.profile');
 

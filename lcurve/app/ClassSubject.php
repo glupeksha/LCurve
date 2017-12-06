@@ -25,16 +25,27 @@ class ClassSubject extends Model
         return $this->belongsTo('App\User','teacher_id','id');
     }
 
-
     public function students()
     {
         return $this->belongsToMany('App\User');
         
     }
 
-    
+    public function topics()
+    {
+        return $this->hasMany('App\Topic');
+    }
+    public function topicSeq()
+    {
+      return $this->topics()->orderBy('seqNo')->get();
+    }
+    public function maintopics()
+    {
+      return $this->topics()->orderBy('seqNo')->where('parent',null)->get();
+    }
+    public function subtopics($parent_id)
+    {
+      return $this->topics()->orderBy('seqNo')->where('parent',$parent_id)->get();
+    }
 
-     
-    
-    
 }

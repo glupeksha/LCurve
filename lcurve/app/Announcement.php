@@ -14,4 +14,10 @@ class Announcement extends Model
     {
       return $this->morphTo();
     }
+
+    public function event()
+    {
+        return $this->hasOne('App\Event');
+    }
+
 }

@@ -6,8 +6,22 @@
     
     <div class="panel-primary">
         
-      <div class="panel-heading"> <h4>{{ $forum->title }}</h4></div>
-      <div class="panel-body"><p >{{ $forum->content }} </p></div>
+
+              <div class="panel-body">
+                    <div class= "panel panel-info" style="border-color:#bbbe64 ;border-width: 2px; ">                    
+                        <div class="panel-heading" style="background-color: #d9dbaa !important; ">
+                            <a href="{{ route('forums.show', $forum->id ) }}"><b>{{ $forum->title }}</b></a>
+                        <br>
+                        </div>
+                        <div class="panel-body" >
+                            <p class="teaser">
+                               {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}
+                            </p>
+                        </div>                 
+                    </div>
+                </div>
+
+
       {!! Form::open(['method' => 'DELETE', 'route' => ['forums.destroy', $forum->id] ]) !!}
         <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
         @can('Edit Forum')

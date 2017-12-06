@@ -21,7 +21,6 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::all();//Get all roles
-
         return view('roles.index')->with('roles', $roles);
     }
 
@@ -33,7 +32,6 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::all();//Get all permissions
-
         return view('roles.create', ['permissions'=>$permissions]);
     }
 
@@ -61,9 +59,9 @@ class RoleController extends Controller
         $role->save();
     //Looping thru selected permissions
         foreach ($permissions as $permission) {
-            $p = Permission::where('id', '=', $permission)->firstOrFail(); 
+            $p = Permission::where('id', '=', $permission)->firstOrFail();
          //Fetch the newly created role and assign permission
-            $role = Role::where('name', '=', $name)->first(); 
+            $role = Role::where('name', '=', $name)->first();
             $role->givePermissionTo($p);
         }
 
@@ -109,7 +107,7 @@ class RoleController extends Controller
         // $role = Role::findOrFail($id);//Get role with the given id
     //Validate name and permission fields
         $this->validate($request, [
-            'name'=>'required|max:10|unique:roles,name,'.$id,
+            'name'=>'required|max:10|unique:roles,name,'.$role->id,
             'permissions' =>'required',
         ]);
 
@@ -141,6 +139,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+
         //$role = Role::findOrFail($id);
         $role->delete();
 
