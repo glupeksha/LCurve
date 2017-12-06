@@ -15,7 +15,7 @@
                 @can('Edit ClassSubject')
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
                 @endcan
-                
+
                 @can('Delete ClassSubject')
                 <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
                 @endcan
@@ -58,12 +58,20 @@
               {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
               {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
               {{ Form::close() }}
+              <hr style="border-color:#848991">
+
+              <div class="">
+                  content:
+                <p id="display"> ads</p>
+              </div>
+
 
         </div>
+
         <div class="panel-body">
-          
+
         </div>
-        
+
     </div>
 
 </div>
@@ -106,7 +114,8 @@
                 data: arr,
                 success: function(response)
                 {
-                  //  $('#display').html(response);
+                    $('#display').html(response['data']);
+
                 }
             });
 
