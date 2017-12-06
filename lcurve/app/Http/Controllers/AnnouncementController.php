@@ -45,12 +45,13 @@ class AnnouncementController extends Controller
         $this->validate($request, [
             'title'=>'required|max:100',
             'content' =>'required',
+            'color' =>'required',
             ]);
 
         $title = $request['title'];
         $content = $request['content'];
 
-        $announcement = Announcement::create($request->only('title', 'content'));
+        $announcement = Announcement::create($request->only('title', 'content','color'));
 
     //Display a successful message upon save
         return redirect()->route('announcements.index')
@@ -69,7 +70,7 @@ class AnnouncementController extends Controller
         $announcement = $society->announcements()->create(request()->only('title', 'content'));
 
     //Display a successful message upon save
-        return redirect()->back()
+         return redirect()->route('societies.show',$society->id)
             ->with('flash_message', 'Article,
              '. $announcement->title.' created');
     }
@@ -86,7 +87,7 @@ class AnnouncementController extends Controller
         $announcement = $sport->announcements()->create(request()->only('title', 'content'));
 
     //Display a successful message upon save
-        return redirect()->route('sports.index')
+        return redirect()->route('sports.show',$sport->id)
             ->with('flash_message', 'Article,
              '. $announcement->title.' created');
     }

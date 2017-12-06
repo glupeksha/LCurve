@@ -19,4 +19,5 @@ class Announcement extends Model
     {
         return $this->hasOne('App\Event');
     }
+
 }

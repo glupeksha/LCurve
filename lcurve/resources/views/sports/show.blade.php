@@ -21,6 +21,7 @@
 </div>
 <!--about us pane end-->
 
+
 <!--subscribe pane start-->
 {{--Who can Subcribe--}}
 <div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:{{ $sport->color }}; ">
@@ -49,16 +50,45 @@
 <!--subscribe pane end-->
 
 <hr>
+<div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:{{ $sport->color }}; ">
+<div class="col-lg-12 notify_head" >
+        <div class="col-lg-3 notify_indi notify_indi_cr" style="margin-bottom: 20px; border-color:{{ $sport->color }}; background-color:{{ $sport->color }}; ">
+           Announcements
+        </div>
+        <div class="col-lg-7"></div>
+    </div>
+<div class="raw">
+      <div class="col-lg-12 notify_body notify_body_cr">
+         @foreach ($sport->announcements as $announcement)
+          <div class= "panel panel-info" style="border-color:{{ $sport->color }};border-width: 2px; ">
+            <div class="panel-heading" style="background-color:{{ $sport->color }}; !important; ">
+            <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: white"> 
+                <h6>{{$announcement->title}}</h6>
+            </a>
+            </div>
+             <div class="panel-body" >
+             <p class="teaser"> 
+                <p>{{  str_limit($announcement->content, 100) }} {{-- Limit teaser to 100 characters --}}</p>
+             </p>
+            </div>
+          </div>
+        @endforeach
+      </div>
+</div>
+</div>
+
 
 {{--Announcement--}}
-<div class="col-lg-12 notify notify_cr">
-  <div class="col-lg-12 notify_head notify_head_cr">
-    <div class="col-lg-3 notify_indi notify_indi_cr">
-        Announcements
-    </div>
-    <div class="col-lg-7"></div>
-  </div>
+<div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:{{ $sport->color }}; ">
 
+    <div class="col-lg-12 notify_head" >
+        <div class="col-lg-3 notify_indi notify_indi_cr" style="margin-bottom: 20px; border-color:{{ $sport->color }}; background-color:{{ $sport->color }}; ">
+           Add Announcement
+        </div>
+        <div class="col-lg-7"></div>
+    </div>
+
+<hr>
   <hr>
 
   <div class="raw">
@@ -69,11 +99,7 @@
         @include('announcements.plug_create')
         {{ Form::close() }}
       @endcan
-
-      @foreach ($sport->announcements as $announcement)
-        <h6>{{$announcement->title}}</h6>
-        <p>{{$announcement->content}}</p>
-      @endforeach
+ 
     </div>
   </div>
 </div>
