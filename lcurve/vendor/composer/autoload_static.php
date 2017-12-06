@@ -380,6 +380,7 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'App\\Http\\Middleware\\ClearanceForumMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceForumMiddleware.php',
         'App\\Http\\Middleware\\ClearanceGradeMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceGradeMiddleware.php',
         'App\\Http\\Middleware\\ClearanceLessonMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceLessonMiddleware.php',
+        'App\\Http\\Middleware\\ClearanceRoleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceRoleMiddleware.php',
         'App\\Http\\Middleware\\ClearanceSocietyMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceSocietyMiddleware.php',
         'App\\Http\\Middleware\\ClearanceSportMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearanceSportMiddleware.php',
         'App\\Http\\Middleware\\ClearenceSubjectMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ClearenceSubjectMiddleware.php',

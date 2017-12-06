@@ -45,6 +45,7 @@ return array(
     'App\\Http\\Middleware\\ClearanceForumMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceForumMiddleware.php',
     'App\\Http\\Middleware\\ClearanceGradeMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceGradeMiddleware.php',
     'App\\Http\\Middleware\\ClearanceLessonMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceLessonMiddleware.php',
+    'App\\Http\\Middleware\\ClearanceRoleMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceRoleMiddleware.php',
     'App\\Http\\Middleware\\ClearanceSocietyMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceSocietyMiddleware.php',
     'App\\Http\\Middleware\\ClearanceSportMiddleware' => $baseDir . '/app/Http/Middleware/ClearanceSportMiddleware.php',
     'App\\Http\\Middleware\\ClearenceSubjectMiddleware' => $baseDir . '/app/Http/Middleware/ClearenceSubjectMiddleware.php',
