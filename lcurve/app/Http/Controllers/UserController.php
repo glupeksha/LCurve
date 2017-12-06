@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\ClassSubject;
+use App\ClassRoom;
 
 class UserController extends Controller
 {
@@ -51,13 +53,21 @@ class UserController extends Controller
 
         $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
 
+         $user_id = $user->id;
+
         $roles = $request['roles']; //Retrieving the roles field
+
+
         //Checking if a role was selected
         if (isset($roles)) {
 
             foreach ($roles as $role) {
-            $role_r = Role::where('id', '=', $role)->firstOrFail();            
-            $user->assignRole($role_r); //Assigning role to user
+                $role_r = Role::where('id', '=', $role)->firstOrFail();            
+                $user->assignRole($role_r); //Assigning role to usery
+                
+                if($role_r->name=='Student'){
+                    return view('studentsSubject.index',compact('user_id'));
+                }
             }
         }        
         //Redirect to the users.index view and display message
@@ -138,5 +148,23 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully deleted.');
+    }
+
+    public function selectSubject(Request $request){
+        $classroom=ClassRoom::find($request->id);
+        $classSubjects=$classroom->classSubject;
+        $student_id=$request->invisible1;
+        //dd($classSubjects[0]);
+        return view('studentsSubject.attach',compact('classSubjects','student_id'));
+    }
+
+    public function addSubject(Request $request){
+        $student=User::find($request->invisible);
+        $classsubjects = $request['classsubjects'];
+        $student->classSubjects()->attach($classsubjects);
+        return redirect()->route('users.index')
+            ->with('flash_message',
+             'User successfully added.');
+
     }
 }

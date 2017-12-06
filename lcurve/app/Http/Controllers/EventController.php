@@ -10,6 +10,7 @@ class EventController extends Controller
 {
 
   public function showCalendar(){
+
           $events = [];
           $data = Event::all();
           if($data->count()) {
@@ -38,6 +39,7 @@ class EventController extends Controller
           ]);
           return view('events.calendar', compact('calendar'));
       //return view('events.index');
+
   }
     /**
      * Display a listing of the resource.

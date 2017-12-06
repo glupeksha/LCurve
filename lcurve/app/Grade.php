@@ -14,4 +14,10 @@ class Grade extends Model
     {
         return $this->hasMany('App\ClassRoom');
     }
+
+      public function classSubjects()
+    {
+        
+        return $this->hasManyThrough('App\ClassSubject', 'App\ClassRoom');
+    }
 }

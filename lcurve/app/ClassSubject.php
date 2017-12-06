@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class ClassSubject extends Model
 {
     protected $fillable = [
-         'classRoom_id','subject_id','teacher_id'
+         'class_room_id','subject_id','teacher_id'
     ];
 
      public function classRoom()
     {
-        return $this->belongsTo('App\ClassRoom','classRoom_id','id');
+        return $this->belongsTo('App\ClassRoom','class_room_id','id');
     }
 
      public function subject()
@@ -24,6 +24,13 @@ class ClassSubject extends Model
     {
         return $this->belongsTo('App\User','teacher_id','id');
     }
+
+    public function students()
+    {
+        return $this->belongsToMany('App\User');
+        
+    }
+
     public function topics()
     {
         return $this->hasMany('App\Topic');
@@ -40,4 +47,5 @@ class ClassSubject extends Model
     {
       return $this->topics()->orderBy('seqNo')->where('parent',$parent_id)->get();
     }
+
 }
