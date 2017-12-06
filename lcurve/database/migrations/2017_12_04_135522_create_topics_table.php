@@ -19,6 +19,7 @@ class CreateTopicsTable extends Migration
             $table->unsignedInteger('seqNo')->default(1);
             $table->unsignedInteger('parent')->nullable($value = true);
             $table->string('name');
+            $table->text('content')->nullable($value = true);
             $table->timestamps();
         });
     }

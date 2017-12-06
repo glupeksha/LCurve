@@ -8507,6 +8507,10 @@ body {
   overflow-x: hidden;
 }
 
+.floatbtn {
+  float: right;
+}
+
 .notify_cr {
   border: 2px solid;
 }

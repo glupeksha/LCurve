@@ -17,8 +17,9 @@
 
             {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
 
-            {{ Form::close() }}
+
         </div>
+        {{ Form::close() }}
     </div>
 </div>
 

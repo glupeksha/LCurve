@@ -19,8 +19,8 @@
             <br>
 
             {{ Form::submit('Create Lessons', array('class' => 'btn btn-success btn-lg btn-block')) }}
-            {{ Form::close() }}
         </div>
+        {{ Form::close() }}
         </div>
     </div>
 
