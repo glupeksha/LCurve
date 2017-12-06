@@ -32,4 +32,50 @@
 		'profileBar'=>'Profile',
 		'logoutBar'=>'Logout',
 
+
+		//announcements
+
+		'announcementTitle'=>'Announcements',
+		'createNewAnnouncement'=>'Create New Announcement',
+		'announcementsContent'=>'Announcement content',
+		'subscribeContent'=>'Subscribe content',
+		'editAnnouncement'=>'Edit Announcement',
+		'tiTle'=>'Title',
+		'content'=>'Content',
+		'back'=>'Back',
+		'edit'=>'Edit',
+		'delete'=>'Delete',
+		'save'=>'Save',
+
+
+		//societies
+
+		'contentTitle'=>'Content',
+		'createNewsociety'=>'Create New Society',
+		'name'=>'Name',
+		'societyAboutus'=>'Society About Us',
+		'subscribeContent'=>'Subscribe content',
+		'color'=>'Color',
+		'createsociety'=>'Create Society',
+
+
+		//subjects
+
+		'subjectsTitle'=>'Subjects',
+		'createNewsubject'=>'Create New Subject',
+		'subjectImage'=>'Subject Image',
+		'chooseFile'=>'Choose File',
+		'noFilechosen'=>'No file chosen',
+		'color'=>'Color',
+		'createsubject'=>'Create Subject',
+
+
+
+
+
+
+
+
+		
+
 	];
