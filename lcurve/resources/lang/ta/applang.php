@@ -1,26 +1,31 @@
 <?php  
-
-	<?php  
+  
 
 	return [
+
+	
 		// login page
 
 
-		'email'=>'மின்னஞ்சல்',
-		'password'=>'கடவுச்சொல்',
+		'emailReq'=>'மின்னஞ்சல்',
 		'remember'=>'என்னை நினைவில் கொள்ளுங்கள்',
 		'loginbutton'=>'உள் நுழை',
-		'forgot'=>'உங்கள் கடவுச்சொல்லை மறந்து விட்டீர்களா?',
+		'forgotPass'=>'உங்கள் கடவுச்சொல்லை மறந்து விட்டீர்களா?',
 		'loginHeading'=>'உள் நுழை',
 
 		//register page
 		
-		'Register'=>'பதிவு',
-		'Name'=>'பெயர்',
+		'RegisterReq'=>'பதிவு',
+		'NameReg'=>'பெயர்',
 		'emailReg'=>'மின்னஞ்சல் முகவரி',
 		'passwordReg'=>'கடவுச்சொல்',
 		'confirmPassword'=>'கடவுச்சொல்லை உறுதிப்படுத்துக',
 		'registerProceed'=>'பதிவு',
+		'languageSelect'=>'இயல்புநிலை மொழி தேர்வு',
+		'chooseEn'=>'ஆங்கிலம்',
+		'chooseSi'=>'சிங்களம்',
+		'chooseTa'=>'தமிழ்',
+
 
 		// email reset password
 
@@ -30,12 +35,12 @@
 		//navbar
 
 
-		'home'=>'முகப்பு',
-		'classRoom'=>'வகுப்பறை',
-		'societies'=>'சங்கங்கள்',
-		'sports'=>'விளையாட்டு',
-		'profile'=>'விவரம்',
-		'logout'=>'வெளியேறு',
+		'homeBar'=>'முகப்பு',
+		'classRoomBar'=>'வகுப்பறை',
+		'societiesBar'=>'சங்கங்கள்',
+		'sportsBar'=>'விளையாட்டு',
+		'profileBar'=>'விவரம்',
+		'logoutBar'=>'வெளியேறு',
 
 
 		//announcements
