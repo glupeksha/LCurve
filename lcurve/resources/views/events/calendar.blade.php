@@ -4,8 +4,8 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.css"/>
 <style>
-.fc-left > h2{
-  font-size: 20px;
+.fc-center > h2{
+  font-size: 20px !important;
 }
 </style>
 @endpush
