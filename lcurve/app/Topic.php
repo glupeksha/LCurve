@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
   protected $fillable = [
-      'seqNo', 'level','name',
+      'seqNo', 'parent','name',
   ];
   public function classSubject()
   {

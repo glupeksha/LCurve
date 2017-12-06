@@ -81,7 +81,20 @@ class TopicController extends Controller
     {
         //
     }
-
+    public function updateSequence(Request $request)
+    {
+      $i=1;
+      foreach ($request['topic'] as $topic_id=>$topic_parent) {
+        $topic=Topic::find($topic_id);
+        $topic->seqNo=$i;
+        if($topic_parent!="null"){
+          $topic->parent=$topic_parent;
+        }
+        $topic->save();
+        $i++;
+      }
+      return $request['topic'];
+    }
     /**
      * Remove the specified resource from storage.
      *

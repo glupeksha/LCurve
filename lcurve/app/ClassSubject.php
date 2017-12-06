@@ -32,5 +32,12 @@ class ClassSubject extends Model
     {
       return $this->topics()->orderBy('seqNo')->get();
     }
-
+    public function maintopics()
+    {
+      return $this->topics()->orderBy('seqNo')->where('parent',null)->get();
+    }
+    public function subtopics($parent_id)
+    {
+      return $this->topics()->orderBy('seqNo')->where('parent',$parent_id)->get();
+    }
 }
