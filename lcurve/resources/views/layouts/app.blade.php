@@ -11,6 +11,7 @@
     <title>{{ config('app.name', "L'Curve") }}</title>
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
 
@@ -48,6 +49,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
+    
     @stack('scripts')
 
 </body>
