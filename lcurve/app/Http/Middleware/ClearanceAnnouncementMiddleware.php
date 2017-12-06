@@ -17,9 +17,7 @@ class ClearanceAnnouncementMiddleware
      */
     public function handle($request, Closure $next)
     {
-      if(Auth::user()->hasPermissionTo('Administrator Permissions')){
-        return $next($request);
-      }
+      
 
       if($request->is('announcements/create')){
         if(Auth::user()->hasPermissionTo('Create Announcement')){

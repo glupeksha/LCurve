@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 	return [
 
@@ -11,13 +11,16 @@
 		'loginHeading'=>'Login',
 
 		//register page
-		
 		'RegisterReq'=>'Register',
 		'NameReg'=>'Name',
 		'emailReg'=>'E-Mail Address',
 		'passwordReg'=>'Password',
 		'confirmPassword'=>'Confirm Password',
 		'registerProceed'=>'Register',
+		'languageSelect'=>'Select default language',
+		'chooseEn'=>'  English',
+		'chooseSi'=>'  සිංහල',
+
 
 		// email reset password
 
@@ -31,7 +34,6 @@
 		'sportsBar'=>'Sports',
 		'profileBar'=>'Profile',
 		'logoutBar'=>'Logout',
-
 
 		//announcements
 
@@ -68,14 +70,7 @@
 		'noFilechosen'=>'No file chosen',
 		'color'=>'Color',
 		'createsubject'=>'Create Subject',
-
-
-
-
-
-
-
-
-		
+	
 
 	];
+

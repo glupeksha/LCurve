@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+
     ];
 
     /**
@@ -60,7 +61,13 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearanceAnnouncement' => \App\Http\Middleware\ClearanceAnnouncementMiddleware::class,
-        'clearanceSection' => \App\Http\Middleware\ClearanceSectionMiddleware::class,
-        'clearanceSection' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
+        'clearanceGrade' => \App\Http\Middleware\ClearanceGradeMiddleware::class,
+        'clearanceLesson' => \App\Http\Middleware\ClearanceLessonMiddleware::class,
+        'clearanceClassRoom' => \App\Http\Middleware\ClearanceClassRoomMiddleware::class,
+        'clearanceSocietyRoom' => \App\Http\Middleware\ClearanceSocietyMiddleware::class,
+        'clearanceForum' => \App\Http\Middleware\ClearanceForumMiddleware::class,
+        'clearanceSport' => \App\Http\Middleware\ClearanceSportMiddleware::class,
+        'clearanceRole' => \App\Http\Middleware\ClearanceRoleMiddleware::class,
+        'clearanceClassSubject' => \App\Http\Middleware\ClearanceClassSubjectMiddleware::class,
     ];
 }

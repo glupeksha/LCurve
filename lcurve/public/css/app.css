@@ -8361,7 +8361,7 @@ button.close {
 }
 
 .topbar {
-  background: #1abb9c;
+  background: #0b9b7e;
   border-color: #1abb9c;
   border-radius: 0px;
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -8462,31 +8462,35 @@ button.close {
 .row-border {
   margin-top: 31px;
   height: 95%;
+  overflow-y: scroll;
 }
 
 .col-border {
-  background-color: #C2DFE3;
+  background-color: rgba(194, 223, 227, 0.5);
   margin-top: -31px;
   padding-bottom: 31px;
-  border-right: 20px solid #C2DFE3;
-  border-left: 20px solid #C2DFE3;
-  overflow: scroll;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .col1 {
   background-color: #FAF7FF;
-  border: 2px solid #C2DFE3;
-  border-right: 15px solid #C2DFE3;
+  border: 2px solid rgba(194, 223, 227, 0.3);
+  border-right: 15px solid rgba(194, 223, 227, 0.3);
   float: left;
   padding: 30px;
   height: auto;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .col2 {
   background-color: #FAF7FF;
   float: right;
-  border: 2px solid #C2DFE3;
+  border: 2px solid transparent;
   padding: 30px;
   min-height: 100%;
   height: auto;
@@ -8501,19 +8505,33 @@ button.close {
 
 body {
   background-image: url("/images/background.png") !important;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .notify_cr {
-  border: 2px solid #22AED1;
-}
-
-.notify_shead_cr {
-  background-color: #22AED1;
+  border: 2px solid;
 }
 
 .notify_indi_cr {
-  background-color: #22AED1;
   color: #FAF7FF;
+  border: 2px solid;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
 
 .notify_head {
@@ -8531,6 +8549,10 @@ body {
   font-size: 12px;
   text-align: center;
   border-radius: 0px 0px 10px 10px;
+}
+
+.okbtnstyle {
+  border-radius: 4px;
 }
 
 .buttonstyles {

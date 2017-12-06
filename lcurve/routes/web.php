@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -27,15 +28,22 @@ Route::resource('permissions', 'PermissionController');
 Route::resource('announcements', 'AnnouncementController');
 Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
-Route::resource('sections', 'SectionController');
+Route::resource('grades', 'GradeController');
 Route::resource('classRooms', 'ClassRoomController');
+Route::resource('lessons', 'LessonsController');
+Route::resource('forums', 'ForumController');
+Route::resource('classSubjects', 'ClassSubjectController');
+Route::resource('sports', 'SportController');
+Route::resource('events', 'EventController');
+Route::resource('topics', 'TopicController');
 
-//Routes to get locale and set locale
-Route::get('locale', function () {
-    return \App::getLocale();
-});
-Route::get('locale/{locale}', function ($locale) {
-    \Session::put('locale', $locale);
-    return redirect()->back();
-});
+//plug announcement
+Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
+Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
+Route::get('/events/calendar', 'EventController@showCalendar');
+Route::post('/topics/{classSubject}','TopicController@store');
+
+Route::get('locale/{locale}','LocalizationController@index');
+
 Route::view('/welcome', 'welcome');
+Route::view('/profile', 'users.profile');

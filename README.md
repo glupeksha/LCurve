@@ -59,6 +59,8 @@
 composer install
 composer require spatie/laravel-permission
 composer require laravelcollective/html
+composer require intervention/image
+composer require maddhatter/laravel-fullcalendar
 
 php artisan key:generate
 
