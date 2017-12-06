@@ -77,6 +77,8 @@
                         <div class="links">
                             <a href="{{url('locale/en')}}">English</a>
                             <a href="{{url('locale/si')}}">Sinhala</a>
+                            <a href="{{url('locale/ta')}}">Tamil</a>
+
                         </div>
                     </div>
 
