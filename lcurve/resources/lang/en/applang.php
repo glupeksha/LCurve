@@ -80,7 +80,7 @@
 		'classRooms'=>'Class Rooms',
 		'Page1of1'=>'Page 1 of 1',
 		'grade'=>'Grade',
-		'nameOfTheclass'=>'Name Of The class'
+		'nameOfTheclass'=>'Name Of The class',
 		'addClassroom'=>'Add ClassRoom',
 		'createNewClassroom'=>'Create New ClassRoom',
 		'className'=>'Class Name',
@@ -95,7 +95,7 @@
 		'mathematics'=>'Mathematics',
 		'history'=>'History',
 		'science'=>'Science',
-		'geography'=>'Geography'
+		'geography'=>'Geography',
 		'english'=>'English',
 		'editSubject'=>'Edit Subject',
 
