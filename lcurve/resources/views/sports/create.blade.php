@@ -1,13 +1,13 @@
 @extends('layouts.app')
-
 @section('dash-left')
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
         <h3>Add New Sport</h3>
-          <hr style="border-color:#848991">
+        <hr class="hr_style">
 
-    {{-- Using the Laravel HTML Form Collective to create our form --}}
+        {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{ Form::open(array('route' => 'sports.store', 'files'=>'true')) }}
 
         <div class="form-group">
@@ -29,8 +29,9 @@
             <br>
 
             {{ Form::submit('Add New Sport', array('class' => 'btn btn-success btn-lg btn-block')) }}
-            {{ Form::close() }}
-        </div>
+            </div>
+        {{ Form::close() }}
+        
         </div>
     </div>
 

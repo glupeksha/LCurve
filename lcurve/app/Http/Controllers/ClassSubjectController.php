@@ -39,12 +39,12 @@ class ClassSubjectController extends Controller
     {
         //Validating classSubject
         $this->validate($request, [
-            'classRoom_id'=>'required|numeric',
+            'class_room_id'=>'required|numeric',
             'subject_id'=>'required|numeric',
             'teacher_id'=>'required|numeric',
             ]);
         
-        $classSubjects = ClassSubject::create($request->only('classRoom_id','subject_id','teacher_id'));
+        $classSubjects = ClassSubject::create($request->only('class_room_id','subject_id','teacher_id'));
 
     //Display a successful message upon save
         return redirect()->route('classSubjects.index')
@@ -84,12 +84,12 @@ class ClassSubjectController extends Controller
     {
         #validate for classSubject
         $this->validate($request, [
-            'classRoom_id'=>'required|numeric',
+            'class_room_id'=>'required|numeric',
             'subject_id'=>'required|numeric',
             'teacher_id'=>'required|numeric',  
         ]);
 
-        $classSubject->classRoom_id = $request->input('classRoom_id');
+        $classSubject->class_room_id = $request->input('class_room_id');
         $classSubject->subject_id = $request->input('subject_id');
         $classSubject->teacher_id = $request->input('teacher_id');
         $classSubject->save();

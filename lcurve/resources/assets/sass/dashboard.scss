@@ -9,7 +9,7 @@
 .row-border{
   margin-top:31px;
   height: 95%;
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 
 .col-border{
@@ -19,7 +19,8 @@
   border-right: 20px solid transparent;
   border-left: 20px solid transparent;
   max-width: 100%;
-  overflow-x: hidden;
+  height: auto;
+  //overflow-x: hidden;
 
 }
 
@@ -33,7 +34,7 @@
   height: auto;
   min-height: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 
 
 }
@@ -45,7 +46,7 @@
   border: 2px solid transparent;
   padding: 30px;
   min-height: 100%;
-  height: auto;
+  height: inherit;
 
 }
 

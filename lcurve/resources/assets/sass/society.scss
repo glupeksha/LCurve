@@ -1,17 +1,30 @@
 //pannel styles
+.hr_style{
+  border-color:#848991
+}
+.outter-styles{
+  border-width: 2px;
+}
+.header-color{
+  color: white;
+}
+//pannel styles
 .notify_head_cr{
 }
 .notify_cr{
   border: 2px solid ;
+  margin-bottom: 20px;
 }
 
 .notify_indi_cr{
   color: #FAF7FF;
    border: 2px solid ;
+   margin-bottom: 20px; 
 }
 a:link {
     text-decoration: none;
 }
+
 .ok-btn-style{
 
 }

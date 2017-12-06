@@ -19,4 +19,5 @@ class Society extends Model
     {
     	$this->announcements()->save($announcement);
     }
+
 }

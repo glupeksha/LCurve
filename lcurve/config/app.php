@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ta',
 
     /*
     |--------------------------------------------------------------------------
@@ -235,6 +235,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
+
 
     ],
 

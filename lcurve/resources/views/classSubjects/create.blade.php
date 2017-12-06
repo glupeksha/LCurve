@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('dash-left')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -12,8 +11,8 @@
 
     
         <div class="form-group">
-            {{ Form::label('classRoom_id', 'Class Room') }}
-            {{ Form::text('classRoom_id', null, array('class' => 'form-control')) }}
+            {{ Form::label('class_room_id', 'Class Room') }}
+            {{ Form::text('class_room_id', null, array('class' => 'form-control')) }}
             <br>
 
             {{ Form::label('subject_id', 'Subject Name') }}
