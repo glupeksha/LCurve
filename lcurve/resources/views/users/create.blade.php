@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('dash-left')
@@ -21,10 +22,10 @@
 
     <div class='form-group'>
         @foreach ($roles as $role)
-            {{ Form::checkbox('roles[]',  $role->id ) }}
+            {{ Form::checkbox('roles[]',  $role->id ,array('id'=>'ChStudent')) }}
             {{ Form::label($role->name, ucfirst($role->name)) }}<br>
-
         @endforeach
+        
     </div>
 
     <div class="form-group">
@@ -46,3 +47,11 @@
 </div>
 
 @endsection
+@push('styles')
+
+<script >
+    if(getElementById("chStudent").value==3){
+
+    };
+</script>
+@endPush

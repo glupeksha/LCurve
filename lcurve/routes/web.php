@@ -35,12 +35,23 @@ Route::resource('forums', 'ForumController');
 Route::resource('classSubjects', 'ClassSubjectController');
 Route::resource('sports', 'SportController');
 Route::resource('events', 'EventController');
+Route::resource('studentSubjects', 'StudentSubjectController');
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 Route::get('/events/calendar', 'EventController@showCalendar');
+Route::get('/selectSubject', 'UserController@selectSubject');
+Route::get('/addSubject', 'UserController@addSubject');
+
 
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
+Route::get('/studentsSubjects/index', function()
+{
+    return View::make('dash-left');
+});
+Route::view('/studentsSubject', 'studentsSubject.index');
+Route::view('/studentsubjects', 'studentsSubject.attach');
+

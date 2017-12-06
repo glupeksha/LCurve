@@ -9,8 +9,8 @@
         <hr>
             {{ Form::model($classSubject, array('route' => array('classSubjects.update', $classSubject->id), 'method' => 'PUT')) }}
         <div class="form-group">
-            {{ Form::label('classRoom_id', 'Class Room') }}
-            {{ Form::text('classRoom_id', null, array('class' => 'form-control')) }}
+            {{ Form::label('class_room_id', 'Class Room') }}
+            {{ Form::text('class_room_id', null, array('class' => 'form-control')) }}
            
             {{ Form::label('subject_id', 'Subject Name') }}
             {{ Form::text('subject_id', null, array('class' => 'form-control')) }}

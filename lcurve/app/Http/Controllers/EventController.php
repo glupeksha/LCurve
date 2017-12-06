@@ -10,35 +10,6 @@ class EventController extends Controller
 {
 
   public function showCalendar(){
-    $events = [];
-    $data = Event::all();
-    if($data->count()) {
-        foreach ($data as $key => $value) {
-            $events[] = Calendar::event(
-                $value->title,
-                true,
-                new \DateTime($value->start_date),
-                new \DateTime($value->end_date.' +1 day'),
-                null,
-                // Add color and link on event
-              [
-                  'color' => '#f05050',
-                  'url' => 'pass here url and any route',
-              ]
-            );
-        }
-    }
-    $calendar = Calendar::addEvents($events);
-    dd($calendar);
-    return view('events.calendar', compact('calendar'));
-  }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
       $events = [];
       $data = Event::all();
       if($data->count()) {
@@ -59,13 +30,22 @@ class EventController extends Controller
       }
       $calendar = Calendar::addEvents($events)
       ->setOptions([ //set fullcalendar options
-		      'firstDay' => 1,
+          'firstDay' => 1,
           'height' => 'auto',
           'themeSystem' => 'bootstrap3',
           'columnHeader' => false,
           'aspectRatio' => 1
       ]);
       return view('events.calendar', compact('calendar'));
+  }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+
       //return view('events.index');
     }
 

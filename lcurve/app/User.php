@@ -38,4 +38,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\ClassSubject');
     }
+
+    public function classSubjects()
+    {
+        return $this->belongsToMany('App\ClassSubject');
+        
+    }
+
+
 }
