@@ -3,8 +3,8 @@
 @section('dash-left')
 
 <div class='col-lg-4 col-lg-offset-4'>
-    <h1><i class='fa fa-key'></i> Edit Role: {{$role->name}}</h1>
-    <hr>
+    <h3><i class='fa fa-key'></i> Edit Role: {{$role->name}}</h3>
+      <hr style="border-color:#848991">
 
     {{ Form::model($role, array('route' => array('roles.update', $role->id), 'method' => 'PUT')) }}
 

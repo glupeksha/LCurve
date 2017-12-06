@@ -98,7 +98,7 @@ class SportController extends Controller
         $sport->name = $request->input('name');
         $sport->content = $request->input('content');
         $sport->subscribe = $request->input('subscribe');
-        $color->subscribe = $request->input('color');
+        $sport->color = $request->input('color');
         $sport->save();
 
         return redirect()->route('sports.show', 

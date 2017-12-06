@@ -4,8 +4,9 @@
 
 <div class='col-lg-4 col-lg-offset-4'>
 
-    <h1><i class='fa fa-user-plus'></i> Add User</h1>
-    <hr>
+    <h3><i class='fa fa-user-plus'></i> Add User</h3>
+    <hr style="border-color:#848991">
+
 
     {{ Form::open(array('url' => 'users')) }}
 
@@ -38,8 +39,8 @@
         {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
 
     </div>
-
-    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+    <div class="col-lg-9"></div>
+    {{ Form::submit('Add', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
 
     {{ Form::close() }}
 

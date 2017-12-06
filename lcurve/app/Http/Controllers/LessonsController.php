@@ -95,7 +95,7 @@ class LessonsController extends Controller
 
         return redirect()->route('lessons.show',
             $lesson->id)->with('flash_message',
-            'Article, '. $lesson->title.' updated');
+             $lesson->title.' updated');
     }
 
     /**

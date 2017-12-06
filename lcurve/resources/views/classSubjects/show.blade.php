@@ -29,21 +29,26 @@
 
 
             <div class="row">
+
               <div class="col-lg-8"></div>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 @can('Edit ClassSubject')
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
                 @endcan
-
+                
                 @can('Delete ClassSubject')
-                <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
-                @endcan
+                  <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+                 @endcan
+           
             </div>
         </div>
+        
     </div>
-</div>
 
+</div>
+ 
+</div>
 <!-- Modal - start -->
                   <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog">
@@ -55,16 +60,14 @@
                           <h5 class="modal-title">Are you sure you want to delete?</h5>
                         </div>
 
-                        <div class="modal-footer">
-                            {!! Form::submit('OK',array('class' => 'okbtnstyle')) !!}
+                        <div class="modal-footer">          
+                            {!! Form::submit('OK') !!}
+
                         </div>
                       </div>
                       {!! Form::close() !!}
                     </div>
                   </div>
-                <!-- Modal - end -->
-
-    {!! Form::close() !!}
-</div>
-
+        <!-- Modal - end -->
 @endsection
+
