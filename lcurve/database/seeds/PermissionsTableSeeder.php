@@ -66,5 +66,10 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassSubject']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete ClassSubject']));
 
+
+        //events
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
+
     }
 }
