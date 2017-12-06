@@ -10,7 +10,7 @@
            <hr style="border-color:#848991">
            
            <lable><b>Name Of The class :</b></lable>
-            {{ $classRoom->name }} 
+            {{$classRoom->name}} 
             <br>
             
             <div class="row">

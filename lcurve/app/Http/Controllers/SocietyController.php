@@ -99,7 +99,7 @@ class SocietyController extends Controller
         $society->name = $request->input('name');
         $society->content = $request->input('content');
         $society->subscribe = $request->input('subscribe');
-        $color->subscribe = $request->input('color');
+        $society->color = $request->input('color');
         $society->save();
 
         return redirect()->route('societies.show', 

@@ -5,8 +5,8 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Lesson</h1>
-        <hr>
+        <h3>Edit Lesson</h3>
+        <hr style="border-color:#848991">
             {{ Form::model($lesson, array('route' => array('lessons.update', $lesson->id), 'method' => 'PUT')) }}
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
@@ -15,7 +15,7 @@
             {{ Form::label('content', 'Content') }}
             {{ Form::textarea('content', null, array('class' => 'form-control','id'=>'myTextarea')) }}<br>
 
-            {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+            {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
 
             {{ Form::close() }}
         </div>

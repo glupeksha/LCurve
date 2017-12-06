@@ -11,12 +11,11 @@
 
             <div class="row">
 
-
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 @can('Edit ClassSubject')
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
                 @endcan
-
+                
                 @can('Delete ClassSubject')
                 <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
                 @endcan
@@ -39,6 +38,7 @@
                                     </div>
                                   </div>
                 <!-- Modal - end -->
+
             </div>
 
             <hr style="border-color:#848991">
@@ -63,9 +63,8 @@
         <div class="panel-body">
           
         </div>
+        
     </div>
-
-
 
 </div>
 

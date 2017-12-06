@@ -17,9 +17,6 @@
 			<br>{{Auth::user()->password}}
 			<br>{{Auth::user()->language}}
 
-
-
-
             </div>
 
         </div>

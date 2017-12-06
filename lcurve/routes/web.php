@@ -36,6 +36,7 @@ Route::resource('classSubjects', 'ClassSubjectController');
 Route::resource('sports', 'SportController');
 Route::resource('events', 'EventController');
 Route::resource('topics', 'TopicController');
+Route::resource('tasks', 'TaskController');
 
 //plug announcement
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
