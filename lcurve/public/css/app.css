@@ -8529,6 +8529,18 @@ body {
 
 }
 
+.hr_style {
+  border-color: #848991;
+}
+
+.outter-styles {
+  border-width: 2px;
+}
+
+.header-color {
+  color: white;
+}
+
 .notify_cr {
   border: 2px solid;
   margin-bottom: 20px;
@@ -8667,7 +8679,10 @@ a:active {
   right: 0;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upekshamerge
 /*Homework start*/
 
 .defaultMargin {
@@ -8836,6 +8851,10 @@ a:active {
 /*homework list end*/
 
 /*Homework end*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> upekshamerge
 .hr_style {
   border-color: #848991;
 }
@@ -9096,5 +9115,3 @@ a:active {
 .hr_style {
   border-color: #848991;
 }
-
-
