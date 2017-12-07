@@ -13,4 +13,3 @@ let mix = require('laravel-mix');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/materialize.scss', 'public/css');
-   .sass('resources/assets/sass/forum.scss', 'public/css');

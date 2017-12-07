@@ -53,7 +53,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="student_home.html">
+                <a class="td_none" href="{{url('/sports')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
 
                         <img src="{{asset('images/navigation/sportssm.PNG')}}" class="img-responsive grow image_nav"/>
@@ -82,8 +82,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @guest
+
+                    
+                <li><a href="{{url('locale/en')}}">@lang('applang.chooseEn')</a></li>
+                <li><a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a></li>
+                <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a></li>
                 <li><a href="{{ route('login') }}">@lang('applang.loginbutton')</a></li>
                 <li><a href="{{ route('register') }}">@lang('applang.RegisterReq')</a></li>
+
                 @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-button" data-toggle="dropdown" aria-expanded="false">
