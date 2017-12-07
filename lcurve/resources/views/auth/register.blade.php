@@ -83,6 +83,13 @@
                                 @else
                                     <input type="radio" name="si" onclick="window.location='locale/si';" />@lang('applang.chooseSi')
                                 @endif
+
+                                @if(\Session::get('locale')=="ta")
+                                    <input type="radio" name="ta" onclick="window.location='locale/ta';" checked />@lang('applang.chooseTa')
+                                @else
+                                    <input type="radio" name="ta" onclick="window.location='locale/ta';" />@lang('applang.chooseTa')
+                                @endif
+
                                 </div>
                             </div>
 

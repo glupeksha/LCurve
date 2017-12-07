@@ -70,6 +70,13 @@ class PermissionsTableSeeder extends Seeder
         //events
         $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Event']));
+
+        //events
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Task']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Task']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Task']));
+
 
     }
 }

@@ -6,16 +6,24 @@
     
     <div class="panel-primary">
      <div class="panel-body">
+      <br><h2>Event Details</h2>
                     <div class= "panel panel-info" style="border-color:#bbbe64 ;border-width: 2px; ">                    
                         <div class="panel-heading" style="background-color: #d9dbaa !important; ">
                             <a href="{{ route('events.show', $event->id ) }}"><b>{{ $event->title }}</b></a>
                         <br>
                         </div>
                         <div class="panel-body" >
-                        {{$event->start}}
-                        {{$event->end}}
 
-                           
+                          <div class="container col-lg-11">
+                            <div class="list-group">
+                              <li class="list-group-item"><p><b>Event Start Date:</b> {{$event->start}}</p></li>
+                              <li class="list-group-item"><p><b>Event End Date:</b> {{$event->end}}</p></li>
+                              <li class="list-group-item"><p><b>All Day Event:</b> {{$event->isAllDay}}</p></li>
+                              <li class="list-group-item"><p><b>Event Colour:</b> {{$event->color}}</p></li>
+                              <li class="list-group-item"><p><b>Event Url:</b> {{$event->url}}</p></li>
+                            </div>
+                          </div>
+
                         </div>                 
                     </div>
                 </div>
@@ -54,3 +62,6 @@
 </div>
 </div>
 @endsection
+
+
+
