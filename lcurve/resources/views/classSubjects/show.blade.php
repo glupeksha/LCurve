@@ -6,39 +6,23 @@
         <div class="panel panel-default">
          <div class="panel-heading">
             <br>
-            <label><b>Subject: </b></label>{{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}<br>
-            <label><b>Teacher name: </b></label>{{  $classSubject->teacher->name }}<br>
+            <label><b>Subject: </b></label> <span> {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br>
+            <label><b>Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
+            <br>
 
             <div class="row">
-
+              {!! Form::open(['method' => 'DELETE', 'route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 @can('Edit ClassSubject')
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
                 @endcan
 
                 @can('Delete ClassSubject')
-                <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+
+                 {!! Form::submit('Delete',array('class' => 'btn btn-danger floatbtn')) !!}
+
                 @endcan
-                <!-- Modal - start -->
-                                  <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog">
-                                     {!! Form::open(['method' => 'DELETE', 'route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
-                                      <!-- Modal content-->
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h5 class="modal-title">Are you sure you want to delete?</h5>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            {!! Form::submit('OK',array('class' => 'okbtnstyle')) !!}
-                                        </div>
-                                      </div>
-                                      {!! Form::close() !!}
-                                    </div>
-                                  </div>
-                <!-- Modal - end -->
-
+                {!! Form::close() !!}
             </div>
 
             <hr style="border-color:#848991">
@@ -46,7 +30,7 @@
 
             <div class="list-group">
 
-              <ol class="sortable" >
+              <ol class="sortable" style="list-style-position: inside;">
                 @foreach($classSubject->maintopics() as $topic)
                   @include('topics/plug_index',['topic'=>$topic])
                 @endforeach
@@ -55,24 +39,31 @@
             </div>
 
               {{ Form::open(array('action' => array('TopicController@store',$classSubject))) }}
-              {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
-              {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
-              {{ Form::close() }}
-              <hr style="border-color:#848991">
+              <div class="row">
+                <div class="col-lg-11">
+                  {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
+                </div>
+                <div class="col-lg-1">
+                  {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
+                </div>
 
-              <div class="">
-                  content:
-                <p id="display"> ads</p>
               </div>
 
+              {{ Form::close() }}
 
         </div>
 
         <div class="panel-body">
+          <h4>Lessons Preview</h4>
+            @foreach($classSubject->maintopics() as $topic)
+              @include('topics/plug_show',['topic'=>$topic])
+            @endforeach
 
         </div>
 
     </div>
+
+    <p id="display"></p>
 
 </div>
 
@@ -105,8 +96,9 @@
   				startCollapsed: false,
           startDepthCount: 0,
   				relocate: function(){
+
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
-            $("#display").html(JSON.stringify(arr));
+            $("#display").html(arr);
 
             $.ajax({
                 url: '/updatesequence',
@@ -114,10 +106,17 @@
                 data: arr,
                 success: function(response)
                 {
-                    $('#display').html(response['data']);
+                    //alert(response);
+                    $('#display').html(response);
 
                 }
+
             });
+            tinymce.triggerSave();
+              tiny();
+
+
+
 
   					console.log('Relocated item');
   				}
@@ -125,4 +124,14 @@
      });
 
   </script>
+  <script src="{{asset('js/tinymce/jquery.tinymce.min.js')}}"></script>
+  <script src="{{asset('js/tinymce/tinymce.min.js')}}"></script>
+<script>
+
+  function tiny() {
+    @stack('tinycode')
+  }
+  tiny();
+
+</script>
 @endpush

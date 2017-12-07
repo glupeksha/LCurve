@@ -79,7 +79,17 @@ class TopicController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
-        //
+      $this->validate($request, [
+          'name'=>'required|max:100',
+          'content'=>'required',
+      ]);
+
+      $topic->name = $request->input('name');
+      $topic->content = $request->input('content');
+      $topic->save();
+
+      return redirect()->back()->with('flash_message',
+           $topic->title.' updated');
     }
     public function updateSequence(Request $request)
     {
@@ -98,7 +108,6 @@ class TopicController extends Controller
         $i++;
       }
 
-      dd($request['data']);
     }
     /**
      * Remove the specified resource from storage.
@@ -108,6 +117,10 @@ class TopicController extends Controller
      */
     public function destroy(Topic $topic)
     {
-        //
+      $topic->delete();
+
+      return redirect()->back()
+          ->with('flash_message',
+           'Article successfully deleted');
     }
 }

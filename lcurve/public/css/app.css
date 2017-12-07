@@ -8507,6 +8507,10 @@ body {
   overflow-x: hidden;
 }
 
+
+.floatbtn {
+  float: right;
+
 .hr_style {
   border-color: #848991;
 }
@@ -8517,6 +8521,7 @@ body {
 
 .header-color {
   color: white;
+
 }
 
 .notify_cr {
