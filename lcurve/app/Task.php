@@ -56,8 +56,5 @@ class Task extends Model
       *
       * @return DateTime
       */
-     public function isAssignment()
-     {
-         return (bool)$this->isAssignment;
-     }
+     
 }

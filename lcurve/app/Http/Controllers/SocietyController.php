@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Society;
+use App\DropDown;
 use Illuminate\Http\Request;
+use Illuminate\lists;
 
 class SocietyController extends Controller
 {
@@ -14,7 +16,7 @@ class SocietyController extends Controller
      */
     public function index()
     {
-         $societies = Society::orderby('id','desc')->paginate(5);
+        $societies = Society::orderby('id','desc')->paginate(5);
         return view('societies.index',compact('societies'));
     }
 
@@ -25,7 +27,8 @@ class SocietyController extends Controller
      */
     public function create()
     {
-       return view('societies.create');
+        $dropdowns = DropDown::pluck('color');
+       return view('societies.create',compact('dropdowns'));
     }
 
     /**

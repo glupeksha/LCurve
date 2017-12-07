@@ -30,7 +30,6 @@ Route::resource('subjects', 'SubjectController');
 Route::resource('societies', 'SocietyController');
 Route::resource('grades', 'GradeController');
 Route::resource('classRooms', 'ClassRoomController');
-Route::resource('lessons', 'LessonsController');
 Route::resource('forums', 'ForumController');
 Route::resource('classSubjects', 'ClassSubjectController');
 Route::resource('sports', 'SportController');
@@ -61,4 +60,3 @@ Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
 Route::view('/profile', 'users.profile');
-

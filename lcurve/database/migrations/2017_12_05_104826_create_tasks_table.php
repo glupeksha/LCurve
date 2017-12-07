@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->string('title');
             $table->dateTime('due_date');
             $table->text('content');
-            $table->unsignedInteger('isAssignment');
+            $table->boolean('isAssignment')->nullable($value = false);
             $table->timestamps();
         });
     }

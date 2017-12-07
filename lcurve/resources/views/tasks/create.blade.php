@@ -21,9 +21,7 @@
             {{ Form::label('content', 'Content') }}
             {{ Form::text('content', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('isAssignment', 'Is it an assignment?') }} <br>
-            {{ Form::checkbox('isAssignment', '1', null, array('class' => 'form-control,checkbox-inline') ) }} Yes
-
+            {{ Form::checkbox('isAssignment','Assignment',true, array('class' => 'form-control,checkbox-inline') ) }} Assignment <br>
 
             {{ Form::submit('Create Task', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}

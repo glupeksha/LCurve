@@ -32,6 +32,7 @@
 </li>
 
 @push('tinycode')
+      tinymce.triggerSave();
       tinymce.remove('#tiny_{{$topic->id}}');
       tinymce.init({
           selector:'#tiny_{{$topic->id}}',

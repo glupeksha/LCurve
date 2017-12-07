@@ -11,6 +11,7 @@ return array(
     'App\\ClassRoom' => $baseDir . '/app/ClassRoom.php',
     'App\\ClassSubject' => $baseDir . '/app/ClassSubject.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\DropDown' => $baseDir . '/app/DropDown.php',
     'App\\Event' => $baseDir . '/app/Event.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Forum' => $baseDir . '/app/Forum.php',
