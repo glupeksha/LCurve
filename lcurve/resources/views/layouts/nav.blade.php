@@ -53,7 +53,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="student_home.html">
+                <a class="td_none" href="{{url('/sports')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
 
                         <img src="{{asset('images/navigation/sportssm.PNG')}}" class="img-responsive grow image_nav"/>
