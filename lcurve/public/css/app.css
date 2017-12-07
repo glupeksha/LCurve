@@ -8507,6 +8507,10 @@ body {
   overflow-x: hidden;
 }
 
+.floatbtn {
+  float: right;
+}
+
 .hr_style {
   border-color: #848991;
 }

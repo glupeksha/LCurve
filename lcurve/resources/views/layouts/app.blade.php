@@ -12,10 +12,10 @@
 
     <!-- Styles -->
     <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
-    @stack('styles')
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+    @stack('styles')
+
 
 
 
