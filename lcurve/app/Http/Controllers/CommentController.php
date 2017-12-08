@@ -15,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -36,7 +36,7 @@ class CommentController extends Controller
      */
     public function store(Request $request,Forum $forum)
     {
-
+        
       $this->validate(request(),['content'=>'required|min:2']);
 
       $forum->addComment( $request->input());

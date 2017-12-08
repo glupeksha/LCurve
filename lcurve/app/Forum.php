@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Forum extends Model
 {
     protected $fillable = [
-        'title', 'content'
+        'user_id','title', 'content'
     ];
 
     public function user(){
@@ -25,5 +25,7 @@ class Forum extends Model
         'forum_id'=>$this->id,
       ]);
     }
+
+
 
 }

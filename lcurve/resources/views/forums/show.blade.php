@@ -1,45 +1,42 @@
 @extends('layouts.app')
-
 @section('dash-left')
-    <div class="panel panel-primary">
-      <div class="panel panel-heading">
-        <div class="panel panel-info">
-            <div class="panel-heading">
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1"  >
+        <div class="panel panel-default" > 
+            <div class="panel-heading"  >        
                 <b>{{ $forum->title }}</b>
             </div>
-            <div class="panel-body" >
-              {{ $forum->content }}
+
+            <div class="col-md-offset-1" >
+              <p class="test">{!! $forum->content !!}</p>
+              <div class="col-md-offset-6"> 
+              {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
+                  <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                  @can('Edit Forum')
+                  <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-info" role="button">Edit</a>
+                  @endcan
+                 
+                    @can('Delete Forum')                       
+                      {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                    @endcan
+              {!! Form::close() !!}
+                  <br>
             </div>
+          </div>  
         </div>
 
-        {!! Form::open(['method' => 'DELETE', 'route' => ['forums.destroy', $forum->id] ]) !!}
-        <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
-        @can('Edit Forum')
-        <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-info" role="button">Edit</a>
-        @endcan
-        @can('Delete Forum')
-          <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#delModal">Delete</button>
-        @endcan
-        {!! Form::close() !!}
-        <!-- Modal - start -->
-        {!! Form::open(['method' => 'DELETE', 'route' => ['forums.destroy', $forum->id] ]) !!}
-          @include('layouts.deleteconfirm')
-        {!! Form::close() !!}
-        <!-- Modal - end -->
-      </div>
+        
+        
 
-      <div class="panel-body">
-        <div class="">
-          <h6>comments</h6>
-          @include('comments.plug_index',$forum)
+        <div class="panel panel-default" > 
+            <h5 ><b>&nbsp;  &nbsp; comments</b></h5>
+             @include('comments.plug_index',$forum)          
         </div>
 
-        @include('comments.plug_create',$forum)
+       @include('comments.plug_create',$forum)
       </div>
 
 
-
-  </div>
-
-
+</div>
 @endsection
