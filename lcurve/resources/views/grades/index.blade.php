@@ -13,8 +13,8 @@
             @foreach ($grades as $grade)
             <!--grade names view-->
                 <div class="panel-body">                    
-                        <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
-                        </a>
+                    <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
+                    </a>
                 </div>
             @endforeach
         </div>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Auth;
 use App\Forum;
 use Illuminate\Http\Request;
 
@@ -46,10 +46,12 @@ class ForumController extends Controller
             'content' =>'required',
             ]);
 
-        $title = $request['title'];
-        $content = $request['content'];
-
-        $forum = Forum::create($request->only('title', 'content'));
+       
+        $forum = Forum::create([
+            'title'=>$request->input('title'),
+            'content'=>$request->input('content'),
+            'user_id'=>\Auth::user()->id,
+        ]);
 
     //Display a successful message upon save
         return redirect()->route('forums.index')

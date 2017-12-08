@@ -22,6 +22,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/forums/{forum}/comments','CommentController@store');
+Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
+Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
 //resources
 Route::resource('users', 'UserController');
@@ -39,6 +41,7 @@ Route::resource('events', 'EventController');
 Route::resource('studentSubjects', 'StudentSubjectController');
 Route::resource('topics', 'TopicController');
 Route::resource('tasks', 'TaskController');
+
 
 
 //plug announcement

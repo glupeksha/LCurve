@@ -12,7 +12,7 @@
       <div class="panel-body">
         <div class="form-group">
           {{ Form::label('content', 'Content') }}
-          {{ Form::textarea('content', null, array('class' => 'form-control','id'=>'tiny_'.$topic->id)) }}
+          {{} Form::textarea('content', null, array('class' => 'form-control','id'=>'tiny_'.$topic->id)) }}
         </div>
 
       </div>

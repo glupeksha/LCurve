@@ -11,20 +11,38 @@
 
             @foreach ($forums as $forum)         
                 <div class="panel-body panel-heading">
-                        <a href="{{ route('forums.show', $forum->id ) }}" style="font-family:sans-serif;">
+                        <a href="{{ route('forums.show', $forum->id ) }}" style="font-family:san;">
                             <p class="teaser">
-                              <div style="float:left;" >  
+                            <div class="row">
+                              <div style="float:left;" class="col-lg-1 " >  
                                 <img src="images\speaking.png" style="width: 50px;height: 50px;">
                               </div> 
-                              <div class="col-md-offset-2">
-                                {{  str_limit($forum->content, 100) }} {{-- Limit teaser to 100 characters --}}
+                              <div class="col-lg-9 col-lg-offset-1">
+                                {{  str_limit($forum->title, 50) }} 
+                                <br>
+                        </a>
+                                <small>
+                                {!!  str_limit($forum->content,75) !!} 
+                                </small>
                               </div>
+                        
+                              <div class="col-lg-1">
+                              <a href="{{ route('forums.show', $forum->id ) }}">
+                               <img src="images\chat.png" style="width:20px;height: 20px; font-family:inherit;">
+                               </a>
+                               {{$forum->comments->count()}} 
+                                </div>
+                             </div>
                             </p>
-                        </a> 
-                            <p>
-                              <div class="col-md-offset-2">
-                              <p>posted by fgdjfkhsklf {{$forum->created_at}}</p>
-                              
+                         
+                            <p >
+                              <div class="col-md-offset-2 row">
+                                <h6 class="media-heading" style="font-family:inherit;">
+                                    Posted by {{$forum->user->name}} &nbsp;
+                                    <i><small>{{$forum->created_at->diffForHumans()}}</small></i>
+
+                                </h6>                              
+  
                               </div>
                             </p>                            
                                       
