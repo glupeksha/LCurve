@@ -8507,9 +8507,9 @@ body {
   overflow-x: hidden;
 }
 
-
 .floatbtn {
   float: right;
+}
 
 .hr_style {
   border-color: #848991;
@@ -8526,7 +8526,6 @@ body {
 
 .header-color {
   color: white;
-
 }
 
 .notify_cr {
@@ -8666,7 +8665,6 @@ a:active {
   opacity: 1;
   right: 0;
 }
-
 
 /*Homework start*/
 
@@ -8836,6 +8834,7 @@ a:active {
 /*homework list end*/
 
 /*Homework end*/
+
 .hr_style {
   border-color: #848991;
 }
@@ -9096,5 +9095,4 @@ a:active {
 .hr_style {
   border-color: #848991;
 }
-
 
