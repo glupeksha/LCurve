@@ -102,7 +102,6 @@
 
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
-
             $.ajax({
                 url: '/updatesequence',
                 type: 'GET',
@@ -115,12 +114,8 @@
                 }
 
             });
-            
-              tiny();
-
-
-
-
+          
+            tiny();
   					console.log('Relocated item');
   				}
 			  });
