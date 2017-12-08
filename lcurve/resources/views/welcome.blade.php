@@ -70,25 +70,16 @@
             @if (Route::has('login'))
                 <div class="top-right links">
 
-                    <!--language switch button starts-->
-
-                    <div class="content">
-
-                        <div class="links">
-                            <a href="{{url('locale/en')}}">English</a>
-                            <a href="{{url('locale/si')}}">Sinhala</a>
-                            <a href="{{url('locale/ta')}}">Tamil</a>
-
-                        </div>
-                    </div>
-
-                    <!--language switch button starts-->
+                    
 
                     @auth
                         <a href="{{ url('/home') }}">@lang('applang.homeBar')</a>
                     @else
                         <a href="{{ route('login') }}">@lang('applang.loginbutton')</a>
                         <a href="{{ route('register') }}">@lang('applang.RegisterReq')</a>
+                        <a href="{{url('locale/en')}}">@lang('applang.chooseEn')</a>
+                            <a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a>
+                            <a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a>
                     @endauth
                 </div>
             @endif

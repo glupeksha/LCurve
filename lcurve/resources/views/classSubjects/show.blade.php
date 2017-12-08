@@ -70,6 +70,9 @@
 @endsection
 
 @push('styles')
+  <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
+  <script src = "{{ asset('js/materialize.min.js') }}"></script>
+
   <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
      rel = "stylesheet">
 
@@ -99,7 +102,6 @@
 
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
-
             $.ajax({
                 url: '/updatesequence',
                 type: 'GET',
@@ -112,12 +114,8 @@
                 }
 
             });
-            tinymce.triggerSave();
-              tiny();
-
-
-
-
+          
+            tiny();
   					console.log('Relocated item');
   				}
 			  });

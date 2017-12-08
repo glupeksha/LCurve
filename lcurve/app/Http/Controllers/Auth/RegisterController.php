@@ -68,6 +68,8 @@ class RegisterController extends Controller
             $language='en';
         }elseif(array_key_exists('si',$data)){
             $language='si';
+        }elseif(array_key_exists('ta',$data)){
+            $language='ta';
         }
 
         //dd($language);

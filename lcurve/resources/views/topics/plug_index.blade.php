@@ -32,6 +32,7 @@
 </li>
 
 @push('tinycode')
+      tinymce.triggerSave();
       tinymce.remove('#tiny_{{$topic->id}}');
       tinymce.init({
           selector:'#tiny_{{$topic->id}}',
@@ -43,7 +44,16 @@
               'emoticons template paste textcolor colorpicker textpattern imagetools',
           ],
           toolbar1:'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent | link imag',
-          toolbar2: 'print preview media | forecolor backcolor emoticons',
-          imag_advtab: true
+          toolbar2: 'print preview media | forecolor backcolor emoticons mybutton',
+          imag_advtab: true,
+          setup: function (editor) {
+            editor.addButton('mybutton', {
+              text: 'My button',
+              icon: false,
+              onclick: function () {
+                editor.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;');
+              }
+            });
+          }
       });
 @endpush

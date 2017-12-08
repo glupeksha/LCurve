@@ -21,8 +21,8 @@
 		'confirmPassword'=>'கடவுச்சொல்லை உறுதிப்படுத்துக',
 		'registerProceed'=>'பதிவு',
 		'languageSelect'=>'இயல்புநிலை மொழி தேர்வு',
-		'chooseEn'=>'ஆங்கிலம்',
-		'chooseSi'=>'சிங்களம்',
+		'chooseEn'=>'  English',
+		'chooseSi'=>'  සිංහල',
 		'chooseTa'=>'தமிழ்',
 
 

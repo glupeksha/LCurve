@@ -82,8 +82,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @guest
+
+                    
+                <li><a href="{{url('locale/en')}}">@lang('applang.chooseEn')</a></li>
+                <li><a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a></li>
+                <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a></li>
                 <li><a href="{{ route('login') }}">@lang('applang.loginbutton')</a></li>
                 <li><a href="{{ route('register') }}">@lang('applang.RegisterReq')</a></li>
+
                 @else
                 <li class="dropdown">
                     <a href="#" class="dropdown-button" data-toggle="dropdown" aria-expanded="false">
