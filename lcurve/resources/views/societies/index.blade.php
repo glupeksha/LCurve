@@ -35,10 +35,12 @@
                         <!--starts delete permissions-->
                         @if(Auth::User()->can('Delete Society') || Auth::User()->can('Delete Society'.$society->id))
 
+
                         {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
 
                         @endif
                         <!--End delete permissions-->
+
 
                         {!! Form::close() !!}
                         <!--edit and delete button end-->

@@ -45,7 +45,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="7">quickadmin.no_entries_in_table</td>
+                            <td colspan="7">No Entries In Table</td>
                         </tr>
                     @endif
                 </tbody>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
   protected $fillable = [
-      'seqNo', 'parent','name',
+      'seqNo', 'parent','name','content',
   ];
   public function classSubject()
   {
@@ -17,6 +17,7 @@ class Topic extends Model
   {
       $this->hasMany('App\Lesson');
   }
+
 
   
 }

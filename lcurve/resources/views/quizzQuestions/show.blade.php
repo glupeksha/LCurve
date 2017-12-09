@@ -12,9 +12,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
-                    <td>{{ $quizzQuestion->topic->title or '' }}</td></tr><tr>
+                        <td>{{ $quizzQuestion->topic->title or '' }}</td></tr><tr>
                     <th>question-text</th>
-                    code-snippet</th>
+                    <td>{!! $quizzQuestion->question_text !!}</td></tr><tr>
+                    <th>code-snippet</th>
                     <td>{!! $quizzQuestion->code_snippet !!}</td></tr><tr>
                     <th>answer-explanation</th>
                     <td>{!! $quizzQuestion->answer_explanation !!}</td></tr><tr>

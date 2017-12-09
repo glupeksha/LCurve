@@ -4,12 +4,12 @@
 	<h3 class="page-title">Quizz Topics</h3>
 
     <p>
-        <a href="{{ route('quizzTopics.create') }}" class="btn btn-success">add_new</a>
+        <a href="{{ route('quizzTopics.create') }}" class="btn btn-success">Add New</a>
     </p>
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            list.
+            list
         </div>
 
         <div class="panel-body">
@@ -26,7 +26,7 @@
                     @if (count($topics) > 0)
                         @foreach ($topics as $topic)
                             <tr data-entry-id="{{ $topic->id }}">
-                                <td></td>
+                                 <td class="select-checkbox"><input type="checkbox" name="id" value="checked" /></td>
                                 <td>{{ $topic->name }}</td>
                                 <td>
                                     <a href="{{ route('quizzTopics.show',[$topic->id]) }}" class="btn btn-xs btn-primary">view</a>
@@ -47,7 +47,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="3">no_entries_in_table</td>
+                            <td colspan="3">No Entries In Table</td>
                         </tr>
                     @endif
                 </tbody>

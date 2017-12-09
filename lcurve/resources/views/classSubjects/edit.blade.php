@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('dash-left')
 <div class="row">
@@ -15,7 +15,7 @@
             {{ Form::text('class_room_id', null, array('class' => 'form-control')) }}
 
             <br>
-           
+
             {{ Form::label('subject_id', 'Subject Name') }}
             {{ Form::text('subject_id', null, array('class' => 'form-control')) }}
 
