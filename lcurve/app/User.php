@@ -30,20 +30,19 @@ class User extends Authenticatable
     ];
 
     public function setPasswordAttribute($password)
-    {   
+    {
         $this->attributes['password'] = bcrypt($password);
     }
 
     public function classSubject()
     {
-        return $this->hasMany('App\ClassSubject');
+        return $this->hasMany('App\ClassSubject','teacher_id');
     }
 
     public function classSubjects()
     {
         return $this->belongsToMany('App\ClassSubject');
-        
-    }
 
+    }
 
 }

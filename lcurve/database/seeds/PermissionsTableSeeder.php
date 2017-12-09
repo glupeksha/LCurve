@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use App\Permission;
+use App\Role;
 
 class PermissionsTableSeeder extends Seeder
 {
@@ -31,7 +31,6 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
 
         //Sports
-
         $role->givePermissionTo(Permission::create(['name'=>'Edit Sport']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Sport']));
 
@@ -60,7 +59,7 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Create Subject']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Subject']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Subject']));
-        
+
          //classSubject
         $role->givePermissionTo(Permission::create(['name'=>'Create ClassSubject']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassSubject']));
