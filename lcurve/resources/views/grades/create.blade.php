@@ -1,4 +1,6 @@
 @extends('layouts.admin.app')
+@if(Auth::User()->can('Create Grade')) 
+
 @section('dash-left')
 
     <div class="row">
@@ -21,3 +23,6 @@
     
 
 @endsection
+
+@endif
+

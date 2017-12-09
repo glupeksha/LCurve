@@ -1,4 +1,6 @@
 @extends('layouts.admin.app')
+@if(Auth::User()->can('View Edit Grade') || Auth::User()->can('View Edit Grade'.$grade->id)) 
+
 @section('dash-left')
 
 <div class="row">
@@ -21,3 +23,6 @@
 </div>
 
 @endsection
+
+@endif
+

@@ -28,7 +28,6 @@
                                 <svg height="20" width="20">
                                     <circle cx="10" cy="10" r="8" stroke-width="1" fill="@if(!empty($announcement->announceable->color )) {{$announcement->announceable->color}} @else #3097D1 @endif " >
                                     </circle>
-                                    Sorry, your browser does not support inline SVG.  
                                 </svg>
                                 </a>
                              </div>                           

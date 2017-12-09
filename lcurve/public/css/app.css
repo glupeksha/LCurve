@@ -8511,13 +8511,13 @@ body {
   float: right;
 }
 
-
 .fc-basic-view .fc-body .fc-row {
   min-height: 2.5em;
 }
 
 .fc-event-container {
   visibility: hidden;
+}
 
 .cr-style {
   margin-bottom: 20px;
@@ -8527,7 +8527,6 @@ body {
 .indi-style {
   background-color: #d9dbaa;
   color: #606060;
-
 }
 
 .hr_style {
