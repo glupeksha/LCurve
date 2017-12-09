@@ -23,6 +23,7 @@
                      <div class="col-lg-4">
                       {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}
 
+
                 <!--edit and delete button start-->
                         @can('Edit Society '.$society->id)
                         <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
@@ -30,6 +31,7 @@
                         @can('Delete Society '.$society->id)
 
                           {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+
                         @endcan
                         {!! Form::close() !!}
                 <!--edit and delete button end-->

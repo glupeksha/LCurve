@@ -76,5 +76,25 @@ class Event extends Model implements \MaddHatter\LaravelFullcalendar\Event
     //etc
       ];
   }
+  public function getCalendar()
+  {
+    $events=Event::all();
+    $calendar = Calendar::addEvents($events)
+          ->setOptions([ //set fullcalendar options
+              'firstDay' => 1,
+              'height' => 'auto',
+              'themeSystem' => 'bootstrap3',
+              'columnHeader' => false,
+              'aspectRatio' => 1,
+              'allDayDefault'=> false, 
 
+          ])->setCallbacks([
+              'eventRender'=> 'function (event, element, view) {
+                var dateString = event.start.format("YYYY-MM-DD");
+        
+                $(view.el[0]).find(".fc-day[data-date=" + dateString +"]").css("background-color", "#efd0e0");
+                $(view.el[0]).wrap(\'<a href="sda"/>\');
+              }'
+          ]);
+  }
 }

@@ -3,6 +3,7 @@
 @section('dash-left')
 
 <div class="col-lg-10 col-lg-offset-1">
+
     <h3><i class="fa fa-key"></i>Permissions Management</h3>
       <ul class="nav nav-tabs">
         <li><a href="{{url('permissions/view/Society')}}">Societies</a></li>
@@ -12,6 +13,7 @@
 
     <br>
     @include('permissions.plug_permissible',[$permissions])
+    
     <div class="col-lg-9"></div>
     <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">Add Permission</a>
 

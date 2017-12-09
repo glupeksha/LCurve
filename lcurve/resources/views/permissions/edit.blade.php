@@ -14,6 +14,7 @@
         </div>
         @include('layouts.search',[$searchableList])
         <br>
+
         {{ Form::submit('Add User', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}

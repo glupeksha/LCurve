@@ -11,11 +11,11 @@
 
             @foreach ($forums as $forum)         
                 <div class="panel-body panel-heading">
-                        <a href="{{ route('forums.show', $forum->id ) }}" style="font-family:san;">
+                        <a href="{{ route('forums.show', $forum->id ) }}">
                             <p class="teaser">
                             <div class="row">
-                              <div style="float:left;" class="col-lg-1 " >  
-                                <img src="images\speaking.png" style="width: 50px;height: 50px;">
+                              <div class="col-lg-1 " >  
+                                <img src="{{ asset('images\speaking.png') }}" class="image-style">
                               </div> 
                               <div class="col-lg-9 col-lg-offset-1">
                                 {{  str_limit($forum->title, 50) }} 
@@ -28,7 +28,7 @@
                         
                               <div class="col-lg-1">
                               <a href="{{ route('forums.show', $forum->id ) }}">
-                               <img src="images\chat.png" style="width:20px;height: 20px; font-family:inherit;">
+                               <img src="{{asset('images\chat.png' )}}" class="image-style1" >
                                </a>
                                {{$forum->comments->count()}} 
                                 </div>

@@ -20,9 +20,6 @@
           
             <br>
             
-            {{ Form::label('color', 'Color') }}
-            {{ Form::color('color', null, array('class' => 'form-control')) }}
-            <br>
 
             {{ Form::submit('Create Announcement', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}

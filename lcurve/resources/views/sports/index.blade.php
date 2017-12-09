@@ -23,11 +23,11 @@
                         <div class="col-lg-4">
                             {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['sports.destroy', $sport->id] ]) !!}                 
                                 @can('Edit Sport')
-                                <a href="{{ route('sports.edit', $sport->id) }}" class="btn btn-info" role="button">Edit</a>
+                                <a href="{{ route('sports.edit', $sport->id) }}" class="btn btn-success" role="button">Edit</a>
                                 @endcan
-                                @can('Delete Sport')
-                               
-                                  {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                                
+                                @can('Delete Sport')                               
+                                  {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
                                 @endcan
                             {!! Form::close() !!}
                     <!--edit delete buttons start-->

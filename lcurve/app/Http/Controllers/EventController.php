@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-
-  public function showCalendar(){
+  //calendar starts
+  public function showPlugCalendar(){
 
           $events = [];
           $data = Event::all();
+
           if($data->count()) {
               foreach ($data as $key => $value) {
                   $events[] = Calendar::event(
@@ -23,24 +24,63 @@ class EventController extends Controller
                       null,
                       // Add color and link on event
                     [
-                        'color' => '#f05050',
+                        
                         'url' => 'pass here url and any route',
+                        'backgroundColor'=> '#f05050',
+
                     ]
                   );
               }
           }
-          $calendar = Calendar::addEvents($events)
+
+          $calendar = Calendar::addEvents($data)
           ->setOptions([ //set fullcalendar options
               'firstDay' => 1,
               'height' => 'auto',
               'themeSystem' => 'bootstrap3',
               'columnHeader' => false,
-              'aspectRatio' => 1
+              'aspectRatio' => 1,
+              'allDayDefault'=> false, 
+
+          ])->setCallbacks([
+    'eventRender'=> 'function (event, element, view) {
+        var dateString = event.start.format("YYYY-MM-DD");
+        
+        $(view.el[0]).find(".fc-day[data-date=" + dateString +"]").css("background-color", "#efd0e0");
+        $(view.el[0]).wrap(\'<a href="{{url(events\calendar)}}"/>\');
+     }'
           ]);
-          return view('events.calendar', compact('calendar'));
+
+          $subset = $data->map(function ($data) {
+              return collect($data->toArray())
+                  ->only(['title','start', 'end'])
+                  ->all();
+          });
+          return view::share('calendar',$calendar);
       //return view('events.index');
 
   }
+  public function showCalendar(){
+
+          $events = [];
+          $data = Event::all();
+
+          $fullcalendar = Calendar::addEvents($data)
+          ->setOptions([ //set fullcalendar options
+              'firstDay' => 1,
+              'height' => 'auto',
+              'themeSystem' => 'bootstrap3',
+              'columnHeader' => false,
+              'aspectRatio' => 1, 
+
+          ]);
+
+          return view('events.calendar', compact('fullcalendar'));
+      //return view('events.index');
+
+  }
+  // calendar ends
+
     /**
      * Display a listing of the resource.
      *

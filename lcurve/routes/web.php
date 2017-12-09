@@ -23,6 +23,7 @@ Route::view('/', 'welcome');
 
 //home page
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/events/calendar', 'EventController@showCalendar');
 
 //calendar
 Route::get('/calendar', 'EventController@showCalendar');
@@ -46,6 +47,7 @@ Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSp
 //topics
 Route::post('/topics/{classSubject}','TopicController@store');
 Route::get('/topics/updatesequence','TopicController@updateSequence');
+Route::get('/updatesequence','TopicController@updateSequence');
 
 //plug comments to forums
 Route::post('/forums/{forum}/comments','CommentController@store');
@@ -82,3 +84,6 @@ Route::get('/studentsSubjects/index', function()
 });
 Route::view('/studentsSubject', 'studentsSubject.index');
 Route::view('/studentsubjects', 'studentsSubject.attach');
+
+
+

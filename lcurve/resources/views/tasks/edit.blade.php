@@ -19,7 +19,10 @@
             {{ Form::label('content', 'Content') }}
             {{ Form::text('content', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('isAssignment', 'Is it an assignment?') }} <br>
+            {{ Form::label('taskType', 'Task Type') }}
+            {{ Form::select('taskType', $taskType) }}<br> 
+
+            {{ Form::label('isAssignment', 'Assignment?') }} <br>
             {{ Form::checkbox('isAssignment','true',1, array('class' => 'form-control,checkbox-inline') ) }} Yes <br>
 
 

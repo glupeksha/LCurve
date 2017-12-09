@@ -10,7 +10,9 @@
       <li><a href="{{url('users/view/Admin')}}">Admins</a></li>
     </ul>
 <br>
+
   @include('users.plug_index',[$users])
+
   <div class="col-lg-10"></div>
   <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
 </div>

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
-  <h2><i class='fa fa-user-plus'></i> Edit {{$download->title}}</h2>
+
+  <h2>
+    <i class='fa fa-user-plus'></i>
+       Edit {{$download->title}}
+  </h2>
   <hr>
   {{ Form::model($download, array('route' => array('downloads.update', $download->id), 'method' => 'put', 'files' => true)) }}
 
