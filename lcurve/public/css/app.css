@@ -8511,6 +8511,14 @@ body {
   float: right;
 }
 
+
+.fc-basic-view .fc-body .fc-row {
+  min-height: 2.5em;
+}
+
+.fc-event-container {
+  visibility: hidden;
+
 .cr-style {
   margin-bottom: 20px;
   border-color: #abad85;
@@ -8519,6 +8527,7 @@ body {
 .indi-style {
   background-color: #d9dbaa;
   color: #606060;
+
 }
 
 .hr_style {
@@ -8690,19 +8699,19 @@ a:active {
 }
 
 .panelBodyColor {
-  color: #22AED1;
+  color: #0B9B7E;
 }
 
 .notify_cr {
-  border: 2px solid #22AED1;
+  border: 2px solid #0B9B7E !important;
 }
 
 .notify_shead_cr {
-  background-color: #22AED1;
+  background-color: #0B9B7E;
 }
 
 .notify_indi_cr {
-  background-color: #22AED1;
+  background-color: #0B9B7E;
   color: #FAF7FF;
 }
 

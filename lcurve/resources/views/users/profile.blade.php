@@ -24,11 +24,12 @@
                     </div>
                 </div>
 <div class="row">
+
     <div class="col-lg-8" ></div>
     @can('Edit Profile')
     <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-success" role="button">Edit</a>
     @endcan
-    
+
 
      
     {!! Form::close() !!}
