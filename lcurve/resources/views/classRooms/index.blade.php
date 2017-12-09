@@ -10,13 +10,11 @@
 
             @foreach ($classRooms as $classRoom)
 
-             <div class="panel-body panel-heading"> 
-                <div class="panel-body">    
-                    <div class="col-lg-1"></div>               
+             <div class="panel-body panel-heading">
+                <div class="panel-body">
+                    <div class="col-lg-1"></div>
                     <a href="{{ route('classRooms.show', $classRoom->id ) }}">
-                        <b>{{ $classRoom->grade->name }} 
-
-                        - {{ $classRoom->name }} </b>
+                        <b> {{ $classRoom->name }} </b>
                         <br>
                     </a>
                 </div>
