@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="row">
@@ -12,18 +12,19 @@
             </div>
             @foreach ($grades as $grade)
             <!--grade names view-->
-                <div class="panel-body">                    
+                <div class="panel-body">
                     <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
                     </a>
                 </div>
             @endforeach
         </div>
-            
+
         <div class="text-center">
             {!! $grades->links() !!}
         </div>
     </div>
 </div>
+
 
 <div class="col-lg-10"></div> 
 @if(Auth::User()->can('Create Grade') || Auth::User()->can('Create Grade'.$grade->id)) 

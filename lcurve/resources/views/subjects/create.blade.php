@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="row">
@@ -26,7 +26,7 @@
                 {{ Form::submit('Create Subject', array('class' => 'btn btn-success btn-lg btn-block')) }}
             </div>
         {{ Form::close() }}
-        
+
     </div>
 </div>
 

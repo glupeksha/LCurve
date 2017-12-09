@@ -9,14 +9,12 @@
 ;
     {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{Form::open(array('action' => 'UserController@selectSubject', 'method' => 'get'))}}
-        {{ Form::hidden('invisible1', $user_id, array('id' => 'invisible_id1')) }}
+        {{ Form::hidden('invisible1', $user->id, array('id' => 'invisible_id1')) }}
         <div class="form-group">
 
-          @foreach ($grades as $grade)
-            {{ Form::radio('grades[]',  $grade->id ,array('id'=>'ChStudent')) }}
-            {{ Form::label($grade->name, ucfirst($grade->name)) }}<br>
-          @endforeach
-          
+
+          @include('layouts.search',$searchableList)
+
             {{ Form::label('id', 'Enter classroom Id') }}
             {{ Form::text('id', null, array('class' => 'form-control')) }}
             <br>

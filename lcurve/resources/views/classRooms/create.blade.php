@@ -1,4 +1,6 @@
-@extends('layouts.app')
+<<<<<<< upeksha
+@extends('layouts.admin.app')
+
 @section('dash-left')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -17,6 +19,7 @@
             <br>
             {{ Form::label('name', 'Class Name') }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
+
             <br>          
 
             {{ Form::submit('Create ClassRoom', array('class' => 'btn btn-success btn-lg btn-block')) }}

@@ -1,7 +1,5 @@
-@extends('layouts.app')
-@section('dash-left')
-
 <div class="row">
+
 	<div >
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -10,22 +8,25 @@
           <div class="panel-body">
             @foreach ($subjects as $subject)
 
-              <div class="col-lg-2 subjects">
-								<a href="{{ route('subjects.show', $subject->id ) }}">
-                	<div class="subject_icon">
-                    <img src="{{$subject->image}}"/>
-                  </div>
-                </a>
-                <div>
-                  {{$subject->name}}
+
+            @foreach ($subjects as $subject)
+                <div class="panel-body panel-heading">
+                <div class="col-lg-1"></div>
+                        <a href="{{ route('subjects.show', $subject->id ) }}" style="font-family:sans-serif;"><b>
+                          {{  $subject->name }}
+                        </b><br>
+                        </a>
                 </div>
-              </div>	
-              								
             @endforeach
-          </div>
+        </div>
+
+        <div class="text-center">
+            {!! $subject->links() !!}
         </div>
     </div>
-  </div>
 </div>
 
-@endsection
+@can('Create ClassSubject')
+<div class="col-lg-8"></div>
+    <a href="{{ route('classSubjects.create') }}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Add Subject For a Class</a>
+@endcan

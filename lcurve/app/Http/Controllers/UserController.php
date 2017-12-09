@@ -64,12 +64,11 @@ class UserController extends Controller
             foreach ($roles as $role) {
                 $role_r = Role::where('id', '=', $role)->firstOrFail();
                 $user->assignRole($role_r); //Assigning role to usery
-
-                if($role_r->name=='Student'){
-                  $grades=Grade::all();
-                    return view('studentsSubject.index',compact('user_id',$grades));
-                }
             }
+        }
+        if($user->hasRole('Student')){
+          $searchableList=ClassRoom::all();
+          return view('studentsSubject.index',compact('user','searchableList'));
         }
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
@@ -117,7 +116,6 @@ class UserController extends Controller
         $this->validate($request, [
             'name'=>'required|max:120',
             'email'=>'required|email|unique:users,email,'.$user->id,
-            'password'=>'required|min:6|confirmed',
         ]);
         $input = $request->only(['name', 'email', 'password']); //Retreive the name, email and password fields
         $roles = $request['roles']; //Retreive all roles
@@ -128,6 +126,10 @@ class UserController extends Controller
         }
         else {
             $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
+        }
+        if($user->hasRole('Student')){
+          $searchableList=ClassRoom::all();
+          return view('studentsSubject.index',compact('user','searchableList'));
         }
         return redirect()->route('users.index')
             ->with('flash_message',

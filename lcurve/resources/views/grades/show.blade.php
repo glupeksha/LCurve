@@ -1,9 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="panel panel-default">
-  <div class="panel-body panel-heading"> 
+  <div class="panel-body panel-heading">
     <h3>{{ $grade->name }}</h3>
+
     <hr class="hr_style">    
     <hr class="hr_style"> 
           
@@ -22,6 +23,7 @@
       @endif
       {!! Form::close() !!}
     </div>
+
 
   </div>  
 </div>

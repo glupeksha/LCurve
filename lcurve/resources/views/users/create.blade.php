@@ -2,7 +2,7 @@
 
 @section('dash-left')
 
-<div class='col-lg-4 col-lg-offset-4'>
+<div class='col-lg-8 col-lg-offset-2'>
 
     <h3><i class='fa fa-user-plus'></i> Add User</h3>
     <hr style="border-color:#848991">
@@ -22,7 +22,7 @@
 
     <div class='form-group'>
         @foreach ($roles as $role)
-            {{ Form::checkbox('roles[]',  $role->id ,array('id'=>'ChStudent')) }}
+            {{ Form::checkbox('roles[]',  $role->id ,false,array('id'=>'ChStudent')) }}
             {{ Form::label($role->name, ucfirst($role->name)) }}<br>
         @endforeach
 
@@ -39,7 +39,7 @@
         {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
 
     </div>
-    <div class="col-lg-9"></div>
+    <div class="col-lg-10"></div>
     {{ Form::submit('Add', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
 
     {{ Form::close() }}
