@@ -21,7 +21,7 @@
 
             <p>&nbsp;</p>
 
-            <a href="{{ route('quizzTopics.index') }}" class="btn btn-default">back_to_list</a>
+            <a href="{{ route('quizzTopics.index') }}" class="btn btn-default">Back to list</a>
         </div>
     </div>
 
