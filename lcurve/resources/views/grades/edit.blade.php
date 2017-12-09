@@ -1,3 +1,4 @@
+@if(Auth::User()->can('View Edit Grade') || Auth::User()->can('View Edit Grade'.$grade->id)) 
 @extends('layouts.app')
 @section('dash-left')
 
@@ -21,3 +22,4 @@
 </div>
 
 @endsection
+@endif

@@ -30,7 +30,7 @@
                         @endcan
                         @can('Delete Society '.$society->id)
 
-                          {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                          {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
 
                         @endcan
                         {!! Form::close() !!}

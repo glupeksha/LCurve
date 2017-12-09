@@ -1,3 +1,4 @@
+@if(Auth::User()->can('View Forum')) 
 @extends('layouts.app')
 @section('dash-left')
 
@@ -7,8 +8,6 @@
             <div class="panel-heading"  >
                 <h3>Forums</h3>
             </div>
-             
-
             @foreach ($forums as $forum)         
                 <div class="panel-body panel-heading">
                         <a href="{{ route('forums.show', $forum->id ) }}">
@@ -44,8 +43,7 @@
                                 </h6>                              
   
                               </div>
-                            </p>                            
-                                      
+                            </p>                           
                 </div>                  
             @endforeach
         </div>
@@ -57,3 +55,4 @@
 </div>
 
 @endsection
+@endif

@@ -1,3 +1,4 @@
+@if(Auth::User()->can('Create Grade')) 
 @extends('layouts.app')
 @section('dash-left')
 
@@ -21,3 +22,4 @@
     
 
 @endsection
+@endif
