@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
     <div class="row">
@@ -13,7 +13,7 @@
                     {{ Form::label('name', 'Grade') }}
                     {{ Form::text('name', null, array('class' => 'form-control')) }}
                     <br>
-                    {{ Form::submit('Create Grade', array('class' => 'btn btn-success btn-lg btn-block')) }}                
+                    {{ Form::submit('Create Grade', array('class' => 'btn btn-success btn-lg btn-block')) }}
                 </div>
             {{ Form::close() }}
         </div>
