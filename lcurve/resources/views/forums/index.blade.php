@@ -15,7 +15,7 @@
                             <p class="teaser">
                             <div class="row">
                               <div class="col-lg-1 " >  
-                                <img src="images\speaking.png image-style" >
+                                <img src="{{ asset('images\speaking.png') }}" class="image-style">
                               </div> 
                               <div class="col-lg-9 col-lg-offset-1">
                                 {{  str_limit($forum->title, 50) }} 
@@ -28,7 +28,7 @@
                         
                               <div class="col-lg-1">
                               <a href="{{ route('forums.show', $forum->id ) }}">
-                               <img src="images\chat.png image-style1" >
+                               <img src="{{asset('images\chat.png' )}}" class="image-style1" >
                                </a>
                                {{$forum->comments->count()}} 
                                 </div>

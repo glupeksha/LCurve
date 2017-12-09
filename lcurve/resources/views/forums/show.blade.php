@@ -12,9 +12,10 @@
               <p class="test">{!! $forum->content !!}</p>
               <div class="col-md-offset-6"> 
                 {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
-                  <a href="{{ url()->previous() }}" class="btn btn-success>Back</a>
+                  <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
+
                   @can('Edit Forum')
-                  <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-success" role="button">Edit</a>
+                  <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-success" role="button" >Edit</a>
                   @endcan
                  
                   @can('Delete Forum')                       
