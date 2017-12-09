@@ -27,8 +27,8 @@
 
             <br>
 
-             {{ Form::label('color', 'Color') }}
-            {{ Form::color('color', null, array('class' => 'form-control')) }}
+            {{ Form::label('color', 'Color') }}
+            {{ Form::select('color',$colors, array('class' => 'form-control')) }}
 
             <br>
 

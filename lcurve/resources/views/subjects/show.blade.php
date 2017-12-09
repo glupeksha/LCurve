@@ -10,11 +10,11 @@
 <!-- edit and delete button start -->
 {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['subjects.destroy', $subject->id] ]) !!} 
     @can('Edit Subject')
-      <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-info" role="button">Edit</a>
+      <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-success" role="button">Edit</a>
     @endcan    
 
     @can('Delete Subject')                       
-      {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+      {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
     @endcan
   <!-- edit and delete button end-->
 {!! Form::close() !!}

@@ -16,13 +16,13 @@
             <div class="row">
                 <div class="col-lg-8"></div>  
                {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classRooms.destroy', $classRoom->id] ]) !!} 
-                <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
                 @can('Edit ClassRoom')
-                <a href="{{ route('classRooms.edit', $classRoom->id) }}" class="btn btn-info" role="button">Edit</a>
+                <a href="{{ route('classRooms.edit', $classRoom->id) }}" class="btn btn-success" role="button">Edit</a>
                 @endcan
                
                 @can('Delete ClassRoom')                       
-                  {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                  {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
                 @endcan
                 {!! Form::close() !!}
             </div>

@@ -27,8 +27,16 @@ class SocietyController extends Controller
      */
     public function create()
     {
-        $dropdowns = DropDown::pluck('color');
-       return view('societies.create',compact('dropdowns'));
+        $colors=[
+       '#8AD7B6'=>'#8AD7B6',
+       '#337BB7'=>'#337BB7',
+       '#2090B4'=>'#2090B4',
+       '#37C199'=>'#37C199',
+       '#1F8CA4'=>'#1F8CA4',
+       '#1ABB9C'=>'#1ABB9C',
+       '#23775B'=>'#23775B',
+       ] ;
+       return view('societies.create',compact('colors'));
     }
 
     /**

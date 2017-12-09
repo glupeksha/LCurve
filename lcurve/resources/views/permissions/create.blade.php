@@ -19,7 +19,7 @@
             @endforeach
         @endif
         <br>
-        {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+        {{ Form::submit('Add', array('class' => 'btn btn-success')) }}
 
     {{ Form::close() }}
 

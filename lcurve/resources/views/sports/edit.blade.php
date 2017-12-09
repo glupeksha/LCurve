@@ -24,7 +24,7 @@
 
                 <div class="col-lg-10"></div>
 
-                {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
+                {{ Form::submit('Save', array('class' => 'btn btn-success','style'=>'background-color: #0b9b7e')) }}
             </div>
         {{ Form::close() }}        
     </div>

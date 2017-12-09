@@ -23,9 +23,10 @@
             {{ Form::label('subscribe', 'Subscribe content') }}
             {{ Form::textarea('subscribe', null, array('class' => 'form-control')) }}
             <br>
+           
+            {{ Form::label('color', 'Color') }}
+            {{ Form::select('color',$colors, array('class' => 'form-control')) }}
 
-             {{ Form::label('color', 'Color') }}
-            {{ Form::color('color', null, array('class' => 'form-control')) }}
             <br>
 
             {{ Form::submit('Add New Sport', array('class' => 'btn btn-success btn-lg btn-block')) }}

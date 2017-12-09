@@ -6,7 +6,8 @@
     <div class="col-md-8 col-md-offset-2">
 
         <h3>Edit Subject for a Class</h3>
-        <hr style="border-color:#848991">
+        <hr class="hr_style">
+
             {{ Form::model($classSubject, array('route' => array('classSubjects.update', $classSubject->id), 'method' => 'PUT')) }}
 
         <div class="form-group">
@@ -24,7 +25,7 @@
 
             <br>
             <div class="col-lg-10"></div>
-            {{ Form::submit('Save', array('class' =>'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
+            {{ Form::submit('Save', array('class' =>'btn btn-success')) }}
 
             {{ Form::close() }}
         </div>
