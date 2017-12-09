@@ -79,21 +79,35 @@ class TopicController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
-        //
+      $this->validate($request, [
+          'name'=>'required|max:100',
+          'content'=>'required',
+      ]);
+
+      $topic->name = $request->input('name');
+      $topic->content = $request->input('content');
+      $topic->save();
+
+      return redirect()->back()->with('flash_message',
+           $topic->title.' updated');
     }
     public function updateSequence(Request $request)
     {
+
       $i=1;
       foreach ($request['topic'] as $topic_id=>$topic_parent) {
         $topic=Topic::find($topic_id);
+        echo $topic->id;
         $topic->seqNo=$i;
         if($topic_parent!="null"){
           $topic->parent=$topic_parent;
+        }else{
+          $topic->parent=null;
         }
         $topic->save();
         $i++;
       }
-      return $request['topic'];
+
     }
     /**
      * Remove the specified resource from storage.
@@ -103,6 +117,10 @@ class TopicController extends Controller
      */
     public function destroy(Topic $topic)
     {
-        //
+      $topic->delete();
+
+      return redirect()->back()
+          ->with('flash_message',
+           'Article successfully deleted');
     }
 }

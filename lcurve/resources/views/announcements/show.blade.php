@@ -6,11 +6,17 @@
     
     <div class="panel-primary">
      <div class="panel-body">
-        <div class= "panel panel-info"style=" border-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #000000 @endif ;
+        <div class= "panel panel-info" style=" border-color:#abad85;
                     border-width: 2px;  ">                    
-          <div class="panel-heading" style="background-color:@if(!empty($announcement->announceable->color )){{ $announcement->announceable->color}} @else #000000 @endif ;
+          <div class="panel-heading" style="background-color:#d9dbaa;
                     border-width: 2px;  ">
-                <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: white"><b>{{ $announcement->title }}</b></a>
+                <div class="col-lg-11">
+                  <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: #606060"><b>{{ $announcement->title }}</b></a>
+                </div>
+                <svg height="20" width="20">
+                  <circle cx="10" cy="10" r="8" stroke-width="1" fill="@if(!empty($announcement->announceable->color )) {{$announcement->announceable->color}} @else #abad85 @endif " ></circle>
+                                Sorry, your browser does not support inline SVG.  
+                </svg>
                 <br>
           </div>
           <div class="panel-body" >

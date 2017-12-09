@@ -42,15 +42,23 @@ class TaskController extends Controller
             'title'=>'required|max:100',
             'due_date'=>'required',
             'content' =>'required|max:100',
-            'isAssignment' =>'required',
             ]);
 
         $title = $request['title'];
         $due_date = $request['due_date'];
         $content = $request['content'];
-        $isAssignment = $request['isAssignment'];
+         if(array_key_exists('isAssignment',$request)){
+                $isAssignment=true;
+            }else{
+                $isAssignment=false;
+            }
 
-        $task = Task::create($request->only('title','due_date', 'content','isAssignment'));
+        $task = Task::create([
+            'title'=>$title,
+            'due_date'=>$due_date,
+            'content'=>$content,
+            'isAssignment'=>$isAssignment,
+        ]);
 
     //Display a successful message upon save
         return redirect()->route('tasks.index')
@@ -87,12 +95,18 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Task $task)
-    {
+    {       
+
+            if(array_key_exists('isAssignment',$request)){
+                $task->isAssignment=true;
+            }else{
+                $task->isAssignment=false;
+            }
+
              $this->validate($request, [
                 'title' => 'required|max:100',
                 'due_date'=>'required',
                 'content'=>'required|max:100',
-                'isAssignment'=>'required',
             
             ]);
 
@@ -100,7 +114,6 @@ class TaskController extends Controller
         $task->title = $request->input('title');
         $task->due_date = $request->input('due_date');
         $task->content = $request->input('content');
-        $task->isAssignment = $request->input('isAssignment');
         $task->save();
 
         return redirect()->route('tasks.show', 

@@ -55,6 +55,8 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Create Forum']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Forum']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Forum']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Comment']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Comment']));
 
         //Subject
         $role->givePermissionTo(Permission::create(['name'=>'Create Subject']));
@@ -70,6 +72,13 @@ class PermissionsTableSeeder extends Seeder
         //events
         $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));  
         $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Event']));
+
+        //events
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Task']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Task']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Task']));
+
 
         //quizzQuestions
         $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestion']));

@@ -17,7 +17,17 @@ body{
     max-width: 100%;
     overflow-x: hidden;
 }
-
+.floatbtn{
+	float: right;
+}
 
 //subject
 @import "society";
+
+//task
+@import "task";
+
+@import "sport";
+@import "subject";
+@import "grade";
+@import "forum";

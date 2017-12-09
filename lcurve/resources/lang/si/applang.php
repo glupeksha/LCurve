@@ -5,7 +5,7 @@
 
 		// login page
 		'emailReq'=>'විද්‍යුත් තැපෑල',
-		'remember'=>'මාව මතක තබා ගන්න',
+		'remember'=>'මුරපදය මතක තබා ගන්න',
 		'loginbutton'=>'පද්ධතියට ඇතුළුවීම',
 		'forgotPass'=>'මුරපදය අමතක වුනාද?',
 		'loginHeading'=>'පද්ධතියට ඇතුළුවීම',
@@ -21,6 +21,7 @@
 		'languageSelect'=>'භාෂාව තෝරන්න',
 		'chooseSi'=>'  සිංහල',
 		'chooseEn'=>'  English',
+		'chooseTa'=>'தமிழ்',
 
 		// email reset password
 

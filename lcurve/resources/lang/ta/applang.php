@@ -1,5 +1,4 @@
 <?php  
-  
 
 	return [
 
@@ -22,8 +21,8 @@
 		'confirmPassword'=>'கடவுச்சொல்லை உறுதிப்படுத்துக',
 		'registerProceed'=>'பதிவு',
 		'languageSelect'=>'இயல்புநிலை மொழி தேர்வு',
-		'chooseEn'=>'ஆங்கிலம்',
-		'chooseSi'=>'சிங்களம்',
+		'chooseEn'=>'  English',
+		'chooseSi'=>'  සිංහල',
 		'chooseTa'=>'தமிழ்',
 
 
@@ -81,16 +80,5 @@
 		'noFilechosen'=>'கோப்பு தேர்வுசெய்யப்பட வில்லை',
 		'color'=>'நிறம்',
 		'createsubject'=>' பாடங்களை உருவாக்கவும்',
-
-
-		
-
-
-
-
-
-
-
-
 
 	];

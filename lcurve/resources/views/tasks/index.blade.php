@@ -1,69 +1,79 @@
 @extends('layouts.app')
 @section('dash-left')
 
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default ">
-            <div class="panel-heading">
-                <h3>Tasks</h3>
-            </div>
 
 
-            <div class="panel-heading">Page {{ $tasks->currentPage() }} of {{ $tasks->lastPage() }}
-            </div>
-
-            <div class="panel-body">
-            @foreach ($tasks as $task)
-                <div class="row">
-                    <div class="col-lg-8">
-                        {{--<button class="buttonstyles">--}}
-                         <div class="col-lg-2"></div>
-                        <a href="{{ route('tasks.show', $task->id ) }}"><b>{{ $task->title }}</b></a>
-                        {{--</button>--}}
-                    </div>
-
-                    <div class="col-lg-4">
-
-                    @can('Edit Task')
-                    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-info" role="button">Edit</a>
-                    @endcan
-
-                    @can('Delete Task')
-                    <button type="button" class="btn btn-info btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
-                    @endcan
-                    
-                    </div>
-                </div>
-                <br>
-
-                  <!-- Modal - start -->
-                  <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-                     {!! Form::open(['method' => 'DELETE', 'route' => ['tasks.destroy', $task->id] ]) !!}
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h5 class="modal-title">Are you sure you want to delete?</h5>
-                        </div>
-
-                        <div class="modal-footer">          
-                            {!! Form::submit('OK') !!}
+            <!--Home work Pane start-->
+            <div class="row defaultMargin">
+            <!-- Homework Body -->
+            <div id="homework" class="row notify notify_cr">
+                <!-- Header -->
+                      <div class="row notify_head notify_head_cr">
+                          <div class="col-lg-9">
+                          </div>
+                          <div class="col-lg-3 notify_indi notify_indi_cr">
+                            Homework
+                          </div>
+                      </div>
+                    <!-- Notification brief -->
+                      <div class="row notify_shead notify_shead_cr">
+                        <div class="col-lg-12">
+                          <div class="col-lg-9">
+                            Number of tasks remaining
+                          </div>
+                          <div id="task_remaining" class="col-lg-3"></div>
                         </div>
                       </div>
-                      {!! Form::close() !!}
-                    </div>
-                  </div>
-                <!-- Modal - end -->
-            @endforeach
-            </div>
+                      <!-- Details -->
+                      <div class="row notify_body notify_body_cr">
+                        <div class="col-lg-12">
+                          <div id="panels_cr" class="col-lg-12 panel-group">
+                             @foreach ($tasks as $task)
 
+                             
+                               <div class="col-lg-6 MarginPanels panel-group">
+                                 <div class="panel panel-success">
+                                   <div class="panel-heading"> {{--<button class="buttonstyles">--}}
+                                        <a href="{{ route('tasks.show', $task->id ) }}"><b>{{ $task->title }}</b></a>
+                                        {{--</button>--}} 
+                                    </div>
+                                      <div class="panel-body panelBodyColor">
+                                        <p >{{ $task->content }} </p>
+                                      </div>
+                                   
+                                 </div>
+                               </div>
+                            
+
+
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
+            
+           
+    
+              
+            </div>
         </div>
+
+
+            @can('Create Task')
+            <div class="col-lg-8">
+                <a href="{{route('tasks.create')}}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Create New Task</a>
+            </div>
+            @endcan
+
+
+            
+        
 
         <div class="text-center">
             {!! $tasks->links() !!}
         </div>
-    </div>
-</div>
+        
 
 @endsection
+
+
+                               
