@@ -14,9 +14,9 @@
 
             {{ Form::label('content', 'Content') }}
             {{ Form::textarea('content', null, array('class' => 'form-control')) }}<br>
-
-            {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
-
+        <div class="col-lg-offset-10">
+            {{ Form::submit('Save', array('class' => 'btn btn-success')) }}
+        </div>
             {{ Form::close() }}
         </div>
     </div>

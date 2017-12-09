@@ -25,11 +25,11 @@
 
                 <!--edit and delete button start-->                
                         @can('Edit Society')
-                        <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
+                        <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-success" role="button">Edit</a>
                         @endcan
                         @can('Delete Society')
                        
-                          {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+                          {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
                         @endcan
                         {!! Form::close() !!}
                 <!--edit and delete button end-->

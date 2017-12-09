@@ -11,22 +11,20 @@
             <div class="col-md-offset-1" >
               <p class="test">{!! $forum->content !!}</p>
               <div class="col-md-offset-6"> 
-              {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
-                  <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
+                  <a href="{{ url()->previous() }}" class="btn btn-success>Back</a>
                   @can('Edit Forum')
-                  <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-info" role="button">Edit</a>
+                  <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-success" role="button">Edit</a>
                   @endcan
                  
-                    @can('Delete Forum')                       
-                      {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-                    @endcan
-              {!! Form::close() !!}
-                  <br>
+                  @can('Delete Forum')                       
+                    {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                  @endcan
+                {!! Form::close() !!}
+                <br>
             </div>
           </div>  
-        </div>
-
-        
+        </div>       
         
 
         <div class="panel panel-default" > 

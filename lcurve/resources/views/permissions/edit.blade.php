@@ -13,8 +13,9 @@
             {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
         <br>
-        {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
-
+        <div class="col-lg-offset-9">
+        {{ Form::submit('Edit', array('class' => 'btn btn-success')) }}
+        </div>
     {{ Form::close() }}
 
 </div>

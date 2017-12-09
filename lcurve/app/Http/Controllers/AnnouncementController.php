@@ -45,13 +45,12 @@ class AnnouncementController extends Controller
         $this->validate($request, [
             'title'=>'required|max:100',
             'content' =>'required',
-            'color' =>'required',
             ]);
 
         $title = $request['title'];
         $content = $request['content'];
 
-        $announcement = Announcement::create($request->only('title', 'content','color'));
+        $announcement = Announcement::create($request->only('title', 'content'));
 
     //Display a successful message upon save
         return redirect()->route('announcements.index')

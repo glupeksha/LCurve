@@ -5,8 +5,8 @@
 <div class="col-lg-10 col-lg-offset-1">
     <h3><i class="fa fa-key"></i>Available Permissions
 
-    <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a>
-    <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a></h3>
+    <a href="{{ route('users.index') }}" class="btn btn-success pull-right">Users</a>
+    <a href="{{ route('roles.index') }}" class="btn btn-success pull-right">Roles</a></h3>
     <br>   
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -23,10 +23,10 @@
                     <td>{{ $permission->name }}</td> 
                     <td>
                     <!--edit delete buttons-->
-                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-success pull-left" style="margin-right: 3px;">Edit</a>
 
                     {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['permissions.destroy', $permission->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::submit('Delete', ['class' => 'btn btn-success']) !!}
                     {!! Form::close() !!}
 
                     </td>

@@ -6,7 +6,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
           <h3>Subjects</h3>
-          <hr style="border-color:#848991">
+          <hr class="hr_style">
           <div class="panel-body">
             @foreach ($subjects as $subject)
 
