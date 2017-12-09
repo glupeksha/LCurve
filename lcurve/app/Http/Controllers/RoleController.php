@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use App\Permission;
+use App\Role;
 use Illuminate\Http\Request;
 use Session;
 use Auth;
@@ -90,7 +90,7 @@ class RoleController extends Controller
     public function edit(Role $role)
     {
         //$role = Role::findOrFail($id);
-        $permissions = Permission::all();
+        $permissions = Permission::where('permissible_type',null)->get();
 
         return view('roles.edit', compact('role', 'permissions'));
     }

@@ -1,5 +1,4 @@
-
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('dash-left')
 
@@ -26,7 +25,7 @@
             {{ Form::checkbox('roles[]',  $role->id ,array('id'=>'ChStudent')) }}
             {{ Form::label($role->name, ucfirst($role->name)) }}<br>
         @endforeach
-        
+
     </div>
 
     <div class="form-group">
