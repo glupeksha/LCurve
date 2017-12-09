@@ -103,7 +103,7 @@
                                 <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
                             @endrole
 
-                            <a href="{{url('/profile')}}">@lang('applang.profileBar')</a>
+                            <a href="{{url('/users/profile')}}">@lang('applang.profileBar')</a>
 
 
                             <a href="{{ route('logout') }}"
