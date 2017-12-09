@@ -68,8 +68,25 @@ class PermissionsTableSeeder extends Seeder
 
 
         //events
-        $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));  
         $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
+
+        //quizzQuestions
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestion']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestion']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzQuestion']));
+
+
+         //quizzQuestionOptions
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestionOption']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestionOption']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzQuestionOption']));
+
+        //quizzTopics
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzTopic']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzTopic']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzTopic']));
+
 
     }
 }

@@ -38,6 +38,9 @@ Route::resource('events', 'EventController');
 Route::resource('studentSubjects', 'StudentSubjectController');
 Route::resource('topics', 'TopicController');
 Route::resource('tasks', 'TaskController');
+Route::resource('quizzQuestions', 'QuizzQuestionController');
+Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
+Route::resource('quizzTopics', 'QuizzTopicController');
 
 
 //plug announcement
