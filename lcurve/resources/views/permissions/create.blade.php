@@ -1,4 +1,4 @@
-@extends('layouts.app')dx
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class='col-lg-4 col-lg-offset-4'>
@@ -13,15 +13,13 @@
         <br>
         @if(!$roles->isEmpty()) <!--If no roles exist yet-->
             <h4>Assign Permission to Roles</h4>
-
-            @foreach ($roles as $role) 
+            @foreach ($roles as $role)
                 {{ Form::checkbox('roles[]',  $role->id ) }}
                 {{ Form::label($role->name, ucfirst($role->name)) }}<br>
-
             @endforeach
         @endif
         <br>
-        {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+        {{ Form::submit('Add', array('class' => 'btn btn-success')) }}
 
     {{ Form::close() }}
 

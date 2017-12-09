@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassSubjectUserTable extends Migration
+class CreateQuizzQuestionOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateClassSubjectUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_subject_user', function (Blueprint $table) {
+        Schema::create('quizz_question_options', function (Blueprint $table) {
             $table->increments('id');
-            $table->Integer('class_subject_id');
-            $table->Integer('user_id');
+            $table->integer('question_id')->unsigned()->nullable();
+            $table->string('option')->nullable();
+            $table->tinyInteger('correct')->nullable()->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateClassSubjectUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_subject_user');
+        Schema::dropIfExists('quizz_question_options');
     }
 }

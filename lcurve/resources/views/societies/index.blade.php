@@ -11,35 +11,37 @@
 
             <div class="panel-body">
             @foreach ($societies as $society)
-                <div class="panel-body panel-heading"> 
+                <div class="panel-body panel-heading">
                 <div class="row">
                 <!--society name load start-->
                     <div class="col-lg-8">
-                        {{--<button class="buttonstyles">--}}                       
+                        {{--<button class="buttonstyles">--}}
                               <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
                         {{--</button>--}}
-                    </div> 
-                <!--society name load end--> 
-                     <div class="col-lg-4"> 
-                      {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!} 
+                    </div>
+                <!--society name load end-->
+                     <div class="col-lg-4">
+                      {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}
 
-                <!--edit and delete button start-->                
-                        @can('Edit Society')
+
+                <!--edit and delete button start-->
+                        @can('Edit Society '.$society->id)
                         <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
                         @endcan
-                        @can('Delete Society')
-                       
+                        @can('Delete Society '.$society->id)
+
                           {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+
                         @endcan
                         {!! Form::close() !!}
                 <!--edit and delete button end-->
                     </div>
                 </div>
-              
+
                 <br>
                  </div>
             @endforeach
-                      
+
         </div>
 
         <div class="text-center">

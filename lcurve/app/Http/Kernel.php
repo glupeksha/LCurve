@@ -69,5 +69,8 @@ class Kernel extends HttpKernel
         'clearanceSport' => \App\Http\Middleware\ClearanceSportMiddleware::class,
         'clearanceRole' => \App\Http\Middleware\ClearanceRoleMiddleware::class,
         'clearanceClassSubject' => \App\Http\Middleware\ClearanceClassSubjectMiddleware::class,
+        'clearanceQuizzQuestion' => \App\Http\Middleware\ClearanceQuizzQuestionMiddleware::class,
+        'clearanceQuizzQuestionOption' => \App\Http\Middleware\ClearanceQuizzQuestionOptionMiddleware::class,
+        'clearanceQuizzTopicOption' => \App\Http\Middleware\ClearanceQuizzTopicMiddleware::class,
     ];
 }

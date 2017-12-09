@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('dash-left')
 
 <div class="row">
@@ -11,22 +10,22 @@
             <br>
 
             <div class="row">
-              {!! Form::open(['method' => 'DELETE', 'route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
+              {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+
                 @can('Edit ClassSubject')
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
                 @endcan
 
                 @can('Delete ClassSubject')
-
-                 {!! Form::submit('Delete',array('class' => 'btn btn-danger floatbtn')) !!}
-
+                  {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
                 @endcan
-                {!! Form::close() !!}
+
+              {!! Form::close() !!}
             </div>
 
             <hr style="border-color:#848991">
-            <h4>Lesson Plan</h4>
+            <h5>Lesson Plan</h5>
 
             <div class="list-group">
 
@@ -54,7 +53,7 @@
         </div>
 
         <div class="panel-body">
-          <h4>Lessons Preview</h4>
+          <h5>Lessons Preview</h5>
             @foreach($classSubject->maintopics() as $topic)
               @include('topics/plug_show',['topic'=>$topic])
             @endforeach
@@ -102,7 +101,6 @@
 
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
-
             $.ajax({
                 url: '/updatesequence',
                 type: 'GET',
@@ -115,12 +113,8 @@
                 }
 
             });
-            
-              tiny();
-
-
-
-
+          
+            tiny();
   					console.log('Relocated item');
   				}
 			  });

@@ -9,13 +9,13 @@
                 <h3>Subjects For Class</h3>
             </div>
 
-            <div class="panel-heading" style="background-color: #d9dbaa; border-color: #d9dbaa !important">Page {{ $classSubjects->currentPage() }} of {{ $classSubjects->lastPage() }}
+            <div class="panel-heading panel-styles" >Page {{ $classSubjects->currentPage() }} of {{ $classSubjects->lastPage() }}
             </div>
 
             @foreach ($classSubjects as $classSubject)
                 <div class="panel-body panel-heading"> 
                 <div class="col-lg-1"></div>                  
-                        <a href="{{ route('classSubjects.show', $classSubject->id ) }}" style="font-family:sans-serif;"><b>
+                        <a href="{{ route('classSubjects.show', $classSubject->id ) }}" ><b>
                         {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}
                         </b><br> 
                         </a>
@@ -31,7 +31,7 @@
 
 @can('Create ClassSubject')
 <div class="col-lg-8"></div>
-    <a href="{{ route('classSubjects.create') }}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Add Subject For a Class</a>
+    <a href="{{ route('classSubjects.create') }}" class="btn btn-success panel-styles" role="button" >Add Subject For a Class</a>
 @endcan
 
 

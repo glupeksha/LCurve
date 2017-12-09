@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
+use App\Role;
 use App\ClassSubject;
 use App\ClassRoom;
 
@@ -13,7 +13,7 @@ class UserController extends Controller
     public function __construct() {
         $this->middleware(['auth', 'isAdmin']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all(); 
+        $users = User::all();
         return view('users.index')->with('users', $users);
     }
 
@@ -53,7 +53,7 @@ class UserController extends Controller
 
         $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
 
-         $user_id = $user->id;
+        $user_id = $user->id;
 
         $roles = $request['roles']; //Retrieving the roles field
 
@@ -62,14 +62,15 @@ class UserController extends Controller
         if (isset($roles)) {
 
             foreach ($roles as $role) {
-                $role_r = Role::where('id', '=', $role)->firstOrFail();            
+                $role_r = Role::where('id', '=', $role)->firstOrFail();
                 $user->assignRole($role_r); //Assigning role to usery
-                
+
                 if($role_r->name=='Student'){
-                    return view('studentsSubject.index',compact('user_id'));
+                  $grades=Grade::all();
+                    return view('studentsSubject.index',compact('user_id',$grades));
                 }
             }
-        }        
+        }
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
             ->with('flash_message',
@@ -112,7 +113,7 @@ class UserController extends Controller
     {
         //$user = User::findOrFail($id); //Get role specified by id
 
-    //Validate name, email and password fields  
+    //Validate name, email and password fields
         $this->validate($request, [
             'name'=>'required|max:120',
             'email'=>'required|email|unique:users,email,'.$user->id,
@@ -122,9 +123,9 @@ class UserController extends Controller
         $roles = $request['roles']; //Retreive all roles
         $user->fill($input)->save();
 
-        if (isset($roles)) {        
-            $user->roles()->sync($roles);  //If one or more role is selected associate user to roles          
-        }        
+        if (isset($roles)) {
+            $user->roles()->sync($roles);  //If one or more role is selected associate user to roles
+        }
         else {
             $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
         }
@@ -142,13 +143,14 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //Find a user with a given id and delete
-        //$user = User::findOrFail($id); 
+        //$user = User::findOrFail($id);
         $user->delete();
 
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully deleted.');
     }
+
 
     public function selectSubject(Request $request){
         $classroom=ClassRoom::find($request->id);
