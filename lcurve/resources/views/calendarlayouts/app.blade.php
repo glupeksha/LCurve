@@ -20,7 +20,14 @@
     @stack('styles')
 
 
-
+    <style type="text/css">
+       
+            .fc-basic-view .fc-body .fc-row { min-height: 10em; }
+            .fc-event-container{
+                visibility:visible; 
+            }
+     
+    </style>
 
 </head>
 <body class="full">
@@ -28,7 +35,7 @@
     <div id="app" class="full">
 
         <!-- Navigation Bar -->
-        @include('layouts.nav')
+        @include('calendarlayouts.nav')
 
         <!-- Errors -->
         @if(Session::has('flash_message'))
@@ -39,14 +46,14 @@
         @endif
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                @include ('layouts.errors') {{-- Including error file --}}
+                @include ('calendarlayouts.errors') {{-- Including error file --}}
             </div>
         </div>
 
         @yield('content')
 
         @auth
-            @include('layouts.dashboard')
+            @include('calendarlayouts.dashboard')
         @endauth
 
 
@@ -61,7 +68,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js">
   </script>
-  {!! $calendar->script() !!}
+  {!! $fullcalendar->script() !!}
     @stack('scripts')
 
 </body>

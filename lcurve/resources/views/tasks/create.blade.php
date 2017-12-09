@@ -21,7 +21,10 @@
             {{ Form::label('content', 'Content') }}
             {{ Form::text('content', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::checkbox('isAssignment','Assignment',true, array('class' => 'form-control,checkbox-inline') ) }} Assignment <br>
+            {{ Form::label('taskType', 'Task Type ') }}
+            {{ Form::select('taskType', $taskType) }}<br><br>
+
+            {{ Form::checkbox('isAssignment','Assignment',true, array('class' => 'form-control,checkbox-inline') ) }} Assignment <br><br>
 
             {{ Form::submit('Create Task', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}

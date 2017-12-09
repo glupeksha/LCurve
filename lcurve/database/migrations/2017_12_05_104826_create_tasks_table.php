@@ -18,7 +18,8 @@ class CreateTasksTable extends Migration
             $table->string('title');
             $table->dateTime('due_date');
             $table->text('content');
-            $table->boolean('isAssignment')->nullable($value = false);
+            $table->text('taskType');
+            $table->text('isAssignment');
             $table->timestamps();
         });
     }

@@ -14,10 +14,11 @@
                         <div class="panel-body" >
                           <div class="container col-lg-11">
                             <div class="list-group">
-                              <li class="list-group-item"><p><b>Event Start Date:</b> {{$task->title}}</p></li>
-                              <li class="list-group-item"><p><b>Event End Date:</b> {{$task->due_date}}</p></li>
-                              <li class="list-group-item"><p><b>All Day Event:</b> {{$task->content}}</p></li>
-                              <li class="list-group-item"><p><b>Event Colour:</b> {{$task->isAssignment}}</p></li>
+                              <li class="list-group-item"><p><b>Title:</b> {{$task->title}}</p></li>
+                              <li class="list-group-item"><p><b>Due Date:</b> {{$task->due_date}}</p></li>
+                              <li class="list-group-item"><p><b>Content:</b> {{$task->content}}</p></li>
+                              <li class="list-group-item"><p><b>Task Type:</b> {{$task->taskType}}</p></li>
+                              <li class="list-group-item"><p><b>Assignment type:</b> {{$task->  isAssignment}}</p></li>
                       
                             </div>
                           </div>

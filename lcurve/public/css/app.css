@@ -8511,6 +8511,14 @@ body {
   float: right;
 }
 
+.fc-basic-view .fc-body .fc-row {
+  min-height: 2.5em;
+}
+
+.fc-event-container {
+  visibility: hidden;
+}
+
 .hr_style {
   border-color: #848991;
 }
@@ -8680,19 +8688,19 @@ a:active {
 }
 
 .panelBodyColor {
-  color: #22AED1;
+  color: #0B9B7E;
 }
 
 .notify_cr {
-  border: 2px solid #22AED1;
+  border: 2px solid #0B9B7E !important;
 }
 
 .notify_shead_cr {
-  background-color: #22AED1;
+  background-color: #0B9B7E;
 }
 
 .notify_indi_cr {
-  background-color: #22AED1;
+  background-color: #0B9B7E;
   color: #FAF7FF;
 }
 

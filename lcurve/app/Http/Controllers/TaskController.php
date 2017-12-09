@@ -27,7 +27,18 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view ('tasks.create');
+        
+
+
+        $taskType=[
+
+            'Quiz' => 'Quiz', 
+            'Upload' => 'Upload', 
+            'Essay' => 'Essay',
+        ];
+
+        return view('tasks.create', compact('taskType'));
+
     }
 
     /**
@@ -38,16 +49,20 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+
        $this->validate($request, [
             'title'=>'required|max:100',
             'due_date'=>'required',
             'content' =>'required|max:100',
+            'taskType' => 'required',
             ]);
 
         $title = $request['title'];
         $due_date = $request['due_date'];
         $content = $request['content'];
+        $taskType = $request['taskType'];
          if(array_key_exists('isAssignment',$request)){
+                dd($request->isAssignment);
                 $isAssignment=true;
             }else{
                 $isAssignment=false;
@@ -58,6 +73,7 @@ class TaskController extends Controller
             'due_date'=>$due_date,
             'content'=>$content,
             'isAssignment'=>$isAssignment,
+            'taskType' => $taskType,
         ]);
 
     //Display a successful message upon save
@@ -84,7 +100,13 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        return view ('tasks.edit', compact('task'));
+        $taskType=[
+
+            'Quiz' => 'Quiz', 
+            'Upload' => 'Upload', 
+            'Essay' => 'Essay',
+        ];
+        return view ('tasks.edit', compact('task','taskType'));
     }
 
     /**
@@ -97,7 +119,8 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {       
 
-            if(array_key_exists('isAssignment',$request)){
+            if($request->has('isAssignment')){
+                dd($request->isAssignment);
                 $task->isAssignment=true;
             }else{
                 $task->isAssignment=false;
@@ -107,6 +130,7 @@ class TaskController extends Controller
                 'title' => 'required|max:100',
                 'due_date'=>'required',
                 'content'=>'required|max:100',
+                'taskType' => 'required',
             
             ]);
 
@@ -114,6 +138,7 @@ class TaskController extends Controller
         $task->title = $request->input('title');
         $task->due_date = $request->input('due_date');
         $task->content = $request->input('content');
+        $task->taskType = $request->input('taskType');
         $task->save();
 
         return redirect()->route('tasks.show', 

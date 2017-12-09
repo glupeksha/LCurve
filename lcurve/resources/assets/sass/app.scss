@@ -21,6 +21,14 @@ body{
 	float: right;
 }
 
+//calendar styles starts
+.fc-basic-view .fc-body .fc-row { min-height: 2.5em; }
+.fc-event-container{
+	visibility: hidden;
+}
+//calendar styles ends
+
+
 //subject
 @import "society";
 

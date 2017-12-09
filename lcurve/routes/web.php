@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/events/calendar', 'EventController@showCalendar');
 
 //resources
 Route::resource('users', 'UserController');
@@ -53,10 +54,13 @@ Route::get('/studentsSubjects/index', function()
 Route::view('/studentsSubject', 'studentsSubject.index');
 Route::view('/studentsubjects', 'studentsSubject.attach');
 
-Route::get('/calendar', 'EventController@showCalendar');
+Route::get('/calendar', 'EventController@showPlugCalendar');
+
 Route::post('/topics/{classSubject}','TopicController@store');
 Route::get('/updatesequence','TopicController@updateSequence');
 Route::get('locale/{locale}','LocalizationController@index');
 
 Route::view('/welcome', 'welcome');
 Route::view('/profile', 'users.profile');
+
+
