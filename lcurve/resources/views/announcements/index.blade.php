@@ -13,7 +13,7 @@
                         <a href="{{ route('announcements.show', $announcement->id ) }}" >
                             <p class="teaser">                            
                               <div class="col-lg-1 " >  
-                                <img src="images\announcement.png"  class="image-style">
+                                <img src="{{asset('images\announcement.png')}}"  class="image-style">
                               </div> 
                               <div class="col-lg-9 col-lg-offset-1">
                                 {{  str_limit($announcement->title, 50) }} 
