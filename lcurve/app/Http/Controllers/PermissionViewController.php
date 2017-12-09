@@ -17,7 +17,7 @@ class PermissionViewController extends Controller
 
     public function addUser(Request $request, Permission $permission)
     {
-      $user=User::findOrFail($request->input('user_id'));
+      $user=User::findOrFail($request->input('searched_id'));
       $user->givePermissionTo($permission);
 
         return redirect()->route('permissions.index')

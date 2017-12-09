@@ -12,8 +12,7 @@
 
         <div class="form-group">
 
-            {{ Form::label('grade_id', 'Grade') }}
-            {{ Form::text('grade_id', null, array('class' => 'form-control')) }}
+          @include('layouts.search',$searchableList)
 
             <br>
             {{ Form::label('name', 'Class Name') }}

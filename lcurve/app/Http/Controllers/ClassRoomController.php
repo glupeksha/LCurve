@@ -25,7 +25,8 @@ class ClassRoomController extends Controller
      */
     public function create()
     {
-        return view('classRooms.create');
+      $searchableList='App\Grade'::all();
+      return view('classRooms.create',compact('searchableList'));
     }
 
     /**
@@ -36,13 +37,17 @@ class ClassRoomController extends Controller
      */
     public function store(Request $request)
     {
+
         //Validating class Room
         $this->validate($request, [
-            'grade_id'=>'required|max:100',
+            'searched_id'=>'required',
             'name'=>'required',
             ]);
-        
-        $classRooms = ClassRoom::create($request->only('grade_id','name'));
+
+        $classRooms = ClassRoom::create([
+          'grade_id'=>$request->input('searched_id'),
+          'name'=>$request->input('name')
+        ]);
 
     //Display a successful message upon save
         return redirect()->route('classRooms.index')
@@ -84,11 +89,11 @@ class ClassRoomController extends Controller
 
         //validating class Room
         $this->validate($request, [
-            'grade_id'=>'required|max:100',
+            'searched_id'=>'required',
             'name'=>'required',
         ]);
 
-        $classRoom->grade_id = $request->input('grade_id');
+        $classRoom->grade_id = $request->input('searched_id');
         $classRoom->name = $request->input('name');
         $classRoom->save();
 
