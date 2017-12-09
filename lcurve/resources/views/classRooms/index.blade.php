@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="row">
@@ -10,11 +10,11 @@
              <div class="panel-heading" style="background-color: #d9dbaa; border-color: #d9dbaa !important">Page {{ $classRooms->currentPage() }} of {{ $classRooms->lastPage() }}
             </div>
             @foreach ($classRooms as $classRoom)
-             <div class="panel-body panel-heading"> 
-                <div class="panel-body">    
-                <div class="col-lg-1"></div>               
+             <div class="panel-body panel-heading">
+                <div class="panel-body">
+                <div class="col-lg-1"></div>
                         <a href="{{ route('classRooms.show', $classRoom->id ) }}" style="font: sans-serif;">
-                        <b>{{ $classRoom->grade->name }} 
+                        <b>{{ $classRoom->grade->name }}
                         - {{ $classRoom->name }} </b>
                         <br>
                         </a>
@@ -22,9 +22,9 @@
                 </div>
             @endforeach
         </div>
-            
+
         <div class="text-center">
-            
+
         </div>
     </div>
 </div>

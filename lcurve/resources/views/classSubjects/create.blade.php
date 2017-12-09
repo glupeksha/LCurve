@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -9,7 +9,7 @@
     {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{ Form::open(array('route' => 'classSubjects.store')) }}
 
-    
+
         <div class="form-group">
             {{ Form::label('class_room_id', 'Class Room') }}
             {{ Form::text('class_room_id', null, array('class' => 'form-control')) }}
@@ -23,10 +23,10 @@
             {{ Form::text('teacher_id', null, array('class' => 'form-control')) }}
             <br>
 
-            
+
 
             {{ Form::submit('Create ClassSubject', array('class' => 'btn btn-success btn-lg btn-block')) }}
-            {{ Form::close() }} 
+            {{ Form::close() }}
         </div>
         </div>
     </div>

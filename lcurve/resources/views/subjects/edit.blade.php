@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="row">
@@ -18,7 +18,7 @@
 
                     {{ Form::submit('Save', array('class' => 'btn btn-primary','style'=>'background-color: #0b9b7e')) }}
                 </div>
-            {{ Form::close() }}            
+            {{ Form::close() }}
     </div>
 </div>
 
