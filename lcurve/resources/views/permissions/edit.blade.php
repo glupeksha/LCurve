@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class='col-lg-4 col-lg-offset-4'>
@@ -6,16 +6,17 @@
     <hr style="border-color:#848991">
 
     <br>
-    {{ Form::model($permission, array('route' => array('permissions.update', $permission->id), 'method' => 'PUT')) }}{{-- Form model binding to automatically populate our fields with permission data --}}
+    {{ Form::model($permission, array('action' => array('PermissionViewController@addUser', $permission), 'method' => 'POST')) }}{{-- Form model binding to automatically populate our fields with permission data --}}
 
         <div class="form-group">
             {{ Form::label('name', 'Permission Name') }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
+        @include('layouts.search',[$searchableList])
         <br>
-        <div class="col-lg-offset-9">
-        {{ Form::submit('Edit', array('class' => 'btn btn-success')) }}
-        </div>
+
+        {{ Form::submit('Add User', array('class' => 'btn btn-primary')) }}
+
     {{ Form::close() }}
 
 </div>

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use App\Permission;
+use App\Role;
 
 class PermissionsTableSeeder extends Seeder
 {
@@ -31,7 +31,6 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
 
         //Sports
-
         $role->givePermissionTo(Permission::create(['name'=>'Edit Sport']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Sport']));
 
@@ -62,7 +61,7 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Create Subject']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Subject']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Subject']));
-        
+
          //classSubject
         $role->givePermissionTo(Permission::create(['name'=>'Create ClassSubject']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassSubject']));
@@ -70,7 +69,7 @@ class PermissionsTableSeeder extends Seeder
 
 
         //events
-        $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));  
         $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Event']));
 
@@ -78,6 +77,23 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit Task']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Task']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Task']));
+
+
+        //quizzQuestions
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestion']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestion']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzQuestion']));
+
+
+         //quizzQuestionOptions
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestionOption']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestionOption']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzQuestionOption']));
+
+        //quizzTopics
+        $role->givePermissionTo(Permission::create(['name'=>'Create QuizzTopic']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzTopic']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzTopic']));
 
 
     }

@@ -17,4 +17,6 @@ class Topic extends Model
   {
       $this->hasMany('App\Lesson');
   }
+
+  
 }

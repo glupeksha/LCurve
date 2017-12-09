@@ -1,11 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class='col-lg-4 col-lg-offset-4'>
 
     <h3><i class='fa fa-key'></i> Add Role</h3>
-    <hr style="border-color:#848991">
-    
+
+      <hr style="border-color:#848991">
+
     {{ Form::open(array('url' => 'roles')) }}
         <div class="form-group">
             {{ Form::label('name', 'Name') }}
