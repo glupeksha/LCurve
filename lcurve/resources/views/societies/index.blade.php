@@ -8,33 +8,42 @@
                 <h3>Societies</h3>
             </div>
 
-
             <div class="panel-body">
+
             @foreach ($societies as $society)
                 <div class="panel-body panel-heading">
-                <div class="row">
-                <!--society name load start-->
-                    <div class="col-lg-8">
-                        {{--<button class="buttonstyles">--}}
-                              <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
-                        {{--</button>--}}
-                    </div>
-                <!--society name load end-->
-                     <div class="col-lg-4">
-                      {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}
+                    <div class="row">
+
+                    <!--society name load start-->
+                        <div class="col-lg-8">
+                            {{--<button class="buttonstyles">--}}
+                                  <a href="{{ route('societies.show', $society->id ) }}"><b>{{ $society->name }}</b></a>
+                            {{--</button>--}}
+                        </div>
+                        <!--society name load end-->
+                        <div class="col-lg-4">
+                        {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}
 
 
-                <!--edit and delete button start-->
-                        @can('Edit Society '.$society->id)
+                        <!--edit and delete button start-->
+                        <!--Starts edit permissions-->
+                        @if(Auth::User()->can('Edit Society') || Auth::User()->can('Edit Society '.$society->id))
                         <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-info" role="button">Edit</a>
-                        @endcan
-                        @can('Delete Society '.$society->id)
+                        @endif
+                        <!--End edit permissions-->
 
-                          {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                        <!--starts delete permissions-->
+                        @if(Auth::User()->can('Delete Society') || Auth::User()->can('Delete Society'.$society->id))
 
-                        @endcan
+
+                        {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
+
+                        @endif
+                        <!--End delete permissions-->
+
+
                         {!! Form::close() !!}
-                <!--edit and delete button end-->
+                        <!--edit and delete button end-->
                     </div>
                 </div>
 
@@ -50,4 +59,13 @@
     </div>
 </div>
 </div>
+
+
+<!--starts Add society permissions-->
+@if(Auth::User()->can('Edit Society') || Auth::User()->can('Edit Society '.$society->id))
+<div class="col-lg-8"></div>
+    <a href="{{ route('societies.create') }}" class="btn btn-success panel-styles" role="button" >Add a new society</a>
+@endif
+<!--Ends Add society permissions-->
+
 @endsection
