@@ -14,11 +14,11 @@
     <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
     >
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/calendar.css')}}" />
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
-
+<script src="{{asset('js/modernizr.custom.63321.js')}}"></script>
 
 
 
@@ -69,9 +69,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js">
+
+
+<script src="{{asset('js/calendar.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.calendario.js')}}"></script>
+  {{}}
+  <script>
+    var codropsEvents = {
+        @foreach($events as $event)
+        '{!! date("m-d-Y",strtotime($event['start']))  !!}':'<a>{!! $event['title'] !!}</a>',
+        @endforeach
+        
+    }
   </script>
-  {!! $calendar->script() !!}
     @stack('scripts')
 
 </body>
