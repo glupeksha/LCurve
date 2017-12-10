@@ -18,6 +18,7 @@ class SubjectController extends Controller
     public function index()
     {
         $subjects = Subject::all();
+        $subjects = Subject::orderby('id','desc')->paginate(5);
         return view('subjects.index',compact('subjects'));
     }
 

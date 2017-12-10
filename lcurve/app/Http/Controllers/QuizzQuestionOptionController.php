@@ -45,7 +45,7 @@ class QuizzQuestionOptionController extends Controller
          QuizzQuestionOption::create($request->all());
         
          return redirect()->route('quizzQuestionOptions.index')
-            ->with('flash_message', 'Article created');
+            ->with('flash_message', 'Quiz option created Successfuly');
     }
 
     /**

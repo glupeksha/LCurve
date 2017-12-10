@@ -54,6 +54,7 @@ Route::post('/forums/{forum}/comments','CommentController@store');
 Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
 Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
+
 //resources
 Route::resource('users', 'UserController');
 Route::resource('roles', 'RoleController');
@@ -73,6 +74,8 @@ Route::resource('tasks', 'TaskController');
 Route::resource('quizzQuestions', 'QuizzQuestionController');
 Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
 Route::resource('quizzTopics', 'QuizzTopicController');
+Route::resource('quizzes', 'QuizController');
+
 
 
 //wrong
@@ -84,6 +87,9 @@ Route::get('/studentsSubjects/index', function()
 });
 Route::view('/studentsSubject', 'studentsSubject.index');
 Route::view('/studentsubjects', 'studentsSubject.attach');
+
+
+
 
 
 
