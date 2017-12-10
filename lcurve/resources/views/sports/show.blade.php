@@ -37,12 +37,15 @@
       </div>
     </div>
   <!--subscribe button start-->
+  <!--Only users other than admin and subscribed users can subscribe-->
+  @if(Auth::User()->can('Subscribe Sport'.$sport->id))
     <div class="row">
         <div class="col-lg-8"></div>
         <button class="button" style="background-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ;border-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ; color: #ffffff ">
             <span>Subscribe</span>
         </button>
     </div>
+    @endif
     <!--subscribe button end-->
 </div>
 <!--subscribe pane end-->
@@ -92,6 +95,8 @@
 
 <!--Add Announcements pane start-->
 {{--Add Announcement--}}
+<!--Only authorized users can add announcements-->
+@if(Auth::User()->can('Create '.$sport->id.' Sport'))
 <div class="col-lg-12 notify_cr" style="border-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ; ">
   <div class="col-lg-12 notify_head" >
     <div class="col-lg-3 notify_indi notify_indi_cr" style="border-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ; background-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ; color: #ffffff ">
@@ -111,6 +116,7 @@
   </div>
   <!--Add Announcements titleand content pane start-->
 </div>
+@endif
 <!--Add Announcements pane start-->
 
 <hr>

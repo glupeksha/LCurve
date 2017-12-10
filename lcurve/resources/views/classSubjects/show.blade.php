@@ -13,13 +13,18 @@
               {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
 
-                @can('Edit ClassSubject')
+                <!--starts subject edit permissions-->
+                @if(Auth::User()->can('Edit ClassSubject') || Auth::User()->can('Edit ClassSubject '.$classSubject->id))
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
-                @endcan
+                @endif
+                <!--ends subject edit permissions-->
 
-                @can('Delete ClassSubject')
+                <!--starts subject delete permissions-->
+                @if(Auth::User()->can('Delete ClassSubject') || Auth::User()->can('Delete ClassSubject '.$classSubject->id))
+
                   {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-                @endcan
+                @endif
+                <!--ends subject delete permissions-->
 
               {!! Form::close() !!}
             </div>
@@ -42,9 +47,14 @@
                 <div class="col-lg-11">
                   {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
                 </div>
+
+                 <!--starts subject edit permissions-->
+                 @if(Auth::User()->can('Create Topic') || Auth::User()->can('Create Topic '.$classSubject->id))
                 <div class="col-lg-1">
                   {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
                 </div>
+                @endif
+                 <!--ends subject edit permissions-->
 
               </div>
 

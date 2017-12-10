@@ -1,7 +1,5 @@
-<!--Only authorized users can view-->
 @extends('layouts.app')
 @section('dash-left')
-@if(Auth::User()->can('View Create Society'))
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
@@ -39,5 +37,4 @@
         
         </div>
     </div>
-@endif
 @endsection
