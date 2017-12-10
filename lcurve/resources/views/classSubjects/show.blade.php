@@ -3,10 +3,10 @@
 
 <div class="row">
         <div class="panel panel-default" style="padding: 30px;">
-         <div class="panel-heading " >
+         <div class="" >
             <br>
-            <label><b>&nbsp;&nbsp;&nbsp; Subject: </b></label> <span> {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br>
-            <label><b>&nbsp;&nbsp;&nbsp;Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
+            <label><b> Subject: </b></label> <span> {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br>
+            <label><b>Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
             <br>
             <div class="col-lg-8"></div>
             <div class="row">
@@ -29,9 +29,9 @@
               {!! Form::close() !!}
             </div>
 
-            <hr style="border-color:#848991">
+            <hr style="border-color:#848991;border-width:2px;">
             <h4>Lesson Plan</h4>
-
+            <br>
             <div class="list-group">
 
               <ol class="sortable" style="list-style-position: inside;">
@@ -64,11 +64,10 @@
               {{ Form::close() }}
 <br>
 <br>
-<hr style="border-color:#848991">       
+<hr style="border-color:#848991;border-width:2px;">   
 
         <!--Downloads starts -->
             <h4 >Downloads</h4>
-            <div class="panel">
                 <div class="panel-heading">
               {{-- Display downloads - Start --}}
                   @foreach($classSubject->downloads() as $download)
@@ -81,13 +80,14 @@
                   @include('downloads.plug_create')
                 </div>
               </div>
-            </div>
+
         <!--Downloads ends -->
         </div>
-<hr style="border-color:#848991">
+<hr style="border-color:#848991;border-width:2px;">
 
        <div class="panel-body">
           <h4>Lessons Preview</h4>
+          <br>
             @foreach($classSubject->maintopics() as $topic)
               @include('topics/plug_show',['topic'=>$topic])
             @endforeach

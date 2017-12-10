@@ -10,7 +10,7 @@
 
             <div class="col-md-offset-1" >
               <p class="test">{!! $forum->content !!}</p>
-              <div class="col-md-offset-6"> 
+              <div class="col-md-offset-8"> 
                 {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
 
                   

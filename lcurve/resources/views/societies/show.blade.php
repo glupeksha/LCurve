@@ -20,10 +20,7 @@
       </div>
     </div>
 
-    
-    <div class="col-lg-8"></div>
-        <a href="{{ route('societies.create') }}" class="btn btn-success panel-styles" role="button" >Add a new society</a>
-
+   
 </div>
 <!--about us pane end-->
 
@@ -127,7 +124,6 @@
 @endif
 <!--announcement pane end-->
 <hr>
-
 
 @endsection
 

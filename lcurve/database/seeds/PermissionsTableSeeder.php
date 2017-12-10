@@ -34,7 +34,7 @@ class PermissionsTableSeeder extends Seeder
 
         //Society
         $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
-        $role->givePermissionTo(Permission::create(['name'=>'Create Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Society']));
         $role->givePermissionTo(Permission::create(['name'=>'Subscribe Society']));
 
         //Sports

@@ -2,21 +2,23 @@
 @section('dash-left')
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 ">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading col-lg-offset-1">
                 <h3>Grades</h3>
-            </div>
-            <div class="panel-heading heading-style" >
-                Page {{ $grades->currentPage() }} of {{ $grades->lastPage() }}
-            </div>
+            </div>           
+            
             @foreach ($grades as $grade)
-            <!--grade names view-->
-                <div class="panel-body">
-                    <a href="{{ route('grades.show', $grade->id ) }}"><b>{{ $grade->name }}</b>
+                <div class="col-lg-1 "></div>
+                    <a href="{{ route('grades.show', $grade->id ) }}" class="list-group-item" >
+                        <div class="col-lg-offset-1">
+                        <b>                         
+                        {{ $grade->name }}                      
+                        </b>
+                        </div>
                     </a>
-                </div>
             @endforeach
+
         </div>
 
         <div class="text-center">

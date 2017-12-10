@@ -50,7 +50,7 @@
 <!--starts Add society permissions-->
 @if(Auth::User()->can('Create Announcement') || Auth::User()->can('Create Announcement '.$announcement->id))
 <div class="col-lg-8"></div>
-    <a href="{{ route('announcements.create') }}" class="btn btn-success panel-styles" role="button" >Add a new Annocement</a>
+    <a href="{{ route('announcements.create') }}" class="btn btn-success " role="button" >Add a new Annocement</a>
 @endif
 <!--Ends Add society permissions-->
 

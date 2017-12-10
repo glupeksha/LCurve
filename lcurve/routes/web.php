@@ -57,6 +57,13 @@ Route::middleware(['auth'])->group(function () {
   //filter subjects shown for users
   Route::get('/classSubjects/filteredindex','ClassSubjectController@filteredIndex');
 
+  //plug downloads to subjectLessons
+  Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
+  Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
+  Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
+  Route::get('/classSubjects/{classSubject}/preview', 'ClassSubjectController@preview');
+  Route::view('/studentView', 'classSubjects.studentView');
+  
   //plug comments to forums
   Route::post('/forums/{forum}/comments','CommentController@store');
   Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
@@ -66,12 +73,6 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
   Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
   
-  //plug downloads to subjectLessons
-  Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
-  Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
-  Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
-
-
   //resources
   Route::resource('users', 'UserController');
   Route::resource('roles', 'RoleController');
