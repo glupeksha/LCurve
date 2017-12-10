@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('layouts.app')
-
 @section('dash-left')
 
 <div class="panel-group">
@@ -26,9 +24,9 @@
 <div class="row">
 
     <div class="col-lg-8" ></div>
-    @can('Edit Profile')
-    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-success" role="button">Edit</a>
-    @endcan
+   
+    <a href="{{url('/changepassword')}}" class="btn btn-success" role="button">Change Password</a>
+  
 
 
      

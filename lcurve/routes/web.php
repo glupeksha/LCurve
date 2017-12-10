@@ -31,7 +31,14 @@ Route::get('/calendar', 'EventController@showCalendar');
 //User attach subjects
 Route::get('/users/{id}/subjects', 'UserController@selectSubject');
 Route::get('/users/{id}/addSubject', 'UserController@addSubject');
-Route::view('users/profile', 'users.profile');
+Route::post('/users/changePassword', 'UserController@changePassword');
+
+
+//cangepassword
+Route::post('/users/changePassword', 'UserController@changePassword');
+Route::view('/changepassword', 'users.changePassword');
+Route::view('/users/profile', 'users.profile');
+
 
 //Admin User view
 Route::get('/users/view/{role}', 'UserViewController@userIndexView');
@@ -87,6 +94,8 @@ Route::get('/studentsSubjects/index', function()
 });
 Route::view('/studentsSubject', 'studentsSubject.index');
 Route::view('/studentsubjects', 'studentsSubject.attach');
+
+
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Role;
 use App\ClassSubject;
@@ -44,6 +45,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         //Validate name, email and password fields
         $this->validate($request, [
             'name'=>'required|max:120',
@@ -95,6 +97,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+
         //$user = User::findOrFail($id); //Get user with specified id
         $roles = Role::get(); //Get all roles
 
@@ -169,6 +172,22 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully added.');
+
+    }
+
+
+    public function changePassword(Request $request){
+        
+            $this->validate($request, [
+            'password'=>'required',
+            'confirmed_password'=>'confirmed',
+            ]);
+
+        $input = $request->only(['password']); //Retreive the name, email and password fields
+        //Retreive all roles
+        $user=Auth::user();
+        $user->fill($input)->save();
+         return view('/users/profile');
 
     }
 }
