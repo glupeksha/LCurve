@@ -28,7 +28,6 @@
             @else
               {{ Form::checkbox('roles[]',  $role->id ,false) }}
             @endif
-
             <br>
         @endforeach
     </div>

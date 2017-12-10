@@ -70,13 +70,7 @@ class UserController extends Controller
 
         //If Role is Student redirect to subject selection
         if($user->hasRole('Student')){
-          $this->validate($request, [
-              'searched_id'=>'required',
-          ]);
-          $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
-          $user->classRoom()->associate($classRoom);
-          $classSubjects=$classroom->classSubjects();
-          return view('studentSubjects.create',compact('user','classSubjects'));
+          return $this->storeUserClassRoom($request,$user);
         }else{
           $user->classroom()->dissassociate();
         }
@@ -140,13 +134,7 @@ class UserController extends Controller
 
         //if role is student redirect to subject selection
         if($user->hasRole('Student')){
-          $this->validate($request, [
-              'searched_id'=>'required',
-          ]);
-          $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
-          $user->classRoom()->associate($classRoom);
-          $classSubjects=$classRoom->classSubjects();
-          return view('studentSubjects.create',compact('user','classSubjects'));
+          return $this->storeUserClassRoom($request,$user);
         }else{
           $user->classroom()->dissassociate();
         }
@@ -173,12 +161,14 @@ class UserController extends Controller
     }
 
 
-    public function selectSubject(Request $request){
-        $classroom=ClassRoom::findOrFail($request->searched_id);
-        $classSubjects=$classroom->classSubject;
-        $student_id=$request->invisible1;
-        //dd($classSubjects[0]);
-        return view('studentsSubject.attach',compact('classSubjects','student_id'));
+    public function storeUserClassRoom(Request $request, User $user){
+        $this->validate($request, [
+            'searched_id'=>'required',
+        ]);
+        $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
+        $user->classRoom()->associate($classRoom);
+        $classSubjects=$classRoom->classSubjects();
+        return view('studentSubjects.create',compact('user','classSubjects'));
     }
 
     public function addSubject(Request $request){
@@ -188,6 +178,5 @@ class UserController extends Controller
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully added.');
-
     }
 }
