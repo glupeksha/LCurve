@@ -991,6 +991,7 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'ForumsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ForumsTableSeeder.php',
         'GradeTableSeeder' => __DIR__ . '/../..' . '/database/seeds/GradeTableSeeder.php',
         'GuzzleHttp\\Psr7\\AppendStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/AppendStream.php',
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
