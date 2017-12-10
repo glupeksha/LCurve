@@ -37,7 +37,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="{{url('/subjects')}}">
+                <a class="td_none" href="{{url('/classSubjects/filteredindex')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #E28B12; border-color: #A5660E; ">
 
                         <img src="{{asset('images/navigation/classroomsm.PNG')}}" class="img-responsive grow image_nav"/>
@@ -83,7 +83,7 @@
                 <!-- Authentication Links -->
                 @guest
 
-                    
+
                 <li><a href="{{url('locale/en')}}">@lang('applang.chooseEn')</a></li>
                 <li><a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a></li>
                 <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a></li>

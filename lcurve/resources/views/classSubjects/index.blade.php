@@ -1,8 +1,4 @@
-@role('Admin')
-  @extends('layouts.admin.app')
-@else
-  @extends('layouts.app')
-@endrole
+@extends('layouts.app')
 
 @section('dash-left')
 

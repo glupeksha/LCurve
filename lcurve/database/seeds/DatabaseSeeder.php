@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
         $this->call(quizzQuestionsTableSeeder::class);
         $this->call(TopicsTableSeeder::class);
         $this->call(ForumsTableSeeder::class);
+
+        factory(App\Task::class, 5)->make();
+        factory(App\Announcement::class, 6)->make();
+        factory(App\Forum::class, 6)->make();
+        factory(App\Topic::class, 6)->make();
     }
 }
