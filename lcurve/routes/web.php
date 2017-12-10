@@ -55,6 +55,11 @@ Route::post('/forums/{forum}/comments','CommentController@store');
 Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
 Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
+//plug downloads to subjectLessons
+Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
+Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
+Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
+
 
 //resources
 Route::resource('users', 'UserController');

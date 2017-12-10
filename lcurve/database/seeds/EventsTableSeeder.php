@@ -13,10 +13,10 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
       $data = [
-        ['title'=>'Demo Event-1', 'start'=>'2017-09-11', 'end'=>'2017-09-12'],
-        ['title'=>'Demo Event-2', 'start'=>'2017-09-11', 'end'=>'2017-09-13'],
-        ['title'=>'Demo Event-3', 'start'=>'2017-09-14', 'end'=>'2017-09-14'],
-        ['title'=>'Demo Event-3', 'start'=>'2017-09-17', 'end'=>'2017-09-17'],
+        ['title'=>'Demo Event-1', 'start'=>'2017-12-11', 'end'=>'2017-12-12'],
+        ['title'=>'Demo Event-2', 'start'=>'2017-12-11', 'end'=>'2017-12-13'],
+        ['title'=>'Demo Event-3', 'start'=>'2017-12-14', 'end'=>'2017-12-14'],
+        ['title'=>'Demo Event-3', 'start'=>'2017-12-17', 'end'=>'2017-12-17'],
       ];
       foreach ($data as $key => $value) {
         Event::create($value);

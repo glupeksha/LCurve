@@ -7,7 +7,7 @@ class Comment extends Model
 {
   protected $fillable = ['user_id','forum_id','content'];
 
-  public function post(){
+  public function forum(){
     return $this->belongsTo(Forum::class);
   }
 
