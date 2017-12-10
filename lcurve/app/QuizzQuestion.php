@@ -23,4 +23,10 @@ class QuizzQuestion extends Model
     {
         $this->attributes['topic_id'] = $input ? $input : null;
     }
+
+     public function quizzes()
+    {
+        return $this->belongsToMany('App\Quiz');
+        
+    }
 }
