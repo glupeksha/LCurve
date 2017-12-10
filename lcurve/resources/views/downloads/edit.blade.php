@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+@section('dash-left')
 
   <h2>
     <i class='fa fa-user-plus'></i>

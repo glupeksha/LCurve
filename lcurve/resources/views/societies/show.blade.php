@@ -19,6 +19,11 @@
         <p >{{ $society->content }} </p>
       </div>
     </div>
+
+    
+    <div class="col-lg-8"></div>
+        <a href="{{ route('societies.create') }}" class="btn btn-success panel-styles" role="button" >Add a new society</a>
+
 </div>
 <!--about us pane end-->
 
@@ -40,11 +45,13 @@
       </div>
   </div>
   <!--subscribe button-->
+  <!--Only users other than admin and subscribed users can subscribe-->
+  @if(Auth::User()->can('Subscribe Society'.$society->id))
   <div class="row">
       <div class="col-lg-8"></div>
       <button class="button" style="vertical-align:middle; background-color:@if(!empty( $society->color )) {{ $society->color}} @else #abad85 @endif ; color: #ffffff; "><span>Subscribe</span></button>
   </div>
-
+  @endif
 
 </div>
 <!--subscribe pane end-->
@@ -89,7 +96,10 @@
 </div>
 </div>
 <!--announcement pane start-->
+
 {{--Announcement--}}
+<!--Only authorized users can add announcements-->
+@if(Auth::User()->can('Create '.$society->id.' Announcement'))
 <div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:@if(!empty( $society->color )) {{ $society->color}} @else #abad85 @endif ; ">
 
     <div class="col-lg-12 notify_head" >
@@ -114,6 +124,7 @@
       </div>
   </div>
 </div>
+@endif
 <!--announcement pane end-->
 <hr>
 

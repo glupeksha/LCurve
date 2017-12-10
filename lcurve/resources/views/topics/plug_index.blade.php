@@ -1,6 +1,6 @@
 <li id="topic_{{$topic->id}}">
   <div class="panel panel-default">
-    {{ Form::model($topic, array('route' => array('topics.update', $topic->id), 'method' => 'PUT')) }}
+    {{ Form::model($topic, array('action' => array('TopicController@update', $topic->id), 'method' => 'PUT')) }}
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#collapse{{$topic->id}}">
@@ -12,7 +12,7 @@
       <div class="panel-body">
         <div class="form-group">
           {{ Form::label('content', 'Content') }}
-          {{} Form::textarea('content', null, array('class' => 'form-control','id'=>'tiny_'.$topic->id)) }}
+          {{ Form::textarea('content', null, array('class' => 'form-control','id'=>'tiny_'.$topic->id)) }}
         </div>
 
       </div>

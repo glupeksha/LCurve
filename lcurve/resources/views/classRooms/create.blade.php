@@ -1,4 +1,3 @@
-<<<<<<< upeksha
 @extends('layouts.admin.app')
 
 @section('dash-left')
@@ -13,14 +12,13 @@
 
         <div class="form-group">
 
-            {{ Form::label('grade_id', 'Grade') }}
-            {{ Form::text('grade_id', null, array('class' => 'form-control')) }}
+          @include('layouts.search',$searchableList)
 
             <br>
             {{ Form::label('name', 'Class Name') }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
 
-            <br>          
+            <br>
 
             {{ Form::submit('Create ClassRoom', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}

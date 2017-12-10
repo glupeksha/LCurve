@@ -20,8 +20,11 @@
 		'registerProceed'=>'ලියාපදිංචි වීම',
 		'languageSelect'=>'භාෂාව තෝරන්න',
 		'chooseSi'=>'  සිංහල',
+		'chooseSin'=>'  සිං',
 		'chooseEn'=>'  English',
+		'chooseEng'=>'  En',
 		'chooseTa'=>'தமிழ்',
+		'chooseTam'=>'த',
 
 		// email reset password
 

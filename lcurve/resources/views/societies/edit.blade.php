@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('dash-left')
 <div class="row">
 
@@ -30,5 +29,4 @@
         </div>
     </div>
 </div>
-
 @endsection

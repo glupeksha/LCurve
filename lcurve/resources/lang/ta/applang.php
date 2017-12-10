@@ -21,9 +21,12 @@
 		'confirmPassword'=>'கடவுச்சொல்லை உறுதிப்படுத்துக',
 		'registerProceed'=>'பதிவு',
 		'languageSelect'=>'இயல்புநிலை மொழி தேர்வு',
-		'chooseEn'=>'  English',
 		'chooseSi'=>'  සිංහල',
+		'chooseSin'=>'  සිං',
+		'chooseEn'=>'  English',
+		'chooseEng'=>'  En',
 		'chooseTa'=>'தமிழ்',
+		'chooseTam'=>'த',
 
 
 		// email reset password

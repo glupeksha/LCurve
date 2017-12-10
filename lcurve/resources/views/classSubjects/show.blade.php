@@ -13,13 +13,18 @@
               {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
 
-                @can('Edit ClassSubject')
+                <!--starts subject edit permissions-->
+                @if(Auth::User()->can('Edit ClassSubject') || Auth::User()->can('Edit ClassSubject '.$classSubject->id))
                 <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
-                @endcan
+                @endif
+                <!--ends subject edit permissions-->
 
-                @can('Delete ClassSubject')
+                <!--starts subject delete permissions-->
+                @if(Auth::User()->can('Delete ClassSubject') || Auth::User()->can('Delete ClassSubject '.$classSubject->id))
+
                   {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-                @endcan
+                @endif
+                <!--ends subject delete permissions-->
 
               {!! Form::close() !!}
             </div>
@@ -37,19 +42,43 @@
 
             </div>
 
-              {{ Form::open(array('action' => array('TopicController@store',$classSubject))) }}
+              {{ Form::open(array('action' => array('TopicController@store',$classSubject), 'method' => 'post')) }}
               <div class="row">
                 <div class="col-lg-11">
                   {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
                 </div>
+
+                 <!--starts subject edit permissions-->
+                 @if(Auth::User()->can('Create Topic') || Auth::User()->can('Create Topic '.$classSubject->id))
                 <div class="col-lg-1">
                   {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
                 </div>
+                @endif
+                 <!--ends subject edit permissions-->
 
               </div>
 
               {{ Form::close() }}
 
+        
+
+        <!--Downloads starts -->
+            <h5 >Downloads</h5>
+            <div class="panel">
+                <div class="panel-heading">
+              {{-- Display downloads - Start --}}
+                  @foreach($classSubject->downloads() as $download)
+                      @include('downloads.plug_index',$download)      
+                  @endforeach
+                </div>
+              {{-- Display downloads - End --}}
+              <div class="panel-body">
+                <div>
+                  @include('downloads.plug_create')
+                </div>
+              </div>
+            </div>
+        <!--Downloads ends -->
         </div>
 
         <div class="panel-body">
@@ -99,7 +128,7 @@
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
             $.ajax({
-                url: '/updatesequence',
+                url: 'topics/updatesequence',
                 type: 'GET',
                 data: arr,
                 success: function(response)
@@ -110,7 +139,7 @@
                 }
 
             });
-          
+
             tiny();
   					console.log('Relocated item');
   				}

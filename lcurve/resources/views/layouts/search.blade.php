@@ -1,6 +1,6 @@
 <div class="">
   <input id="search">
-  <input type="hidden" id="search-id" name="user_id">
+  <input type="hidden" id="search-id" name="searched_id">
   <p id="search-description"></p>
 </div>
 

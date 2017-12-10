@@ -33,7 +33,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        return view('users.create', ['roles'=>$roles]);
+        $searchableList = ClassRoom::all();
+        return view('users.create', compact('roles','searchableList'));
     }
 
     /**
@@ -66,9 +67,10 @@ class UserController extends Controller
                 $user->assignRole($role_r); //Assigning role to usery
             }
         }
+
+        //If Role is Student redirect to subject selection
         if($user->hasRole('Student')){
-          $searchableList=ClassRoom::all();
-          return view('studentsSubject.index',compact('user','searchableList'));
+          return $this->storeUserClassRoom($request,$user);
         }
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
@@ -97,8 +99,8 @@ class UserController extends Controller
     {
         //$user = User::findOrFail($id); //Get user with specified id
         $roles = Role::get(); //Get all roles
-
-        return view('users.edit', compact('user', 'roles')); //pass user and roles data to view
+        $searchableList = ClassRoom::all();
+        return view('users.edit', compact('user', 'roles','searchableList')); //pass user and roles data to view
     }
 
     /**
@@ -127,9 +129,13 @@ class UserController extends Controller
         else {
             $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
         }
+
+        //if role is student redirect to subject selection
         if($user->hasRole('Student')){
-          $searchableList=ClassRoom::all();
-          return view('studentsSubject.index',compact('user','searchableList'));
+          return $this->storeUserClassRoom($request,$user);
+        }else{
+          $user->classroom()->dissociate();
+          $user->save();
         }
         return redirect()->route('users.index')
             ->with('flash_message',
@@ -154,21 +160,26 @@ class UserController extends Controller
     }
 
 
-    public function selectSubject(Request $request){
-        $classroom=ClassRoom::find($request->id);
-        $classSubjects=$classroom->classSubject;
-        $student_id=$request->invisible1;
-        //dd($classSubjects[0]);
-        return view('studentsSubject.attach',compact('classSubjects','student_id'));
+    public function storeUserClassRoom(Request $request, User $user){
+        $this->validate($request,[
+            'searched_id'=>'required',
+        ]);
+        $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
+        $user->classRoom()->associate($classRoom);
+        $user->save();
+        $classSubjects=$classRoom->classSubjects()->get();
+
+        return view('studentSubjects.create',compact('user','classSubjects'));
     }
 
-    public function addSubject(Request $request){
+    public function storeUserClassSubjects(Request $request, User $user){
         $student=User::find($request->invisible);
         $classsubjects = $request['classsubjects'];
-        $student->classSubjects()->attach($classsubjects);
+        foreach ($classsubjects as $classsubject) {
+          $user->classSubjects()->attach($classsubject);
+        }
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully added.');
-
     }
 }

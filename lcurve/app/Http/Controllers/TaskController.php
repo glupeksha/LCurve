@@ -76,6 +76,7 @@ class TaskController extends Controller
             'taskType' => $taskType,
         ]);
 
+
         $task_id=$task->id;
 
         if($taskType==Essay){
@@ -88,6 +89,24 @@ class TaskController extends Controller
 
     //Display a successful message upon save
         
+
+        $quiz_id=$task->id;
+
+        $relations = [
+            'questions' => \App\QuizzTopic::get()->pluck('name', 'id')->prepend('Please select', ''),
+        ];
+
+        if($taskType=='Quiz'){
+            return view('quizzes.create',compact('quiz_id'),$relations);
+        }
+
+    //Display a successful message upon save
+        else{
+             return redirect()->route('tasks.index')
+            ->with('flash_message', 'Task created');
+
+        } 
+
     }
 
     /**
@@ -150,9 +169,19 @@ class TaskController extends Controller
         $task->taskType = $request->input('taskType');
         $task->save();
 
-        return redirect()->route('tasks.show', 
+         $relations = [
+            'questions' => \App\QuizzTopic::get()->pluck('name', 'id')->prepend('Please select', ''),
+        ];
+
+        if($taskType=='Quiz'){
+            return view('quizzes.index',compact('quiz_id'),$relations);
+        }
+
+        else{
+            return redirect()->route('tasks.show', 
             $task->id)->with('flash_message', 
             'Task updated');
+        }
     }
 
     /**

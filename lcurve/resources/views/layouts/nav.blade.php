@@ -91,6 +91,9 @@
                 <li><a href="{{ route('register') }}">@lang('applang.RegisterReq')</a></li>
 
                 @else
+                <li><a href="{{url('locale/en')}}">@lang('applang.chooseEng')</a></li>
+                <li><a href="{{url('locale/si')}}">@lang('applang.chooseSin')</a></li>
+                <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTam')</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-button" data-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -103,7 +106,7 @@
                                 <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
                             @endrole
 
-                            <a href="{{url('/profile')}}">@lang('applang.profileBar')</a>
+                            <a href="{{url('/users/profile')}}">@lang('applang.profileBar')</a>
 
 
                             <a href="{{ route('logout') }}"
