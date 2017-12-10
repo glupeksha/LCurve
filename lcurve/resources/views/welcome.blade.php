@@ -70,16 +70,14 @@
             @if (Route::has('login'))
                 <div class="top-right links">
 
-                    
-
                     @auth
                         <a href="{{ url('/home') }}">@lang('applang.homeBar')</a>
                     @else
                         <a href="{{ route('login') }}">@lang('applang.loginbutton')</a>
                         <a href="{{ route('register') }}">@lang('applang.RegisterReq')</a>
                         <a href="{{url('locale/en')}}">@lang('applang.chooseEn')</a>
-                            <a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a>
-                            <a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a>
+                        <a href="{{url('locale/si')}}">@lang('applang.chooseSi')</a>
+                        <a href="{{url('locale/ta')}}">@lang('applang.chooseTa')</a>
                     @endauth
                 </div>
             @endif
@@ -90,11 +88,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/upeksha1996/GroupProject">GitHub</a>
                 </div>
             </div>
         </div>
