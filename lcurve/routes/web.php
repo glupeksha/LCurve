@@ -37,6 +37,11 @@ Route::middleware(['auth'])->group(function () {
   //Admin User view
   Route::get('/users/view/{role}', 'UserViewController@userIndexView');
 
+  //cangepassword
+  Route::post('/users/changePassword', 'UserController@changePassword');
+  Route::view('/changepassword', 'users.changePassword');
+  Route::view('/users/profile', 'users.profile');
+
   //Admin Permissions View
   Route::get('/permissions/view/{permissibletype}', 'PermissionViewController@permissionIndexView');
   Route::post('/permissions/{permission}/addUser', 'PermissionViewController@addUser');
@@ -57,6 +62,10 @@ Route::middleware(['auth'])->group(function () {
   Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
   Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
+  //plug comments to essayAnswers
+  Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
+  Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
+  
   //plug downloads to subjectLessons
   Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
   Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');

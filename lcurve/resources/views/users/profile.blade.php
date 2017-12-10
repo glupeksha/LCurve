@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('layouts.app')
-
 @section('dash-left')
 
 <div class="panel-group">
@@ -22,8 +20,12 @@
                            
                         </div>                 
                     </div>
-                </div>
+      </div>
 <div class="row">
+
+    <div class="col-lg-8" ></div>
+   
+    <a href="{{url('/changepassword')}}" class="btn btn-success" role="button">Change Password</a>
 
      
     {!! Form::close() !!}

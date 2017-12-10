@@ -1,13 +1,19 @@
 .hr_style{
 	border-color:#848991;
 }
-.image-style{
-	width: 40px;
-	height: 40px;
-}
+
 .panel-styles{
 	border-color:#abad85;
     border-width: 2px;
     background-color:#d9dbaa;
     color: #606060;
+}
+.button1 {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color:#0b9b7e;
 }
