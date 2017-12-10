@@ -6,7 +6,7 @@
 	<div class="row">
                 <h3>Subject</h3>
     </div>
-    {{Form::open(array('action' => 'UserController@addSubject', 'method' => 'get'))}}
+    {{Form::open(array('action' => 'UserController@storeUserClassSubjects', 'method' => 'get'))}}
     {{ Form::hidden('invisible',$user->id, array('id' => 'invisible_id')) }}
 	    @foreach ($classSubjects as $classsubject)
 	        {{ Form::checkbox('classsubjects[]',  $classsubject->subject_id) }}
