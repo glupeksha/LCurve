@@ -13,15 +13,15 @@
               <div class="col-md-offset-6"> 
                 {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['forums.destroy', $forum->id] ]) !!} 
 
-                  <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
-                
-                  @can('Edit Forum')
+                  
+                  @if(Auth::User()->can('Edit Forum') || Auth::User()->can('Edit Forum '.$forum->id))
+
                   <a href="{{ route('forums.edit', $forum->id) }}" class="btn btn-success" role="button" >Edit</a>
-                  @endcan
-                 
-                  @can('Delete Forum')                       
+                  @endif
+  
+                  @if(Auth::User()->can('Delete Forum') || Auth::User()->can('Delete Forum '.$forum->id))                     
                     {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
-                  @endcan
+                  @endif
                 {!! Form::close() !!}
                 <br>
             </div>

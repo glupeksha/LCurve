@@ -4,19 +4,19 @@
 	<h3 class="page-title">Question Options</h3>
 
     <p>
-        <a href="{{ route('quizzQuestionOptions.create') }}" class="btn btn-success">add_new</a>
+        <a href="{{ route('quizzQuestionOptions.create') }}" class="btn btn-success">Add New</a>
     </p>
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            list
+            List
         </div>
 
         <div class="panel-body">
             <table class="table table-bordered table-striped dt-select">
                 <thead>
                     <tr>
-                        <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
+                        <th style="text-align:center;"></th>
                         <th>question</th>
                         <th>option</th>
                         <th>correct</th>
@@ -46,11 +46,11 @@
 
                                      @endcan
                                 </td>
-                            </tr>quizzQuestionsOptions
+                            </tr>
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="5">no_entries_in_table</td>
+                            <td colspan="5">No Entries In Table</td>
                         </tr>
                     @endif
                 </tbody>
