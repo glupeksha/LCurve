@@ -71,8 +71,6 @@ class UserController extends Controller
         //If Role is Student redirect to subject selection
         if($user->hasRole('Student')){
           return $this->storeUserClassRoom($request,$user);
-        }else{
-          $user->classroom()->dissassociate();
         }
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
@@ -136,7 +134,8 @@ class UserController extends Controller
         if($user->hasRole('Student')){
           return $this->storeUserClassRoom($request,$user);
         }else{
-          $user->classroom()->dissassociate();
+          $user->classroom()->dissociate();
+          $user->save();
         }
         return redirect()->route('users.index')
             ->with('flash_message',
@@ -162,19 +161,23 @@ class UserController extends Controller
 
 
     public function storeUserClassRoom(Request $request, User $user){
-        $this->validate($request, [
+        $this->validate($request,[
             'searched_id'=>'required',
         ]);
         $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
         $user->classRoom()->associate($classRoom);
-        $classSubjects=$classRoom->classSubjects();
+        $user->save();
+        $classSubjects=$classRoom->classSubjects()->get();
+
         return view('studentSubjects.create',compact('user','classSubjects'));
     }
 
     public function storeUserClassSubjects(Request $request, User $user){
         $student=User::find($request->invisible);
         $classsubjects = $request['classsubjects'];
-        $student->classSubjects()->attach($classsubjects);
+        foreach ($classsubjects as $classsubject) {
+          $user->classSubjects()->attach($classsubject);
+        }
         return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully added.');

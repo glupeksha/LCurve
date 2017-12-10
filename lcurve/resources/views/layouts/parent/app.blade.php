@@ -29,16 +29,7 @@
     <div id="app" class="full">
 
         <!-- Navigation Bar -->
-        @guest
-          @include('layouts.nav')
-        @else
-          @includeWhen(Auth::user()->hasRole('Admin'),'layouts.admin.nav')
-          @includeWhen(Auth::user()->hasRole('Teacher'),'layouts.teacher.nav')
-          @includeWhen(Auth::user()->hasRole('Stundet'),'layouts.student.nav')
-          @includeWhen(Auth::user()->hasRole('Parent'),'layouts.parent.nav')
-        @endguest
-
-
+        @include('layouts.nav')
 
         <!-- Errors -->
         @if(Session::has('flash_message'))

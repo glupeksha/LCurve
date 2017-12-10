@@ -30,7 +30,7 @@ Route::get('/calendar', 'EventController@showCalendar');
 
 //User attach subjects
 Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
-Route::get('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
+Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
 Route::view('users/profile', 'users.profile');
 
 //Admin User view
