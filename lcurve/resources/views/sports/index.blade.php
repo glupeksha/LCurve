@@ -21,16 +21,20 @@
                     <!--sport name pane start-->
                     <!--edit delete buttons start-->
                         <div class="col-lg-4">
-                            {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['sports.destroy', $sport->id] ]) !!}                 
-                                @can('Edit Sport')
+                            {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['sports.destroy', $sport->id] ]) !!} 
+
+                                <!--starts sports edit permissions-->
+                                @if(Auth::User()->can('Edit Sport') || Auth::User()->can('Edit Sport '.$sport->id))
                                 <a href="{{ route('sports.edit', $sport->id) }}" class="btn btn-success" role="button">Edit</a>
-                                @endcan
+                                @endif
                                 
-                                @can('Delete Sport')                               
+                                <!--starts sports edit permissions-->
+                                @if(Auth::User()->can('Delete Sport') || Auth::User()->can('Delete Sport '.$sport->id))                               
                                   {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
-                                @endcan
+                                @endif
+                                
                             {!! Form::close() !!}
-                    <!--edit delete buttons start-->
+                        <!--edit delete buttons start-->
                         </div>
                     </div>
                     <br>             
@@ -42,5 +46,13 @@
         </div>
     </div>
 </div>
+
+
+<!--starts Add sports permissions-->
+@if(Auth::User()->can('Create Sport') || Auth::User()->can('Create Sport '.$sport->id))
+<div class="col-lg-8"></div>
+    <a href="{{ route('sports.create') }}" class="btn btn-success panel-styles" role="button" >Add a new sport</a>
+@endif
+<!--Ends Add sports permissions-->
 
 @endsection

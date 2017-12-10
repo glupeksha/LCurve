@@ -30,15 +30,26 @@
     <div class="col-lg-8" ></div>
     {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['tasks.destroy', $task->id] ]) !!} 
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
-    @can('Edit Task')
+
+    <!--starts tasks edit permissions-->
+    @if(Auth::User()->can('Edit Task') || Auth::User()->can('Edit Task '.$task->id))
     <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-info" role="button">Edit</a>
-    @endcan
-    @can('Delete Task')                       
+    @endif
+
+    <!--starts tasks edit permissions-->
+    @if(Auth::User()->can('Delete Task') || Auth::User()->can('Delete Task '.$task->id))                       
       {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-    @endcan
+    @endif
     {!! Form::close() !!}
      
 </div>
 </div>
 </div>
+
+<!--starts Add sport permissions-->
+@if(Auth::User()->can('Create Sport') || Auth::User()->can('Create Sport '.$sport->id))
+<div class="col-lg-8"></div>
+    <a href="{{ route('societies.create') }}" class="btn btn-success panel-styles" role="button" >Add a new sport</a>
+@endif
+<!--Ends Add society permissions-->
 @endsection

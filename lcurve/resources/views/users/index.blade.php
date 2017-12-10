@@ -12,9 +12,11 @@
 <br>
 
   @include('users.plug_index',[$users])
-
+  <!--starts add user permissions-->
+  @if(Auth::User()->can('Create User'))
   <div class="col-lg-10"></div>
   <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+  @endif
 </div>
 
 @endsection

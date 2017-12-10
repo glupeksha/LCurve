@@ -18,6 +18,14 @@ class PermissionsTableSeeder extends Seeder
 
         $role->givePermissionTo(Permission::create(['name'=>'Administrator Permissions']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Role']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Permission']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Permission']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete Permission']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create User']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit User']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete User']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Role']));
+        $role->givePermissionTo(Permission::create(['name'=>'Edit Role']));
 
         //Announcements
         $role->givePermissionTo(Permission::create(['name'=>'Create Announcement']));
@@ -25,19 +33,15 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Delete Announcement']));
 
         //Society
-        $role->givePermissionTo(Permission::create(['name'=>'Create About Us']));
-        $role->givePermissionTo(Permission::create(['name'=>'Edit About Us']));
-        $role->givePermissionTo(Permission::create(['name'=>'Edit Society']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Society']));
-        $role->givePermissionTo(Permission::create(['name'=>'View Edit Society']));
-        $role->givePermissionTo(Permission::create(['name'=>'View Create Society']));
-
+        $role->givePermissionTo(Permission::create(['name'=>'Subscribe Society']));
 
         //Sports
         $role->givePermissionTo(Permission::create(['name'=>'Edit Sport']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Sport']));
-
+        $role->givePermissionTo(Permission::create(['name'=>'Subscribe Sport']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Sport']));
 
         //Sections
         $role->givePermissionTo(Permission::create(['name'=>'Create Grade']));
@@ -49,6 +53,7 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Create ClassRoom']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassRoom']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete ClassRoom']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Topic']));
 
         //lessons
         $role->givePermissionTo(Permission::create(['name'=>'Create Lesson']));
@@ -73,24 +78,21 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassSubject']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete ClassSubject']));
 
-
         //events
         $role->givePermissionTo(Permission::create(['name'=>'Edit Event']));  
         $role->givePermissionTo(Permission::create(['name'=>'Delete Event']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Event']));
 
-        //events
+        //tasks
         $role->givePermissionTo(Permission::create(['name'=>'Edit Task']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Task']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Task']));
-
 
         //quizzQuestions
         $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestion']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestion']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzQuestion']));
-
-
+        
          //quizzQuestionOptions
         $role->givePermissionTo(Permission::create(['name'=>'Create QuizzQuestionOption']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzQuestionOption']));

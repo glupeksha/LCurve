@@ -34,10 +34,7 @@
 
                         <!--starts delete permissions-->
                         @if(Auth::User()->can('Delete Society') || Auth::User()->can('Delete Society'.$society->id))
-
-
                         {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-
                         @endif
                         <!--End delete permissions-->
 
@@ -62,7 +59,7 @@
 
 
 <!--starts Add society permissions-->
-@if(Auth::User()->can('Edit Society') || Auth::User()->can('Edit Society '.$society->id))
+@if(Auth::User()->can('Create Society') || Auth::User()->can('Create Society '.$society->id))
 <div class="col-lg-8"></div>
     <a href="{{ route('societies.create') }}" class="btn btn-success panel-styles" role="button" >Add a new society</a>
 @endif
