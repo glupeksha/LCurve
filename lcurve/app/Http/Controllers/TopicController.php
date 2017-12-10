@@ -40,7 +40,7 @@ class TopicController extends Controller
           'name'=>'required|max:100',
           ]);
 
-          $topic = $classSubject->topics()->create(request()->only('name'));
+      $topic = $classSubject->topics()->create(request()->only('name'));
 
       //Display a successful message upon save
           return redirect()->back()

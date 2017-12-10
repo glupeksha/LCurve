@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\StudentSubjects;
-use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use DB;
 
-class StudentSubjectsController extends Controller
+class StudentSubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +23,8 @@ class StudentSubjectsController extends Controller
      */
     public function create()
     {
-        //
+      $searchableList=ClassRoom::all();
+      return view('studentSubjects.create',compact('user','searchableList'));
     }
 
     /**
@@ -36,31 +33,29 @@ class StudentSubjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function view(request $request)
+    public function store(Request $request)
     {
-        $student=User::find($request);
-        $subjects=DB::table('class_subject_user')->where('user_id', $request)->pluck('class_subject_id');
-        dd($subjects);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('studentsSubject.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(StudentSubjects $studentSubjects)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +64,10 @@ class StudentSubjectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StudentSubjects $studentSubjects)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +75,10 @@ class StudentSubjectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StudentSubjects $studentSubjects)
+    public function destroy($id)
     {
         //
     }

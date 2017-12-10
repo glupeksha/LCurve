@@ -35,9 +35,13 @@ class ClassRoom extends Model
         return $this->belongsTo('App\Grade');
     }
 
-    public function classSubject()
+    public function classSubjects()
     {
         return $this->hasMany('App\ClassSubject');
+    }
+    public function users()
+    {
+        return $this->hasMany('App\User');
     }
     public function permissions()
     {

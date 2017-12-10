@@ -33,7 +33,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        return view('users.create', ['roles'=>$roles]);
+        $searchableList = ClassRoom::all();
+        return view('users.create', compact('roles','searchableList'));
     }
 
     /**
@@ -66,9 +67,18 @@ class UserController extends Controller
                 $user->assignRole($role_r); //Assigning role to usery
             }
         }
+
+        //If Role is Student redirect to subject selection
         if($user->hasRole('Student')){
-          $searchableList=ClassRoom::all();
-          return view('studentsSubject.index',compact('user','searchableList'));
+          $this->validate($request, [
+              'searched_id'=>'required',
+          ]);
+          $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
+          $user->classRoom()->associate($classRoom);
+          $classSubjects=$classroom->classSubjects();
+          return view('studentSubjects.create',compact('user','classSubjects'));
+        }else{
+          $user->classroom()->dissassociate();
         }
         //Redirect to the users.index view and display message
         return redirect()->route('users.index')
@@ -97,8 +107,8 @@ class UserController extends Controller
     {
         //$user = User::findOrFail($id); //Get user with specified id
         $roles = Role::get(); //Get all roles
-
-        return view('users.edit', compact('user', 'roles')); //pass user and roles data to view
+        $searchableList = ClassRoom::all();
+        return view('users.edit', compact('user', 'roles','searchableList')); //pass user and roles data to view
     }
 
     /**
@@ -127,9 +137,18 @@ class UserController extends Controller
         else {
             $user->roles()->detach(); //If no role is selected remove exisiting role associated to a user
         }
+
+        //if role is student redirect to subject selection
         if($user->hasRole('Student')){
-          $searchableList=ClassRoom::all();
-          return view('studentsSubject.index',compact('user','searchableList'));
+          $this->validate($request, [
+              'searched_id'=>'required',
+          ]);
+          $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
+          $user->classRoom()->associate($classRoom);
+          $classSubjects=$classRoom->classSubjects();
+          return view('studentSubjects.create',compact('user','classSubjects'));
+        }else{
+          $user->classroom()->dissassociate();
         }
         return redirect()->route('users.index')
             ->with('flash_message',
@@ -155,7 +174,7 @@ class UserController extends Controller
 
 
     public function selectSubject(Request $request){
-        $classroom=ClassRoom::find($request->id);
+        $classroom=ClassRoom::findOrFail($request->searched_id);
         $classSubjects=$classroom->classSubject;
         $student_id=$request->invisible1;
         //dd($classSubjects[0]);

@@ -37,7 +37,7 @@
 
             </div>
 
-              {{ Form::open(array('action' => array('TopicController@store',$classSubject))) }}
+              {{ Form::open(array('action' => array('TopicController@store',$classSubject), 'method' => 'post')) }}
               <div class="row">
                 <div class="col-lg-11">
                   {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
@@ -102,7 +102,7 @@
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
             $.ajax({
-                url: '/updatesequence',
+                url: 'topics/updatesequence',
                 type: 'GET',
                 data: arr,
                 success: function(response)
@@ -113,7 +113,7 @@
                 }
 
             });
-          
+
             tiny();
   					console.log('Relocated item');
   				}

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('dash-left')
 
 <div class="row">
@@ -23,16 +23,16 @@
                     </div>
                     <!--edit delete buttons start-->
                     <div class="col-lg-4">
-                            {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['subjects.destroy', $subject->id] ]) !!}                 
+                            {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['subjects.destroy', $subject->id] ]) !!}
                                 @can('Edit Sport')
                                 <a href="{{ route('subjects.edit', $subject->id) }}" class="btn btn-success" role="button">Edit</a>
                                 @endcan
-                                
-                                @can('Delete Sport')                               
+
+                                @can('Delete Sport')
                                   {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
                                 @endcan
                             {!! Form::close() !!}
-                    
+
                     </div>
                     <!--edit delete buttons end-->
                 <!--society name load end-->
