@@ -11,7 +11,7 @@
         {{ Form::open(array('route' => 'classRooms.store')) }}
 
         <div class="form-group">
-
+          {{ Form::label('name', 'Grade') }}
           @include('layouts.search',$searchableList)
 
             <br>

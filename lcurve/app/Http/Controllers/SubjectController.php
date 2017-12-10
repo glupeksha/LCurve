@@ -125,6 +125,6 @@ class SubjectController extends Controller
 
         return redirect()->route('subjects.index')
             ->with('flash_message',
-             'Article successfully deleted');
+             'Subject successfully deleted');
     }
 }

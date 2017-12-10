@@ -7,11 +7,12 @@
             <br>
             <lable><b>Grade :</b></lable>
             {{ $classRoom->grade->name }}
-           <hr style="border-color:#848991">
-
+            <br>
            <lable><b>Name Of The class :</b></lable>
             {{$classRoom->name}}
-            <br>
+            
+             <hr style="border-color:#848991">
+              <hr style="border-color:#848991">
 
             <div class="row">
 

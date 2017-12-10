@@ -56,8 +56,8 @@
 
 <!--starts Add forum permissions-->
 @if(Auth::User()->can('Create Forum') || Auth::User()->can('Create Forum '.$forum->id))
-<div class="col-lg-8"></div>
-    <a href="{{ route('forums.create') }}" class="btn btn-success panel-styles" role="button" >Add a new forum</a>
+<div class="col-lg-9"></div>
+    <a href="{{ route('forums.create') }}" class="btn btn-success" role="button" >Add a new forum</a>
 @endif
 <!--Ends Add society permissions-->
 

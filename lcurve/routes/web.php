@@ -32,6 +32,7 @@ Route::get('/calendar', 'EventController@showCalendar');
 Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
 Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
 Route::view('users/profile', 'users.profile');
+Route::view('/studentView', 'classSubjects.studentView');
 
 //Admin User view
 Route::get('/users/view/{role}', 'UserViewController@userIndexView');
@@ -48,6 +49,7 @@ Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSp
 Route::post('/classSubjects/{classSubject}/topics','TopicController@store');
 Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
 Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
+Route::get('/classSubjects/{classSubject}/preview', 'ClassSubjectController@preview');
 
 
 //plug comments to forums
