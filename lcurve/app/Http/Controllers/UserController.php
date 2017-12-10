@@ -171,7 +171,7 @@ class UserController extends Controller
         return view('studentSubjects.create',compact('user','classSubjects'));
     }
 
-    public function addSubject(Request $request){
+    public function storeUserClassSubjects(Request $request, User $user){
         $student=User::find($request->invisible);
         $classsubjects = $request['classsubjects'];
         $student->classSubjects()->attach($classsubjects);

@@ -29,8 +29,8 @@ Route::get('/events/calendar', 'EventController@showCalendar');
 Route::get('/calendar', 'EventController@showCalendar');
 
 //User attach subjects
-Route::get('/users/{id}/subjects', 'UserController@selectSubject');
-Route::get('/users/{id}/addSubject', 'UserController@addSubject');
+Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
+Route::get('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
 Route::view('users/profile', 'users.profile');
 
 //Admin User view
@@ -46,7 +46,7 @@ Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSp
 
 //topics for subjects
 Route::post('/classSubjects/{classSubject}/topics','TopicController@store');
-Route::put('/classSubjects/topics/update','TopicController@update');
+Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
 Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
 
 
@@ -76,14 +76,3 @@ Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
 Route::resource('quizzTopics', 'QuizzTopicController');
 Route::resource('quizzes', 'QuizController');
 Route::resource('downloads', 'DownloadController');
-
-
-//wrong
-Route::get('/selectSubject', 'UserController@selectSubject');
-Route::get('/addSubject', 'UserController@addSubject');
-Route::get('/studentsSubjects/index', function()
-{
-    return View::make('dash-left');
-});
-
-
