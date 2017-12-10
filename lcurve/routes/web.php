@@ -54,7 +54,14 @@ Route::post('/forums/{forum}/comments','CommentController@store');
 Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
 Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
+//plug comments to essayAnswers
+Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
+Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
+
+
 //resources
+
+Route::resource('essays', 'EssayController');
 Route::resource('users', 'UserController');
 Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
@@ -73,6 +80,8 @@ Route::resource('tasks', 'TaskController');
 Route::resource('quizzQuestions', 'QuizzQuestionController');
 Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
 Route::resource('quizzTopics', 'QuizzTopicController');
+Route::resource('essayAnswers', 'EssayAnswerController');
+
 
 
 //wrong

@@ -69,10 +69,7 @@
 @endsection
 
 @push('styles')
-  <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
-  <script src = "{{ asset('js/materialize.min.js') }}"></script>
-
-  <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+   <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
      rel = "stylesheet">
 
   <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>

@@ -44,5 +44,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\ClassSubject');
 
     }
+     public function essayAnswers()
+    {
+        return $this->hasMany('App\EssayAnswer');
+    }
 
 }

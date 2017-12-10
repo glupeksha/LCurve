@@ -76,9 +76,18 @@ class TaskController extends Controller
             'taskType' => $taskType,
         ]);
 
-    //Display a successful message upon save
-        return redirect()->route('tasks.index')
+        $task_id=$task->id;
+
+        if($taskType==Essay){
+             return view ('essay.index', compact('task_id'));
+        }
+        else{
+            return redirect()->route('tasks.index')
             ->with('flash_message', 'Task created'); 
+        }
+
+    //Display a successful message upon save
+        
     }
 
     /**
