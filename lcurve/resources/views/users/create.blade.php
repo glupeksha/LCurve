@@ -22,10 +22,18 @@
 
     <div class='form-group'>
         @foreach ($roles as $role)
-            {{ Form::checkbox('roles[]',  $role->id ,false,array('id'=>'ChStudent')) }}
-            {{ Form::label($role->name, ucfirst($role->name)) }}<br>
+            {{ Form::label($role->name, ucfirst($role->name)) }}
+            @if ($role->id==3)
+              {{ Form::checkbox('roles[]',  $role->id ,false,array('id'=>'ChStudent','data-toggle'=>'collapse','data-target'=>'#setGrade')) }}
+            @else
+              {{ Form::checkbox('roles[]',  $role->id ,false) }}
+            @endif
+            <br>
         @endforeach
+    </div>
 
+    <div id="setGrade" class="form-group collapse">
+      Class @include('layouts.search',$searchableList)
     </div>
 
     <div class="form-group">
@@ -47,11 +55,14 @@
 </div>
 
 @endsection
-@push('styles')
+@push('scripts')
 
 <script >
-    if(getElementById("chStudent").value==3){
+$(function setGrade() {
+  if($("#ChStudent").prop('checked') == true){
+    $("#setGrade").addClass("show");
+  }
+})
 
-    };
 </script>
 @endPush

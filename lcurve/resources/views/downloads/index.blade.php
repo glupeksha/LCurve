@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+@section('dash-left')
 
   <div class="panel panel-default">
 

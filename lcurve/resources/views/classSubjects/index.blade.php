@@ -19,11 +19,11 @@
 
             @foreach ($classSubjects as $classSubject)
 
-                <div class="panel-body panel-heading"> 
-                <div class="col-lg-1"></div>                  
+                <div class="panel-body panel-heading">
+                <div class="col-lg-1"></div>
                         <a href="{{ route('classSubjects.show', $classSubject->id ) }}" ><b>
 
-                        {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}
+                          {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}
                         </b><br>
                         </a>
                 </div>
