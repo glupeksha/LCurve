@@ -20,21 +20,21 @@ Life and its functions, including Anatomy & Physiology, Botany, Zoology, Ecology
         ]);
 
         Forum::create([
-        	'user_id'=>'2',
+        	'user_id'=>'1',
         	'title'=>'Mathematics', 
         	'content'=>'
 The study of the measurement, properties, and relationships of quantities and sets, using numbers and symbols.',
         ]);
 
         Forum::create([
-        	'user_id'=>'3',
+        	'user_id'=>'1',
         	'title'=>'Electrical and Electronics', 
         	'content'=>'
 From breadboards to the latest high tech gadgets that drive our society. This forum is to discuss the development, design and construction of all things electronic. Consult with others on how electronics work to what type of cell phone to purchase. From capacitors, resistors, inductors to microwave transmitters.',
         ]);
 
         Forum::create([
-        	'user_id'=>'4',
+        	'user_id'=>'1',
         	'title'=>'Computer Science', 
         	'content'=>'
 The software, hardware, peripherals and devices working with or pertaining to computers and computer related devices. Programming, microprocessors, micro controllers, modems, printers, mice, crts and devices related to computers, software and accessories.',

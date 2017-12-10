@@ -34,7 +34,7 @@
                              </div>
                             </p>
                          
-                            <p >
+                            <p>
                               <div class="col-md-offset-2 row">
                                 <h6 class="media-heading" style="font-family:inherit;">
                                     Posted by {{$forum->user->name}} &nbsp;
