@@ -33,6 +33,11 @@ Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
 Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
 Route::view('users/profile', 'users.profile');
 
+//cangepassword
+Route::post('/users/changePassword', 'UserController@changePassword');
+Route::view('/changepassword', 'users.changePassword');
+Route::view('/users/profile', 'users.profile');
+
 //Admin User view
 Route::get('/users/view/{role}', 'UserViewController@userIndexView');
 

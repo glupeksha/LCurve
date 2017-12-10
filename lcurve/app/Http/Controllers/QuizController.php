@@ -16,9 +16,13 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(request $request)
+    public function index()
     {
-        
+
+        $quizzes = Quiz::all()->first();
+
+        dd($quizzes->questions());
+        return view('quizzes.index', compact('quizzes'));
     }
 
     /**
