@@ -26,8 +26,6 @@
     <div class="col-lg-8" ></div>
    
     <a href="{{url('/changepassword')}}" class="btn btn-success" role="button">Change Password</a>
-  
-
 
      
     {!! Form::close() !!}

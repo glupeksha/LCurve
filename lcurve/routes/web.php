@@ -29,16 +29,14 @@ Route::get('/events/calendar', 'EventController@showCalendar');
 Route::get('/calendar', 'EventController@showCalendar');
 
 //User attach subjects
-Route::get('/users/{id}/subjects', 'UserController@selectSubject');
-Route::get('/users/{id}/addSubject', 'UserController@addSubject');
-Route::post('/users/changePassword', 'UserController@changePassword');
-
+Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
+Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
+Route::view('users/profile', 'users.profile');
 
 //cangepassword
 Route::post('/users/changePassword', 'UserController@changePassword');
 Route::view('/changepassword', 'users.changePassword');
 Route::view('/users/profile', 'users.profile');
-
 
 //Admin User view
 Route::get('/users/view/{role}', 'UserViewController@userIndexView');
@@ -51,18 +49,28 @@ Route::post('/permissions/{permission}/addUser', 'PermissionViewController@addUs
 Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
 Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 
-//topics
-Route::post('/topics/{classSubject}','TopicController@store');
-Route::get('/topics/updatesequence','TopicController@updateSequence');
-Route::get('/updatesequence','TopicController@updateSequence');
+//topics for subjects
+Route::post('/classSubjects/{classSubject}/topics','TopicController@store');
+Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
+Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
+
 
 //plug comments to forums
 Route::post('/forums/{forum}/comments','CommentController@store');
 Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
 Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
+//plug comments to essayAnswers
+Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
+Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
+
+//plug downloads to subjectLessons
+Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
+Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
+Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
 
 //resources
+Route::resource('essays', 'EssayController');
 Route::resource('users', 'UserController');
 Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
@@ -76,29 +84,10 @@ Route::resource('classSubjects', 'ClassSubjectController');
 Route::resource('sports', 'SportController');
 Route::resource('events', 'EventController');
 Route::resource('studentSubjects', 'StudentSubjectController');
-Route::resource('topics', 'TopicController');
 Route::resource('tasks', 'TaskController');
 Route::resource('quizzQuestions', 'QuizzQuestionController');
 Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
 Route::resource('quizzTopics', 'QuizzTopicController');
+Route::resource('essayAnswers', 'EssayAnswerController');
 Route::resource('quizzes', 'QuizController');
-
-
-
-//wrong
-Route::get('/selectSubject', 'UserController@selectSubject');
-Route::get('/addSubject', 'UserController@addSubject');
-Route::get('/studentsSubjects/index', function()
-{
-    return View::make('dash-left');
-});
-Route::view('/studentsSubject', 'studentsSubject.index');
-Route::view('/studentsubjects', 'studentsSubject.attach');
-
-
-
-
-
-
-
-
+Route::resource('downloads', 'DownloadController');

@@ -19,11 +19,11 @@
 
             @foreach ($classSubjects as $classSubject)
 
-                <div class="panel-body panel-heading"> 
-                <div class="col-lg-1"></div>                  
+                <div class="panel-body panel-heading">
+                <div class="col-lg-1"></div>
                         <a href="{{ route('classSubjects.show', $classSubject->id ) }}" ><b>
 
-                        {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}
+                          {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }}
                         </b><br>
                         </a>
                 </div>
@@ -36,10 +36,11 @@
     </div>
 </div>
 
-@can('Create ClassSubject')
+<!--starts Add society permissions-->
+@if(Auth::User()->can('Create ClassSubject') || Auth::User()->can('Create ClassSubject '.$classSubject->id))
 <div class="col-lg-8"></div>
     <a href="{{ route('classSubjects.create') }}" class="btn btn-success panel-styles" role="button" >Add Subject For a Class</a>
-@endcan
-
+@endif
+<!--starts Add society permissions-->
 
 @endsection

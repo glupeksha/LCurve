@@ -17,19 +17,20 @@ class ClassSubject extends Model
 
      public function subject()
     {
-        return $this->belongsTo('App\Subject','subject_id','id');
+        return $this->belongsTo('App\Subject');
     }
 
-     public function teacher()
-    {
-        return $this->belongsTo('App\User','teacher_id','id');
-    }
 
-    public function students()
+    public function users()
     {
         return $this->belongsToMany('App\User');
-        
+
     }
+    
+    public function teacher()
+   {
+       return $this->belongsTo('App\User','teacher_id','id');
+   }
 
     public function topics()
     {
@@ -47,5 +48,10 @@ class ClassSubject extends Model
     {
       return $this->topics()->orderBy('seqNo')->where('parent',$parent_id)->get();
     }
+    public function downloads(){
+      return $this->hasMany(Download::class);
+    }
+
+    
 
 }

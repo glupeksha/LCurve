@@ -4,17 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassSubjectUsersTable extends Migration
+class CreateEssaysTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
+
     public function up()
     {
-        Schema::create('class_subject_users', function (Blueprint $table) {
+        Schema::create('essays', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('question');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateClassSubjectUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_subject_users');
+        Schema::dropIfExists('essays');
     }
 }

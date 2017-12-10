@@ -19,15 +19,15 @@
                {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classRooms.destroy', $classRoom->id] ]) !!} 
                 <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
 
-                @can('Edit ClassRoom')
+                <!--starts Add society permissions-->
+                @if(Auth::User()->can('Edit ClassRoom') || Auth::User()->can('Edit ClassRoom '.$classRoom->id))
                 <a href="{{ route('classRooms.edit', $classRoom->id) }}" class="btn btn-success" role="button">Edit</a>
-                @endcan
-
+                @endif
                
-                @can('Delete ClassRoom')                       
+                @if(Auth::User()->can('Delete ClassRoom') || Auth::User()->can('Delete ClassRoom '.$classRoom->id))                      
                   {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
 
-                @endcan
+                @endif
                 {!! Form::close() !!}
             </div>
             <br>

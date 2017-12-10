@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\StudentSubjects;
-use App\User;
+use App\Essay;
+use App\EssayAnswer;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use DB;
 
-class StudentSubjectsController extends Controller
+class EssayAnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,31 +33,33 @@ class StudentSubjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function view(request $request)
+    public function store(Request $request,Essay $essay)
     {
-        $student=User::find($request);
-        $subjects=DB::table('class_subject_user')->where('user_id', $request)->pluck('class_subject_id');
-        dd($subjects);
+
+      $this->validate(request(),['content'=>'required|min:2']);
+      $essay->addEssay( $request->input());
+
+      return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  \App\EssayAnswer  $essayAnswer
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {
-        return view('studentsSubject.show');
+    public function show(EssayAnswer $essayAnswer)
+    {   
+        return view ('essayAnswers.show',compact('essayAnswer'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  \App\EssayAnswer  $essayAnswer
      * @return \Illuminate\Http\Response
      */
-    public function edit(StudentSubjects $studentSubjects)
+    public function edit(EssayAnswer $essayAnswer)
     {
         //
     }
@@ -69,10 +68,10 @@ class StudentSubjectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  \App\EssayAnswer  $essayAnswer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StudentSubjects $studentSubjects)
+    public function update(Request $request, EssayAnswer $essayAnswer)
     {
         //
     }
@@ -80,10 +79,10 @@ class StudentSubjectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\StudentSubjects  $studentSubjects
+     * @param  \App\EssayAnswer  $essayAnswer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StudentSubjects $studentSubjects)
+    public function destroy(EssayAnswer $essayAnswer)
     {
         //
     }

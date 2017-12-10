@@ -31,13 +31,17 @@
     <div class="col-lg-8" ></div>
      {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['events.destroy', $event->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
-    @can('Edit Event')
-    <a href="{{ route('events.edit', $event->id) }}" class="btn btn-info" role="button">Edit</a>
-    @endcan
 
-    @can('Delete Event')                       
+    <!--starts event edit permissions-->    
+    @if(Auth::User()->can('Edit Event') || Auth::User()->can('Edit Event '.$event->id))
+    <a href="{{ route('events.edit', $event->id) }}" class="btn btn-info" role="button">Edit</a>
+    @endif
+    
+    <!--starts event delete permissions-->
+    @if(Auth::User()->can('Delete Event') || Auth::User()->can('Delete Event '.$event->id))              
       {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-    @endcan
+    @endif
+
 
     {!! Form::close() !!}
 </div>

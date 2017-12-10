@@ -26,13 +26,19 @@
     
                 <div class="col-lg-8" ></div>
                 <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
-                @can('Edit Announcement')
+
+                <!-- only authorized users can edit-->
+                @if(Auth::User()->can('Edit Announcement') || Auth::User()->can('Edit Announcement '.$announcement->id))
                 <a href="{{ route('announcements.edit', $announcement->id) }}" class="btn btn-success" role="button">Edit</a>
-                @endcan
-                @can('Delete Announcement')
+                @endif
+                <!-- only authorized users can edit-->
+
+                <!-- only authorized users can edit-->
+                @if(Auth::User()->can('Delete Announcement') || Auth::User()->can('Delete Announcement '.$announcement->id))
                 {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
-                   
-                @endcan
+                @endif
+                <!-- only authorized users can edit-->
+
 
                 {!! Form::close() !!}                
               </div>

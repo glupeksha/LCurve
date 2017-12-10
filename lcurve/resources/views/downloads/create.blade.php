@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+@section('dash-left')
 
   {{ Form::open(array('url' => 'downloads', 'files' => true)) }}
 

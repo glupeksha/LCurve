@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('dash-left')
 
-
-
             <!--Home work Pane start-->
             <div class="row defaultMargin">
             <!-- Homework Body -->
@@ -43,26 +41,23 @@
                                    
                                  </div>
                                </div>
-                            
-
-
+  
                             @endforeach
                           </div>
                         </div>
                       </div>
-            
-           
     
               
             </div>
         </div>
 
 
-            @can('Create Task')
+            <!--starts sports create permissions-->
+            @if(Auth::User()->can('Create Task') || Auth::User()->can('Create Task '.$task->id))
             <div class="col-lg-8">
                 <a href="{{route('tasks.create')}}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Create New Task</a>
             </div>
-            @endcan
+            @endif
 
 
             

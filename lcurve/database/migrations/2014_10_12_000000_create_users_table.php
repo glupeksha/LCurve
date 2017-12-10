@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('language')->default('en');
+            $table->string('class_room_id')->nullable($value=true);
             $table->rememberToken();
             $table->timestamps();
         });

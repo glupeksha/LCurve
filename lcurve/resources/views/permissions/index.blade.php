@@ -14,9 +14,11 @@
     <br>
     @include('permissions.plug_permissible',[$permissions])
     
+    <!--starts set permissions-->
+    @if(Auth::User()->can('Create Permission'))
     <div class="col-lg-9"></div>
     <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">Add Permission</a>
-
+    @endif
 </div>
 
 @endsection

@@ -29,7 +29,7 @@
               <li><a href="{{url('permissions')}}">Permissions</a></li>
               <li><a href="{{url('roles')}}">Roles</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Configure Class Rooms
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Basic Configurations
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{url('subjects')}}">Configure Subjects</a></li>

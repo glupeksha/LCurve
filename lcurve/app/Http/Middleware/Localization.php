@@ -20,6 +20,9 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
+        if(Auth::user()){
+          App::setLocale(Auth::user()->language);
+        }
         if ( Session::has('locale')) {
             App::setLocale(Session::get('locale'));
 
@@ -27,9 +30,7 @@ class Localization
             Carbon::setLocale(Session::get('locale'));
         }
         
-        if(Auth::user()){
-          App::setLocale(Auth::user()->language);
-        }
+        
         return $next($request);
     }
 }

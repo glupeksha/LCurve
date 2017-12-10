@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ClassSubjectUserTable extends Migration
+class CreateEssayAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class ClassSubjectUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_subject_user', function (Blueprint $table) {
+        Schema::create('essay_answers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('essay_id');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class ClassSubjectUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_subject_user');
+        Schema::dropIfExists('essay_answers');
     }
 }

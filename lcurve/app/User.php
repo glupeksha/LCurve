@@ -33,7 +33,10 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
-
+    public function classRoom()
+    {
+        return $this->belongsTo('App\ClassRoom');
+    }
     public function classSubject()
     {
         return $this->hasMany('App\ClassSubject','teacher_id');
@@ -43,6 +46,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\ClassSubject');
 
+    }
+     public function essayAnswers()
+    {
+        return $this->hasMany('App\EssayAnswer');
     }
 
 }

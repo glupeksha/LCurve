@@ -2,30 +2,35 @@
 @section('dash-left')
 
 <div class="row">
-        <div class="panel panel-default">
-         <div class="panel-heading">
+        <div class="panel panel-default" style="padding: 30px;">
+         <div class="panel-heading " >
             <br>
-            <label><b>Subject: </b></label> <span> {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br>
-            <label><b>Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
+            <label><b>&nbsp;&nbsp;&nbsp; Subject: </b></label> <span> {{  $classSubject->classRoom->grade->name }} {{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br>
+            <label><b>&nbsp;&nbsp;&nbsp;Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
             <br>
-
+            <div class="col-lg-8"></div>
             <div class="row">
               {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['classSubjects.destroy', $classSubject->id] ]) !!}
-                <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
 
-                @can('Edit ClassSubject')
-                <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-info" role="button">Edit</a>
-                @endcan
+                <!--starts subject edit permissions-->
+                @if(Auth::User()->can('Edit ClassSubject') || Auth::User()->can('Edit ClassSubject '.$classSubject->id))
+                <a href="{{ route('classSubjects.edit', $classSubject->id) }}" class="btn btn-success" role="button">Edit</a>
+                @endif
+                <!--ends subject edit permissions-->
 
-                @can('Delete ClassSubject')
-                  {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-                @endcan
+                <!--starts subject delete permissions-->
+                @if(Auth::User()->can('Delete ClassSubject') || Auth::User()->can('Delete ClassSubject '.$classSubject->id))
+
+                  {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                @endif
+                <!--ends subject delete permissions-->
 
               {!! Form::close() !!}
             </div>
 
             <hr style="border-color:#848991">
-            <h5>Lesson Plan</h5>
+            <h4>Lesson Plan</h4>
 
             <div class="list-group">
 
@@ -37,23 +42,52 @@
 
             </div>
 
-              {{ Form::open(array('action' => array('TopicController@store',$classSubject))) }}
+              {{ Form::open(array('action' => array('TopicController@store',$classSubject), 'method' => 'post')) }}
               <div class="row">
                 <div class="col-lg-11">
                   {{ Form::text('name', null, array('class' => 'form-control','placeholder' => 'Add a new topic')) }}
                 </div>
+
+                 <!--starts subject edit permissions-->
+                 @if(Auth::User()->can('Create Topic') || Auth::User()->can('Create Topic '.$classSubject->id))
+                 
+
                 <div class="col-lg-1">
-                  {{ Form::button('<i class="material-icons">add</i>', array('type' => 'submit', 'class' => 'btn-floating waves-effect waves-light')) }}
+                <input class=" glyphicon glyphicon-plus-sign button1 btn-success" type="submit" value="+">
+                 
                 </div>
+                @endif
+                 <!--ends subject edit permissions-->
 
               </div>
 
               {{ Form::close() }}
+<br>
+<br>
+<hr style="border-color:#848991">       
 
+        <!--Downloads starts -->
+            <h4 >Downloads</h4>
+            <div class="panel">
+                <div class="panel-heading">
+              {{-- Display downloads - Start --}}
+                  @foreach($classSubject->downloads() as $download)
+                      @include('downloads.plug_index',$download)      
+                  @endforeach
+                </div>
+              {{-- Display downloads - End --}}
+              <div class="panel-body">
+                <div>
+                  @include('downloads.plug_create')
+                </div>
+              </div>
+            </div>
+        <!--Downloads ends -->
         </div>
+<hr style="border-color:#848991">
 
-        <div class="panel-body">
-          <h5>Lessons Preview</h5>
+       <div class="panel-body">
+          <h4>Lessons Preview</h4>
             @foreach($classSubject->maintopics() as $topic)
               @include('topics/plug_show',['topic'=>$topic])
             @endforeach
@@ -69,11 +103,8 @@
 @endsection
 
 @push('styles')
-  <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
-  <script src = "{{ asset('js/materialize.min.js') }}"></script>
 
-  <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-     rel = "stylesheet">
+  <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel = "stylesheet">
 
   <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="{{asset('js/jquery.mjs.nestedSortable.js')}}"></script>
@@ -102,7 +133,7 @@
             arr=$('.sortable').nestedSortable('serialize', {startDepthCount: 0});
             $("#display").html(arr);
             $.ajax({
-                url: '/updatesequence',
+                url: 'topics/updatesequence',
                 type: 'GET',
                 data: arr,
                 success: function(response)
@@ -113,7 +144,7 @@
                 }
 
             });
-          
+
             tiny();
   					console.log('Relocated item');
   				}
