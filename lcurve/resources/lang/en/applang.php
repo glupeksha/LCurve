@@ -18,9 +18,12 @@
 		'confirmPassword'=>'Confirm Password',
 		'registerProceed'=>'Register',
 		'languageSelect'=>'Select default language',
-		'chooseEn'=>'  English',
 		'chooseSi'=>'  සිංහල',
+		'chooseSin'=>'  සිං',
+		'chooseEn'=>'  English',
+		'chooseEng'=>'  En',
 		'chooseTa'=>'தமிழ்',
+		'chooseTam'=>'த',
 
 
 

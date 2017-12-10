@@ -48,5 +48,10 @@ class ClassSubject extends Model
     {
       return $this->topics()->orderBy('seqNo')->where('parent',$parent_id)->get();
     }
+    public function downloads(){
+      return $this->hasMany(Download::class);
+    }
+
+    
 
 }

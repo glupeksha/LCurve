@@ -103,6 +103,11 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit QuizzTopic']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete QuizzTopic']));
 
+        //Ddownloads
+        $role->givePermissionTo(Permission::create(['name'=>'Edit File']));
+        $role->givePermissionTo(Permission::create(['name'=>'Delete File']));
+        $role->givePermissionTo(Permission::create(['name'=>'View Download']));
+
 
     }
 }
