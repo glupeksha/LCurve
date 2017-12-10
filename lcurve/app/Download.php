@@ -7,4 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Download extends Model
 {
     protected $guarded=[];
+
+    public function classSubject(){
+    	return $this->belongsTo(ClassSubject::class);
+  	}
 }

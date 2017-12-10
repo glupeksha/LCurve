@@ -60,6 +60,25 @@
 
               {{ Form::close() }}
 
+        
+
+        <!--Downloads starts -->
+            <h5 >Downloads</h5>
+            <div class="panel">
+                <div class="panel-heading">
+              {{-- Display downloads - Start --}}
+                  @foreach($classSubject->downloads() as $download)
+                      @include('downloads.plug_index',$download)      
+                  @endforeach
+                </div>
+              {{-- Display downloads - End --}}
+              <div class="panel-body">
+                <div>
+                  @include('downloads.plug_create')
+                </div>
+              </div>
+            </div>
+        <!--Downloads ends -->
         </div>
 
         <div class="panel-body">
