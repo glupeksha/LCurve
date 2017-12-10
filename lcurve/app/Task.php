@@ -50,6 +50,10 @@ class Task extends Model
      {
          return $this->content;
      }
+     public function taskable()
+    {
+      return $this->morphTo();
+    }
 
      /**
       * Get the end time

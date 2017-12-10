@@ -76,6 +76,20 @@ class TaskController extends Controller
             'taskType' => $taskType,
         ]);
 
+
+        $task_id=$task->id;
+
+        if($taskType==Essay){
+             return view ('essay.index', compact('task_id'));
+        }
+        else{
+            return redirect()->route('tasks.index')
+            ->with('flash_message', 'Task created'); 
+        }
+
+    //Display a successful message upon save
+        
+
         $quiz_id=$task->id;
 
         $relations = [
@@ -92,6 +106,7 @@ class TaskController extends Controller
             ->with('flash_message', 'Task created');
 
         } 
+
     }
 
     /**

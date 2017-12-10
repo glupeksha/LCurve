@@ -42,7 +42,6 @@ class Essay extends Model
 
     public function addEssay($essayAnswer)
     {  
-        dd($this->id);
          EssayAnswer::create([
         'user_id'=>\Auth::user()->id,
         'essay_id'=>$this->id,

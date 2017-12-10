@@ -35,7 +35,7 @@ class EssayAnswerController extends Controller
      */
     public function store(Request $request,Essay $essay)
     {
-       dd($essay->id);
+
       $this->validate(request(),['content'=>'required|min:2']);
       $essay->addEssay( $request->input());
 

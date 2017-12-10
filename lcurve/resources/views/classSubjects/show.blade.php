@@ -104,9 +104,7 @@
 
 @push('styles')
 
-
-  <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
-     rel = "stylesheet">
+  <link href = "https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel = "stylesheet">
 
   <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="{{asset('js/jquery.mjs.nestedSortable.js')}}"></script>
