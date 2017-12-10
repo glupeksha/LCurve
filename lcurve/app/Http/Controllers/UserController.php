@@ -166,6 +166,7 @@ class UserController extends Controller
         ]);
         $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
         $user->classRoom()->associate($classRoom);
+        $user->givePermissionTo('View ClassRoom '.$classRoom->id);
         $user->save();
         $classSubjects=$classRoom->classSubjects()->get();
 
@@ -176,7 +177,10 @@ class UserController extends Controller
         $student=User::find($request->invisible);
         $classsubjects = $request['classsubjects'];
         foreach ($classsubjects as $classsubject) {
-          $user->classSubjects()->attach($classsubject);
+          $classSubject=App\ClassSubject::find($classsubject);
+          $user->classSubjects()->attach($classSubject);
+          $user->givePermissionTo('View ClassSubject '.$classSubject->id);
+          $user->save();
         }
         return redirect()->route('users.index')
             ->with('flash_message',

@@ -35,5 +35,8 @@ class ClassRoomsTableSeeder extends Seeder
         	'grade_id'=>3,
         	'name'=>'G'
         	]);
+
+
+
     }
 }

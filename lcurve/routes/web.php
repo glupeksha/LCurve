@@ -28,56 +28,59 @@ Route::get('/events/calendar', 'EventController@showCalendar');
 //calendar
 Route::get('/calendar', 'EventController@showCalendar');
 
-//User attach subjects
-Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
-Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
-Route::view('users/profile', 'users.profile');
+Route::middleware(['auth'])->group(function () {
+  //User attach subjects
+  Route::get('/users/{user}/classroom', 'UserController@storeUserClassRoom');
+  Route::post('/users/{user}/subjects', 'UserController@storeUserClassSubjects');
+  Route::view('users/profile', 'users.profile');
 
-//Admin User view
-Route::get('/users/view/{role}', 'UserViewController@userIndexView');
+  //Admin User view
+  Route::get('/users/view/{role}', 'UserViewController@userIndexView');
 
-//Admin Permissions View
-Route::get('/permissions/view/{permissibletype}', 'PermissionViewController@permissionIndexView');
-Route::post('/permissions/{permission}/addUser', 'PermissionViewController@addUser');
+  //Admin Permissions View
+  Route::get('/permissions/view/{permissibletype}', 'PermissionViewController@permissionIndexView');
+  Route::post('/permissions/{permission}/addUser', 'PermissionViewController@addUser');
 
-//plug announcement
-Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
-Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
+  //plug announcement
+  Route::post('/societies/{society}/announcements','AnnouncementController@storeUnderSociety');
+  Route::post('/sports/{sport}/announcements','AnnouncementController@storeUnderSport');
 
-//topics for subjects
-Route::post('/classSubjects/{classSubject}/topics','TopicController@store');
-Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
-Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
+  //topics for subjects
+  Route::post('/classSubjects/{classSubject}/topics','TopicController@store');
+  Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
+  Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
+  //filter subjects shown for users
+  Route::get('/classSubjects/filteredindex','ClassSubjectController@filteredIndex');
+
+  //plug comments to forums
+  Route::post('/forums/{forum}/comments','CommentController@store');
+  Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
+  Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
+
+  //plug downloads to subjectLessons
+  Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
+  Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
+  Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
 
 
-//plug comments to forums
-Route::post('/forums/{forum}/comments','CommentController@store');
-Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
-Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
-
-//plug downloads to subjectLessons
-Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
-Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
-Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
-
-
-//resources
-Route::resource('users', 'UserController');
-Route::resource('roles', 'RoleController');
-Route::resource('permissions', 'PermissionController');
-Route::resource('announcements', 'AnnouncementController');
-Route::resource('subjects', 'SubjectController');
-Route::resource('societies', 'SocietyController');
-Route::resource('grades', 'GradeController');
-Route::resource('classRooms', 'ClassRoomController');
-Route::resource('forums', 'ForumController');
-Route::resource('classSubjects', 'ClassSubjectController');
-Route::resource('sports', 'SportController');
-Route::resource('events', 'EventController');
-Route::resource('studentSubjects', 'StudentSubjectController');
-Route::resource('tasks', 'TaskController');
-Route::resource('quizzQuestions', 'QuizzQuestionController');
-Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
-Route::resource('quizzTopics', 'QuizzTopicController');
-Route::resource('quizzes', 'QuizController');
-Route::resource('downloads', 'DownloadController');
+  //resources
+  Route::resource('users', 'UserController');
+  Route::resource('roles', 'RoleController');
+  Route::resource('permissions', 'PermissionController');
+  Route::resource('announcements', 'AnnouncementController');
+  Route::resource('subjects', 'SubjectController');
+  Route::resource('societies', 'SocietyController');
+  Route::resource('grades', 'GradeController');
+  Route::resource('classRooms', 'ClassRoomController');
+  Route::resource('forums', 'ForumController');
+  Route::resource('classSubjects', 'ClassSubjectController');
+  Route::resource('sports', 'SportController');
+  Route::resource('events', 'EventController');
+  Route::resource('studentSubjects', 'StudentSubjectController');
+  Route::resource('tasks', 'TaskController');
+  Route::resource('quizzQuestions', 'QuizzQuestionController');
+  Route::resource('quizzQuestionOptions', 'QuizzQuestionOptionController');
+  Route::resource('quizzTopics', 'QuizzTopicController');
+  Route::resource('quizzes', 'QuizController');
+  Route::resource('downloads', 'DownloadController');
+});

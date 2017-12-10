@@ -20,9 +20,6 @@
     @stack('styles')
 
 
-
-
-
 </head>
 <body class="full">
 
@@ -34,7 +31,7 @@
         @else
           @includeWhen(Auth::user()->hasRole('Admin'),'layouts.admin.nav')
           @includeWhen(Auth::user()->hasRole('Teacher'),'layouts.teacher.nav')
-          @includeWhen(Auth::user()->hasRole('Stundet'),'layouts.student.nav')
+          @includeWhen(Auth::user()->hasRole('Student'),'layouts.student.nav')
           @includeWhen(Auth::user()->hasRole('Parent'),'layouts.parent.nav')
         @endguest
 

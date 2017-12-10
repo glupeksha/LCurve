@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ClassSubject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class ClassSubjectController extends Controller
 {
@@ -19,6 +20,11 @@ class ClassSubjectController extends Controller
         return view('classSubjects.index',compact('classSubjects'));
     }
 
+    public function filteredIndex()
+    {
+        $classSubjects = Auth::user()->classSubjects()->get();
+        return view('classSubjects.filtered_index',compact('classSubjects'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +49,7 @@ class ClassSubjectController extends Controller
             'subject_id'=>'required|numeric',
             'teacher_id'=>'required|numeric',
             ]);
-        
+
         $classSubjects = ClassSubject::create($request->only('class_room_id','subject_id','teacher_id'));
 
     //Display a successful message upon save
@@ -86,7 +92,7 @@ class ClassSubjectController extends Controller
         $this->validate($request, [
             'class_room_id'=>'required|numeric',
             'subject_id'=>'required|numeric',
-            'teacher_id'=>'required|numeric',  
+            'teacher_id'=>'required|numeric',
         ]);
 
         $classSubject->class_room_id = $request->input('class_room_id');

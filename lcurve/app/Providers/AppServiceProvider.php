@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    
+
 
     //calendar starts
     public function boot()
@@ -30,17 +30,17 @@ class AppServiceProvider extends ServiceProvider
               'themeSystem' => 'bootstrap3',
               'columnHeader' => false,
               'aspectRatio' => 1,
-              'allDayDefault'=> false, 
-
+              'allDayDefault'=> false,
           ])->setCallbacks([
               'eventRender'=> 'function (event, element, view) {
                 var dateString = event.start.format("YYYY-MM-DD");
-        
+
                 $(view.el[0]).find(".fc-day[data-date=" + dateString +"]").css("background-color", "#efd0e0");
                 $(view.el[0]).wrap(\'<a href="'.url('events/calendar').'"/>\');
               }'
           ]);
         View::share('calendar', $calendar);
+
     }
     // calendar ends
 
