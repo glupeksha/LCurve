@@ -29,6 +29,10 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Edit About Us']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Society']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'Create Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'View Edit Society']));
+        $role->givePermissionTo(Permission::create(['name'=>'View Create Society']));
+
 
         //Sports
         $role->givePermissionTo(Permission::create(['name'=>'Edit Sport']));
@@ -39,7 +43,8 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Create Grade']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Grade']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Grade']));
-
+        $role->givePermissionTo(Permission::create(['name'=>' View Edit Grade']));
+       
         //Classroom
         $role->givePermissionTo(Permission::create(['name'=>'Create ClassRoom']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit ClassRoom']));
@@ -51,6 +56,7 @@ class PermissionsTableSeeder extends Seeder
         $role->givePermissionTo(Permission::create(['name'=>'Delete Lesson']));
 
         //Forum
+        $role->givePermissionTo(Permission::create(['name'=>'View Forum']));
         $role->givePermissionTo(Permission::create(['name'=>'Create Forum']));
         $role->givePermissionTo(Permission::create(['name'=>'Edit Forum']));
         $role->givePermissionTo(Permission::create(['name'=>'Delete Forum']));

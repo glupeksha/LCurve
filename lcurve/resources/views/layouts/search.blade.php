@@ -1,6 +1,6 @@
 <div class="">
   <input id="search">
-  <input type="hidden" id="search-id" name="user_id">
+  <input type="hidden" id="search-id" name="searched_id">
   <p id="search-description"></p>
 </div>
 
@@ -31,12 +31,14 @@
       select: function( event, ui ) {
         $( "#search" ).val( ui.item.name );
         $( "#search-id" ).val( ui.item.id );
-        $( "#search-description" ).html( ui.item.email );
+        if(ui.item.hasOwnProperty('email')){
+          $( "#search-description" ).html( ui.item.email );
+        }
         return false;
       }
     }).autocomplete( "instance" )._renderItem = function( ul, item ) {
       return $( "<li>" )
-        .append( "<div>" + item.name + "<br>" + item.email + "</div>" )
+        .append( "<div>" + " " + item.name + "</div>" )
         .appendTo( ul );
     };
 

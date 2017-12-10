@@ -33,16 +33,18 @@
     <div class="form-group">
         {{ Form::label('password', 'Password') }}<br>
         {{ Form::password('password', array('class' => 'form-control')) }}
-
     </div>
 
     <div class="form-group">
         {{ Form::label('password', 'Confirm Password') }}<br>
         {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
-
     </div>
     <div class="col-lg-9"></div>
-    {{ Form::submit('Add', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
+    @if ($user->hasRole('Student'))
+      {{ Form::submit('Next', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
+    @else
+      {{ Form::submit('Add', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
+    @endif
 
     {{ Form::close() }}
 

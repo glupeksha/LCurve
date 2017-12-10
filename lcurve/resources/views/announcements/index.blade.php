@@ -13,7 +13,7 @@
                         <a href="{{ route('announcements.show', $announcement->id ) }}" >
                             <p class="teaser">                            
                               <div class="col-lg-1 " >  
-                                <img src="images\announcement.png"  class="image-style">
+                                <img src="{{asset('images\announcement.png')}}"  class="image-style">
                               </div> 
                               <div class="col-lg-9 col-lg-offset-1">
                                 {{  str_limit($announcement->title, 50) }} 
@@ -28,7 +28,6 @@
                                 <svg height="20" width="20">
                                     <circle cx="10" cy="10" r="8" stroke-width="1" fill="@if(!empty($announcement->announceable->color )) {{$announcement->announceable->color}} @else #3097D1 @endif " >
                                     </circle>
-                                    Sorry, your browser does not support inline SVG.  
                                 </svg>
                                 </a>
                              </div>                           

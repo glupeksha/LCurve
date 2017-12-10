@@ -40,7 +40,8 @@ class EventController extends Controller
               'themeSystem' => 'bootstrap3',
               'columnHeader' => false,
               'aspectRatio' => 1,
-              'allDayDefault'=> false, 
+              'allDayDefault'=> false,
+               
 
           ])->setCallbacks([
     'eventRender'=> 'function (event, element, view) {
