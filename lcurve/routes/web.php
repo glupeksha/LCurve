@@ -70,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
   //plug comments to essayAnswers
-  Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
+  Route::post('/essays/essayAnswers','EssayAnswerController@store');
   Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
   
   //resources

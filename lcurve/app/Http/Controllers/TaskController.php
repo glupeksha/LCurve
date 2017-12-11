@@ -78,12 +78,8 @@ class TaskController extends Controller
 
         $task_id=$task->id;
 
-        if($taskType==Essay){
-             return view ('essay.index', compact('task_id'));
-        }
-        else{
-            return redirect()->route('tasks.index')
-            ->with('flash_message', 'Task created'); 
+        if($taskType=='Essay'){
+             return view ('essays.create', compact('task_id'));
         }
 
     //Display a successful message upon save
@@ -98,6 +94,8 @@ class TaskController extends Controller
         if($taskType=='Quiz'){
             return view('quizzes.create',compact('quiz_id'),$relations);
         }
+
+        
 
     //Display a successful message upon save
         else{

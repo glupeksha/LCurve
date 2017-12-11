@@ -19,7 +19,7 @@
             {{ Form::text('ammount', null, array('class' => 'form-control')) }}
             <br>          
 
-            {{ Form::submit('Create Quiz', array('class' => 'btn btn-success btn-lg btn-block')) }}
+            {{ Form::submit('Create Quiz', array('class' => 'btn btn-success btn-lg btn-success')) }}
             {{ Form::close() }}
         </div>
         </div>

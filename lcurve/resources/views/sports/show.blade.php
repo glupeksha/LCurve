@@ -3,7 +3,7 @@
 
 <!--about us pane start-->
 {{-- About Us--}}
-<div class="col-lg-12 notify_cr outter-styles" style=" border-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif  ">
+<div class="col-lg-12 notify_cr outter-styles" style=" border-color:@if(!empty( $sport->color )){{ $sport->color}} @else #abad85 @endif  ">
     <div class="col-lg-12 notify_head" >
         <div class="col-lg-3 notify_indi notify_indi_cr" style="border-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ;background-color:@if(!empty( $sport->color )) {{ $sport->color}} @else #abad85 @endif ; color: #ffffff ">
             About Us
