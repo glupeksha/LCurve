@@ -2,9 +2,9 @@
 @section('dash-left')
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-1 ">
-        <div class="panel panel-default">
-            <div class="panel-heading col-lg-offset-1">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
                 <h3>Grades</h3>
             </div>           
             
@@ -19,15 +19,12 @@
                     </a>
             @endforeach
 
-        </div>
-
         <div class="text-center">
             {!! $grades->links() !!}
         </div>
     </div>
 </div>
-
-
+</div>
 <div class="col-lg-10"></div> 
 @if(Auth::User()->can('Create Grade') || Auth::User()->can('Create Grade'.$grade->id)) 
     <a href="{{ route('grades.create') }}" class="btn btn-success" role="button" class="create-styles" >
@@ -36,3 +33,5 @@
 @endif
 
 @endsection
+
+

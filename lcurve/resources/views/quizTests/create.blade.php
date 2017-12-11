@@ -46,7 +46,7 @@
     @endif
     </div>
 
-    {!! Form::submit('submit_quiz', ['class' => 'btn btn-danger']) !!}
+    {!! Form::submit('submit_quiz', ['class' => 'btn btn-success']) !!}
     {!! Form::close() !!}
 
 @endsection

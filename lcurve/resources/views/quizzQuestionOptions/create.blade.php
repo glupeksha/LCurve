@@ -50,8 +50,8 @@
             
         </div>
     </div>
-
-    {!! Form::submit(trans('save'), ['class' => 'btn btn-danger']) !!}
+    <div class="col-lg-11"></div>
+    {!! Form::submit(trans('save'), ['class' => 'btn btn-success']) !!}
     {!! Form::close() !!}
 
 @endsection

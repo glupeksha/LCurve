@@ -51,7 +51,7 @@
             
         </div>
     </div>
-
-    {!! Form::submit('update', ['class' => 'btn btn-danger']) !!}
+    <div class="col-lg-10"></div>
+    {!! Form::submit('update', ['class' => 'btn btn-success']) !!}
     {!! Form::close() !!}               
 @endsection
