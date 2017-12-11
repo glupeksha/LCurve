@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 @if(Auth::User()->can('View Edit Grade') || Auth::User()->can('View Edit Grade'.$grade->id)) 
 
 @section('dash-left')

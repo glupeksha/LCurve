@@ -1,6 +1,6 @@
 <div class="">
-  <input id="search">
-  <input type="hidden" id="search-id" name="searched_id">
+  {{ Form::text('search', null, array('class' => 'form-control','id'=>'search')) }}
+   {{ Form::hidden('searched_id', null, array('class' => 'form-control','id'=>'search-id')) }}
   <p id="search-description"></p>
 </div>
 

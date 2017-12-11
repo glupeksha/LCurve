@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 @section('dash-left')
 
 <h3><img src="{{$subject->image}}"/> {{ $subject->name }}</h3>

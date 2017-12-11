@@ -15,7 +15,7 @@ class CreateSocietiesTable extends Migration
     {
         Schema::create('societies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->text('content');
             $table->text('subscribe');
             $table->text('color');

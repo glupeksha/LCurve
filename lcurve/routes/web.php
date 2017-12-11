@@ -55,13 +55,20 @@ Route::middleware(['auth'])->group(function () {
   Route::put('/classSubjects/topics/{topic}/update','TopicController@update');
   Route::get('/classSubjects/topics/updatesequence','TopicController@updateSequence');
 
+  //plug downloads to subjectLessons
+  Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
+  Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
+  Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
+  Route::get('/classSubjects/{classSubject}/preview', 'ClassSubjectController@preview');
+  Route::view('/studentView', 'classSubjects.studentView');
+
   //plug comments to forums
   Route::post('/forums/{forum}/comments','CommentController@store');
   Route::put('/forums/{forum}/comments/{comment}/edit','CommentController@edit');
   Route::post('/forums/{forum}/comments/{comment}/delete','CommentController@destroy');
 
   //plug comments to essayAnswers
-  Route::post('/essays/{essay}/essayAnswers','EssayAnswerController@store');
+  Route::post('/essays/essayAnswers','EssayAnswerController@store');
   Route::post('/essays/{essay}/essayAnswers/{essayAnswer}/show','EssayAnswerController@show');
 
   //plug downloads to subjectLessons

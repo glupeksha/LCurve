@@ -9,7 +9,7 @@
 
         
         {{-- Using the Laravel HTML Form Collective to create our form --}}
-        {{ Form::open(array('route' => 'essays.store')) }}
+        {{ Form::open(array('action' => 'EssayAnswerController@store')) }}
 
         <div class="form-group">
             

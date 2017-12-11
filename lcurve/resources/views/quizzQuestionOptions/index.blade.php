@@ -2,11 +2,10 @@
 
 @section('dash-left')
 	<h3 class="page-title">Question Options</h3>
-
+    <div class="col-lg-10"></div>
     <p>
         <a href="{{ route('quizzQuestionOptions.create') }}" class="btn btn-success">Add New</a>
     </p>
-
     <div class="panel panel-default">
         <div class="panel-heading">
             List
@@ -34,14 +33,14 @@
                                 <td>{{ $quizzQuestionOption->correct == 1 ? 'Yes' : 'No' }}</td>
                                 <td>
                                 
-                                    <a href="{{ route('quizzQuestionOptions.show',[$quizzQuestionOption->id]) }}" class="btn btn-xs btn-primary">view</a>
+                                    <a href="{{ route('quizzQuestionOptions.show',[$quizzQuestionOption->id]) }}" class="btn  btn-success">view</a>
  
                                      @can('Edit QuizzQuestionOption')
-                                        <a href="{{ route('quizzQuestionOptions.edit', [$quizzQuestionOption->id]) }}" class="btn btn-info" role="button">Edit</a>
+                                        <a href="{{ route('quizzQuestionOptions.edit', [$quizzQuestionOption->id]) }}" class="btn btn-success" role="button">Edit</a>
                                     @endcan
                                     @can('Delete QuizzQuestionOption')
                                         {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['quizzQuestionOptions.destroy', $quizzQuestionOption->id] ]) !!} 
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                        {!! Form::submit('Delete', ['class' => 'btn btn-success']) !!}
                                         {!! Form::close() !!}
 
                                      @endcan
@@ -57,5 +56,7 @@
             </table>
         </div>
     </div>
+
+
 @endsection
 

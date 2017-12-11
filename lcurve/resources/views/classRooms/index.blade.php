@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 @section('dash-left')
 
 <div class="row">
@@ -9,16 +9,14 @@
             </div>
 
             @foreach ($classRooms as $classRoom)
-
-             <div class="panel-body panel-heading">
-                <div class="panel-body">
-                    <div class="col-lg-1"></div>
-                    <a href="{{ route('classRooms.show', $classRoom->id ) }}">
-                        <b> {{ $classRoom->name }} </b>
-                        <br>
+                <div class="col-lg-1 "></div>
+                    <a href="{{ route('classRooms.show', $classRoom->id ) }}" class="list-group-item" >
+                        <div class="col-lg-offset-1">
+                        <b>                         
+                        {{ $classRoom->name }}                      
+                        </b>
+                        </div>
                     </a>
-                </div>
-            </div>
             @endforeach
         </div>
 

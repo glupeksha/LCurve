@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 @section('dash-left')
 
     <h3><i class='fa fa-key'></i>Edit Role: {{$role->name}}</h3>

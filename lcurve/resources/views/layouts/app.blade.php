@@ -14,11 +14,12 @@
     <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
     >
-    <link rel="stylesheet" type="text/css" href="{{asset('css/calendar.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('css/calendar.css')}}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{asset('js/modernizr.custom.63321.js')}}"></script>
     @stack('styles')
-<script src="{{asset('js/modernizr.custom.63321.js')}}"></script>
+
 
 </head>
 <body class="full">
@@ -70,13 +71,13 @@
 
 <script src="{{asset('js/calendar.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/jquery.calendario.js')}}"></script>
-  {{}}
+
   <script>
     var codropsEvents = {
         @foreach($events as $event)
         '{!! date("m-d-Y",strtotime($event['start']))  !!}':'<a>{!! $event['title'] !!}</a>',
         @endforeach
-        
+
     }
   </script>
     @stack('scripts')

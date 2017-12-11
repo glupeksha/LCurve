@@ -119,4 +119,8 @@ class ClassSubjectController extends Controller
             ->with('flash_message',
              'Article successfully deleted');
     }
+
+    public function preview(ClassSubject $classSubject){
+        return view('classSubjects.studentView',compact('classSubject'));
+    }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 @section('dash-left')
 
 <div class="col-lg-10 col-lg-offset-1">

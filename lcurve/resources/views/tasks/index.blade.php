@@ -51,17 +51,14 @@
             </div>
         </div>
 
-
+        <div class="col-lg-9"></div>
             <!--starts sports create permissions-->
             @if(Auth::User()->can('Create Task') || Auth::User()->can('Create Task '.$task->id))
-            <div class="col-lg-8">
-                <a href="{{route('tasks.create')}}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Create New Task</a>
+            <div class="col-lg-3">
+                <a href="{{route('tasks.create')}}" class="btn btn-success" role="button" >Create New Task</a>
             </div>
             @endif
 
-
-            
-        
 
         <div class="text-center">
             {!! $tasks->links() !!}

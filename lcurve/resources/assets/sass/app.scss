@@ -21,13 +21,6 @@ body{
 	float: right;
 }
 
-//calendar styles starts
-.fc-basic-view .fc-body .fc-row { min-height: 2.5em; }
-.fc-event-container{
-	visibility: hidden;
-}
-//calendar styles ends
-
 
 //subject
 @import "society";
@@ -35,10 +28,11 @@ body{
 //task
 @import "task";
 
-@import "sport";
+
 @import "subject";
 @import "grade";
 @import "forum";
 @import "announcement";
 @import "classSubject";
 @import "comment";
+@import "sport";

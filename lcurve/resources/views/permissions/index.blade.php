@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends('layouts.app')
 
 @section('dash-left')
 
@@ -13,7 +13,7 @@
 
     <br>
     @include('permissions.plug_permissible',[$permissions])
-    
+
     <!--starts set permissions-->
     @if(Auth::User()->can('Create Permission'))
     <div class="col-lg-9"></div>
