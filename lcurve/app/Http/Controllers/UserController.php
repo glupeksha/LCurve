@@ -194,10 +194,10 @@ class UserController extends Controller
 
 
     public function changePassword(Request $request){
-
+            
             $this->validate($request, [
-            'password'=>'required',
-            'confirmed_password'=>'confirmed',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6'
             ]);
 
         $input = $request->only(['password']); //Retreive the name, email and password fields
