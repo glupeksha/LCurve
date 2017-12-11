@@ -73,7 +73,7 @@
 
 .fc-calendar .fc-row > div {
 	border-right: 1px solid #ddd;
-	padding: 4px;
+	padding: 2px;
 	overflow: hidden;
 	position: relative;
 }
@@ -87,7 +87,7 @@
 	width: 30px;
 	height: 20px;
 	font-size: 15px;
-	line-height: 20px;
+	line-height: 18px;
 	font-weight: 700;
 	color: #ddd;
 	text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
