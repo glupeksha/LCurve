@@ -20,7 +20,7 @@
       </div>
     </div>
 
-   
+
 </div>
 <!--about us pane end-->
 
@@ -43,7 +43,7 @@
   </div>
   <!--subscribe button-->
   <!--Only users other than admin and subscribed users can subscribe-->
-  @if(Auth::User()->can('Subscribe Society'.$society->id))
+  @if(Auth::User()->can('Subscribe Society '.$society->id))
   <div class="row">
       <div class="col-lg-8"></div>
       <button class="button" style="vertical-align:middle; background-color:@if(!empty( $society->color )) {{ $society->color}} @else #abad85 @endif ; color: #ffffff; "><span>Subscribe</span></button>
@@ -70,21 +70,21 @@
 
               <div class="row">
                 <div class="col-lg-11">
-                  <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: #ffffff;"> 
+                  <a href="{{ route('announcements.show', $announcement->id ) }}" style="color: #ffffff;">
                   <h6>{{$announcement->title}}</h6></a>
                 </div>
-                
+
               </div>
 
             </div>
              <div class="panel-body" >
-             <p class="teaser"> 
+             <p class="teaser">
                 <p>{{  str_limit($announcement->content, 100) }} {{-- Limit teaser to 100 characters --}}</p>
              </p>
             </div>
           </div>
           <script type="text/javascript">
-             $(".panel-h").css("border-width": '2px', 
+             $(".panel-h").css("border-width": '2px',
               "border-color":"@if(!empty( $society->color )) {{ $society->color}} @else #abad85 @endif ");
           </script>
 
@@ -96,7 +96,7 @@
 
 {{--Announcement--}}
 <!--Only authorized users can add announcements-->
-@if(Auth::User()->can('Create '.$society->id.' Announcement'))
+@if(Auth::User()->can('Add Announcement '.$society->id))
 <div class="col-lg-12 notify_cr" style="margin-bottom: 20px; border-color:@if(!empty( $society->color )) {{ $society->color}} @else #abad85 @endif ; ">
 
     <div class="col-lg-12 notify_head" >
@@ -112,12 +112,12 @@
   <div class="raw">
       <div class="col-lg-12 notify_body notify_body_cr">
 
-        @can('Create Announcement')
+
           {{ Form::open(array('action' => array('AnnouncementController@storeUnderSociety', $society))) }}
           @include('announcements.plug_create')
-        @endcan
 
-       
+
+
       </div>
   </div>
 </div>
@@ -126,5 +126,3 @@
 <hr>
 
 @endsection
-
-

@@ -22,7 +22,8 @@ class SocietyController extends Controller
     }
     public function filteredIndex()
     {
-        $societies = Auth::user()->societies()->get();
+        //$societies = Auth::user()->societies()->get();
+        $societies = Society::orderby('id','desc')->paginate(5);
         return view('societies.filtered_index',compact('societies'));
     }
 
