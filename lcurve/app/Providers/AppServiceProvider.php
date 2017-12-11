@@ -28,8 +28,10 @@ class AppServiceProvider extends ServiceProvider
                   ->only(['start', 'title','url','id'])
                   ->all();
           });
-
         View::share('events', $shortEvents);
+
+        $tasks='App\Task'::all();
+        View::share('tasks', $tasks);
     }
     // calendar ends
 
