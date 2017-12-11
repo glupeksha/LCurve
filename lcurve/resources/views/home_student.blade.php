@@ -4,4 +4,6 @@
 
 @include('tasks.plug_index')
 
+@include('announcements.plug_index')
+
 @endsection

@@ -32,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
 
         $tasks='App\Task'::all();
         View::share('tasks', $tasks);
+
+        $announcements = 'App\Announcement'::orderby('id','desc')->paginate(5);
+        View::share('announcements', $announcements);
     }
     // calendar ends
 
