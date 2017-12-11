@@ -6,6 +6,7 @@ use App\Society;
 use App\DropDown;
 use Illuminate\Http\Request;
 use Illuminate\lists;
+use Auth;
 
 class SocietyController extends Controller
 {
@@ -18,6 +19,11 @@ class SocietyController extends Controller
     {
         $societies = Society::orderby('id','desc')->paginate(5);
         return view('societies.index',compact('societies'));
+    }
+    public function filteredIndex()
+    {
+        $societies = Auth::user()->societies()->get();
+        return view('societies.filtered_index',compact('societies'));
     }
 
     /**
@@ -76,7 +82,7 @@ class SocietyController extends Controller
      */
     public function show(Society $society)
     {
-      
+
         return view ('societies.show', compact('society'));
     }
 
@@ -104,7 +110,7 @@ class SocietyController extends Controller
              'name'=>'required',
             'content'=>'required',
             'subscribe'=>'required',
-            
+
         ]);
 
         $society->name = $request->input('name');
@@ -113,8 +119,8 @@ class SocietyController extends Controller
         $society->color = $request->input('color');
         $society->save();
 
-        return redirect()->route('societies.show', 
-            $society->id)->with('flash_message', 
+        return redirect()->route('societies.show',
+            $society->id)->with('flash_message',
             'Article, '. $society->name.' updated');
     }
 

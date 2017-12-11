@@ -37,6 +37,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\ClassRoom');
     }
+    public function societies()
+    {
+        return $this->belongsToMany('App\Society');
+    }
+    public function sports()
+    {
+        return $this->belongsToMany('App\Sport');
+    }
     public function classSubject()
     {
         return $this->hasMany('App\ClassSubject','teacher_id');

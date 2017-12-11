@@ -45,7 +45,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="{{url('/societies')}}">
+                <a class="td_none" href="{{url('/societies/filteredindex')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #122c34; border-color: #0E2126;">
 
                         <img src="{{asset('images/navigation/societiessm.PNG')}}" class="img-responsive grow image_nav"/>
@@ -53,7 +53,7 @@
 
                     </div>
                 </a>
-                <a class="td_none" href="{{url('/sports')}}">
+                <a class="td_none" href="{{url('/sports/filteredindex')}}">
                     <div class="col-lg-3 item_nav" style="background-color: #CE0030; border-color: #960023;">
 
                         <img src="{{asset('images/navigation/sportssm.PNG')}}" class="img-responsive grow image_nav"/>

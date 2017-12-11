@@ -41,9 +41,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="text-center">
-            {!! $sports->links() !!}
-        </div>
+
     </div>
 </div>
 

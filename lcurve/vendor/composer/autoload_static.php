@@ -337,7 +337,6 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
 
     public static $classMap = array (
         'App\\Announcement' => __DIR__ . '/../..' . '/app/Announcement.php',
-        'App\\Class' => __DIR__ . '/../..' . '/app/Class.php',
         'App\\ClassRoom' => __DIR__ . '/../..' . '/app/ClassRoom.php',
         'App\\ClassSubject' => __DIR__ . '/../..' . '/app/ClassSubject.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
@@ -361,6 +360,7 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DownloadController' => __DIR__ . '/../..' . '/app/Http/Controllers/DownloadController.php',
         'App\\Http\\Controllers\\DropDownController' => __DIR__ . '/../..' . '/app/Http/Controllers/DropDownController.php',
+        'App\\Http\\Controllers\\EssayAnswerController' => __DIR__ . '/../..' . '/app/Http/Controllers/EssayAnswerController.php',
         'App\\Http\\Controllers\\EssayController' => __DIR__ . '/../..' . '/app/Http/Controllers/EssayController.php',
         'App\\Http\\Controllers\\EventController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventController.php',
         'App\\Http\\Controllers\\ForumController' => __DIR__ . '/../..' . '/app/Http/Controllers/ForumController.php',
@@ -378,7 +378,6 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoleController.php',
         'App\\Http\\Controllers\\SocietyController' => __DIR__ . '/../..' . '/app/Http/Controllers/SocietyController.php',
         'App\\Http\\Controllers\\SportController' => __DIR__ . '/../..' . '/app/Http/Controllers/SportController.php',
-        'App\\Http\\Controllers\\StudentSubjectsController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentSubjectsController.php',
         'App\\Http\\Controllers\\SubjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubjectController.php',
         'App\\Http\\Controllers\\TaskController' => __DIR__ . '/../..' . '/app/Http/Controllers/TaskController.php',
         'App\\Http\\Controllers\\TopicController' => __DIR__ . '/../..' . '/app/Http/Controllers/TopicController.php',
@@ -422,7 +421,6 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'App\\Role' => __DIR__ . '/../..' . '/app/Role.php',
         'App\\Society' => __DIR__ . '/../..' . '/app/Society.php',
         'App\\Sport' => __DIR__ . '/../..' . '/app/Sport.php',
-        'App\\StudentSubjects' => __DIR__ . '/../..' . '/app/StudentSubjects.php',
         'App\\Subject' => __DIR__ . '/../..' . '/app/Subject.php',
         'App\\Task' => __DIR__ . '/../..' . '/app/Task.php',
         'App\\Topic' => __DIR__ . '/../..' . '/app/Topic.php',
@@ -3392,20 +3390,6 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-
-        'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
-
-        'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
-        'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
-        'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',
-        'Symfony\\Component\\EventDispatcher\\DependencyInjection\\ExtractingEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/DependencyInjection/RegisterListenersPass.php',
-        'Symfony\\Component\\EventDispatcher\\DependencyInjection\\RegisterListenersPass' => __DIR__ . '/..' . '/symfony/event-dispatcher/DependencyInjection/RegisterListenersPass.php',
-        'Symfony\\Component\\EventDispatcher\\Event' => __DIR__ . '/..' . '/symfony/event-dispatcher/Event.php',
-        'Symfony\\Component\\EventDispatcher\\EventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/EventDispatcher.php',
-        'Symfony\\Component\\EventDispatcher\\EventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/EventDispatcherInterface.php',
-        'Symfony\\Component\\EventDispatcher\\EventSubscriberInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/EventSubscriberInterface.php',
-        'Symfony\\Component\\EventDispatcher\\GenericEvent' => __DIR__ . '/..' . '/symfony/event-dispatcher/GenericEvent.php',
-        'Symfony\\Component\\EventDispatcher\\ImmutableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ImmutableEventDispatcher.php',
         'Symfony\\Component\\Finder\\Comparator\\Comparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/Comparator.php',
         'Symfony\\Component\\Finder\\Comparator\\DateComparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/DateComparator.php',
         'Symfony\\Component\\Finder\\Comparator\\NumberComparator' => __DIR__ . '/..' . '/symfony/finder/Comparator/NumberComparator.php',
@@ -3810,10 +3794,7 @@ class ComposerStaticInitc527e76c3cbc746a19ddcfe892a75e81
         'TasksTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TasksTableSeeder.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
-
         'Tests\\Feature\\UserTest' => __DIR__ . '/../..' . '/tests/Feature/UserTest.php',
-        'Tests\\Feature\\httpTest' => __DIR__ . '/../..' . '/tests/Feature/httpTest.php',
-
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Tests\\Unit\\UserTest' => __DIR__ . '/../..' . '/tests/Unit/UserTest.php',

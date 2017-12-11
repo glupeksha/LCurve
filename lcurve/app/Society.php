@@ -40,4 +40,9 @@ class Society extends Model
     {
         return $this->morphMany('App\Permission', 'permissible');
     }
+    public function users()
+   {
+       return $this->belongsToMany('App\User');
+   }
+
 }

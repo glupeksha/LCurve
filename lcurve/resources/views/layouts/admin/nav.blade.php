@@ -37,7 +37,14 @@
                   <li><a href="{{url('classRooms')}}">Configure Classes</a></li>
                 </ul>
               </li>
-
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Manage Groups
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url('societies')}}">Societies</a></li>
+                  <li><a href="{{url('sports')}}">Sports</a></li>
+                </ul>
+              </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

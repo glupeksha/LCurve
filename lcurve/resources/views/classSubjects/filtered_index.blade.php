@@ -1,39 +1,32 @@
 @extends('layouts.app')
 
 @section('dash-left')
+  <div class="row">
+            <h3>Subjects</h3>
+            <hr style="border-color:#848991">
 
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
+              @foreach ($classSubjects as $classSubject)
 
-            <h3>Subjects For Class</h3>
-            </div>
-
-            <div class="panel-body panel-styles" >
-
-            @foreach ($classSubjects as $classSubject)
-
-                <div class="panel-body panel-heading">
-                <div class="col-lg-1"></div>
-                        <a href="{{ route('classSubjects.show', $classSubject->id ) }}" ><b>
-                          {{  $classSubject->subject->name }}
-                        </b><br>
-                        </a>
+                <div class="col-lg-2 subjects">
+  								<a href="{{ route('classSubjects.show', $classSubject->id ) }}">
+                  	<div class="subject_icon">
+                      <img src="{{$classSubject->subject()->first()->image}}"/>
+                    </div>
+                  </a>
+                  <div>
+                    {{$classSubject->subject()->first()->name}}
+                  </div>
                 </div>
-                <!--starts Add society permissions-->
-                @if(Auth::User()->can('Create ClassSubject') || Auth::User()->can('Create ClassSubject '.$classSubject->id))
-                  <div class="col-lg-8"></div>
-                  <a href="{{ route('classSubjects.create') }}" class="btn btn-success panel-styles" role="button" >Add Subject For a Class</a>
-                @endif
-                <!--starts Add society permissions-->
-            @endforeach
-        </div>
 
-    </div>
-</div>
+              @endforeach
 
 
-</div>
+  </div>
+<!--starts Add society permissions-->
+@if(Auth::User()->can('Create ClassSubject'))
+  <div class="col-lg-8"></div>
+  <a href="{{ route('classSubjects.create') }}" class="btn btn-success panel-styles" role="button" >Add Subject For a Class</a>
+@endif
+<!--starts Add society permissions-->
 
 @endsection

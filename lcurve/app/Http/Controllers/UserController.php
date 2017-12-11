@@ -168,8 +168,10 @@ class UserController extends Controller
             'searched_id'=>'required',
         ]);
         $classRoom=ClassRoom::findOrFail($request->input('searched_id'));
-        $user->classRoom()->associate($classRoom);
-        $user->givePermissionTo('View ClassRoom '.$classRoom->id);
+        if(!$user->has('classRoom',$classRoom)){
+          $user->classRoom()->associate($classRoom);
+          $user->givePermissionTo('View ClassRoom '.$classRoom->id);
+        }
         $user->save();
         $classSubjects=$classRoom->classSubjects()->get();
 
@@ -179,9 +181,9 @@ class UserController extends Controller
     public function storeUserClassSubjects(Request $request, User $user){
         $student=User::find($request->invisible);
         $classsubjects = $request['classsubjects'];
+        $user->classSubjects()->sync($classsubjects);
         foreach ($classsubjects as $classsubject) {
-          $classSubject=App\ClassSubject::find($classsubject);
-          $user->classSubjects()->attach($classSubject);
+          $classSubject='App\ClassSubject'::find($classsubject);
           $user->givePermissionTo('View ClassSubject '.$classSubject->id);
           $user->save();
         }
@@ -192,7 +194,7 @@ class UserController extends Controller
 
 
     public function changePassword(Request $request){
-        
+
             $this->validate($request, [
             'password'=>'required',
             'confirmed_password'=>'confirmed',

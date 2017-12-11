@@ -33,7 +33,7 @@
 </div>
 
 <!--starts Add society permissions-->
-@if(Auth::User()->can('Create ClassSubject') || Auth::User()->can('Create ClassSubject '.$classSubject->id))
+@if(Auth::User()->can('Create ClassSubject'))
 <div class="col-lg-8"></div>
     <a href="{{ route('classSubjects.create') }}" class="btn btn-success panel-styles" role="button" >Add Subject For a Class</a>
 @endif

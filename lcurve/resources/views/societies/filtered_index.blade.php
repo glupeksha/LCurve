@@ -24,7 +24,6 @@
                         <div class="col-lg-4">
                         {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['societies.destroy', $society->id] ]) !!}
 
-
                         <!--edit and delete button start-->
                         <!--Starts edit permissions-->
                         @if(Auth::User()->can('Edit Society') || Auth::User()->can('Edit Society '.$society->id))
@@ -50,9 +49,6 @@
 
         </div>
 
-        <div class="text-center">
-            {!! $societies->links() !!}
-        </div>
     </div>
 </div>
 </div>

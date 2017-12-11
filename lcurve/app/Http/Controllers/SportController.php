@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Sport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class SportController extends Controller
 {
@@ -17,7 +18,12 @@ class SportController extends Controller
     {
          $sports = Sport::orderby('id','desc')->paginate(5);
         return view('sports.index',compact('sports'));
-    }     
+    }
+    public function filteredIndex()
+    {
+        $sports = Auth::user()->sports()->get();
+        return view('sports.filtered_index',compact('sports'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +41,7 @@ class SportController extends Controller
        '#1ABB9C'=>'#1ABB9C',
        '#23775B'=>'#23775B',
        ] ;
-       return view('sports.create',compact('colors')); 
+       return view('sports.create',compact('colors'));
     }
 
     /**
@@ -64,7 +70,7 @@ class SportController extends Controller
         return redirect()->route('sports.index')
             ->with('flash_message', 'Article,
              '. $sport->name.' created');
-    } 
+    }
 
     /**
      * Display the specified resource.
@@ -101,7 +107,7 @@ class SportController extends Controller
              'name'=>'required',
             'content'=>'required',
             'subscribe'=>'required',
-            
+
         ]);
 
         $sport->name = $request->input('name');
@@ -110,8 +116,8 @@ class SportController extends Controller
         $sport->color = $request->input('color');
         $sport->save();
 
-        return redirect()->route('sports.show', 
-            $sport->id)->with('flash_message', 
+        return redirect()->route('sports.show',
+            $sport->id)->with('flash_message',
             'Article, '. $sport->name.' updated');
     }
 

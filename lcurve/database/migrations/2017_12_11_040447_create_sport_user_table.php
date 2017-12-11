@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ClassSubjectUser extends Migration
+class CreateSportUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class ClassSubjectUser extends Migration
      */
     public function up()
     {
-      Schema::create('class_subject_user', function (Blueprint $table) {
-          $table->unsignedInteger('class_subject_id');
-          $table->unsignedInteger('user_id');
+      Schema::create('sport_user', function (Blueprint $table) {
+          $table->integer('user_id');
+          $table->integer('sport_id');
+          $table->primary(['user_id','sport_id']);
           $table->timestamps();
       });
     }
@@ -27,6 +28,6 @@ class ClassSubjectUser extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sport_user');
     }
 }
