@@ -75,7 +75,7 @@
   <script>
     var codropsEvents = {
         @foreach($events as $event)
-        '{!! date("m-d-Y",strtotime($event['start']))  !!}':'<a href="{!!$event['url']!!}">{!! $event['title'] !!}</a>',
+        '{!! date("m-d-Y",strtotime($event['start']))  !!}':'<a href="{!!route('events.show',[$event['id']])!!}">{!! $event['title'] !!}</a>',
         @endforeach
 
     }

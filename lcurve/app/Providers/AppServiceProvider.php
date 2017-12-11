@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $events=Event::all();
         $shortEvents = $events->map(function ($events) {
               return collect($events->toArray())
-                  ->only(['start', 'title','url'])
+                  ->only(['start', 'title','url','id'])
                   ->all();
           });
 
