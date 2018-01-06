@@ -30,10 +30,15 @@
         @guest
           @include('layouts.nav')
         @else
-          @includeWhen(Auth::user()->hasRole('Admin'),'layouts.admin.nav')
-          @includeWhen(Auth::user()->hasRole('Teacher'),'layouts.teacher.nav')
-          @includeWhen(Auth::user()->hasRole('Student'),'layouts.student.nav')
-          @includeWhen(Auth::user()->hasRole('Parent'),'layouts.parent.nav')
+          @if (Auth::user()->hasAnyRole('App\Role'::all()))
+            @includeWhen(Auth::user()->hasRole('Admin'),'layouts.admin.nav')
+            @includeWhen(Auth::user()->hasRole('Teacher'),'layouts.teacher.nav')
+            @includeWhen(Auth::user()->hasRole('Student'),'layouts.student.nav')
+            @includeWhen(Auth::user()->hasRole('Parent'),'layouts.parent.nav')
+          @else
+            @include('layouts.nav')
+          @endif
+
         @endguest
 
 

@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default ">
             <div class="panel-heading">
-                <h3>Societies</h3>
+                <h3>@lang('applang.societiesBar')</h3>
             </div>
 
             <div class="panel-body">
@@ -28,13 +28,13 @@
                         <!--edit and delete button start-->
                         <!--Starts edit permissions-->
                         @if(Auth::User()->can('Edit Society') || Auth::User()->can('Edit Society '.$society->id))
-                        <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-success" role="button">Edit</a>
+                        <a href="{{ route('societies.edit', $society->id) }}" class="btn btn-success" role="button">@lang('applang.edit')</a>
                         @endif
                         <!--End edit permissions-->
 
                         <!--starts delete permissions-->
                         @if(Auth::User()->can('Delete Society') || Auth::User()->can('Delete Society'.$society->id))
-                        {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                        {!! Form::submit(Lang::get('applang.delete'),['class'=>'btn btn-success']) !!}
                         @endif
                         <!--End delete permissions-->
 
@@ -61,7 +61,7 @@
 <!--starts Add society permissions-->
 @if(Auth::User()->can('Create Society'))
 <div class="col-lg-8"></div>
-    <a href="{{ route('societies.create') }}" class="btn btn-success " role="button" >Add a new society</a>
+    <a href="{{ route('societies.create') }}" class="btn btn-success " role="button" >@lang('applang.addANewSociety')</a>
 @endif
 <!--Ends Add society permissions-->
 

@@ -4,23 +4,23 @@
 
 <div class='col-lg-8 col-lg-offset-2'>
 
-    <h3><i class='fa fa-user-plus'></i> Edit {{$user->name}}</h3>
+    <h3><i class='fa fa-user-plus'></i>@lang('applang.edit') {{$user->name}}</h3>
     <hr style="border-color:#848991">
 
 
     {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}{{-- Form model binding to automatically populate our fields with user data --}}
 
     <div class="form-group">
-        {{ Form::label('name', 'Name') }}
+        {{ Form::label('name', Lang::get('applang.NameReg')) }}
         {{ Form::text('name', null, array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('email', 'Email') }}
+        {{ Form::label('email', Lang::get('applang.emailReq')) }}
         {{ Form::email('email', null, array('class' => 'form-control')) }}
     </div>
 
-    <h5><b>Give Role</b></h5>
+    <h5><b>@lang('applang.giveRole')</b></h5>
 
     <div class='form-group'>
         @foreach ($roles as $role)
@@ -37,19 +37,19 @@
       Class @include('layouts.search',$searchableList)
     </div>
     <div class="form-group">
-        {{ Form::label('password', 'Password') }}<br>
+        {{ Form::label('password', Lang::get('applang.passwordReg')) }}<br>
         {{ Form::password('password', array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('password', 'Confirm Password') }}<br>
+        {{ Form::label('password', Lang::get('applang.confirmPassword')) }}<br>
         {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
     </div>
     <div class="col-lg-9"></div>
     @if ($user->hasRole('Student'))
       {{ Form::submit('Next', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
     @else
-      {{ Form::submit('Add', array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
+      {{ Form::submit(Lang::get('applang.addNew'), array('class' => 'btn btn-primary' ,'style'=>'background-color: #0b9b7e')) }}
     @endif
 
     {{ Form::close() }}

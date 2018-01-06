@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('dash-left')
 
-    <h3><i class='fa fa-key'></i>Edit Role: {{$role->name}}</h3>
+    <h3><i class='fa fa-key'></i>@lang('applang.editRole') {{$role->name}}</h3>
     <hr style="border-color:#848991">
 
     {{ Form::model($role, array('route' => array('roles.update', $role->id), 'method' => 'PUT')) }}
 
         <div class="form-group">
-            {{ Form::label('name', 'Role Name') }}
+            {{ Form::label('name', Lang::get('applang.roleName')) }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
 
-        <h5><b>Assign Permissions</b></h5>
+        <h5><b>@lang('applang.assignPermissions')</b></h5>
 
         <table class="table">
           <thead>
@@ -71,7 +71,7 @@
 
         <!--permission assign checkboxes-->
 
-        {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
+        {{ Form::submit(Lang::get('applang.edit'), array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
 

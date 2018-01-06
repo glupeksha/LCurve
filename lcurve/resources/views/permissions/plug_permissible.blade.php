@@ -4,9 +4,9 @@
         <thead>
             <tr>
                 <th>{{ substr($permissions->first()->permissible_type,4) }}</th>
-                <th>Permission</th>
-                <th>Authorized Users</th>
-                <th>Operations</th>
+                <th>@lang('applang.permission')</th>
+                <th>@lang('applang.authorizedUsers')</th>
+                <th>@lang('applang.operations')</th>
             </tr>
         </thead>
         <tbody>
@@ -24,12 +24,12 @@
                 </td>{{-- Retrieve array of permissions associated to a role and convert to string --}}
                 <td>
                      @if(Auth::User()->can('Edit Permission'))
-                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-success pull-left" style="margin-right: 3px;">Edit</a>
+                    <a href="{{ URL::to('permissions/'.$permission->id.'/edit') }}" class="btn btn-success pull-left" style="margin-right: 3px;">@lang('applang.edit')</a>
                     @endif
 
                     @if(Auth::User()->can('Delete Permission'))
                     {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['permissions.destroy', $permission->id] ]) !!}
-                        {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                        {!! Form::submit(Lang::get('applang.delete'),['class'=>'btn btn-success']) !!}
                     @endif
                     {!! Form::close() !!}
                 </td>

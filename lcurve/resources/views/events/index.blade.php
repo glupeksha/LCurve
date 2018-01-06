@@ -22,11 +22,11 @@
             @endforeach
             
             <!--starts subject create permissions-->
-            @if(Auth::User()->can('Create Event') || Auth::User()->can('Create Event '.$event->id))
+            
             <div class="col-lg-8">
                 <a href="{{route('events.create')}}" class="btn btn-info" role="button" style="background-color: #0b9b7e;border-color: #0b9b7e;">Create New Event</a>
             </div>
-            @endif
+            
             
         </div>
 

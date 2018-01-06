@@ -34,7 +34,8 @@
     <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-success" role="button">Edit</a>
     @endif
 
-    <!--starts tasks edit permissions-->
+    <!--starts tasks delete permissions-->
+    
     @if(Auth::User()->can('Delete Task') || Auth::User()->can('Delete Task '.$task->id))                       
       {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
     @endif

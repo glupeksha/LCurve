@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default ">
             <div class="panel-heading">
-                <h3>Subjects</h3>
+                <h3>@lang('applang.subjectsGiven')</h3>
             </div>
 
 
@@ -30,7 +30,7 @@
 <div class="col-lg-10"></div> 
 @if(Auth::User()->can('Create Subject') || Auth::User()->can('Create Subject'.$subject->id)) 
     <a href="{{ route('subjects.create') }}" class="btn btn-success" role="button" class="create-styles" >
-        Add
+        @lang('applang.addNew')
     </a>
 @endif
 
