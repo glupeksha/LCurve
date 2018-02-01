@@ -4,19 +4,16 @@
 
 	
 		// login page
-
-
 		'emailReq'=>'மின்னஞ்சல்',
 		'remember'=>'என்னை நினைவில் கொள்ளுங்கள்',
 		'loginbutton'=>'உள் நுழை',
 		'forgotPass'=>'உங்கள் கடவுச்சொல்லை மறந்து விட்டீர்களா?',
 		'loginHeading'=>'உள் நுழை',
 
+
 		//register page
-		
 		'RegisterReq'=>'பதிவு',
 		'NameReg'=>'பெயர்',
-		'emailReg'=>'மின்னஞ்சல் முகவரி',
 		'passwordReg'=>'கடவுச்சொல்',
 		'confirmPassword'=>'கடவுச்சொல்லை உறுதிப்படுத்துக',
 		'registerProceed'=>'பதிவு',
@@ -35,8 +32,6 @@
 		'resetLink'=>'கடவுச்சொல் மீட்டமைக்க இணைப்பு அனுப்பவும்',
 
 		//navbar
-
-
 		'homeBar'=>'முகப்பு',
 		'classRoomBar'=>'வகுப்பறை',
 		'societiesBar'=>'சங்கங்கள்',
@@ -53,7 +48,7 @@
 		'announcementsContent'=>'அறிவிப்பு உள்ளடக்கம்',
 		'subscribeContent'=>'உள்ளடக்கத்தை குழுசேர்',
 		'editAnnouncement'=>'அறிவுப்புகளை தொகு',
-		'tiTle'=>'தலைப்பு',
+		'title'=>'தலைப்பு',
 		'content'=>'உள்ளடக்கம்',
 		'back'=>'பின்னோக்கி',
 		'edit'=>'தொகு',

@@ -91,6 +91,9 @@
                 <li><a href="{{ route('register') }}">@lang('applang.RegisterReq')</a></li>
 
                 @else
+                <li><a href="{{url('locale/en')}}">@lang('applang.chooseEng')</a></li>
+                <li><a href="{{url('locale/si')}}">@lang('applang.chooseSin')</a></li>
+                <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTam')</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-button" data-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>

@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
           'name'=>'Meily Soiza',
           'email'=>'meily_student@lcurve.edu',
           'password'=>'asdasd',
-          'language'=>'en',
+          'language'=>'si',
         ]);
 
         $user2->assignRole('Student');
@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder
           'name'=>'Wenila June',
           'email'=>'wenila_parent@lcurve.edu',
           'password'=>'asdasd',
-          'language'=>'en',
+          'language'=>'si',
         ]);
 
         $user3->assignRole('Parent');

@@ -33,14 +33,14 @@
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
 
     <!--starts event edit permissions-->    
-    @if(Auth::User()->can('Edit Event') || Auth::User()->can('Edit Event '.$event->id))
+    
     <a href="{{ route('events.edit', $event->id) }}" class="btn btn-info" role="button">Edit</a>
-    @endif
+   
     
     <!--starts event delete permissions-->
-    @if(Auth::User()->can('Delete Event') || Auth::User()->can('Delete Event '.$event->id))              
+              
       {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
-    @endif
+ 
 
 
     {!! Form::close() !!}

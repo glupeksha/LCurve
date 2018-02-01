@@ -3,11 +3,11 @@
 
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Date/Time Added</th>
-                <th>User Roles</th>
-                <th>Operations</th>
+                <th>@lang('applang.NameReg')</th>
+                <th>@lang('applang.emailReq')</th>
+                <th>@lang('applang.dateTimeAdded')</th>
+                <th>@lang('applang.userRoles')</th>
+                <th>@lang('applang.operations')</th>
             </tr>
         </thead>
         <tbody>
@@ -20,14 +20,14 @@
                 <td>
                 <!--starts add user permissions-->
                 @if(Auth::User()->can('Edit User'))
-                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success pull-left" style="margin-right: 3px;">Edit</a>
+                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success pull-left" style="margin-right: 3px;">@lang('applang.edit')</a>
                 @endif
 
                 <!--starts add user permissions-->
                 @if(Auth::User()->can('Delete User'))
                 {!! Form::open(['method' => 'DELETE','onsubmit' => 'return confirm("Are you sure?")','route' => ['users.destroy', $user->id] ]) !!}
 
-                {!! Form::submit('Delete', ['class' => 'btn btn-success']) !!}
+                {!! Form::submit(Lang::get('applang.delete'), ['class' => 'btn btn-success']) !!}
                 @endif
                 
                 {!! Form::close() !!}
