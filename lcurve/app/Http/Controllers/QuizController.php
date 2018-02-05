@@ -19,9 +19,8 @@ class QuizController extends Controller
     public function index()
     {
 
-        $quizzes = Quiz::all()->first();
+        $quizzes = Quiz::all();
 
-        dd($quizzes->questions());
         return view('quizzes.index', compact('quizzes'));
     }
 
@@ -32,7 +31,7 @@ class QuizController extends Controller
      */
     public function create(request $request)
     {
-        $quiz_id=$request->quiz_id;   
+        $quiz_id=$request->quiz_id;
         $relations=$request->relations;
         return view('quizzes.create',compact('quiz_id'),$relations);//retun to view to create a quizz by providing a topic
     }
@@ -45,10 +44,10 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        $task=Task::findOrFail($request->invisible);//find the id of a task
+        $task=Task::find($request->invisible);//find the id of a task
 
         $quiz=Quiz::Create([]);////create quizz
-        $task->taskable()->save($quiz); //
+        $quiz->task()->save($task);
 
         $questions = QuizzQuestion::where('id', $request->question_id)->limit($request->ammount)->get();
         foreach ($questions as $question) {
@@ -59,16 +58,14 @@ class QuizController extends Controller
         }
 
         return redirect()->route('tasks.index');
-    
-            
-            
+
         }
 
-        
-        
-        
-        
-    
+
+
+
+
+
 
     /**
      * Display the specified resource.

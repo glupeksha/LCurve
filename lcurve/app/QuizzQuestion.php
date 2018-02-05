@@ -11,7 +11,7 @@ class QuizzQuestion extends Model
 
      public function options()
     {
-        return $this->hasMany(QuizzQuestionsOption::class, 'question_id');
+        return $this->hasMany(QuizzQuestionOption::class, 'question_id');
     }
 
     public function topic()
@@ -27,6 +27,6 @@ class QuizzQuestion extends Model
      public function quizzes()
     {
         return $this->belongsToMany('App\Quiz');
-        
+
     }
 }

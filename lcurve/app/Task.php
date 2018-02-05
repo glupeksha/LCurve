@@ -10,7 +10,7 @@ class Task extends Model
         'title', 'due_date','content','isAssignment','taskType'
     ];
 
-    
+
 
      /**
       * Get the event's id number
@@ -58,8 +58,8 @@ class Task extends Model
       */
      public function taskable()
      {
-      return $this->morphTo();
+        return $this->morphTo();
      }
-    
-     
+
+
 }

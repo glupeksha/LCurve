@@ -4,18 +4,20 @@
 
 @foreach($quizzes as $quiz)
 
-    <h3 class="page-title">L-Curve Quizz</h3>
+    <h3 class="page-title">{{$quiz->task->title}}</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['quizzes.store']]) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
         </div>
-        <?php //dd($questions) ?>
-    @if(count($quiz->questions()) > 0)
-        <div class="panel-body">
-        <?php $i = 1; ?>
 
-        @foreach($quiz->questions() as $question)
+    @isset($quiz)
+        <div class="panel-body">
+        @php
+          $i = 1;
+        @endphp
+
+        @foreach($quiz->questions as $question)
             @if ($i > 1) <hr /> @endif
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -30,23 +32,25 @@
                             type="hidden"
                             name="questions[{{ $i }}]"
                             value="{{ $question->id }}">
-                    @foreach($question->options as $option)
-                        <br>
-                        <label class="radio-inline">
-                            <input
-                                type="radio"
-                                name="answers[{{ $question->id }}]"
-                                value="{{ $option->id }}">
-                            {{ $option->option }}
-                        </label>
-                    @endforeach
+                    @isset($question->options)
+                      @foreach($question->options as $option)
+                          <br>
+                          <label class="radio-inline">
+                              <input
+                                  type="radio"
+                                  name="answers[{{ $question->id }}]"
+                                  value="{{ $option->id }}">
+                              {{ $option->option }}
+                          </label>
+                      @endforeach
+                    @endisset
                     </div>
                 </div>
             </div>
         <?php $i++; ?>
         @endforeach
         </div>
-    @endif
+    @endisset
     </div>
 
     {!! Form::submit('submit_quiz', ['class' => 'btn btn-success']) !!}
@@ -54,4 +58,3 @@
 
 @endforeach
 @endsection
-

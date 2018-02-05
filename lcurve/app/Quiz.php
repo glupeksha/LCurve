@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quiz extends Model
 {
-     public function tasks()
+     public function task()
     {
-        return $this->morphMany('App\Task','taskable');
+        return $this->morphOne('App\Task','taskable');
     }
 
      public function questions()
     {
         return $this->belongsToMany('App\QuizzQuestion');
-        
+
     }
 }

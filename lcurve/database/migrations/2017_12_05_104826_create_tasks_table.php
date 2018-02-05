@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->text('content');
             $table->string('taskType')->default('homework');
             $table->boolean('isAssignment')->default(false);
+            $table->nullableMorphs('taskable');
             $table->timestamps();
         });
     }
