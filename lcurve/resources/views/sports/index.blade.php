@@ -4,7 +4,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default ">
             <div class="panel-heading">
-                <h3>Sports</h3>
+                <h3>@lang('applang.sportsBar')</h3>
             </div>
 
             <div class="panel-body">
@@ -23,12 +23,12 @@
 
                                 <!--starts sports edit permissions-->
                                 @if(Auth::User()->can('Edit Sport') || Auth::User()->can('Edit Sport '.$sport->id))
-                                <a href="{{ route('sports.edit', $sport->id) }}" class="btn btn-success" role="button">Edit</a>
+                                <a href="{{ route('sports.edit', $sport->id) }}" class="btn btn-success" role="button">@lang('applang.edit')</a>
                                 @endif
 
                                 <!--starts sports edit permissions-->
                                 @if(Auth::User()->can('Delete Sport') || Auth::User()->can('Delete Sport '.$sport->id))
-                                  {!! Form::submit('Delete',['class'=>'btn btn-success']) !!}
+                                  {!! Form::submit(Lang::get('applang.delete'),['class'=>'btn btn-success']) !!}
                                 @endif
 
                             {!! Form::close() !!}
@@ -48,7 +48,7 @@
 <!--starts Add sports permissions-->
 @if(Auth::User()->can('Create Sport'))
 <div class="col-lg-8"></div>
-    <a href="{{ route('sports.create') }}" class="btn btn-success" role="button" >Add a new sport</a>
+    <a href="{{ route('sports.create') }}" class="btn btn-success" role="button" >@lang('applang.addNewSport')</a>
 @endif
 <!--Ends Add sports permissions-->
 

@@ -16,8 +16,8 @@
                 <br>
 
 
-                {{ Form::label('confirm_password', 'Subject Name') }}
-                {{ Form::password('confirm_password', null, array('class' => 'form-control')) }}
+                {{ Form::label('password_confirmation', 'Confirm Password') }}
+                {{ Form::password('password_confirmation', null, array('class' => 'form-control')) }}
                 <br>
                 
 

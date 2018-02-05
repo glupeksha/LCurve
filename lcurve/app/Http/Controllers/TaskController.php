@@ -61,7 +61,7 @@ class TaskController extends Controller
         $content = $request['content'];
         $taskType = $request['taskType'];
          if(array_key_exists('isAssignment',$request)){
-                dd($request->isAssignment);
+                
                 $isAssignment=true;
             }else{
                 $isAssignment=false;
@@ -145,7 +145,7 @@ class TaskController extends Controller
     {       
 
             if($request->has('isAssignment')){
-                dd($request->isAssignment);
+                
                 $task->isAssignment=true;
             }else{
                 $task->isAssignment=false;
@@ -170,7 +170,7 @@ class TaskController extends Controller
             'questions' => \App\QuizzTopic::get()->pluck('name', 'id')->prepend('Please select', ''),
         ];
 
-        if($taskType=='Quiz'){
+        if($task->taskType=='Quiz'){
             return view('quizzes.index',compact('quiz_id'),$relations);
         }
 

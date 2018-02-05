@@ -25,24 +25,24 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-              <li><a href="{{url('users')}}">Users</a></li>
-              <li><a href="{{url('permissions')}}">Permissions</a></li>
-              <li><a href="{{url('roles')}}">Roles</a></li>
+              <li><a href="{{url('users')}}">@lang('applang.users')</a></li>
+              <li><a href="{{url('permissions')}}">@lang('applang.permission')</a></li>
+              <li><a href="{{url('roles')}}">@lang('applang.role')</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Basic Configurations
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">@lang('applang.basicConfig')
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{url('subjects')}}">Configure Subjects</a></li>
-                  <li><a href="{{url('grades')}}">Configure Grades</a></li>
-                  <li><a href="{{url('classRooms')}}">Configure Classes</a></li>
+                  <li><a href="{{url('subjects')}}">@lang('applang.configSubject')</a></li>
+                  <li><a href="{{url('grades')}}">@lang('applang.configGrade')</a></li>
+                  <li><a href="{{url('classRooms')}}">@lang('applang.configClass')</a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Manage Groups
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> @lang('applang.manage')
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{url('societies')}}">Societies</a></li>
-                  <li><a href="{{url('sports')}}">Sports</a></li>
+                  <li><a href="{{url('societies')}}">@lang('applang.societiesBar')</a></li>
+                  <li><a href="{{url('sports')}}">@lang('applang.sportsBar')</a></li>
                 </ul>
               </li>
             </ul>
@@ -57,6 +57,9 @@
                 <li><a href="{{ route('login') }}">@lang('applang.loginbutton')</a></li>
                 <li><a href="{{ route('register') }}">@lang('applang.RegisterReq')</a></li>
                 @else
+                <li><a href="{{url('locale/en')}}">@lang('applang.chooseEng')</a></li>
+                <li><a href="{{url('locale/si')}}">@lang('applang.chooseSin')</a></li>
+                <li><a href="{{url('locale/ta')}}">@lang('applang.chooseTam')</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-button" data-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -69,7 +72,7 @@
                                 <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
                             @endrole
 
-                            <a href="{{route('home')}}">@lang('applang.profileBar')</a>
+                            <a href="{{url('/users/profile')}}">@lang('applang.profileBar')</a>
 
 
                             <a href="{{ route('logout') }}"

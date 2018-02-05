@@ -4,23 +4,23 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        <h3>Create New ClassRoom</h3>
+        <h3>@lang('applang.createNewClassRoom')</h3>
          <hr style="border-color:#848991">
 
     {{-- Using the Laravel HTML Form Collective to create our form --}}
         {{ Form::open(array('route' => 'classRooms.store')) }}
 
         <div class="form-group">
-          {{ Form::label('name', 'Grade') }}
+          {{ Form::label('name', Lang::get('applang.gradeGiven')) }}
           @include('layouts.search',$searchableList)
 
             <br>
-            {{ Form::label('name', 'Class Name') }}
+            {{ Form::label('name', Lang::get('applang.nameOfTheClass')) }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
 
             <br>
 
-            {{ Form::submit('Create ClassRoom', array('class' => 'btn btn-success btn-lg btn-block')) }}
+            {{ Form::submit(Lang::get('applang.createClassRoom'), array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
         </div>
         </div>

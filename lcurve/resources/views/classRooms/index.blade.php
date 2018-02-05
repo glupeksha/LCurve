@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Class Rooms</h3>
+                <h3>@lang('applang.classRooms')</h3>
             </div>
 
             @foreach ($classRooms as $classRoom)
@@ -29,7 +29,7 @@
         <!--starts Add society permissions-->
         @if(Auth::User()->can('Create ClassRoom') || Auth::User()->can('Create ClassRoom '.$classRoom->id))
         <div class="col-lg-9"></div>
-            <a href="{{ route('classRooms.create') }}" class="btn btn-success" role="button" >Add ClassRoom
+            <a href="{{ route('classRooms.create') }}" class="btn btn-success" role="button" >@lang('applang.createNewClassRoom')
         </a>
         @endif
         <!--starts Add society permissions-->

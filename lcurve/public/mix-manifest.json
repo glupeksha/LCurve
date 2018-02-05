@@ -1,6 +1,5 @@
 {
     "/css/app.css": "/css/app.css",
     "/css/materialize.css": "/css/materialize.css",
-    "/css/forum.css": "/css/forum.css",
-    "/css/calendar.css": "/css/calendar.css"
+    "/css/forum.css": "/css/forum.css"
 }

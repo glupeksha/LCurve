@@ -8511,14 +8511,6 @@ body {
   float: right;
 }
 
-.fc-basic-view .fc-body .fc-row {
-  min-height: 2.5em;
-}
-
-.fc-event-container {
-  visibility: hidden;
-}
-
 .cr-style {
   margin-bottom: 20px;
   border-color: #abad85;

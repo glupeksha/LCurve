@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-default ">
             <div class="panel-heading">
-                <h3>Grades</h3>
+                <h3>@lang('applang.gradeGive')</h3>
             </div>           
             
             @foreach ($grades as $grade)
@@ -28,7 +28,7 @@
 <div class="col-lg-10"></div> 
 @if(Auth::User()->can('Create Grade') || Auth::User()->can('Create Grade'.$grade->id)) 
     <a href="{{ route('grades.create') }}" class="btn btn-success" role="button" class="create-styles" >
-        Add
+        @lang('applang.addNew')
     </a>
 @endif
 
