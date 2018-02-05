@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('dash-left')
 
-
 	<h3><span> &nbsp; &nbsp;{{  $classSubject->classRoom->name }} - {{  $classSubject->subject->name }} </span><br></h3>
             <label><b>&nbsp; &nbsp;&nbsp;&nbsp;Teacher name: </b></label> <span> {{  $classSubject->teacher->name }} </span>
 
@@ -12,5 +11,8 @@
               @include('topics/plug_show',['topic'=>$topic])
             @endforeach
 
-    </div>
+  </div>
+	@foreach ($classSubject->downloads()->get() as $download)
+		@include('downloads.plug_index',[$download])
+	@endforeach
 @endsection

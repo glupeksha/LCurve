@@ -15,9 +15,8 @@
       {{ Form::label('description', 'Description') }}
       {{ Form::text('description', '', array('class' => 'form-control')) }}
   </div><br>
+  {!! Form::hidden('class_subject_id', $classSubject->id) !!}
   <div class="col-lg-10"></div>
   {{ Form::submit('Upload', array('class' => 'btn btn-success')) }}
 
   {{ Form::close() }}
-
-

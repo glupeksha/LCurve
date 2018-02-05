@@ -8,7 +8,7 @@
               @foreach ($classSubjects as $classSubject)
 
                 <div class="col-lg-2 subjects">
-  								<a href="{{ route('classSubjects.show', $classSubject->id ) }}">
+  								<a href="{{ route('preview', $classSubject->id ) }}">
                   	<div class="subject_icon">
                       <img src="{{$classSubject->subject()->first()->image}}"/>
                     </div>
