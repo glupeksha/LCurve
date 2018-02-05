@@ -46,6 +46,7 @@ class DownloadController extends Controller
       ]);
 
       $file = $request->file('file');
+      $classSubject='App\ClassSubject'::find($request['class_subject_id']);
 
       $download=Download::create([
         'title'=>$request['title'],
@@ -55,8 +56,8 @@ class DownloadController extends Controller
         'original_filename' => $file->getClientOriginalName(),
         'description' => $request['description'],
       ]);
-
-      return redirect()->route('downloads.index')->with('flash_message','File, '.$download->original_filename.' uploaded' );
+      $classSubject->downloads()->save($download);
+      return redirect()->back()->with('flash_message','File, '.$download->original_filename.' uploaded' );
 
     }
 

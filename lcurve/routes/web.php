@@ -59,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/classSubjects/{classSubject}/downloads','DownloadController@store');
   Route::put('/classSubjects/{classSubject}/downloads/{download}/edit','DownloadController@edit');
   Route::post('/classSubjects/{classSubject}/downloads/{download}/delete','DownloadController@destroy');
-  Route::get('/classSubjects/{classSubject}/preview', 'ClassSubjectController@preview');
+  Route::get('/classSubjects/{classSubject}/preview', 'ClassSubjectController@preview')->name('preview');
   Route::view('/studentView', 'classSubjects.studentView');
 
   //plug comments to forums

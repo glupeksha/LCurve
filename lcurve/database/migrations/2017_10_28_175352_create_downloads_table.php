@@ -18,9 +18,10 @@ class CreateDownloadsTable extends Migration
             $table->string('title');
             $table->string('filename');
             $table->string('fileurl');
-			$table->string('mime');
-			$table->string('original_filename');
+			      $table->string('mime');
+			      $table->string('original_filename');
             $table->text('description');
+            $table->unsignedInteger('class_subject_id')->nullable($value=true);
             $table->timestamps();
         });
     }

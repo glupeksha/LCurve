@@ -50,11 +50,11 @@
 
                  <!--starts subject edit permissions-->
                  @if(Auth::User()->can('Create Topic') || Auth::User()->can('Create Topic '.$classSubject->id))
-                 
+
 
                 <div class="col-lg-1">
                 <input class=" glyphicon glyphicon-plus-sign button1 btn-success" type="submit" value="+">
-                 
+
                 </div>
                 @endif
                  <!--ends subject edit permissions-->
@@ -64,22 +64,26 @@
               {{ Form::close() }}
 <br>
 <br>
-<hr style="border-color:#848991;border-width:2px;">   
+<hr style="border-color:#848991;border-width:2px;">
 
         <!--Downloads starts -->
             <h4 >Downloads</h4>
-                <div class="panel-heading">
+            <div class="panel">
               {{-- Display downloads - Start --}}
-                  @foreach($classSubject->downloads() as $download)
-                      @include('downloads.plug_index',$download)      
+                <div class="panel-heading">
+                  @foreach($classSubject->downloads()->get() as $download)
+                      @include('downloads.plug_index',[$download])
                   @endforeach
                 </div>
               {{-- Display downloads - End --}}
               <div class="panel-body">
+                <h5 >Add Downlaod</h5>
                 <div>
                   @include('downloads.plug_create')
                 </div>
               </div>
+            </div>
+
 
         <!--Downloads ends -->
         </div>

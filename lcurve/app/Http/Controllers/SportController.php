@@ -21,7 +21,8 @@ class SportController extends Controller
     }
     public function filteredIndex()
     {
-        $sports = Auth::user()->sports()->get();
+        //$sports = Auth::user()->sports()->get();
+        $sports = Sport::orderby('id','desc')->paginate(5);
         return view('sports.filtered_index',compact('sports'));
     }
 
